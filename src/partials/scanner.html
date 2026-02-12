@@ -1,0 +1,47 @@
+<section id="scanner" class="py-28 bg-void">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="w-12 h-[1px] bg-champagne"></span>
+      <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Биометрическая карта</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div class="glass-panel p-8 reveal-on-scroll">
+        <h3 class="text-xl text-ivory font-serif mb-4">Интерактивная диагностика зажимов</h3>
+        <p class="text-gray-400 font-light mb-8">Выберите зону на карте тела для получения подробного анализа психосоматики и рекомендаций.</p>
+        <div class="relative w-full max-w-md mx-auto">
+          <svg viewBox="0 0 260 520" class="w-full h-auto">
+            <path class="body-path" d="M130 20 C120 25 115 40 115 55 C115 70 120 80 130 80 C140 80 145 70 145 55 C145 40 140 25 130 20 Z"></path>
+            <path class="body-path" d="M90 90 C100 60 160 60 170 90 C180 120 175 180 160 220 C150 250 150 300 150 340 C150 380 160 420 170 500"></path>
+            <path class="body-path" d="M170 90 C160 60 100 60 90 90 C80 120 85 180 100 220 C110 250 110 300 110 340 C110 380 100 420 90 500"></path>
+            <g class="active-point" data-point="head" role="button" tabindex="0" aria-label="Шум в голове">
+              <circle cx="130" cy="55" r="6"></circle>
+              <circle class="pulse-ring" cx="130" cy="55" r="12"></circle>
+            </g>
+            <g class="active-point" data-point="shoulders" role="button" tabindex="0" aria-label="Груз на плечах">
+              <circle cx="90" cy="110" r="6"></circle>
+              <circle class="pulse-ring" cx="90" cy="110" r="12"></circle>
+            </g>
+            <g class="active-point" data-point="chest" role="button" tabindex="0" aria-label="Эмоциональный щит">
+              <circle cx="130" cy="160" r="6"></circle>
+              <circle class="pulse-ring" cx="130" cy="160" r="12"></circle>
+            </g>
+            <g class="active-point" data-point="lowerback" role="button" tabindex="0" aria-label="Потеря опоры">
+              <circle cx="130" cy="260" r="6"></circle>
+              <circle class="pulse-ring" cx="130" cy="260" r="12"></circle>
+            </g>
+            <g class="active-point" data-point="legs" role="button" tabindex="0" aria-label="Земное притяжение">
+              <circle cx="130" cy="380" r="6"></circle>
+              <circle class="pulse-ring" cx="130" cy="380" r="12"></circle>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="glass-panel p-8 reveal-on-scroll" aria-live="polite">
+        <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Ожидание сигнала</p>
+        <h3 class="text-2xl text-ivory font-serif mb-4" id="scanner-title">Выберите зону</h3>
+        <p class="text-gray-400 font-light leading-relaxed mb-6" id="scanner-description">Нажмите на точку на карте тела, чтобы получить анализ и рекомендацию.</p>
+        <a id="scanner-cta" href="https://wa.me/79260899019?text=Здравствуйте,%20хочу%20записаться." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Scanner: CTA">Подтвердить симптом</a>
+      </div>
+    </div>
+  </div>
+</section>
