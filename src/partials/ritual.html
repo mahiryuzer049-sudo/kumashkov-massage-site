@@ -1,46 +1,142 @@
-<section id="ritual" class="py-28 bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="flex items-center gap-4 mb-8">
-      <span class="w-12 h-[1px] bg-champagne"></span>
-      <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Сценарий знакомства</p>
+<!-- RITUAL -->
+<section id="ritual" class="section-shell bg-[#050505] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Session Flow</p>
+      <h2 class="section-title">Сценарий первой встречи</h2>
+      <p class="section-subtitle">
+        Четкая структура помогает снять тревогу и мягко провести вас от запроса к результату. Без резких переходов и
+        без перегруза.
+      </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-16">
-      <div class="reveal-on-scroll">
-        <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Как проходит наша первая встреча</h2>
-        <p class="text-gray-400 font-light mb-8">Кодекс этики. Я понимаю ваши опасения. Моя работа строится на железной дисциплине боевых искусств и медицинской этике.</p>
-        <ul class="text-gray-400 text-sm space-y-3">
-          <li>Никаких двусмысленностей</li>
-          <li>Строгое соблюдение границ</li>
-          <li>Полная конфиденциальность</li>
+
+    <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
+        <p class="text-[9px] uppercase tracking-[0.28em] text-gray-500 mb-3">Кодекс процесса</p>
+        <h3 class="font-serif text-2xl text-ivory mb-4">Спокойно, понятно, бережно</h3>
+        <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>Перед стартом обсуждаем цель, зоны и комфортный ритм.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>В процессе можно скорректировать давление и темп в любой момент.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>После сеанса получаете короткие рекомендации по закреплению эффекта.</span>
+          </li>
         </ul>
-      </div>
-      <div class="grid gap-6">
-        <div class="glass-panel p-6 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Подготовка</p>
-          <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Снять тревогу</p>
-          <p class="text-xs text-gray-400 font-light">Вход в состояние. Вы приходите, и город остается за дверью. Я даю вам время спокойно переодеться и выдохнуть.</p>
+      </article>
+
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.06s">
+        <div class="ritual-controls mb-7" role="tablist" aria-label="Этапы сессии">
+          <button
+            id="step-btn-1"
+            class="ritual-step-btn step-btn active interactive-el ripple-container"
+            data-step="1"
+            data-analytics="Ritual: Step 1"
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-1"
+            aria-selected="true"
+          >
+            Подготовка
+          </button>
+          <button
+            id="step-btn-2"
+            class="ritual-step-btn step-btn interactive-el ripple-container"
+            data-step="2"
+            data-analytics="Ritual: Step 2"
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-2"
+            aria-selected="false"
+          >
+            Диалог
+          </button>
+          <button
+            id="step-btn-3"
+            class="ritual-step-btn step-btn interactive-el ripple-container"
+            data-step="3"
+            data-analytics="Ritual: Step 3"
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-3"
+            aria-selected="false"
+          >
+            Сессия
+          </button>
+          <button
+            id="step-btn-4"
+            class="ritual-step-btn step-btn interactive-el ripple-container"
+            data-step="4"
+            data-analytics="Ritual: Step 4"
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-4"
+            aria-selected="false"
+          >
+            Фиксация
+          </button>
         </div>
-        <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Диалог</p>
-          <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Найти причину</p>
-          <p class="text-xs text-gray-400 font-light">Мы говорим. Не формальный опрос, а живой диалог. Важно понять не только где болит, но и как вы живете.</p>
+
+        <div class="ritual-stage relative min-h-[260px] md:min-h-[240px]">
+          <div id="ritual-step-1" class="ritual-step is-active" role="tabpanel" aria-labelledby="step-btn-1">
+            <p class="text-[10px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 1</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Вход в спокойный режим</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Пара минут на переключение: выдыхаете, устраиваетесь, обозначаете состояние на сейчас. Наша цель на этом
+              этапе — снять суету и начать работу в комфортном темпе.
+            </p>
+          </div>
+          <div id="ritual-step-2" class="ritual-step" role="tabpanel" aria-labelledby="step-btn-2">
+            <p class="text-[10px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 2</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Короткая настройка</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Обсуждаем, что именно хочется получить от сеанса: расслабление, восстановление, тонус или работу с
+              конкретной зоной. По итогам фиксируем персональный протокол.
+            </p>
+          </div>
+          <div id="ritual-step-3" class="ritual-step" role="tabpanel" aria-labelledby="step-btn-3">
+            <p class="text-[10px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 3</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Основная проработка</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Техники комбинируются по отклику тела, а не по шаблону. Если нужно, ритм и давление корректируются сразу
+              в процессе, чтобы сохранить точность и комфорт.
+            </p>
+          </div>
+          <div id="ritual-step-4" class="ritual-step" role="tabpanel" aria-labelledby="step-btn-4">
+            <p class="text-[10px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 4</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Закрепление результата</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Финально подводим итог: что изменилось в ощущениях и как сохранить эффект в ближайшие дни. Вы уходите с
+              ясным пониманием следующего шага.
+            </p>
+          </div>
         </div>
-        <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Терапия</p>
-          <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Глубокая проработка</p>
-          <p class="text-xs text-gray-400 font-light">Магия касания. Я комбинирую техники, слышу отклик мышц и меняю давление.</p>
+
+        <div class="ritual-progress-track mt-7">
+          <div id="ritual-progress" class="ritual-progress-bar" style="width: 25%"></div>
         </div>
-        <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.15s;">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Финал</p>
-          <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Закрепить результат</p>
-          <p class="text-xs text-gray-400 font-light">Возвращение. Рекомендации, как сохранить легкость на 2–3 дня. Вы уходите с новым ощущением своего тела.</p>
+
+        <div class="mt-5 flex flex-wrap items-center gap-2.5">
+          <button id="ritual-prev" type="button" class="btn-secondary interactive-el">
+            Предыдущий шаг
+          </button>
+          <button id="ritual-next" type="button" class="btn-secondary interactive-el">
+            Следующий шаг
+          </button>
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20хочу%20уточнить%20как%20проходит%20первая%20встреча."
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+            data-analytics="Ritual: Ask in Chat"
+          >
+            Уточнить детали в чате
+          </a>
         </div>
-      </div>
-    </div>
-    <div class="mt-10">
-      <p class="text-gray-400 font-light mb-4">Остались вопросы по процессу?</p>
-      <a href="https://wa.me/79260899019?text=Павел,%20хочу%20уточнить%20детали%20проведения%20сеанса." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Ritual: CTA">Спросить лично в чате</a>
-      <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Далее: Гарантии безопасности</p>
+      </article>
     </div>
   </div>
 </section>

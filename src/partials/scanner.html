@@ -1,47 +1,209 @@
-<section id="scanner" class="py-28 bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="flex items-center gap-4 mb-8">
-      <span class="w-12 h-[1px] bg-champagne"></span>
-      <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Биометрическая карта</p>
+<!-- SCANNER -->
+<section id="scanner-section" class="section-shell bg-[#070707] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Body Scanner 2.0</p>
+      <h2 class="section-title">Послушайте сигналы тела</h2>
+      <p class="section-subtitle">
+        Нажмите на зону, которая беспокоит прямо сейчас. Сканер покажет короткую интерпретацию и предложит стартовый
+        формат сессии.
+      </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-16 items-center">
-      <div class="glass-panel p-8 reveal-on-scroll">
-        <h3 class="text-xl text-ivory font-serif mb-4">Интерактивная диагностика зажимов</h3>
-        <p class="text-gray-400 font-light mb-8">Выберите зону на карте тела для получения подробного анализа психосоматики и рекомендаций.</p>
-        <div class="relative w-full max-w-md mx-auto">
-          <svg viewBox="0 0 260 520" class="w-full h-auto">
-            <path class="body-path" d="M130 20 C120 25 115 40 115 55 C115 70 120 80 130 80 C140 80 145 70 145 55 C145 40 140 25 130 20 Z"></path>
-            <path class="body-path" d="M90 90 C100 60 160 60 170 90 C180 120 175 180 160 220 C150 250 150 300 150 340 C150 380 160 420 170 500"></path>
-            <path class="body-path" d="M170 90 C160 60 100 60 90 90 C80 120 85 180 100 220 C110 250 110 300 110 340 C110 380 100 420 90 500"></path>
-            <g class="active-point" data-point="head" role="button" tabindex="0" aria-label="Шум в голове">
-              <circle cx="130" cy="55" r="6"></circle>
-              <circle class="pulse-ring" cx="130" cy="55" r="12"></circle>
-            </g>
-            <g class="active-point" data-point="shoulders" role="button" tabindex="0" aria-label="Груз на плечах">
-              <circle cx="90" cy="110" r="6"></circle>
-              <circle class="pulse-ring" cx="90" cy="110" r="12"></circle>
-            </g>
-            <g class="active-point" data-point="chest" role="button" tabindex="0" aria-label="Эмоциональный щит">
-              <circle cx="130" cy="160" r="6"></circle>
-              <circle class="pulse-ring" cx="130" cy="160" r="12"></circle>
-            </g>
-            <g class="active-point" data-point="lowerback" role="button" tabindex="0" aria-label="Потеря опоры">
-              <circle cx="130" cy="260" r="6"></circle>
-              <circle class="pulse-ring" cx="130" cy="260" r="12"></circle>
-            </g>
-            <g class="active-point" data-point="legs" role="button" tabindex="0" aria-label="Земное притяжение">
-              <circle cx="130" cy="380" r="6"></circle>
-              <circle class="pulse-ring" cx="130" cy="380" r="12"></circle>
-            </g>
-          </svg>
+
+    <div class="grid xl:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
+      <div id="scanner-container" class="scanner-stage card-luxe reveal-on-scroll group relative p-4 md:p-6">
+        <div class="scanner-grid" aria-hidden="true"></div>
+        <div class="scanner-vignette" aria-hidden="true"></div>
+        <div id="scan-line" class="scan-line" aria-hidden="true"></div>
+
+        <svg
+          viewBox="0 0 220 520"
+          class="scanner-figure relative z-10"
+          role="img"
+          aria-label="Силуэт тела с интерактивными зонами"
+        >
+          <defs>
+            <linearGradient id="bodyFill" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="rgba(227, 200, 173, 0.16)"></stop>
+              <stop offset="100%" stop-color="rgba(227, 200, 173, 0.04)"></stop>
+            </linearGradient>
+          </defs>
+
+          <path
+            class="scanner-outline"
+            d="M110 20
+               C128 20 142 33 142 52
+               C142 68 132 80 120 84
+               L120 104
+               C138 112 154 130 160 152
+               C167 177 166 212 153 241
+               C145 259 133 271 120 280
+               L120 345
+               C132 379 136 422 130 462
+               C126 488 119 503 110 512
+               C101 503 94 488 90 462
+               C84 422 88 379 100 345
+               L100 280
+               C87 271 75 259 67 241
+               C54 212 53 177 60 152
+               C66 130 82 112 100 104
+               L100 84
+               C88 80 78 68 78 52
+               C78 33 92 20 110 20 Z"
+          ></path>
+          <path class="scanner-skeleton" d="M110 84 L110 354"></path>
+          <path class="scanner-skeleton" d="M100 176 Q110 184 120 176"></path>
+          <path class="scanner-skeleton" d="M96 244 Q110 256 124 244"></path>
+
+          <g
+            class="active-point"
+            data-point="head"
+            role="button"
+            tabindex="0"
+            aria-label="Тяжесть и шум в голове"
+            data-analytics="Scanner: Point Click - Head"
+          >
+            <circle cx="110" cy="52" r="24" class="hit-area"></circle>
+            <circle cx="110" cy="52" r="3.2" class="zone-dot"></circle>
+            <circle cx="110" cy="52" r="11" class="pulse-ring"></circle>
+            <text class="scanner-label" x="142" y="56">Голова</text>
+          </g>
+
+          <g
+            class="active-point"
+            data-point="neck"
+            role="button"
+            tabindex="0"
+            aria-label="Напряжение в шее"
+            data-analytics="Scanner: Point Click - Neck"
+          >
+            <circle cx="110" cy="101" r="22" class="hit-area"></circle>
+            <circle cx="110" cy="101" r="3.2" class="zone-dot"></circle>
+            <circle cx="110" cy="101" r="10" class="pulse-ring" style="animation-delay: 0.2s"></circle>
+            <text class="scanner-label" x="142" y="105">Шея</text>
+          </g>
+
+          <g
+            class="active-point"
+            data-point="shoulders"
+            role="button"
+            tabindex="0"
+            aria-label="Скованность плечевого пояса"
+            data-analytics="Scanner: Point Click - Shoulders"
+          >
+            <circle cx="78" cy="144" r="24" class="hit-area"></circle>
+            <circle cx="142" cy="144" r="24" class="hit-area"></circle>
+            <circle cx="78" cy="144" r="3.1" class="zone-dot"></circle>
+            <circle cx="142" cy="144" r="3.1" class="zone-dot"></circle>
+            <circle cx="78" cy="144" r="10" class="pulse-ring" style="animation-delay: 0.35s"></circle>
+            <text class="scanner-label" x="142" y="148">Плечи</text>
+          </g>
+
+          <g
+            class="active-point"
+            data-point="back"
+            role="button"
+            tabindex="0"
+            aria-label="Зажим в спине и пояснице"
+            data-analytics="Scanner: Point Click - Back"
+          >
+            <circle cx="110" cy="236" r="30" class="hit-area"></circle>
+            <circle cx="110" cy="236" r="3.2" class="zone-dot"></circle>
+            <circle cx="110" cy="236" r="14" class="pulse-ring" style="animation-delay: 0.1s"></circle>
+            <text class="scanner-label" x="142" y="240">Спина</text>
+          </g>
+
+          <g
+            class="active-point"
+            data-point="legs"
+            role="button"
+            tabindex="0"
+            aria-label="Тяжесть в ногах"
+            data-analytics="Scanner: Point Click - Legs"
+          >
+            <circle cx="110" cy="392" r="36" class="hit-area"></circle>
+            <circle cx="110" cy="392" r="3.2" class="zone-dot"></circle>
+            <circle cx="110" cy="392" r="16" class="pulse-ring" style="animation-delay: 0.45s"></circle>
+            <text class="scanner-label" x="142" y="396">Ноги</text>
+          </g>
+        </svg>
+
+        <div
+          id="zone-popup"
+          class="scanner-popup glass-panel border border-champagne/20 p-5 md:p-6"
+          role="dialog"
+          aria-modal="false"
+          aria-labelledby="zone-title"
+          aria-describedby="zone-desc"
+          aria-hidden="true"
+          tabindex="-1"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="text-[9px] uppercase tracking-[0.28em] text-gray-500 mb-1">Сигнал</p>
+              <h3 id="zone-title" class="font-serif text-2xl text-ivory">Выберите зону</h3>
+            </div>
+            <button
+              id="zone-close"
+              type="button"
+              class="w-8 h-8 rounded-full border border-white/10 text-white/60 hover:text-white hover:border-champagne/40 transition interactive-el"
+              aria-label="Закрыть подсказку зоны"
+            >
+              ×
+            </button>
+          </div>
+          <p id="zone-med" class="text-[10px] uppercase tracking-[0.2em] text-champagne/90 mt-3"></p>
+          <p id="zone-desc" class="text-sm text-gray-300 leading-relaxed mt-3 min-h-[72px] typing-cursor"></p>
+          <button
+            id="zone-cta"
+            type="button"
+            class="mt-5 w-full btn-secondary interactive-el btn-vibrate ripple-container"
+            data-analytics="Scanner: CTA Click"
+          >
+            Сформировать запрос по этой зоне
+          </button>
         </div>
       </div>
-      <div class="glass-panel p-8 reveal-on-scroll" aria-live="polite">
-        <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Ожидание сигнала</p>
-        <h3 class="text-2xl text-ivory font-serif mb-4" id="scanner-title">Выберите зону</h3>
-        <p class="text-gray-400 font-light leading-relaxed mb-6" id="scanner-description">Нажмите на точку на карте тела, чтобы получить анализ и рекомендацию.</p>
-        <a id="scanner-cta" href="https://wa.me/79260899019?text=Здравствуйте,%20хочу%20записаться." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Scanner: CTA">Подтвердить симптом</a>
-      </div>
+
+      <aside class="space-y-5">
+        <div class="card-luxe p-6 reveal-on-scroll">
+          <p class="text-[9px] uppercase tracking-[0.28em] text-gray-500 mb-2">Быстрый выбор</p>
+          <h3 class="font-serif text-2xl text-ivory mb-4">Выберите, что беспокоит</h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-5">
+            Можно нажать на точку в силуэте или выбрать вариант ниже. После выбора сразу откроется пояснение и готовый
+            сценарий обращения.
+          </p>
+          <div class="flex flex-wrap gap-2.5">
+            <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="head">Голова</button>
+            <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="neck">Шея</button>
+            <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="shoulders">Плечи</button>
+            <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="back">Спина</button>
+            <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="legs">Ноги</button>
+          </div>
+        </div>
+
+        <div class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+          <p class="text-[9px] uppercase tracking-[0.28em] text-gray-500 mb-2">Конфиденциально</p>
+          <h3 class="font-serif text-2xl text-ivory mb-4">Никакой публичности</h3>
+          <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+              <span>Запрос обсуждается только в личном чате.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+              <span>Перед сеансом уточняются пожелания, противопоказания и комфортный формат.</span>
+            </li>
+          </ul>
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте,%20хочу%20обсудить%20запрос%20по%20массажу."
+            class="mt-5 inline-flex btn-primary whatsapp-link interactive-el btn-vibrate ripple-container"
+            data-analytics="Scanner: Main Aside CTA"
+          >
+            Обсудить мой запрос
+          </a>
+        </div>
+      </aside>
     </div>
   </div>
 </section>

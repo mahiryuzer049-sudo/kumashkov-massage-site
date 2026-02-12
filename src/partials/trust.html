@@ -1,20 +1,71 @@
-<section id="trust" class="py-28 bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="flex items-center gap-4 mb-8">
-      <span class="w-12 h-[1px] bg-champagne"></span>
-      <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Карта доверия</p>
+<!-- TRUST -->
+<section id="trust" class="section-shell bg-[#040404] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Trust Protocol</p>
+      <h2 class="section-title">Понятный формат первого визита</h2>
+      <p class="section-subtitle">
+        Первая встреча нужна не «на удачу», а для точной настройки: запрос, зоны, комфортная интенсивность и
+        прозрачный сценарий следующих шагов.
+      </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-16 items-start">
-      <div class="reveal-on-scroll">
-        <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Доступ к регулярной работе открывается после первого знакомства</h2>
-        <p class="text-gray-400 font-light mb-6">Я не продаю “абонементы” всем подряд. Первый визит — это наша “проба пера”. Если мы совпадаем в понимании комфорта и границ, вы получаете карту.</p>
-        <p class="text-gray-400 font-light">Это знак того, что мы теперь в одной команде.</p>
-      </div>
-      <div class="glass-panel p-8 reveal-on-scroll">
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Специальные условия для знакомства</p>
-        <p class="text-xs text-gray-400 font-light mb-6">Оплата только после сеанса. Никаких скрытых условий.</p>
-        <a href="https://wa.me/79260899019?text=Павел,%20хочу%20записаться%20на%20первый%20сеанс-знакомство." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Trust: CTA">Записаться на знакомство</a>
-      </div>
+
+    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-7 items-start">
+      <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-3">Что входит в первый визит</p>
+        <ul class="space-y-3.5 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>Короткая диагностика запроса и приоритетных зон.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>Подбор техник и темпа под ваш комфорт.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>Фиксация персонального протокола на следующий шаг.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>Рекомендации после сеанса для закрепления эффекта.</span>
+          </li>
+        </ul>
+
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <span class="font-serif text-4xl text-champagne">7 000 ₽</span>
+          <span class="text-sm text-gray-600 line-through">15 000 ₽</span>
+          <span class="tag-pill">Первый визит</span>
+        </div>
+        <p class="text-[11px] text-gray-500 mt-2">
+          Формат: выезд на дом в Москве, ориентир по времени — около 60 минут.
+        </p>
+      </article>
+
+      <article class="card-luxe p-7 md:p-8 reveal-on-scroll" data-reveal-delay="0.08s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-3">Почему это снижает тревогу</p>
+        <div class="grid grid-cols-1 gap-3.5">
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="text-sm text-ivory mb-1">Без неопределенности</p>
+            <p class="text-xs text-gray-400">До старта понимаете, как пройдет визит и какие правила действуют.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="text-sm text-ivory mb-1">Без давления</p>
+            <p class="text-xs text-gray-400">Вы в любой момент можете скорректировать интенсивность и ритм.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+            <p class="text-sm text-ivory mb-1">Без навязчивых решений</p>
+            <p class="text-xs text-gray-400">После первого визита спокойно решаете, нужен ли курс и в каком формате.</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20уточнить%20формат%20первого%20визита%20и%20свободные%20окна."
+          class="whatsapp-link mt-6 inline-flex btn-primary interactive-el btn-vibrate ripple-container"
+          data-analytics="Trust: Clarify First Visit"
+        >
+          Уточнить формат первого визита
+        </a>
+      </article>
     </div>
   </div>
 </section>

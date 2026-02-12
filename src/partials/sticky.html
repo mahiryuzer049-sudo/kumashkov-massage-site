@@ -1,6 +1,25 @@
-<div class="fixed bottom-0 left-0 right-0 z-50 border-t border-white/5 bg-void/90 backdrop-blur-xl">
-  <div class="max-w-screen-xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-    <div class="text-xs text-gray-400 font-light">Павел Кумашков — медицинский массаж на дому в Москве</div>
-    <a href="https://wa.me/79260899019?text=Здравствуйте,%20хочу%20записаться." class="whatsapp-link inline-flex px-8 py-3 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Sticky: CTA">Записаться</a>
+﻿<!-- STICKY BAR -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-6 pb-[env(safe-area-inset-bottom)] pointer-events-none">
+  <div class="max-w-lg mx-auto glass-panel bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2.5 flex justify-between items-center shadow-2xl pointer-events-auto transform translate-y-0 transition-transform duration-500">
+    <div class="flex items-center gap-3 pl-3">
+      <div class="relative">
+        <div class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center"><span class="font-serif text-[10px] text-white/40 tracking-widest">PK</span></div>
+        <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#050505] flex items-center justify-center">
+          <div class="w-2 h-2 rounded-full bg-green-500 relative"><div class="absolute inset-0 w-full h-full rounded-full bg-green-500 animate-ping opacity-75"></div></div>
+        </div>
+      </div>
+      <div class="flex flex-col justify-center">
+        <span class="text-[8px] font-sans uppercase tracking-widest text-gray-500 mb-0.5">Pavel Kumashkov</span>
+        <div class="h-4 flex items-center overflow-hidden relative">
+          <div id="status-container" class="flex items-center gap-2 transition-transform duration-500"><span class="text-[10px] font-serif text-champagne">Online</span></div>
+          <div id="typing-container" class="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-2 transition-all duration-500 opacity-0 translate-y-4"><span class="text-[10px] font-serif text-champagne/80 italic">печатает</span><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <a href="{{site.telegram}}" class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/30 transition interactive-el ripple-container bg-white/5" data-analytics="Sticky: Telegram"><i class="fa-brands fa-telegram text-lg"></i></a>
+      <a href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20здравствуйте.%20Хочу%20начать%20диалог." class="whatsapp-link px-8 h-12 flex items-center bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion rounded-xl hover:bg-white transition duration-500 interactive-el btn-vibrate shadow-[0_0_25px_rgba(227,200,173,0.15)] ripple-container" data-analytics="Sticky: Start Dialogue">Начать диалог</a>
+    </div>
   </div>
 </div>
+

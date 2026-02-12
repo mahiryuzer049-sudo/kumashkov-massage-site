@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
+  safelist: ["animate-scan"],
   theme: {
     extend: {
       colors: {
@@ -11,8 +12,9 @@ module.exports = {
         panel: "#080808",
       },
       fontFamily: {
-        serif: ['"Cinzel"', "serif"],
+        serif: ['"Cormorant Garamond"', "serif"],
         sans: ['"Manrope"', "sans-serif"],
+        mono: ['"Manrope"', "sans-serif"],
       },
       letterSpacing: {
         fashion: "0.25em",

@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth bg-[#050505]">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#050505">
-  <title>Политика конфиденциальности — Павел Кумашков</title>
-  <meta name="description" content="Политика конфиденциальности и обработки персональных данных.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="stylesheet" href="/styles/main.css">
+  {{> head-core}}
+  {{> head-seo}}
 </head>
-<body class="has-sticky">
+<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
   {{> chrome}}
   {{> header}}
   <main id="main" class="pt-28">

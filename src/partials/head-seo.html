@@ -1,0 +1,48 @@
+<!-- SEO -->
+<meta name="robots" content="{{seo.robots}}">
+<title>{{seo.title}}</title>
+<meta name="description" content="{{seo.description}}">
+<meta name="author" content="{{site.brandRu}}">
+
+{{#if seo.geo}}
+<meta name="geo.region" content="{{site.regionCode}}">
+<meta name="geo.placename" content="{{site.city}}">
+{{/if}}
+
+<meta property="og:type" content="{{seo.ogType}}">
+<meta property="og:site_name" content="{{seo.ogSiteName}}">
+<meta property="og:title" content="{{seo.ogTitle}}">
+<meta property="og:description" content="{{seo.ogDescription}}">
+<meta property="og:image" content="{{seo.ogImage}}">
+<meta property="og:locale" content="{{seo.ogLocale}}">
+<meta property="og:url" content="{{seo.ogUrl}}">
+
+<meta name="twitter:card" content="{{seo.twitterCard}}">
+<meta name="twitter:title" content="{{seo.twitterTitle}}">
+<meta name="twitter:description" content="{{seo.twitterDescription}}">
+<meta name="twitter:image" content="{{seo.twitterImage}}">
+
+<link rel="canonical" href="{{seo.canonical}}">
+
+{{#if seo.includeYandexWebmasterPlaceholder}}
+<!-- TODO: Yandex Webmaster verification meta here -->
+{{/if}}
+
+{{#if seo.preloadImage}}
+<link rel="preload" as="image" href="{{seo.preloadImage}}">
+{{/if}}
+
+{{#if seo.preconnectUnsplash}}
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link rel="dns-prefetch" href="//images.unsplash.com">
+{{/if}}
+
+{{#if seo.includeYandexMetrikaPlaceholder}}
+<!-- TODO: Yandex Metrika counter (place script here) -->
+{{/if}}
+
+{{#each seo.structuredDataScripts}}
+<script type="application/ld+json">
+{{{this}}}
+</script>
+{{/each}}

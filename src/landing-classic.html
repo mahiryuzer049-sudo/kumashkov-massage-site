@@ -1,33 +1,105 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth bg-[#050505]">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#050505">
-  <title>Классический массаж — Павел Кумашков</title>
-  <meta name="description" content="Классический массаж на дому в Москве. Восстановление тонуса, снятие усталости, медицинский подход.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="stylesheet" href="/styles/main.css">
+  {{> head-core}}
+  {{> head-seo}}
 </head>
-<body class="has-sticky">
+<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
+  <a class="skip-link" href="#main">К содержимому</a>
   {{> chrome}}
   {{> header}}
+
   <main id="main" class="pt-28">
-    <section class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section class="section-shell bg-void border-y border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
         <div class="reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Классика</p>
-          <h1 class="font-serif text-4xl md:text-6xl text-ivory mb-6 leading-tight">Фундаментальная проработка</h1>
-          <p class="text-gray-400 font-light mb-8">Восстановление тонуса и снятие общей усталости. Глубокая работа с мышцами для улучшения кровообращения.</p>
-          <a href="https://wa.me/79260899019?text=Павел,%20хочу%20классический%20массаж." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container">Записаться</a>
+          <p class="section-kicker text-left">Classic Format</p>
+          <h1 class="section-title text-left">Классический массаж на дому в Москве</h1>
+          <p class="section-subtitle text-left m-0">
+            Базовый формат для восстановления после нагрузки: снять мышечную перегрузку, вернуть телу тонус и сделать
+            самочувствие ровнее уже после первого визита.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a
+              href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20записаться%20на%20классический%20массаж%20на%20дому."
+              class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+              data-analytics="LandingClassic: Book"
+            >
+              Записаться
+            </a>
+            <a href="/#packages" class="btn-secondary interactive-el" data-analytics="LandingClassic: Packages">
+              Пакеты и курс
+            </a>
+          </div>
         </div>
-        <div class="glass-panel p-8 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Результат</p>
-          <p class="text-sm text-gray-400 font-light">Свобода движения, уменьшение усталости, восстановление тонуса.</p>
+
+        <article class="card-luxe p-7 reveal-on-scroll" data-reveal-delay="0.08s">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Кому подходит</p>
+          <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+            <li>• При усталости в спине и плечевом поясе после рабочего дня.</li>
+            <li>• При ощущении «тяжелого» тела и сниженного тонуса.</li>
+            <li>• Как стартовый формат перед переходом в курс 4/8 визитов.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell bg-[#060606] border-y border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5">
+        <article class="card-luxe p-6 reveal-on-scroll">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
+          <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+            <li>• Снижение скованности в ключевых зонах.</li>
+            <li>• Более легкое движение и меньше фоновой усталости.</li>
+            <li>• Понимание персонального ритма восстановления.</li>
+          </ul>
+        </article>
+
+        <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Следующий шаг</p>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            После первого визита фиксируем отклик тела и при необходимости переводим формат в курс для устойчивого
+            результата.
+          </p>
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20начать%20с%20классического%20формата%20и%20обсудить%20дальнейший%20план."
+            class="whatsapp-link btn-secondary interactive-el"
+            data-analytics="LandingClassic: NextStep"
+          >
+            Обсудить план
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell bg-[#050505]">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="section-head reveal-on-scroll mb-10">
+          <p class="section-kicker">Related Formats</p>
+          <h2 class="section-title">Смотреть также</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <a href="/landing-relax.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-analytics="LandingClassic: Related Relax">
+            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Relax</p>
+            <h3 class="font-serif text-2xl text-ivory mb-2">Антистресс</h3>
+            <p class="text-sm text-gray-300">Если нужен мягкий темп и глубокая разгрузка нервной системы.</p>
+          </a>
+          <a href="/landing-posture.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.08s" data-analytics="LandingClassic: Related Posture">
+            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Posture</p>
+            <h3 class="font-serif text-2xl text-ivory mb-2">Осанка</h3>
+            <p class="text-sm text-gray-300">Когда важно выровнять нагрузку и убрать зажимы в плечах и спине.</p>
+          </a>
+          <a href="/#technique-guide" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.14s" data-analytics="LandingClassic: Related Guide">
+            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Guide</p>
+            <h3 class="font-serif text-2xl text-ivory mb-2">Все форматы</h3>
+            <p class="text-sm text-gray-300">Открыть гид по выбору техники и подобрать маршрут под задачу.</p>
+          </a>
         </div>
       </div>
     </section>
   </main>
+
   {{> footer}}
   {{> sticky}}
   <script type="module" src="/scripts/main.js"></script>

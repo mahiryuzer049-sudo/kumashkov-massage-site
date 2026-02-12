@@ -8,7 +8,7 @@
 - Tailwind CSS (build через Vite)
 - Vanilla JavaScript
 - Font Awesome
-- Google Fonts (Cinzel, Manrope)
+- Local fonts via `@fontsource` (Cormorant Garamond, Manrope)
 
 ## Текущая структура проекта
 
@@ -87,20 +87,28 @@ npm run preview
 
 - `npm run lint` — ESLint + Stylelint
 - `npm run format` — Prettier
-- `npm run check` — lint + build + html validation
+- `npm run perf:budget` — performance budget check (gzip limits)
+- `npm run check` — lint + build + html validation + performance budget
+
+## Quality Gates
+
+- Регламент качества: `QUALITY_GATES.md`
+- В CI запускается `npm run check`
 
 ## Аналитика (Яндекс)
 
 Где вставлять:
 
 1. **Yandex Webmaster**
-   - В `src/index.html` в `<head>` есть комментарий `TODO: Yandex Webmaster verification meta here`.
-   - Вставь туда мета‑тег вида:
+   - В `src/partials/head-seo.html` есть комментарий `TODO: Yandex Webmaster verification meta here`.
+   - Управляется флагом `includeYandexWebmasterPlaceholder` в `site.config.mjs` для нужной страницы.
+   - Вставь мета-тег в это место:
      `\<meta name="yandex-verification" content="..."\>`
 
 2. **Yandex Metrika**
-   - В `src/index.html` перед закрытием `</head>` есть комментарий `TODO: Yandex Metrika counter (place script here)`.
-   - Вставь туда скрипт счетчика Метррики.
+   - В `src/partials/head-seo.html` есть комментарий `TODO: Yandex Metrika counter (place script here)`.
+   - Управляется флагом `includeYandexMetrikaPlaceholder` в `site.config.mjs`.
+   - Вставь туда скрипт счетчика Метрики.
 
 ## Важное
 
@@ -111,3 +119,11 @@ npm run preview
   - `favicon-16x16.png` (16x16)
   - `apple-touch-icon.png` (180x180)
   - `site.webmanifest`
+
+## Maintenance Shortcuts
+
+- Shared `<head>` setup (fonts, icons, base CSS, viewport) is centralized in `src/partials/head-core.html`.
+- SEO, canonical, OG/Twitter and structured data are centralized in `src/partials/head-seo.html`.
+- Domain, contacts, and per-page SEO content are centralized in `site.config.mjs`.
+- To change global typography for all sections, edit `tailwind.config.js` (`theme.extend.fontFamily`).
+- Entry pages now include `{{> head-core}}`, so you no longer need to edit repeated font/link blocks in every page.

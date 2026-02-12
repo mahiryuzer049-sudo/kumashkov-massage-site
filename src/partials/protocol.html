@@ -1,0 +1,116 @@
+<!-- PROTOCOL -->
+<section id="protocol" class="section-shell bg-[#070707] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Session Builder</p>
+      <h2 class="section-title">Индивидуальный протокол сеанса</h2>
+      <p class="section-subtitle">
+        Мини-конструктор помогает быстро собрать стартовый сценарий под ваш запрос. Финальную настройку сделаем лично
+        перед сеансом.
+      </p>
+    </div>
+
+    <div class="protocol-layout grid lg:grid-cols-[1fr_0.9fr] gap-8">
+      <article class="protocol-card card-luxe p-6 md:p-7 reveal-on-scroll">
+        <div class="space-y-5">
+          <div data-protocol-group="goal">
+            <p class="protocol-group-title">Цель</p>
+            <div class="flex flex-wrap gap-2">
+              <button class="protocol-chip is-active" type="button" data-value="recovery" data-label="Восстановление">
+                Восстановление
+              </button>
+              <button class="protocol-chip" type="button" data-value="relax" data-label="Глубокое расслабление">
+                Расслабление
+              </button>
+              <button class="protocol-chip" type="button" data-value="tone" data-label="Тонус и энергия">
+                Тонус
+              </button>
+            </div>
+          </div>
+
+          <div data-protocol-group="zone">
+            <p class="protocol-group-title">Зона фокуса</p>
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="protocol-chip is-active"
+                type="button"
+                data-value="back-shoulders"
+                data-label="Спина и плечевой пояс"
+              >
+                Спина и плечи
+              </button>
+              <button class="protocol-chip" type="button" data-value="head-neck" data-label="Голова и шея">
+                Голова и шея
+              </button>
+              <button class="protocol-chip" type="button" data-value="legs" data-label="Ноги и легкость шага">
+                Ноги
+              </button>
+              <button class="protocol-chip" type="button" data-value="hips" data-label="Поясница и ягодичная зона">
+                Поясница и ягодицы
+              </button>
+            </div>
+          </div>
+
+          <div data-protocol-group="tempo">
+            <p class="protocol-group-title">Интенсивность</p>
+            <div class="flex flex-wrap gap-2">
+              <button class="protocol-chip is-active" type="button" data-value="soft" data-label="Мягкая">
+                Мягкая
+              </button>
+              <button class="protocol-chip" type="button" data-value="medium" data-label="Средняя">
+                Средняя
+              </button>
+              <button class="protocol-chip" type="button" data-value="deep" data-label="Глубже, по согласованию">
+                Глубже
+              </button>
+            </div>
+          </div>
+
+          <div data-protocol-group="duration">
+            <p class="protocol-group-title">Длительность</p>
+            <div class="flex flex-wrap gap-2">
+              <button class="protocol-chip is-active" type="button" data-value="60" data-label="60 минут">
+                60 минут
+              </button>
+              <button class="protocol-chip" type="button" data-value="75" data-label="75 минут">
+                75 минут
+              </button>
+              <button class="protocol-chip" type="button" data-value="90" data-label="90 минут">
+                90 минут
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="protocol-card card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.08s">
+        <p class="text-[9px] uppercase tracking-[0.28em] text-gray-500 mb-2">Предварительный результат</p>
+        <h3 class="font-serif text-2xl text-ivory mb-4">Ваш стартовый протокол</h3>
+        <p id="protocol-output" class="protocol-output">
+          Восстановление · Спина и плечевой пояс · Мягкая интенсивность · 60 минут.
+        </p>
+        <p id="protocol-note" class="text-sm text-gray-400 leading-relaxed mt-3">
+          Перед стартом уточним самочувствие и пожелания, затем подтверждаем финальный формат.
+        </p>
+
+        <div class="mt-6 flex flex-wrap gap-2.5">
+          <a
+            id="protocol-cta"
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте,%20хочу%20записаться."
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+            data-analytics="Protocol: CTA"
+          >
+            Отправить этот запрос
+          </a>
+          <a
+            href="{{site.telegram}}"
+            class="btn-secondary interactive-el"
+            data-analytics="Protocol: Telegram"
+          >
+            Написать в Telegram
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

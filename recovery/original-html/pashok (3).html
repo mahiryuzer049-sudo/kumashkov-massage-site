@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth bg-[#050505]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#050505">
+    
+    <!-- SEO -->
+    <meta name="description" content="Павел Кумашков. Private Body Architecture. Москва. Эксклюзивное восстановление. Медицинский подход.">
+    <meta property="og:title" content="Pavel Kumashkov | Private Access">
+    <meta property="og:description" content="Закрытый прием. Медицинский базис. Эстетика силы.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1615900119312-2acd3a71f3ad?q=80&w=1200&auto=format&fit=crop">
+    
+    <title>Pavel Kumashkov | Private Access</title>
+    
+    <!-- Performance -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=75&w=1920&auto=format&fit=crop">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'void': '#050505',        
+                        'champagne': '#E3C8AD',   
+                        'champagne-dark': '#8a7356',   
+                        'ivory': '#F5F5F3',       
+                        'glass': 'rgba(255, 255, 255, 0.02)',
+                        'panel': '#080808',
+                    },
+                    fontFamily: {
+                        serif: ['"Cinzel"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'fashion': '0.25em',
+                        'wide': '0.15em',
+                    },
+                    backgroundImage: {
+                        'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1.5s ease-out forwards',
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'scan': 'scanBody 5s linear infinite',
+                        'shimmer': 'shimmer 6s infinite linear',
+                        'float': 'float 10s ease-in-out infinite',
+                        'breathe': 'breathe 12s ease-in-out infinite',
+                        'radar': 'radar 3s infinite',
+                        'heartbeat': 'heartbeat 5s infinite',
+                        'glare': 'glare 6s infinite linear',
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+                        scanBody: { '0%': { top: '0%', opacity: '0' }, '10%, 90%': { opacity: '1' }, '100%': { top: '100%', opacity: '0' } },
+                        shimmer: { '0%': { backgroundPosition: '-200% center' }, '100%': { backgroundPosition: '200% center' } },
+                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+                        breathe: { '0%, 100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.02)' } },
+                        radar: { '0%': { transform: 'scale(1)', opacity: '0.5' }, '100%': { transform: 'scale(2.5)', opacity: '0' } },
+                        heartbeat: { '0%, 100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.02)' } },
+                        glare: { '0%': { transform: 'translateX(-150%) skewX(-15deg)' }, '100%': { transform: 'translateX(150%) skewX(-15deg)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-padding-top: 100px; overscroll-behavior-y: none; background-color: #050505; }
+        body { background-color: #050505; color: #F5F5F3; overflow-x: hidden; cursor: none; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+        .spotlight-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 40; background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), transparent 300px, rgba(0,0,0,0.5) 1200px); mix-blend-mode: multiply; transition: opacity 0.5s ease; }
+        .cursor-dot, .cursor-circle { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; mix-blend-mode: exclusion; will-change: transform; }
+        .cursor-dot { width: 6px; height: 6px; background: #E3C8AD; border-radius: 50%; box-shadow: 0 0 10px #E3C8AD; transform: translate(-50%, -50%); }
+        .cursor-circle { width: 40px; height: 40px; border: 1px solid rgba(227, 200, 173, 0.4); border-radius: 50%; transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s; }
+        body.hovering .cursor-circle { width: 60px; height: 60px; background: rgba(227, 200, 173, 0.1); border-color: transparent; }
+        @media (hover: none) { .cursor-dot, .cursor-circle, .spotlight-overlay { display: none; } body { cursor: auto; } }
+        .noise-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 50; opacity: 0.025; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); }
+        .glass-panel { background: rgba(15, 15, 15, 0.6); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.03); }
+        .reveal-on-scroll { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); filter: blur(5px); }
+        .reveal-on-scroll.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+        .btn-shimmer { background: linear-gradient(90deg, transparent, rgba(227, 200, 173, 0.15), transparent); background-size: 200% 100%; animation: shimmer 4s infinite linear; }
+        .ripple-container { position: relative; overflow: hidden; }
+        .ripple { position: absolute; border-radius: 50%; background: rgba(227, 200, 173, 0.2); transform: scale(0); animation: ripple-anim 0.8s ease-out; pointer-events: none; }
+        @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
+        .noir-filter { filter: grayscale(100%) contrast(110%) brightness(0.9); transition: filter 0.7s ease, transform 1.5s ease; }
+        .group:hover .noir-filter { filter: grayscale(0%) contrast(105%) brightness(1.05) sepia(10%); transform: scale(1.03); }
+        .body-path { fill: none; stroke: rgba(255,255,255,0.1); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+        .body-outline { fill: rgba(255,255,255,0.01); filter: drop-shadow(0 0 5px rgba(255,255,255,0.05)); }
+        .active-point { cursor: pointer; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; }
+        .active-point circle { fill: #E3C8AD; transition: all 0.3s; }
+        .hit-area { fill: transparent; stroke: none; }
+        .active-point .pulse-ring { stroke: #E3C8AD; fill: none; stroke-width: 1; opacity: 0; transform-origin: center; pointer-events: none; }
+        .active-point:hover circle { fill: #fff; filter: drop-shadow(0 0 8px #E3C8AD); }
+        .active-point:hover .pulse-ring { animation: radar 1.5s infinite; }
+        .active-point.selected circle { fill: #fff; filter: drop-shadow(0 0 10px #fff); }
+        .active-point.selected .pulse-ring { animation: radar 1.5s infinite; opacity: 1; }
+        .scan-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #E3C8AD, transparent); box-shadow: 0 0 10px #E3C8AD; opacity: 0.6; pointer-events: none; z-index: 20; will-change: top, opacity; }
+        .typing-cursor::after { content: '|'; animation: blink 1s infinite; opacity: 0.5; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .skill-tag { position: relative; padding: 10px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
+        .skill-tag:hover { border-color: #E3C8AD; background: rgba(227, 200, 173, 0.05); transform: translateY(-2px); }
+        .step-btn { position: relative; transition: all 0.4s ease; -webkit-tap-highlight-color: transparent; }
+        .step-btn::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: #E3C8AD; transition: width 0.4s ease; }
+        .step-btn.active { color: #E3C8AD; }
+        .step-btn.active::after { width: 100%; }
+        .member-card-wrapper { perspective: 1200px; }
+        .member-card { background: linear-gradient(145deg, #111111 0%, #050505 100%); border: 1px solid rgba(227, 200, 173, 0.15); box-shadow: 0 25px 60px -10px rgba(0,0,0,0.7), 0 0 30px rgba(227, 200, 173, 0.03); transform-style: preserve-3d; transition: transform 0.5s ease; }
+        .member-card:hover { transform: rotateY(5deg) rotateX(5deg) scale(1.02); }
+        .gold-text-shadow { text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 20px rgba(227, 200, 173, 0.3); }
+        .card-glare { position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%); transform: skewX(-25deg) translateX(-150%); animation: glare 5s infinite ease-in-out; pointer-events: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        .typing-indicator { display: flex; align-items: center; gap: 3px; }
+        .typing-dot { width: 2px; height: 2px; background-color: #E3C8AD; border-radius: 50%; animation: typing 1.4s infinite ease-in-out both; }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing { 0%, 80%, 100% { transform: scale(0); opacity: 0.5; } 40% { transform: scale(1); opacity: 1; } }
+    </style>
+</head>
+<body class="antialiased selection:bg-champagne selection:text-void">
+
+    <div class="cursor-dot"></div><div class="cursor-circle"></div><div class="noise-overlay"></div><div class="spotlight-overlay" id="spotlight"></div>
+    <div id="preloader"><div class="flex flex-col items-center"><span class="font-serif text-champagne tracking-widest text-xl mb-4">PRIVATE ACCESS</span><div class="w-48 h-[1px] bg-white/10 relative"><div class="loader-line absolute left-0 top-0 h-full" id="loader-progress"></div></div></div></div>
+
+    <nav class="fixed top-0 w-full z-40 bg-void/70 backdrop-blur-lg border-b border-white/5 transition-all duration-500" id="navbar">
+        <div class="max-w-screen-xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="#" class="font-serif text-lg tracking-widest text-ivory hover:text-champagne transition interactive-el" data-analytics="Nav: Logo Click">KUMASHKOV</a>
+            <div class="hidden md:flex gap-14">
+                <a href="#master" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Master Link">Мастер</a>
+                <a href="#services" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Services Link">Услуги</a>
+                <a href="#ritual" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Ritual Link">Ритуал</a>
+            </div>
+            <a href="https://wa.me/79990000000?text=Павел,%20добрый%20день.%20Пишу%20с%20сайта,%20есть%20вопрос." class="whatsapp-link px-8 py-3 border border-champagne/20 text-[9px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Nav: Ask Question">Задать вопрос</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=75&w=1920&auto=format&fit=crop" class="w-full h-full object-cover opacity-20 grayscale brightness-50 animate-breathe" alt="Atmosphere" fetchpriority="high"><div class="absolute inset-0 bg-gradient-to-b from-void via-void/50 to-void"></div><div class="absolute inset-0 bg-radial-gradient from-transparent to-void"></div></div>
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
+            <p class="text-champagne text-[10px] md:text-xs font-sans uppercase tracking-[0.5em] mb-10 animate-fade-in opacity-0" style="animation-delay: 0.2s;">Moscow • Exclusive Service</p>
+            <h1 class="font-serif text-5xl md:text-9xl leading-none text-ivory mb-12 animate-fade-in opacity-0 tracking-tight" style="animation-delay: 0.4s;"><span class="block">Архитектура</span><span class="block italic text-champagne font-light mt-4">Касаний</span></h1>
+            <p class="font-sans text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-lg mx-auto mb-16 animate-fade-in opacity-0 tracking-wide" style="animation-delay: 0.7s;">Я предлагаю вам свежий взгляд на восстановление. <br>Сочетаю медицинскую точность и энергию мужской силы.</p>
+            <div class="flex flex-col items-center justify-center animate-fade-in opacity-0" style="animation-delay: 1s;">
+                <a href="https://wa.me/79990000000?text=Павел,%20меня%20заинтересовал%20ваш%20подход.%20Хочу%20узнать%20подробнее." class="whatsapp-link group relative px-14 py-6 bg-transparent border border-champagne/30 overflow-hidden interactive-el btn-vibrate transition-colors duration-500 hover:border-champagne ripple-container" data-analytics="Hero: Contact"><span class="absolute inset-0 w-full h-full bg-champagne transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span><span class="relative font-sans text-[10px] font-bold uppercase tracking-fashion text-champagne group-hover:text-void transition-colors">Связаться</span></a>
+                <span class="text-[9px] text-white/30 mt-4 font-sans tracking-wide font-light">Это ни к чему вас не обязывает</span>
+            </div>
+        </div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40 animate-bounce"><span class="text-[8px] uppercase tracking-widest text-champagne">Scroll</span><div class="w-[1px] h-12 bg-champagne"></div></div>
+    </section>
+
+    <!-- MASTER -->
+    <section id="master" class="py-40 relative bg-void overflow-hidden">
+        <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-20 md:gap-32 items-center">
+            <div class="relative reveal-on-scroll order-2 md:order-1">
+                <div class="aspect-[3/4] blur-reveal-wrapper relative border border-white/5 bg-[#0a0a0a]">
+                    <img src="https://images.unsplash.com/photo-1620310237583-b789179d671c?q=75&w=800&auto=format&fit=crop" alt="Павел Кумашков" loading="lazy" decoding="async" class="blur-reveal-img w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-0 w-full px-8 flex flex-col gap-6">
+                        <div class="glass-panel px-6 py-4 flex items-center gap-5 w-fit animate-float rounded-sm"><div class="w-10 h-10 rounded-full bg-champagne/5 flex items-center justify-center border border-champagne/10"><i class="fa-solid fa-staff-snake text-champagne text-sm"></i></div><div><p class="text-[8px] uppercase tracking-widest text-gray-400 mb-1">Фундамент</p><p class="text-[10px] uppercase tracking-wider text-ivory">Медицинский базис</p></div></div>
+                        <div class="glass-panel px-6 py-4 flex items-center gap-5 w-fit animate-float rounded-sm" style="animation-delay: 1.5s;"><div class="w-10 h-10 rounded-full bg-champagne/5 flex items-center justify-center border border-champagne/10"><i class="fa-solid fa-hand-fist text-champagne text-sm"></i></div><div><p class="text-[8px] uppercase tracking-widest text-gray-400 mb-1">Дисциплина</p><p class="text-[10px] uppercase tracking-wider text-ivory">Спортивный опыт</p></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-on-scroll order-1 md:order-2">
+                <div class="flex items-center gap-4 mb-8"><span class="w-12 h-[1px] bg-champagne"></span><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Expertise</p></div>
+                <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-10 leading-tight">Знание Анатомии.<br><span class="italic text-gray-500 font-light">Контроль</span> <span class="text-champagne italic">Силы</span>.</h2>
+                <div class="prose prose-invert prose-p:font-sans prose-p:font-light prose-p:text-gray-400 prose-p:leading-relaxed mb-12">
+                    <p>Я не использую эзотерику. В работе с телом для меня нет места случайностям. Мой метод базируется на трех составляющих: <strong class="text-gray-300 font-normal">медицинское образование</strong>, спортивная дисциплина и непрерывная практика.</p>
+                    <p>Вы доверяете мне свое здоровье, и я отвечаю за него знаниями физиологии и биомеханики. Я не работаю по шаблонам "старой школы". Мои руки слышат ваше тело и работают с точностью хирурга, адаптируясь под ваш болевой порог.</p>
+                </div>
+                <div class="mb-12 space-y-4">
+                    <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Сертификация</p>
+                    <div class="flex flex-wrap gap-3"><span class="skill-tag text-[9px] uppercase text-gray-400 tracking-wide">Institute of Esthetics</span><span class="skill-tag text-[9px] uppercase text-gray-400 tracking-wide">Xsize School</span></div>
+                </div>
+                <div class="grid grid-cols-2 gap-8 border-t border-white/5 pt-10">
+                    <div><p class="text-[10px] font-bold text-champagne uppercase tracking-widest mb-2">Миофасциальный релиз</p><p class="text-[11px] text-gray-500 font-light">Глубокая проработка зажимов</p></div>
+                    <div><p class="text-[10px] font-bold text-champagne uppercase tracking-widest mb-2">Лимфодренаж</p><p class="text-[11px] text-gray-500 font-light">Восстановление метаболизма</p></div>
+                    <div><p class="text-[10px] font-bold text-champagne uppercase tracking-widest mb-2">Нейроседация</p><p class="text-[11px] text-gray-500 font-light">Работа с нервной системой</p></div>
+                    <div><p class="text-[10px] font-bold text-champagne uppercase tracking-widest mb-2">Моделирование</p><p class="text-[11px] text-gray-500 font-light">Коррекция контуров тела</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USP -->
+    <section id="usp" class="py-32 bg-[#050505] relative border-b border-white/5">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-on-scroll"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Why Me</p><h2 class="font-serif text-3xl md:text-5xl text-ivory">Мужской <span class="italic text-gray-500">Подход</span></h2></div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500"><i class="fa-solid fa-shield-halved text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i><h3 class="font-serif text-lg text-ivory mb-3">Безопасность</h3><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я понимаю, как устроено ваше тело. Каждое мое движение обосновано знанием анатомии, поэтому вы в безопасности.</p></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.1s;"><i class="fa-solid fa-yin-yang text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i><h3 class="font-serif text-lg text-ivory mb-3">Баланс</h3><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я умею управлять силой. Не будет "слишком больно" или "слишком слабо". Мои руки станут стальными для зажимов и бархатными для расслабления.</p></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.2s;"><i class="fa-solid fa-feather text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i><h3 class="font-serif text-lg text-ivory mb-3">Чувственность</h3><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я возвращаю вам радость быть в теле. Массаж для меня — это искусство пробуждения чувствительности, а не просто "ремонт".</p></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.3s;"><i class="fa-solid fa-lock-open text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i><h3 class="font-serif text-lg text-ivory mb-3">Принятие</h3><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Здесь нет запретных тем. Я создаю пространство, свободное от табу и оценок. Вы можете озвучить любой запрос — мы обсудим его конфиденциально.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES (Uslugenie Step 1) -->
+    <section id="services" class="py-32 bg-void relative border-b border-white/5">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-on-scroll">
+                <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Service Menu</p>
+                <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6">Мой <span class="italic text-gray-500">Арсенал</span></h2>
+                <p class="font-sans text-sm text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">Я не продаю время. Я предлагаю решение. <br>Каждая техника — это инструмент, который я подбираю под задачи вашего тела сегодня.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 mb-16">
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500"><div class="flex items-start justify-between mb-4"><h3 class="font-serif text-xl text-ivory">Классика</h3><i class="fa-solid fa-hand-holding-heart text-champagne/50 text-xl group-hover:text-champagne transition"></i></div><p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Фундаментальная проработка</p><p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Восстановление тонуса и снятие общей усталости. Глубокая работа с мышцами для улучшения кровообращения.</p><div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Свобода движения</span></div></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.1s;"><div class="flex items-start justify-between mb-4"><h3 class="font-serif text-xl text-ivory">Лимфодренаж</h3><i class="fa-solid fa-water text-champagne/50 text-xl group-hover:text-champagne transition"></i></div><p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Detox & Flow</p><p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Уменьшение отеков и улучшение гидробаланса. Мягкое, ритмичное выведение лишней жидкости из организма.</p><div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Изящность лодыжек и легкость</span></div></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.2s;"><div class="flex items-start justify-between mb-4"><h3 class="font-serif text-xl text-ivory">Моделирование</h3><i class="fa-solid fa-shapes text-champagne/50 text-xl group-hover:text-champagne transition"></i></div><p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Силуэт</p><p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Работа с контурами тела и стимуляция микроциркуляции. Безопасная коррекция проблемных зон (антицеллюлитный эффект).</p><div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Подтянутый силуэт</span></div></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500"><div class="flex items-start justify-between mb-4"><h3 class="font-serif text-xl text-ivory">Релакс</h3><i class="fa-solid fa-moon text-champagne/50 text-xl group-hover:text-champagne transition"></i></div><p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Нейроседация</p><p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Глубокое расслабление нервной системы. Снижение уровня кортизола, стресса и тревоги.</p><div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Тишина в голове</span></div></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.1s;"><div class="flex items-start justify-between mb-4"><h3 class="font-serif text-xl text-ivory">Лицо</h3><i class="fa-regular fa-face-smile text-champagne/50 text-xl group-hover:text-champagne transition"></i></div><p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Эстетика</p><p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Снятие маски напряжения. Тонус мышц, лифтинг-эффект и возвращение естественного сияния кожи.</p><div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Свежий взгляд</span></div></div>
+                <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.2s;"><div class="flex items-start justify-between mb-4"><h3 class="font-serif text-xl text-ivory">Обертывание</h3><i class="fa-solid fa-leaf text-champagne/50 text-xl group-hover:text-champagne transition"></i></div><p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">SPA-Уход</p><p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Локальное улучшение текстуры кожи. Эффект "сжатия" и мощный детокс для тканей.</p><div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Бархатная кожа</span></div></div>
+            </div>
+            <div class="text-center reveal-on-scroll"><p class="font-serif text-lg text-ivory italic mb-6">"Я редко использую одну технику в чистом виде. <br>Я комбинирую их, создавая персональный коктейль для вашего состояния."</p><a href="https://wa.me/79990000000?text=Павел,%20помогите%20подобрать%20технику%20под%20мой%20запрос." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-gray-500 hover:text-champagne border-b border-transparent hover:border-champagne transition pb-1 interactive-el">Подобрать программу</a></div>
+        </div>
+    </section>
+
+    <!-- ATMOSPHERE -->
+    <section id="atmosphere" class="py-32 bg-[#030303] overflow-hidden">
+        <div class="max-w-screen-xl mx-auto px-6 mb-16 flex justify-between items-end reveal-on-scroll"><div><h2 class="font-serif text-4xl text-ivory mb-3">Атмосфера</h2><p class="text-[10px] text-gray-500 uppercase tracking-widest">Детали, которые имеют значение</p></div><div class="hidden md:block w-32 h-[1px] bg-white/10"></div></div>
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-6 md:grid md:grid-cols-3 md:gap-2 md:px-4 hide-scroll pb-8 md:pb-0">
+            <div class="min-w-[85vw] md:min-w-0 snap-center group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden cursor-none reveal-on-scroll"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=70&w=600&auto=format&fit=crop" class="w-full h-full object-cover noir-filter" loading="lazy" decoding="async" alt="Towels & Space"><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700 z-10"><div class="text-center"><span class="text-champagne font-serif italic text-3xl bg-black/40 px-6 py-3 backdrop-blur-md border border-white/5 block mb-2">Комфорт</span><span class="text-[9px] text-white/60 uppercase tracking-widest">Здесь чисто и тихо</span></div></div></div>
+            <div class="min-w-[85vw] md:min-w-0 snap-center group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden cursor-none reveal-on-scroll" style="transition-delay: 0.1s;"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=70&w=600&auto=format&fit=crop" class="w-full h-full object-cover noir-filter" loading="lazy" decoding="async" alt="Massage Process"><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700 z-10"><div class="text-center"><span class="text-champagne font-serif italic text-3xl bg-black/40 px-6 py-3 backdrop-blur-md border border-white/5 block mb-2">Процесс</span><span class="text-[9px] text-white/60 uppercase tracking-widest">Я слушаю ваше тело</span></div></div></div>
+            <div class="min-w-[85vw] md:min-w-0 snap-center group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden cursor-none reveal-on-scroll" style="transition-delay: 0.2s;"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=70&w=600&auto=format&fit=crop" class="w-full h-full object-cover noir-filter" loading="lazy" decoding="async" alt="Oils & Details"><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700 z-10"><div class="text-center"><span class="text-champagne font-serif italic text-3xl bg-black/40 px-6 py-3 backdrop-blur-md border border-white/5 block mb-2">Детали</span><span class="text-[9px] text-white/60 uppercase tracking-widest">Только премиум</span></div></div></div>
+        </div>
+        <div class="md:hidden flex justify-center gap-2 mt-4 opacity-20"><div class="w-1.5 h-1.5 rounded-full bg-champagne"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div></div>
+    </section>
+
+    <!-- SCANNER -->
+    <section id="scanner-section" class="py-32 bg-[#080808] relative">
+        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-champagne/20 to-transparent"></div>
+        <div class="max-w-md mx-auto px-6 mb-20 text-center reveal-on-scroll"><h2 class="font-serif text-4xl text-ivory mb-4">Послушайте свое тело</h2><p class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Интерактивный диалог с ощущениями</p></div>
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative h-[650px] border border-white/5 bg-[#030303] rounded-sm flex items-center justify-center overflow-hidden reveal-on-scroll group" id="scanner-container">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div><div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px;"></div><div class="scan-line animate-scan"></div>
+                <svg viewBox="0 0 200 450" class="h-[90%] w-auto relative z-10 drop-shadow-2xl">
+                    <path class="body-path body-outline" d="M100,20 C115,20 125,35 120,50 C115,65 85,65 80,50 C75,35 85,20 100,20 Z" />
+                    <path class="body-path body-outline" d="M120,50 Q150,55 160,60 Q170,100 170,160 Q160,200 130,220" /><path class="body-path body-outline" d="M80,50 Q50,55 40,60 Q30,100 30,160 Q40,200 70,220" /><path class="body-path body-outline" d="M70,220 Q65,300 70,350 Q75,420 90,440" /><path class="body-path body-outline" d="M130,220 Q135,300 130,350 Q125,420 110,440" /><path class="body-path body-outline" d="M100,50 L100,220" stroke-dasharray="2,3" opacity="0.3" />
+                    <g class="active-point" onclick="showZoneInfo('head', this)" data-analytics="Scanner: Point Click - Head"><circle cx="100" cy="35" r="25" class="hit-area" /><circle cx="100" cy="35" r="3" /><circle cx="100" cy="35" r="8" class="pulse-ring" /></g>
+                    <g class="active-point" onclick="showZoneInfo('neck', this)" data-analytics="Scanner: Point Click - Neck"><circle cx="100" cy="60" r="25" class="hit-area" /><circle cx="100" cy="60" r="3" /><circle cx="100" cy="60" r="12" class="pulse-ring" style="animation-delay: 0.5s" /></g>
+                    <g class="active-point" onclick="showZoneInfo('shoulders', this)" data-analytics="Scanner: Point Click - Shoulders"><circle cx="100" cy="70" r="40" class="hit-area" /><circle cx="60" cy="70" r="3" /><circle cx="140" cy="70" r="3" /><circle cx="60" cy="70" r="10" class="pulse-ring" style="animation-delay: 1s" /></g>
+                    <g class="active-point" onclick="showZoneInfo('back', this)" data-analytics="Scanner: Point Click - Back"><circle cx="100" cy="190" r="30" class="hit-area" /><circle cx="100" cy="190" r="3" /><circle cx="100" cy="190" r="15" class="pulse-ring" style="animation-delay: 0.2s" /></g>
+                    <g class="active-point" onclick="showZoneInfo('legs', this)" data-analytics="Scanner: Point Click - Legs"><circle cx="100" cy="350" r="50" class="hit-area" /><circle cx="80" cy="350" r="3" /><circle cx="120" cy="350" r="3" /><circle cx="80" cy="350" r="12" class="pulse-ring" style="animation-delay: 0.7s" /></g>
+                </svg>
+                <div id="zone-popup" class="absolute bottom-6 left-6 right-6 glass-panel p-8 translate-y-[120%] transition-transform duration-500 ease-out z-30 backdrop-blur-xl border border-champagne/10">
+                    <div class="flex flex-col mb-4"><h3 id="zone-title" class="font-serif text-2xl text-champagne mb-1">...</h3><div class="flex items-center gap-2"><i class="fa-solid fa-staff-snake text-[8px] text-gray-500"></i><span id="zone-med" class="text-[9px] font-sans text-gray-500 uppercase tracking-widest border-b border-gray-700 pb-0.5">...</span></div></div>
+                    <p id="zone-desc" class="text-sm text-gray-300 font-sans font-light leading-relaxed mb-8 h-16 overflow-hidden typing-cursor">...</p>
+                    <button class="w-full py-4 bg-white/5 border border-champagne/30 hover:bg-champagne hover:text-void transition-colors duration-300 text-[10px] uppercase tracking-[0.2em] interactive-el btn-vibrate ripple-container" onclick="bookZone()" data-analytics="Scanner: CTA Click">Мне это знакомо</button><span class="text-[8px] text-gray-600 mt-3 block text-center font-mono tracking-widest">100% КОНФИДЕНЦИАЛЬНО</span><button class="absolute top-4 right-4 text-white/30 hover:text-white w-6 h-6 flex items-center justify-center interactive-el" onclick="hideZoneInfo()">×</button>
+                </div>
+                <div class="absolute top-6 left-6 text-[9px] font-mono text-gray-600">SENSORY_MODE: ACTIVE<br>STATUS: LISTENING</div><div class="absolute bottom-6 right-6 text-[9px] font-mono text-champagne/50 animate-pulse">Выберите точку...</div>
+            </div>
+            <div class="reveal-on-scroll space-y-12">
+                <div><h3 class="font-serif text-3xl text-ivory mb-6">Тело помнит все</h3><p class="font-sans text-base text-gray-400 font-light leading-relaxed">Вы можете убедить свой разум, что не устали. Но тело ведет свой счет. Каждая невысказанная эмоция, каждый час контроля и стресса остаются в мышцах. <br><br>Коснитесь пульсирующих точек на карте. Узнаете ли вы эти ощущения?</p></div>
+                <div class="space-y-8 pl-6 border-l border-white/5">
+                    <div class="flex flex-col gap-2"><p class="text-[10px] font-bold text-champagne uppercase tracking-widest">Сигнал</p><p class="text-base text-gray-300 font-light">Вы просыпаетесь, но плечи уже напряжены, словно вы не отдыхали.</p><p class="text-[11px] text-gray-500 mt-1">→ Тело просит сбросить груз ответственности.</p></div>
+                    <div class="flex flex-col gap-2"><p class="text-[10px] font-bold text-champagne uppercase tracking-widest">Сигнал</p><p class="text-base text-gray-300 font-light">К вечеру ноги становятся "чугунными", хочется просто лечь и не двигаться.</p><p class="text-[11px] text-gray-500 mt-1">→ Тело просит вернуть легкость и циркуляцию.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RITUAL -->
+    <section id="ritual" class="py-40 bg-void relative">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-center font-serif text-4xl text-ivory mb-6 reveal-on-scroll">Сценарий Знакомства</h2>
+            <p class="text-center text-[10px] font-sans text-gray-500 uppercase tracking-widest mb-16 reveal-on-scroll">Как проходит наша первая встреча</p>
+            <div class="max-w-xl mx-auto mb-20 reveal-on-scroll"><div class="relative p-8 border border-champagne/20 bg-white/5 backdrop-blur-sm rounded-xl flex flex-col md:flex-row gap-8 items-center md:items-start"><div class="shrink-0 relative"><div class="w-16 h-16 rounded-full border border-champagne/30 flex items-center justify-center bg-[#0a0a0a]"><i class="fa-solid fa-shield-heart text-champagne text-2xl"></i></div><div class="absolute -bottom-2 -right-2 w-6 h-6 bg-green-900/80 rounded-full flex items-center justify-center border border-green-500/30"><i class="fa-solid fa-check text-[10px] text-green-400"></i></div></div><div class="text-center md:text-left"><h3 class="font-serif text-xl text-ivory mb-3">Кодекс Этики</h3><p class="font-sans text-sm text-gray-300 font-light leading-relaxed mb-4">Я понимаю ваши опасения. Моя работа строится на железной дисциплине боевых искусств и медицинской этике.</p><ul class="space-y-2"><li class="flex items-center gap-3 justify-center md:justify-start"><span class="w-1 h-1 rounded-full bg-champagne"></span><span class="text-[11px] text-gray-400 uppercase tracking-wider">Никаких двусмысленностей</span></li><li class="flex items-center gap-3 justify-center md:justify-start"><span class="w-1 h-1 rounded-full bg-champagne"></span><span class="text-[11px] text-gray-400 uppercase tracking-wider">Строгое соблюдение границ</span></li><li class="flex items-center gap-3 justify-center md:justify-start"><span class="w-1 h-1 rounded-full bg-champagne"></span><span class="text-[11px] text-gray-400 uppercase tracking-wider">Полная конфиденциальность</span></li></ul></div></div></div>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-16 mb-20 border-b border-white/5 pb-6 reveal-on-scroll">
+                <button onclick="changeRitualStep(1)" id="step-btn-1" class="step-btn active text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 1">Подготовка</button>
+                <button onclick="changeRitualStep(2)" id="step-btn-2" class="step-btn text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 2">Диалог</button>
+                <button onclick="changeRitualStep(3)" id="step-btn-3" class="step-btn text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 3">Терапия</button>
+                <button onclick="changeRitualStep(4)" id="step-btn-4" class="step-btn text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 4">Финал</button>
+            </div>
+            <div class="relative min-h-[350px] md:min-h-[300px] text-center reveal-on-scroll">
+                <div id="ritual-step-1" class="transition-all duration-700 absolute inset-0 opacity-100 transform translate-y-0"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Снять тревогу</p><h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Вход в состояние</h3><p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Вы приходите, и город остается за дверью. Я даю вам время спокойно переодеться и выдохнуть. Здесь никто не торопит. Это момент, чтобы переключиться с режима "надо" на режим "чувствую".</p></div>
+                <div id="ritual-step-2" class="transition-all duration-700 absolute inset-0 opacity-0 transform translate-y-4 pointer-events-none"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Найти причину</p><h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Настройка</h3><p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Мы говорим. Не формальный опрос, а живой диалог. Мне важно понять не только где болит, но и как вы живете. Офис, спорт, стресс — мы собираем картину, чтобы работать с причиной, а не следствием.</p></div>
+                <div id="ritual-step-3" class="transition-all duration-700 absolute inset-0 opacity-0 transform translate-y-4 pointer-events-none"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Глубокая проработка</p><h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Магия касания</h3><p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Вы ложитесь, и контроль переходит ко мне. Я комбинирую техники под ваш запрос. Слышу отклик мышц и меняю давление. Это танец анатомии и интуиции, где каждое движение имеет смысл.</p></div>
+                <div id="ritual-step-4" class="transition-all duration-700 absolute inset-0 opacity-0 transform translate-y-4 pointer-events-none"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Закрепить результат</p><h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Возвращение</h3><p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Сеанс завершается плавно. Я даю рекомендации, как сохранить эту легкость на 2-3 дня. Вы уходите не просто "размятой", а с новым ощущением своего тела и пониманием, как с ним дружить.</p></div>
+            </div>
+            <div class="mt-16 w-full h-[1px] bg-white/5 relative overflow-hidden"><div id="ritual-progress" class="absolute left-0 top-0 h-full bg-champagne transition-all duration-700 w-1/4"></div></div>
+            <div class="mt-12 text-center reveal-on-scroll"><p class="text-xs text-gray-500 font-light mb-4">Остались вопросы по процессу?</p><a href="https://wa.me/79990000000?text=Павел,%20хочу%20уточнить%20детали%20проведения%20сеанса." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-champagne border-b border-champagne/30 hover:border-champagne transition pb-1 interactive-el">Спросить лично в чате</a></div>
+        </div>
+    </section>
+
+    <!-- SAFETY (Practice) -->
+    <section id="safety" class="py-32 bg-[#050505] border-b border-white/5 relative">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="text-center mb-16 reveal-on-scroll"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Safety Protocol</p><h2 class="font-serif text-3xl md:text-4xl text-ivory mb-4">Безопасность и Этика</h2><p class="text-xs text-gray-500 font-light tracking-wide max-w-lg mx-auto">Я знаю, что визит к новому мастеру (особенно мужчине) — это стресс. <br>Поэтому каждый шаг регламентирован для вашего спокойствия.</p></div>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div class="space-y-4 reveal-on-scroll">
+                    <h3 class="font-serif text-xl text-ivory mb-6 pl-2 border-l-2 border-champagne">Важные вопросы</h3>
+                    <div class="group"><details class="glass-panel rounded-lg overflow-hidden transition-all duration-300 open:bg-white/5" data-analytics="Safety: Toggle - Shyness"><summary class="flex justify-between items-center p-5 cursor-pointer list-none text-ivory hover:text-champagne transition"><span class="text-sm font-sans font-light tracking-wide">"Я стесняюсь (тела / мужчины)"</span><i class="fa-solid fa-plus text-xs text-white/30 group-open:rotate-45 transition-transform duration-300"></i></summary><div class="px-5 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">В кабинете гендер исчезает. Есть только специалист и анатомия. Я смотрю на ваше тело как врач: вижу зажимы, асимметрию и тонус, а не "недостатки". Стеснение уходит через 5 минут работы.</div></details></div>
+                    <div class="group"><details class="glass-panel rounded-lg overflow-hidden transition-all duration-300 open:bg-white/5" data-analytics="Safety: Toggle - Pain"><summary class="flex justify-between items-center p-5 cursor-pointer list-none text-ivory hover:text-champagne transition"><span class="text-sm font-sans font-light tracking-wide">"Боюсь, что будет больно или щекотно"</span><i class="fa-solid fa-plus text-xs text-white/30 group-open:rotate-45 transition-transform duration-300"></i></summary><div class="px-5 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">Мы работаем на грани "приятной боли" (good pain). Если больно — я снижаю давление. Если щекотно — меняю технику на более плотную. Мы в постоянном диалоге.</div></details></div>
+                    <div class="group"><details class="glass-panel rounded-lg overflow-hidden transition-all duration-300 open:bg-white/5" data-analytics="Safety: Toggle - Boundaries"><summary class="flex justify-between items-center p-5 cursor-pointer list-none text-ivory hover:text-champagne transition"><span class="text-sm font-sans font-light tracking-wide">"Личные границы и правила"</span><i class="fa-solid fa-plus text-xs text-white/30 group-open:rotate-45 transition-transform duration-300"></i></summary><div class="px-5 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">Границы — это гибкая материя, которую мы устанавливаем вместе перед началом. В этом пространстве возможно всё, что комфортно нам обоим. Я умею хранить тайны и слышать то, что не сказано вслух. <br><span class="text-champagne/80">В конечном счете, всё зависит только от ваших желаний.</span></div></details></div>
+                </div>
+                <div class="space-y-6 reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <h3 class="font-serif text-xl text-ivory mb-6 pl-2 border-l-2 border-champagne">Практика визита</h3>
+                    <div class="flex gap-5 items-start"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-champagne"><i class="fa-solid fa-bag-shopping"></i></div><div><h4 class="font-serif text-base text-ivory mb-2">Что брать с собой?</h4><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Ничего. Только себя. Одноразовое белье, тапочки, халат, полотенца, средства для снятия макияжа — всё уже готово для вас.</p></div></div>
+                    <div class="flex gap-5 items-start"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-champagne"><i class="fa-solid fa-user-shield"></i></div><div><h4 class="font-serif text-base text-ivory mb-2">Приватность переодевания</h4><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я всегда выхожу из кабинета, пока вы переодеваетесь и ложитесь. Вы накрываетесь простыней. Я захожу только после вашего сигнала "Готово".</p></div></div>
+                    <div class="flex gap-5 items-start"><div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-champagne"><i class="fa-solid fa-layer-group"></i></div><div><h4 class="font-serif text-base text-ivory mb-2">Правило "Драпировки"</h4><p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Вы никогда не лежите полностью обнаженной. Я открываю только ту часть тела (спина, нога, рука), с которой работаю в данный момент. Остальное всегда в тепле под тканью.</p></div></div>
+                </div>
+            </div>
+            <div class="mt-16 text-center reveal-on-scroll"><p class="text-xs text-gray-500 font-light mb-4">Всё еще тревожно? Это нормально.</p><a href="https://wa.me/79990000000?text=Павел,%20у%20меня%20есть%20деликатный%20вопрос%20по%20поводу%20сеанса." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-champagne border-b border-champagne/30 hover:border-champagne transition pb-1 interactive-el" data-analytics="Safety: Ask Personal Question">Задать личный вопрос в чате</a></div>
+        </div>
+    </section>
+
+    <!-- RESULTS (Timeline) -->
+    <section id="results" class="py-32 bg-[#050505] relative border-b border-white/5 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#080808] to-transparent pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 reveal-on-scroll"><p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Timeline</p><h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6">Хронология <span class="italic text-gray-500">Результата</span></h2><p class="font-sans text-sm text-gray-400 font-light tracking-wide max-w-lg mx-auto">Эффект от сеанса — это не только момент "сейчас". <br>Это процесс, который разворачивается во времени.</p></div>
+            <div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-champagne/20 before:to-transparent">
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal-on-scroll"><div class="flex items-center justify-center w-10 h-10 rounded-full border border-champagne/30 bg-[#0a0a0a] shadow-[0_0_15px_rgba(227,200,173,0.1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"><span class="w-2 h-2 bg-champagne rounded-full"></span></div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 glass-panel rounded-xl border border-white/5 hover:border-champagne/20 transition duration-500"><div class="flex justify-between items-start mb-2"><h3 class="font-serif text-lg text-ivory">Сразу после</h3><span class="text-[9px] font-mono text-champagne">T + 00:00</span></div><ul class="space-y-2"><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Глубокое мышечное расслабление ("эффект желе").</p></li><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Снятие болевого синдрома в острой фазе.</p></li><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Замедление мыслей, состояние тишины.</p></li></ul></div></div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal-on-scroll" style="transition-delay: 0.1s;"><div class="flex items-center justify-center w-10 h-10 rounded-full border border-champagne/30 bg-[#0a0a0a] shadow-[0_0_15px_rgba(227,200,173,0.1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"><span class="text-[9px] font-serif text-gray-500">2d</span></div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 glass-panel rounded-xl border border-white/5 hover:border-champagne/20 transition duration-500"><div class="flex justify-between items-start mb-2"><h3 class="font-serif text-lg text-ivory">24 — 72 часа</h3><span class="text-[9px] font-mono text-gray-500">T + 48:00</span></div><ul class="space-y-2"><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Лимфодренажный эффект: уходят видимые отеки.</p></li><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Глубокий, восстанавливающий сон.</p></li><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Повышение эластичности движений (легче держать осанку).</p></li></ul></div></div>
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal-on-scroll" style="transition-delay: 0.2s;"><div class="flex items-center justify-center w-10 h-10 rounded-full border border-champagne bg-champagne/10 shadow-[0_0_20px_rgba(227,200,173,0.2)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"><i class="fa-solid fa-infinity text-champagne text-xs"></i></div><div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 glass-panel rounded-xl border border-champagne/20 bg-white/5 hover:border-champagne/40 transition duration-500"><div class="flex justify-between items-start mb-2"><h3 class="font-serif text-lg text-ivory">Курс (5-10)</h3><span class="text-[9px] font-mono text-champagne">LONG TERM</span></div><ul class="space-y-2"><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne text-[10px] mt-1"></i><p class="text-xs text-gray-300 font-light">Структурное изменение осанки (тело "запоминает" правильное положение).</p></li><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne text-[10px] mt-1"></i><p class="text-xs text-gray-300 font-light">Стабильный эмоциональный фон.</p></li><li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne text-[10px] mt-1"></i><p class="text-xs text-gray-300 font-light">Эстетика: подтянутый силуэт и качество кожи.</p></li></ul><div class="mt-4 pt-4 border-t border-white/10"><a href="https://wa.me/79990000000?text=Павел,%20хочу%20обсудить%20долгосрочный%20результат%20и%20курс." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-champagne hover:text-white transition interactive-el">Обсудить стратегию курса →</a></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF & FILTER -->
+    <section id="proof-filter" class="py-32 bg-void relative">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="reveal-on-scroll order-2 md:order-1">
+                <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Honesty Protocol</p>
+                <h2 class="font-serif text-3xl text-ivory mb-6">Честный разговор</h2>
+                <div class="prose prose-invert prose-p:font-sans prose-p:font-light prose-p:text-gray-400 prose-p:leading-relaxed mb-8">
+                    <p>Я ценю свое время и ваше доверие. Чтобы мы сработались, важно понимать специфику моего метода.</p>
+                    <p class="text-white/60">Мой подход <span class="text-red-400/80">не подойдет</span> вам, если:</p>
+                    <ul class="space-y-3 mt-4">
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-900 mt-1 text-xs"></i><span class="text-xs">Вы ждете исцеления хронической проблемы за 1 час. (Качественная работа требует времени).</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-900 mt-1 text-xs"></i><span class="text-xs">У вас острая фаза воспаления или температура. (Пожалуйста, позаботьтесь о себе дома).</span></li>
+                        <li class="flex items-start gap-3"><i class="fa-solid fa-check text-champagne mt-1 text-xs"></i><span class="text-xs text-champagne">Во всем остальном — я открыт к диалогу. Любые форматы обсуждаемы.</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="reveal-on-scroll order-1 md:order-2 relative">
+                <div class="absolute inset-0 bg-champagne/5 blur-[80px] rounded-full pointer-events-none"></div>
+                <div class="glass-panel p-8 rounded-xl border border-white/10 relative">
+                    <div class="absolute -top-3 -right-3 bg-champagne text-void text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">Real Case</div>
+                    <div class="flex items-center gap-4 mb-6 border-b border-white/5 pb-4"><div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-400"><i class="fa-regular fa-user"></i></div><div><p class="text-sm text-ivory font-serif">Анна, 29 лет</p><p class="text-[10px] text-gray-500 uppercase tracking-wide">IT-предприниматель</p></div></div>
+                    <div class="space-y-4 mb-6">
+                        <div><p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Запрос</p><p class="text-xs text-gray-300 font-light italic">"Постоянная тревога, плохой сон, отеки на ногах от сидячей работы."</p></div>
+                        <div><p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Решение</p><p class="text-xs text-champagne font-light">Курс из 5 сеансов (Микс: Релакс + Лимфодренаж)</p></div>
+                        <div><p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Результат</p><ul class="space-y-1"><li class="text-xs text-gray-300 font-light flex gap-2"><i class="fa-solid fa-check text-green-500/50 text-[10px] mt-0.5"></i> Сон восстановился на 2-й сеанс.</li><li class="text-xs text-gray-300 font-light flex gap-2"><i class="fa-solid fa-check text-green-500/50 text-[10px] mt-0.5"></i> Ушла "вода" (-1.5 см в щиколотках).</li><li class="text-xs text-gray-300 font-light flex gap-2"><i class="fa-solid fa-check text-green-500/50 text-[10px] mt-0.5"></i> Вернулась концентрация.</li></ul></div>
+                    </div>
+                    <a href="https://wa.me/79990000000?text=Павел,%20хочу%20обсудить%20мой%20случай%20и%20ожидаемый%20результат." class="whatsapp-link w-full py-3 bg-white/5 border border-champagne/20 hover:bg-champagne hover:text-void transition-colors duration-300 text-[9px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 interactive-el btn-vibrate ripple-container"><span>Обсудить мой случай</span><i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VOICES -->
+    <section id="voices" class="py-32 bg-[#050505] relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-void via-[#0a0a0a] to-void"></div>
+        <div class="max-w-md mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal-on-scroll"><i class="fa-regular fa-comment-dots text-champagne/30 text-3xl mb-6"></i><h2 class="font-serif text-3xl md:text-4xl text-ivory mb-2">Шепот</h2><p class="text-[10px] text-gray-500 uppercase tracking-widest">Истории, рассказанные телом</p></div>
+            <div class="space-y-6 font-sans">
+                <div class="reveal-on-scroll flex flex-col items-start group"><div class="bg-[#151515] p-5 rounded-2xl rounded-tl-sm shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/5 relative max-w-[95%] hover:border-champagne/20 transition-colors duration-300"><p class="text-xs text-gray-300 font-light leading-relaxed">Павел, честно скажу — шла и боялась. Все-таки мужчина, первый раз... 🙈 Но через 10 минут вообще забыла, кто есть кто. Просто космос. Спасибо за тактичность, это было супер важно!</p><span class="text-[9px] text-gray-600 mt-2 block text-right font-mono">14:02</span></div></div>
+                <div class="reveal-on-scroll flex flex-col items-start" style="transition-delay: 0.1s;"><div class="bg-[#151515] p-5 rounded-2xl rounded-tl-sm shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/5 relative max-w-[85%] hover:border-champagne/20 transition-colors duration-300"><p class="text-xs text-gray-300 font-light leading-relaxed">Руки просто 🔥. Я как будто заново родилась. Спина наконец-то дышит. Запиши меня на следующую неделю, плз!</p><span class="text-[9px] text-gray-600 mt-2 block text-right font-mono">Вчера</span></div></div>
+                <div class="reveal-on-scroll flex flex-col items-start" style="transition-delay: 0.2s;"><div class="bg-[#151515] p-5 rounded-2xl rounded-tl-sm shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/5 relative max-w-[90%] hover:border-champagne/20 transition-colors duration-300"><p class="text-xs text-gray-300 font-light leading-relaxed">Такое чувство, что вытащили из меня батарейку и вставили новую. Я в желе 😂 Голова пустая, тело легкое. Это не массаж, это какой-то ментальный детокс.</p><span class="text-[9px] text-gray-600 mt-2 block text-right font-mono">09:15</span></div></div>
+            </div>
+            <div class="mt-16 text-center reveal-on-scroll border-t border-white/5 pt-8"><div class="inline-flex flex-col items-center"><a href="https://wa.me/79990000000?text=Павел,%20хочу%20узнать,%20как%20проходит%20прием%20(правила%20и%20формат)." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-gray-500 hover:text-champagne transition pb-1 interactive-el" data-analytics="Voices: CTA Click"><i class="fa-brands fa-whatsapp mr-2"></i> Написать лично</a><span class="text-[8px] text-white/20 mt-2 font-sans tracking-wider">Отвечу лично я, без ботов</span></div></div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY -->
+    <section class="py-40 bg-[#050505] relative overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-champagne/3 rounded-full blur-[150px] animate-pulse-slow"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-on-scroll"><i class="fa-solid fa-quote-left text-champagne/20 text-5xl mb-12 block mx-auto"></i><h2 class="font-serif text-3xl md:text-6xl text-ivory leading-snug mb-12">"Мой личный <span class="text-champagne italic">гедонизм</span> — это ваша полная перезагрузка."</h2><div class="prose prose-invert prose-xl mx-auto"><p class="font-sans text-gray-400 font-light leading-relaxed">Для меня массаж — это не работа, а форма медитации. Видеть, как с вашего лица сходит маска напряжения, а плечи опускаются — это мой главный источник энергии. <br><br><span class="text-white/80">Я не устаю отдавать, потому что получаю взамен ваше доверие и расслабление.</span></p></div><div class="mt-16"><p class="text-[9px] font-sans text-gray-600 uppercase tracking-[0.4em]">Manifesto of Touch</p></div></div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="py-20 bg-[#080808] border-y border-white/5">
+        <div class="max-w-2xl mx-auto px-6 text-center reveal-on-scroll">
+            <div class="glass-panel p-10 md:p-14 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-50"></div>
+                <p class="font-serif text-2xl md:text-3xl text-ivory mb-4">Special Invitation</p>
+                <p class="font-sans text-xs text-champagne uppercase tracking-[0.2em] mb-8">Новогодняя привилегия</p>
+                <div class="flex items-center justify-center gap-6 mb-8"><span class="text-gray-600 line-through font-serif text-xl">15.000₽</span><i class="fa-solid fa-arrow-right text-white/20 text-xs"></i><span class="text-champagne font-serif text-4xl md:text-5xl">7.000₽</span></div>
+                <p class="font-sans text-sm text-gray-400 font-light leading-relaxed mb-10 max-w-sm mx-auto">Я приглашаю вас на знакомство. Это возможность понять, подходим ли мы друг другу и составить план восстановления.</p>
+                <div class="flex flex-col items-center"><a href="https://wa.me/79990000000?text=Павел,%20интересует%20стоимость%20визита%20и%20свободные%20окна%20для%20знакомства." class="whatsapp-link inline-block px-10 py-4 bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion hover:bg-white transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Pricing: CTA Click">Обсудить визит</a><span class="text-[9px] text-gray-600 mt-4 font-sans tracking-wide">Без предоплаты и скрытых условий</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFE -->
+    <section class="py-32 bg-void relative border-b border-white/5">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal-on-scroll"><div><h2 class="font-serif text-4xl text-ivory mb-3">Архитектура Жизни</h2><p class="text-[10px] text-gray-500 uppercase tracking-widest">Протокол продления эффекта</p></div><div class="hidden md:block w-1/3 h-[1px] bg-gradient-to-r from-champagne/30 to-transparent"></div></div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="glass-panel p-10 group hover:border-champagne/30 transition duration-500 reveal-on-scroll"><div class="text-champagne text-3xl mb-8 opacity-80"><i class="fa-solid fa-glass-water"></i></div><h3 class="font-serif text-2xl text-ivory mb-4">Гидробаланс</h3><p class="font-sans text-sm text-gray-400 font-light leading-relaxed">Я запустил мощные процессы очищения. Теперь токсинам нужен выход. Я прошу вас пить теплую воду — это лучшее, что вы можете сделать для себя сегодня.</p></div>
+                <div class="glass-panel p-10 group hover:border-champagne/30 transition duration-500 reveal-on-scroll" style="transition-delay: 0.1s;"><div class="text-champagne text-3xl mb-8 opacity-80"><i class="fa-solid fa-person-swimming"></i></div><h3 class="font-serif text-2xl text-ivory mb-4">Невесомость</h3><p class="font-sans text-sm text-gray-400 font-light leading-relaxed">Я часто рекомендую плавание. Вода снимает остаточную нагрузку гравитации. Это идеальный способ закрепить нашу работу с осанкой.</p></div>
+                <div class="glass-panel p-10 group hover:border-champagne/30 transition duration-500 reveal-on-scroll" style="transition-delay: 0.2s;"><div class="text-champagne text-3xl mb-8 opacity-80"><i class="fa-solid fa-mobile-screen-button"></i></div><h3 class="font-serif text-2xl text-ivory mb-4">Цифровая Тишина</h3><p class="font-sans text-sm text-gray-400 font-light leading-relaxed">Пожалуйста, не берите телефон сразу. Дайте нервной системе "дожить" это состояние покоя. Мир подождет еще час.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="py-40 bg-[#020202] relative overflow-hidden flex flex-col items-center justify-center border-b border-white/5">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center relative z-10">
+            <div class="reveal-on-scroll order-2 md:order-1 text-center md:text-left">
+                <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-6">Trust Protocol</p>
+                <h2 class="font-serif text-4xl md:text-6xl text-ivory mb-8 leading-tight">Карта <br><span class="italic text-gray-600 font-light">Доверия</span></h2>
+                <div class="prose prose-invert prose-base font-light text-gray-400 leading-relaxed mb-12 mx-auto md:mx-0"><p>Я не продаю "абонементы" всем подряд. Доступ к регулярной работе и моему личному расписанию открывается только после первого знакомства.</p><p>Первый визит — это наша "проба пера". Если мы совпадаем в понимании комфорта и границ, вы получаете карту <strong>Private Access</strong>. Это знак того, что мы теперь в одной команде.</p></div>
+                <div class="flex flex-col gap-4"><div class="flex items-center gap-5 justify-center md:justify-start"><span class="text-champagne font-serif text-3xl">7.000₽</span><span class="text-gray-600 text-xs uppercase tracking-widest line-through decoration-1">15.000₽</span><span class="px-3 py-1 bg-champagne/5 border border-champagne/10 text-[9px] uppercase text-champagne tracking-widest rounded-sm">Welcome Visit</span></div><p class="text-[9px] text-gray-600 uppercase tracking-widest">Специальные условия для знакомства</p></div>
+                <div class="mt-8 flex flex-col items-center md:items-start"><a href="https://wa.me/79990000000?text=Павел,%20хочу%20записаться%20на%20первый%20сеанс-знакомство." class="whatsapp-link inline-block px-10 py-4 bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion hover:bg-white transition duration-500 interactive-el btn-vibrate ripple-container rounded-sm" data-analytics="Trust: CTA Click">Записаться на знакомство</a><span class="text-[9px] text-gray-600 mt-3 font-sans tracking-wide pl-1">Оплата только после сеанса</span></div>
+            </div>
+            <div class="member-card-wrapper reveal-on-scroll order-1 md:order-2 flex justify-center">
+                <div class="member-card relative w-[360px] h-[230px] rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+                    <div class="card-glare"></div>
+                    <div class="flex justify-between items-start relative z-10"><span class="font-serif text-2xl text-champagne tracking-widest gold-text-shadow">PK</span><i class="fa-solid fa-infinity text-white/10 text-2xl"></i></div>
+                    <div class="relative z-10"><p class="font-mono text-white/30 text-sm tracking-[0.25em] mb-6">MEMBER SINCE 2024</p><div class="flex justify-between items-end"><div><p class="text-[8px] uppercase text-gray-600 tracking-widest mb-1">Status</p><p class="text-[12px] uppercase text-ivory tracking-widest font-bold">Trusted Guest</p></div><div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center"><div class="w-6 h-6 border border-white/20 rounded-full"></div></div></div></div>
+                    <div class="absolute inset-0 border border-white/5 rounded-2xl m-1.5 pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black pt-24 pb-40">
+        <div class="max-w-screen-xl mx-auto px-6 text-center">
+            <p class="font-serif text-5xl text-white/5 mb-10 tracking-widest">KUMASHKOV</p>
+            <div class="flex justify-center gap-10 mb-16">
+                <a href="#" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" data-analytics="Footer: WhatsApp"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
+                <a href="#" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" data-analytics="Footer: Telegram"><i class="fa-brands fa-telegram text-3xl"></i></a>
+            </div>
+            <p class="text-[9px] font-sans text-gray-800 uppercase tracking-[0.4em]">Private Body Architecture © 2024.<br>Members Only.</p>
+        </div>
+    </footer>
+
+    <!-- STICKY BAR -->
+    <div class="fixed bottom-0 left-0 w-full z-50 p-6 pb-[env(safe-area-inset-bottom)] pointer-events-none">
+        <div class="max-w-lg mx-auto glass-panel bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2.5 flex justify-between items-center shadow-2xl pointer-events-auto transform translate-y-0 transition-transform duration-500">
+            <div class="flex items-center gap-3 pl-3">
+                <div class="relative"><div class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center"><span class="font-serif text-[10px] text-white/40 tracking-widest">PK</span></div><div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#050505] flex items-center justify-center"><div class="w-2 h-2 rounded-full bg-green-500 relative"><div class="absolute inset-0 w-full h-full rounded-full bg-green-500 animate-ping opacity-75"></div></div></div></div>
+                <div class="flex flex-col justify-center"><span class="text-[8px] font-sans uppercase tracking-widest text-gray-500 mb-0.5">Pavel Kumashkov</span><div class="h-4 flex items-center overflow-hidden relative"><div id="status-container" class="flex items-center gap-2 transition-transform duration-500"><span class="text-[10px] font-serif text-champagne">Online</span></div><div id="typing-container" class="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-2 transition-all duration-500 opacity-0 translate-y-4"><span class="text-[10px] font-serif text-champagne/80 italic">печатает</span><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div></div></div>
+            </div>
+            <div class="flex gap-2"><a href="https://t.me/username" class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/30 transition interactive-el ripple-container bg-white/5" data-analytics="Sticky: Telegram"><i class="fa-brands fa-telegram text-lg"></i></a><a href="https://wa.me/79990000000?text=Павел,%20здравствуйте.%20Хочу%20начать%20диалог." class="whatsapp-link px-8 h-12 flex items-center bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion rounded-xl hover:bg-white transition duration-500 interactive-el btn-vibrate shadow-[0_0_25px_rgba(227,200,173,0.15)] ripple-container" data-analytics="Sticky: Start Dialogue">Начать диалог</a></div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loaderLine = document.getElementById('loader-progress');
+            loaderLine.style.width = '100%';
+            setTimeout(() => { document.getElementById('preloader').style.opacity = '0'; document.getElementById('preloader').style.visibility = 'hidden'; }, 800);
+            initLivingStatus();
+            console.log("Alpha Gamma Beta Prime: System Ready.");
+        });
+
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorCircle = document.querySelector('.cursor-circle');
+        const spotlight = document.getElementById('spotlight');
+        const interactiveEls = document.querySelectorAll('.interactive-el');
+        let mouseX = 0, mouseY = 0, circleX = 0, circleY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            if (window.matchMedia("(pointer: fine)").matches) {
+                cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+                spotlight.style.setProperty('--x', mouseX + 'px');
+                spotlight.style.setProperty('--y', mouseY + 'px');
+            }
+        });
+
+        function animateCursor() {
+            const speed = 0.15;
+            circleX += (mouseX - circleX) * speed;
+            circleY += (mouseY - circleY) * speed;
+            if (window.matchMedia("(pointer: fine)").matches) {
+                cursorCircle.style.transform = `translate3d(${circleX}px, ${circleY}px, 0) translate(-50%, -50%)`;
+            }
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        interactiveEls.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        const zoneData = {
+            'head': { title: 'Шум в голове', med: 'Церебральный ангиоспазм / Хронический стресс', desc: 'Чувствуете, как мысли не дают покоя даже в тишине? Тяжесть в висках — это сигнал о перегрузке. Позвольте мне вернуть вам ясность и тишину.', msg: 'Павел, чувствую сильное ментальное напряжение, нужна перезагрузка.' },
+            'neck': { title: 'Груз на плечах', med: 'Гипертонус трапеции / "Офисный синдром"', desc: 'Здесь скапливается всё, что вы несете на себе. Плечи стремятся к ушам, защищаясь от мира. Мы мягко опустим этот груз, и вы снова начнете дышать.', msg: 'Павел, шея и плечи "каменные", хочу легкости.' },
+            'shoulders': { title: 'Эмоциональный щит', med: 'Миофасциальный зажим / Психосоматика', desc: 'Когда мы сдерживаем эмоции, "камень" ложится именно сюда. Это ваша броня. Я помогу растопить этот лед, чтобы вы могли расслабиться по-настоящему.', msg: 'Павел, чувствую зажимы в лопатках и плечах.' },
+            'back': { title: 'Потеря опоры', med: 'Люмбалгия / Спазм глубоких мышц', desc: 'Поясница — это ваш центр безопасности. Если здесь холодно или тянет — значит, телу не хватает чувства защищенности. Мы вернем тепло и уверенность.', msg: 'Павел, беспокоит поясница, не хватает ощущения опоры.' },
+            'legs': { title: 'Земное притяжение', med: 'Лимфостаз / Отечность', desc: 'Ощущение, что к ногам привязали гири. Усталость от каблуков или статики мешает летать. Лимфодренаж вернет легкость каждому вашему шагу.', msg: 'Павел, тяжесть в ногах, нужен лимфодренаж.' }
+        };
+
+        let currentZoneMsg = '';
+        let typeInterval;
+
+        function showZoneInfo(zone, el) {
+            if (navigator.vibrate) navigator.vibrate(10);
+            document.querySelectorAll('.active-point').forEach(z => z.classList.remove('selected'));
+            el.classList.add('selected');
+            const data = zoneData[zone];
+            currentZoneMsg = data.msg;
+            document.getElementById('zone-title').innerText = data.title;
+            document.getElementById('zone-med').innerText = data.med;
+            const descEl = document.getElementById('zone-desc');
+            descEl.innerText = '';
+            const fullText = data.desc;
+            let i = 0;
+            clearInterval(typeInterval);
+            const popup = document.getElementById('zone-popup');
+            popup.style.transform = 'translateY(0)';
+            typeInterval = setInterval(() => {
+                descEl.innerText += fullText.charAt(i);
+                i++;
+                if (i > fullText.length - 1) clearInterval(typeInterval);
+            }, 20);
+        }
+
+        function hideZoneInfo() {
+            const popup = document.getElementById('zone-popup');
+            popup.style.transform = 'translateY(120%)';
+            document.querySelectorAll('.active-point').forEach(z => z.classList.remove('selected'));
+            clearInterval(typeInterval);
+        }
+
+        function bookZone() {
+            if (navigator.vibrate) navigator.vibrate(20);
+            const btn = document.querySelector('#zone-popup button[onclick="bookZone()"]');
+            const originalText = btn.innerText;
+            btn.innerText = "Перехожу в чат...";
+            btn.classList.add('bg-champagne', 'text-void');
+            btn.classList.remove('bg-white/5');
+            const phone = "79990000000"; 
+            const text = encodeURIComponent(currentZoneMsg);
+            setTimeout(() => {
+                window.location.href = `https://wa.me/${phone}?text=${text}`;
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-champagne', 'text-void');
+                    btn.classList.add('bg-white/5');
+                }, 1000);
+            }, 800);
+        }
+        
+        function changeRitualStep(step) {
+            if (navigator.vibrate) navigator.vibrate(10);
+            document.querySelectorAll('.step-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`step-btn-${step}`).classList.add('active');
+            document.querySelectorAll('[id^="ritual-step-"]').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.pointerEvents = 'none';
+            });
+            const activeStep = document.getElementById(`ritual-step-${step}`);
+            setTimeout(() => {
+                activeStep.style.opacity = '1';
+                activeStep.style.transform = 'translateY(0)';
+                activeStep.style.pointerEvents = 'auto';
+            }, 50);
+            const progress = document.getElementById('ritual-progress');
+            if(step === 1) progress.style.width = '25%';
+            if(step === 2) progress.style.width = '50%';
+            if(step === 3) progress.style.width = '75%';
+            if(step === 4) progress.style.width = '100%';
+        }
+        
+        document.querySelectorAll('.btn-vibrate').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (navigator.vibrate) navigator.vibrate(15);
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('.ripple-container');
+            if (target) {
+                const circle = document.createElement('span');
+                const diameter = Math.max(target.clientWidth, target.clientHeight);
+                const radius = diameter / 2;
+                const rect = target.getBoundingClientRect();
+                circle.style.width = circle.style.height = `${diameter}px`;
+                circle.style.left = `${e.clientX - rect.left - radius}px`;
+                circle.style.top = `${e.clientY - rect.top - radius}px`;
+                circle.classList.add('ripple');
+                const existingRipple = target.querySelector('.ripple');
+                if (existingRipple) existingRipple.remove();
+                target.appendChild(circle);
+            }
+        });
+
+        document.addEventListener('click', function(e) {
+            const target = e.target.closest('.whatsapp-link');
+            if (target) {
+                e.preventDefault();
+                const originalText = target.innerText;
+                const originalWidth = target.offsetWidth;
+                target.style.width = `${originalWidth}px`;
+                target.style.justifyContent = 'center';
+                target.style.textAlign = 'center';
+                target.innerText = "Перехожу в чат...";
+                target.classList.add('animate-pulse');
+                setTimeout(() => {
+                    window.location.href = target.href;
+                    setTimeout(() => {
+                        target.innerText = originalText;
+                        target.style.width = '';
+                        target.style.justifyContent = '';
+                        target.style.textAlign = '';
+                        target.classList.remove('animate-pulse');
+                    }, 1000);
+                }, 800);
+            }
+        });
+
+        function initLivingStatus() {
+            const statusContainer = document.getElementById('status-container');
+            const typingContainer = document.getElementById('typing-container');
+            if (!statusContainer || !typingContainer) return;
+            function showTyping() {
+                statusContainer.style.opacity = '0';
+                statusContainer.style.transform = 'translateY(-10px)';
+                setTimeout(() => {
+                    typingContainer.style.opacity = '1';
+                    typingContainer.style.transform = 'translateY(-50%)';
+                }, 200);
+                setTimeout(showOnline, 2500 + Math.random() * 1500);
+            }
+            function showOnline() {
+                typingContainer.style.opacity = '0';
+                typingContainer.style.transform = 'translateY(10px) translateY(-50%)';
+                setTimeout(() => {
+                    statusContainer.style.opacity = '1';
+                    statusContainer.style.transform = 'translateY(0)';
+                }, 200);
+            }
+            setInterval(() => {
+                if (Math.random() > 0.3) { showTyping(); }
+            }, 10000);
+        }
+        
+        document.querySelectorAll('[data-analytics]').forEach(el => {
+            el.addEventListener('click', () => {
+                console.log(`Analytics Event: ${el.getAttribute('data-analytics')}`);
+            });
+        });
+    </script>
+</body>
+</html>

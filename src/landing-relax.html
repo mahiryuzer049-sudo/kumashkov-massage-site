@@ -1,33 +1,104 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth bg-[#050505]">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#050505">
-  <title>Релакс / Нейроседация — Павел Кумашков</title>
-  <meta name="description" content="Релакс-массаж на дому в Москве. Глубокое расслабление нервной системы и снижение стресса.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-  <link rel="stylesheet" href="/styles/main.css">
+  {{> head-core}}
+  {{> head-seo}}
 </head>
-<body class="has-sticky">
+<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
+  <a class="skip-link" href="#main">К содержимому</a>
   {{> chrome}}
   {{> header}}
+
   <main id="main" class="pt-28">
-    <section class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <section class="section-shell bg-void border-y border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
         <div class="reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Релакс</p>
-          <h1 class="font-serif text-4xl md:text-6xl text-ivory mb-6 leading-tight">Тишина в голове</h1>
-          <p class="text-gray-400 font-light mb-8">Глубокое расслабление нервной системы. Снижение уровня стресса и тревоги.</p>
-          <a href="https://wa.me/79260899019?text=Павел,%20хочу%20сеанс%20релакс%20/ %20нейроседации." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container">Записаться</a>
+          <p class="section-kicker text-left">Relax Format</p>
+          <h1 class="section-title text-left">Релакс-массаж на дому в Москве</h1>
+          <p class="section-subtitle text-left m-0">
+            Мягкий темп для глубокой разгрузки нервной системы. Формат, когда хочется «выдохнуть», снизить внутренний
+            шум и вернуть телу спокойный ритм.
+          </p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a
+              href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20записаться%20на%20релакс-массаж%20на%20дому."
+              class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+              data-analytics="LandingRelax: Book"
+            >
+              Записаться
+            </a>
+            <a href="/#packages" class="btn-secondary interactive-el" data-analytics="LandingRelax: Packages">
+              Пакеты и курс
+            </a>
+          </div>
         </div>
-        <div class="glass-panel p-8 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Результат</p>
-          <p class="text-sm text-gray-400 font-light">Глубокое расслабление, спокойный сон, снижение тревожности.</p>
+
+        <article class="card-luxe p-7 reveal-on-scroll" data-reveal-delay="0.08s">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Когда выбирать</p>
+          <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+            <li>• После эмоционально тяжелой недели и переутомления.</li>
+            <li>• Если сложно «отпустить» тело перед сном.</li>
+            <li>• Когда нужен деликатный формат без жесткой проработки.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell bg-[#060606] border-y border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5">
+        <article class="card-luxe p-6 reveal-on-scroll">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
+          <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+            <li>• Больше спокойствия в теле и мыслях.</li>
+            <li>• Более глубокое расслабление после сеанса.</li>
+            <li>• Понятный план поддерживающего режима.</li>
+          </ul>
+        </article>
+
+        <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Комбинация</p>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Релакс можно комбинировать с базовым восстановлением или курсом по осанке, если есть смешанный запрос.
+          </p>
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20собрать%20мягкий%20антистресс%20формат%20и%20частоту%20визитов."
+            class="whatsapp-link btn-secondary interactive-el"
+            data-analytics="LandingRelax: Combo"
+          >
+            Собрать комбинацию
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell bg-[#050505]">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="section-head reveal-on-scroll mb-10">
+          <p class="section-kicker">Related Formats</p>
+          <h2 class="section-title">Смотреть также</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+          <a href="/landing-classic.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-analytics="LandingRelax: Related Classic">
+            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
+            <h3 class="font-serif text-2xl text-ivory mb-2">Восстановление</h3>
+            <p class="text-sm text-gray-300">Если к антистрессу нужно добавить более плотную мышечную работу.</p>
+          </a>
+          <a href="/landing-lymph.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.08s" data-analytics="LandingRelax: Related Lymph">
+            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Lymph</p>
+            <h3 class="font-serif text-2xl text-ivory mb-2">Легкость</h3>
+            <p class="text-sm text-gray-300">Подходит, если вместе со стрессом есть тяжесть и отечность.</p>
+          </a>
+          <a href="/#technique-guide" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.14s" data-analytics="LandingRelax: Related Guide">
+            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Guide</p>
+            <h3 class="font-serif text-2xl text-ivory mb-2">Все форматы</h3>
+            <p class="text-sm text-gray-300">Открыть гид и выбрать формат под цель без лишних шагов.</p>
+          </a>
         </div>
       </div>
     </section>
   </main>
+
   {{> footer}}
   {{> sticky}}
   <script type="module" src="/scripts/main.js"></script>

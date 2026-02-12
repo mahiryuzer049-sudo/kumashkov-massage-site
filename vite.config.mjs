@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import handlebars from "vite-plugin-handlebars";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+import { getTemplateContext } from "./site.config.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -11,6 +12,7 @@ export default defineConfig({
   plugins: [
     handlebars({
       partialDirectory: "./src/partials",
+      context: (pagePath) => getTemplateContext(pagePath),
     }),
   ],
   build: {

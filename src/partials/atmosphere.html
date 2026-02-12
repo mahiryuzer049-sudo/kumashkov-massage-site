@@ -1,11 +1,44 @@
 <!-- ATMOSPHERE -->
-<section id="atmosphere" class="py-32 bg-[#030303] overflow-hidden">
-    <div class="max-w-screen-xl mx-auto px-6 mb-16 flex justify-between items-end reveal-on-scroll"><div><h2 class="font-serif text-4xl text-ivory mb-3">Атмосфера</h2><p class="text-[10px] text-gray-500 uppercase tracking-widest">Детали, которые имеют значение</p></div><div class="hidden md:block w-32 h-[1px] bg-white/10"></div></div>
-    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 px-6 md:grid md:grid-cols-3 md:gap-2 md:px-4 hide-scroll pb-8 md:pb-0">
-        <div class="min-w-[85vw] md:min-w-0 snap-center group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden cursor-none reveal-on-scroll"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=70&w=600&auto=format&fit=crop" class="w-full h-full object-cover noir-filter" loading="lazy" decoding="async" alt="Towels & Space"><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700 z-10"><div class="text-center"><span class="text-champagne font-serif italic text-3xl bg-black/40 px-6 py-3 backdrop-blur-md border border-white/5 block mb-2">Комфорт</span><span class="text-[9px] text-white/60 uppercase tracking-widest">Здесь чисто и тихо</span></div></div></div>
-        <div class="min-w-[85vw] md:min-w-0 snap-center group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden cursor-none reveal-on-scroll" style="transition-delay: 0.1s;"><img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=70&w=600&auto=format&fit=crop" class="w-full h-full object-cover noir-filter" loading="lazy" decoding="async" alt="Massage Process"><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700 z-10"><div class="text-center"><span class="text-champagne font-serif italic text-3xl bg-black/40 px-6 py-3 backdrop-blur-md border border-white/5 block mb-2">Процесс</span><span class="text-[9px] text-white/60 uppercase tracking-widest">Я слушаю ваше тело</span></div></div></div>
-        <div class="min-w-[85vw] md:min-w-0 snap-center group relative aspect-[3/4] md:aspect-[4/5] overflow-hidden cursor-none reveal-on-scroll" style="transition-delay: 0.2s;"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=70&w=600&auto=format&fit=crop" class="w-full h-full object-cover noir-filter" loading="lazy" decoding="async" alt="Oils & Details"><div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-700 z-10"><div class="text-center"><span class="text-champagne font-serif italic text-3xl bg-black/40 px-6 py-3 backdrop-blur-md border border-white/5 block mb-2">Детали</span><span class="text-[9px] text-white/60 uppercase tracking-widest">Только премиум</span></div></div></div>
+<section id="atmosphere" class="section-shell bg-[#030303] border-y border-white/5 overflow-hidden">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="section-head reveal-on-scroll mb-12">
+      <p class="section-kicker">Atmosphere</p>
+      <h2 class="section-title">Атмосфера <span class="italic text-gray-500">Сеанса</span></h2>
+      <p class="section-subtitle">
+        Пространство и детали, которые создают ощущение спокойствия, чистоты и личного комфорта.
+      </p>
     </div>
-    <div class="md:hidden flex justify-center gap-2 mt-4 opacity-20"><div class="w-1.5 h-1.5 rounded-full bg-champagne"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div></div>
-</section>
 
+    <div class="grid md:grid-cols-3 gap-6">
+      <article class="gallery-card reveal-on-scroll group">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=70&w=700&auto=format&fit=crop" class="w-full h-full object-cover noir-filter group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" alt="Теплая подготовка пространства">
+          <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <p class="text-champagne font-serif text-2xl italic">Комфорт</p>
+            <p class="text-[10px] uppercase tracking-widest text-white/60">Чисто, спокойно, без спешки</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal-on-scroll group" style="transition-delay: 0.08s;">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?q=70&w=700&auto=format&fit=crop" class="w-full h-full object-cover noir-filter group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" alt="Тактильная работа и ритм">
+          <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <p class="text-champagne font-serif text-2xl italic">Ритм</p>
+            <p class="text-[10px] uppercase tracking-widest text-white/60">Темп под ваш запрос</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal-on-scroll group" style="transition-delay: 0.16s;">
+        <div class="relative aspect-[4/5] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=70&w=700&auto=format&fit=crop" class="w-full h-full object-cover noir-filter group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" alt="Материалы и премиальные детали">
+          <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+            <p class="text-champagne font-serif text-2xl italic">Детали</p>
+            <p class="text-[10px] uppercase tracking-widest text-white/60">Материалы и уход</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

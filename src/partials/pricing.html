@@ -1,24 +1,87 @@
-<section id="pricing" class="py-28 bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="flex items-center gap-4 mb-8">
-      <span class="w-12 h-[1px] bg-champagne"></span>
-      <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Знакомство</p>
+<!-- PRICING -->
+<section id="pricing" class="section-shell bg-[#080808] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Pricing Ladder</p>
+      <h2 class="section-title">Стоимость без скрытых условий</h2>
+      <p class="section-subtitle">
+        Прозрачная ценовая лестница: первый визит, короткий курс и расширенный курс. Вы заранее понимаете, за что
+        платите и какой формат получаете.
+      </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-16 items-start">
-      <div class="reveal-on-scroll">
-        <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Новогодняя привилегия</h2>
-        <p class="text-gray-400 font-light mb-6">Я приглашаю вас на знакомство. Это возможность понять, подходим ли мы друг другу и составить план восстановления.</p>
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-8">Без предоплаты и скрытых условий</p>
-        <a href="https://wa.me/79260899019?text=Павел,%20интересует%20стоимость%20визита%20и%20свободные%20окна%20для%20знакомства." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Pricing: CTA">Обсудить визит</a>
+
+    <div class="grid lg:grid-cols-3 gap-5">
+      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.02s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Start</p>
+        <h3 class="font-serif text-3xl text-ivory mb-2">1 визит</h3>
+        <p class="text-sm text-gray-400 mb-4">Диагностика запроса, сессия и персональные рекомендации.</p>
+        <div class="flex items-end justify-between gap-2">
+          <span class="font-serif text-5xl text-champagne">7 000 ₽</span>
+          <span class="text-sm text-gray-600 line-through">15 000 ₽</span>
+        </div>
+      </article>
+
+      <article class="card-luxe p-6 border border-champagne/30 reveal-on-scroll" data-reveal-delay="0.1s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Core</p>
+        <h3 class="font-serif text-3xl text-ivory mb-2">Курс 4</h3>
+        <p class="text-sm text-gray-400 mb-4">Оптимальный баланс цены и устойчивости эффекта.</p>
+        <div class="flex items-end justify-between gap-2 mb-3">
+          <span class="font-serif text-5xl text-champagne">26 000 ₽</span>
+        </div>
+        <p class="text-[11px] text-gray-500">Экономия 2 000 ₽ относительно разовых визитов.</p>
+      </article>
+
+      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.18s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Signature</p>
+        <h3 class="font-serif text-3xl text-ivory mb-2">Курс 8</h3>
+        <p class="text-sm text-gray-400 mb-4">Глубокая последовательная работа и долгосрочная поддержка.</p>
+        <div class="flex items-end justify-between gap-2 mb-3">
+          <span class="font-serif text-5xl text-champagne">48 000 ₽</span>
+        </div>
+        <p class="text-[11px] text-gray-500">Экономия 8 000 ₽ относительно разовых визитов.</p>
+      </article>
+    </div>
+
+    <div class="mt-8 card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.24s">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-2">Как выбрать</p>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Не уверены, какой пакет ваш? Начните со Start и после первого визита перейдем в Core или Signature, если
+            это действительно нужно вашему запросу.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20забронировать%20первый%20визит%20(пакет%20Start)."
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+            data-analytics="Pricing: Start CTA"
+          >
+            Забронировать Start
+          </a>
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20подобрать%20между%20пакетами%20Core%20и%20Signature."
+            class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
+            data-analytics="Pricing: Compare CTA"
+          >
+            Сравнить пакеты
+          </a>
+        </div>
       </div>
-      <div class="glass-panel p-8 reveal-on-scroll">
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Оплата только после сеанса</p>
-        <ul class="text-sm text-gray-400 font-light space-y-3">
-          <li>Формат: на дому</li>
-          <li>Длительность: в среднем час (зависит от техники)</li>
-          <li>Запись: напрямую в чате, обсуждаем детали</li>
-          <li>Мини-опрос: время, зоны, техники, цели</li>
-        </ul>
+
+      <div class="grid md:grid-cols-3 gap-4 pt-6">
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
+          <p class="text-[10px] uppercase tracking-[0.22em] text-champagne mb-1.5">Доп. время</p>
+          <p class="text-sm text-gray-300">+30 минут по согласованию к любому формату.</p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
+          <p class="text-[10px] uppercase tracking-[0.22em] text-champagne mb-1.5">Зональный фокус</p>
+          <p class="text-sm text-gray-300">Усиленная проработка одной зоны, включая ягодичную область.</p>
+        </div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
+          <p class="text-[10px] uppercase tracking-[0.22em] text-champagne mb-1.5">Поддержка</p>
+          <p class="text-sm text-gray-300">После курса: режим 1-2 визита в месяц для удержания эффекта.</p>
+        </div>
       </div>
     </div>
   </div>

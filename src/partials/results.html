@@ -1,41 +1,77 @@
-<section id="results" class="py-28 bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="flex items-center gap-4 mb-8">
-      <span class="w-12 h-[1px] bg-champagne"></span>
-      <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Результат</p>
+<!-- RESULTS -->
+<section id="results" class="section-shell bg-[#050505] overflow-hidden border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Outcome Ladder</p>
+      <h2 class="section-title">Результат по шагам</h2>
+      <p class="section-subtitle">
+        Здесь видно, как один визит переходит в устойчивый эффект. Это помогает выбрать формат осознанно: разовая
+        сессия, короткий курс или поддержка.
+      </p>
     </div>
-    <div class="grid md:grid-cols-2 gap-16">
-      <div class="reveal-on-scroll">
-        <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Хронология результата</h2>
-        <p class="text-gray-400 font-light mb-8">Эффект от сеанса — это не только момент “сейчас”. Это процесс, который разворачивается во времени.</p>
-        <a href="https://wa.me/79260899019?text=Павел,%20хочу%20обсудить%20долгосрочный%20результат%20и%20курс." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Results: CTA">Обсудить стратегию курса →</a>
-        <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Далее: Кейс</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <article class="card-luxe p-6 reveal-on-scroll" data-hover-lift data-reveal-delay="0.02s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-3">1 визит</p>
+        <h3 class="font-serif text-2xl text-ivory mb-3">Быстрый эффект</h3>
+        <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Снимается острая скованность в ключевых зонах.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Тело «выдыхает», голова становится спокойнее.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Понятно, какая тактика дает лучший отклик именно вам.</span></li>
+        </ul>
+      </article>
+
+      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/30" data-hover-lift data-reveal-delay="0.08s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-3">4 визита</p>
+        <h3 class="font-serif text-2xl text-ivory mb-3">Курсовый эффект</h3>
+        <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Стабилизируется тонус, снижается «фоновая» усталость.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Тело легче держит осанку и рабочую нагрузку.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Появляется понятный персональный ритм восстановления.</span></li>
+        </ul>
+      </article>
+
+      <article class="card-luxe p-6 reveal-on-scroll" data-hover-lift data-reveal-delay="0.14s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-3">8 визитов</p>
+        <h3 class="font-serif text-2xl text-ivory mb-3">Долгий результат</h3>
+        <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Устойчивое ощущение легкости и собранности в теле.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Меньше откатов после стрессовых и рабочих недель.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Поддерживающий режим без постоянного «обнуления».</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-3 gap-4 reveal-on-scroll" data-reveal-delay="0.18s">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Start</p>
+        <p class="text-sm text-gray-300">Проверяем реакцию тела и фиксируем персональный вектор работы.</p>
       </div>
-      <div class="grid gap-6">
-        <div class="glass-panel p-6 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Сразу после</p>
-          <ul class="text-xs text-gray-400 font-light space-y-2">
-            <li>Глубокое мышечное расслабление (“эффект желе”).</li>
-            <li>Снятие болевого синдрома в острой фазе.</li>
-            <li>Замедление мыслей, состояние тишины.</li>
-          </ul>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Core</p>
+        <p class="text-sm text-gray-300">Закрепляем эффект ритмом и корректируем техники по динамике.</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Signature</p>
+        <p class="text-sm text-gray-300">Формируем поддерживающий режим без отката к исходному состоянию.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.2s">
+      <div class="flex flex-wrap items-center justify-between gap-3.5">
+        <div>
+          <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-1">Следующий шаг</p>
+          <p class="text-sm text-gray-300">
+            Если хотите стабильный эффект, после первого визита соберем подходящий пакет и частоту под ваш график.
+          </p>
         </div>
-        <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">24 — 72 часа</p>
-          <ul class="text-xs text-gray-400 font-light space-y-2">
-            <li>Лимфодренажный эффект: уходят видимые отеки.</li>
-            <li>Глубокий, восстанавливающий сон.</li>
-            <li>Повышение эластичности движений (легче держать осанку).</li>
-          </ul>
-        </div>
-        <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Курс (5–10)</p>
-          <ul class="text-xs text-gray-400 font-light space-y-2">
-            <li>Структурное изменение осанки (тело “запоминает” правильное положение).</li>
-            <li>Стабильный эмоциональный фон.</li>
-            <li>Эстетика: подтянутый силуэт и качество кожи.</li>
-          </ul>
-        </div>
+        <a
+          href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20обсудить%20пакет%20и%20ожидаемый%20результат."
+          class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+          data-analytics="Results: Package CTA"
+        >
+          Обсудить пакет
+        </a>
       </div>
     </div>
   </div>

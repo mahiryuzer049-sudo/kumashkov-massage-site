@@ -1,24 +1,75 @@
-<section id="booking" class="py-28 bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="glass-panel p-10 reveal-on-scroll grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Павел Кумашков</h2>
-        <p class="text-gray-400 font-light mb-6">Павел, здравствуйте. Хочу начать диалог.</p>
-        <a href="https://wa.me/79260899019?text=Павел,%20здравствуйте.%20Хочу%20начать%20диалог." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Booking: CTA">Начать диалог</a>
-      </div>
-      <div class="text-gray-400 font-light text-sm">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="typing-indicator" aria-hidden="true">
-            <span class="typing-dot"></span>
-            <span class="typing-dot"></span>
-            <span class="typing-dot"></span>
-          </div>
-          <span class="text-[10px] uppercase tracking-widest text-gray-500">печатает</span>
+<!-- BOOKING -->
+<section id="booking" class="section-shell bg-[#050505] border-y border-white/5">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-[1.02fr_0.98fr] gap-7 items-start">
+      <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
+        <p class="section-kicker !text-left mb-3">Direct Booking</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-ivory leading-[0.96] mb-5">
+          Запись напрямую
+        </h2>
+        <p class="text-sm text-gray-300 leading-relaxed mb-6">
+          Вы общаетесь лично со мной, без менеджеров и долгих анкет. Средняя длительность сеанса — около 60 минут,
+          точный формат согласуем под ваш запрос и комфорт.
+        </p>
+
+        <div class="flex flex-wrap gap-2.5 mb-6">
+          <span class="tag-pill">Москва</span>
+          <span class="tag-pill">Выезд на дом</span>
+          <span class="tag-pill">18+</span>
+          <span class="tag-pill">Конфиденциально</span>
         </div>
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Соединение...</p>
-        <p>Отвечу лично, без ботов. Обсудим время, зоны и формат.</p>
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-4">Здравствуйте, хочу записаться.</p>
-      </div>
+
+        <div class="flex flex-wrap gap-2.5">
+          <a
+            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20записаться%20на%20массаж.%20Удобное%20время:%20[ ].%20Район:%20[ ].%20Запрос:%20[ ]."
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+            data-analytics="Booking: Primary CTA"
+          >
+            Начать диалог в WhatsApp
+          </a>
+          <a
+            href="{{site.telegram}}"
+            class="btn-secondary interactive-el"
+            data-analytics="Booking: Secondary CTA"
+          >
+            Написать в Telegram
+          </a>
+        </div>
+      </article>
+
+      <article class="card-luxe p-7 md:p-8 reveal-on-scroll" data-reveal-delay="0.08s">
+        <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-3">Мини-опрос перед подтверждением</p>
+        <ol class="space-y-3.5 booking-checklist">
+          <li>
+            <span class="booking-check-num">1</span>
+            <div>
+              <p class="booking-check-title">Когда удобно и в каком районе Москвы</p>
+              <p class="booking-check-text">Подбираем ближайшее подходящее окно без лишней переписки.</p>
+            </div>
+          </li>
+          <li>
+            <span class="booking-check-num">2</span>
+            <div>
+              <p class="booking-check-title">Какие зоны беспокоят сейчас</p>
+              <p class="booking-check-text">Сразу определяем приоритет и стартовую тактику работы.</p>
+            </div>
+          </li>
+          <li>
+            <span class="booking-check-num">3</span>
+            <div>
+              <p class="booking-check-title">Какая цель на первый визит</p>
+              <p class="booking-check-text">Расслабление, восстановление, тонус или комплексный формат.</p>
+            </div>
+          </li>
+          <li>
+            <span class="booking-check-num">4</span>
+            <div>
+              <p class="booking-check-title">Пожелания по интенсивности</p>
+              <p class="booking-check-text">Согласуем комфортный ритм до начала сессии.</p>
+            </div>
+          </li>
+        </ol>
+      </article>
     </div>
   </div>
 </section>
