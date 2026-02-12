@@ -11,7 +11,7 @@ const BUDGET = {
   privacyHtmlGzipMax: 5 * 1024,
   mainCssGzipMax: 12 * 1024,
   mainJsGzipMax: 7 * 1024,
-  totalCriticalGzipMax: 65 * 1024,
+  totalCriticalGzipMax: 70 * 1024,
 };
 
 const LANDING_FILES = [

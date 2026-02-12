@@ -146,7 +146,7 @@ if ("IntersectionObserver" in window) {
 }
 
 const scanLine = document.getElementById("scan-line");
-const scannerSection = document.getElementById("scanner-section");
+const scannerSection = document.getElementById("scanner") || document.getElementById("scanner-section");
 if (scanLine && scannerSection && "IntersectionObserver" in window) {
   const scanObserver = new IntersectionObserver(
     (entries) => {
@@ -256,6 +256,7 @@ let currentZoneMsg = "";
 let typeTimer;
 
 const zonePopup = document.getElementById("zone-popup");
+const scannerContainer = document.getElementById("scanner-container");
 const zoneTitle = document.getElementById("zone-title");
 const zoneMed = document.getElementById("zone-med");
 const zoneDesc = document.getElementById("zone-desc");
@@ -300,6 +301,11 @@ const setActiveZoneState = (zone) => {
 
 const showZoneInfo = (zone, triggerElement) => {
   if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return;
+  const openedZone = zonePopup.dataset.active || "";
+  if (zonePopup.classList.contains("open") && openedZone === zone) {
+    hideZoneInfo();
+    return;
+  }
   const data = zoneData[zone];
   if (!data) return;
   if (navigator.vibrate) navigator.vibrate(10);
@@ -314,6 +320,7 @@ const showZoneInfo = (zone, triggerElement) => {
   zonePopup.dataset.active = zone;
   zonePopup.classList.add("open");
   zonePopup.setAttribute("aria-hidden", "false");
+  if (scannerContainer) scannerContainer.dataset.activeZone = zone;
   requestAnimationFrame(() => {
     if (zoneClose) zoneClose.focus();
   });
@@ -331,6 +338,7 @@ const hideZoneInfo = () => {
   zonePopup.classList.remove("open");
   zonePopup.dataset.active = "";
   zonePopup.setAttribute("aria-hidden", "true");
+  if (scannerContainer) scannerContainer.dataset.activeZone = "";
   setActiveZoneState("");
   if (lastZoneTrigger && typeof lastZoneTrigger.focus === "function") {
     lastZoneTrigger.focus();

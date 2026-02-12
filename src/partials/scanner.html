@@ -1,59 +1,75 @@
 <!-- SCANNER -->
-<section id="scanner-section" class="section-shell bg-[#070707] border-y border-white/5">
+<section id="scanner" class="section-shell bg-[#070707] border-y border-white/5">
   <div class="max-w-6xl mx-auto px-6 relative z-10">
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Body Scanner 2.0</p>
       <h2 class="section-title">Послушайте сигналы тела</h2>
       <p class="section-subtitle">
-        Нажмите на зону, которая беспокоит прямо сейчас. Сканер покажет короткую интерпретацию и предложит стартовый
-        формат сессии.
+        Нажмите на зону, которая беспокоит прямо сейчас. Сканер покажет короткую интерпретацию
+        и предложит стартовый формат сессии.
       </p>
     </div>
 
     <div class="grid xl:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
-      <div id="scanner-container" class="scanner-stage card-luxe reveal-on-scroll group relative p-4 md:p-6">
+      <div id="scanner-container" class="scanner-stage card-luxe reveal-on-scroll group relative p-4 md:p-6" data-active-zone="">
         <div class="scanner-grid" aria-hidden="true"></div>
         <div class="scanner-vignette" aria-hidden="true"></div>
         <div id="scan-line" class="scan-line" aria-hidden="true"></div>
 
         <svg
-          viewBox="0 0 220 520"
+          viewBox="0 0 260 560"
           class="scanner-figure relative z-10"
           role="img"
           aria-label="Силуэт тела с интерактивными зонами"
         >
           <defs>
             <linearGradient id="bodyFill" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="rgba(227, 200, 173, 0.16)"></stop>
-              <stop offset="100%" stop-color="rgba(227, 200, 173, 0.04)"></stop>
+              <stop offset="0%" stop-color="rgba(227, 200, 173, 0.2)"></stop>
+              <stop offset="100%" stop-color="rgba(227, 200, 173, 0.05)"></stop>
             </linearGradient>
+            <filter id="scannerGlow">
+              <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="rgba(227, 200, 173, 0.25)"></feDropShadow>
+            </filter>
           </defs>
+
+          <circle class="scanner-zone-halo scanner-zone-halo-head" cx="130" cy="76" r="34"></circle>
+          <circle class="scanner-zone-halo scanner-zone-halo-neck" cx="130" cy="124" r="28"></circle>
+          <ellipse class="scanner-zone-halo scanner-zone-halo-shoulders" cx="130" cy="192" rx="58" ry="28"></ellipse>
+          <ellipse class="scanner-zone-halo scanner-zone-halo-back" cx="130" cy="270" rx="56" ry="62"></ellipse>
+          <ellipse class="scanner-zone-halo scanner-zone-halo-legs" cx="130" cy="420" rx="48" ry="78"></ellipse>
 
           <path
             class="scanner-outline"
-            d="M110 20
-               C128 20 142 33 142 52
-               C142 68 132 80 120 84
-               L120 104
-               C138 112 154 130 160 152
-               C167 177 166 212 153 241
-               C145 259 133 271 120 280
-               L120 345
-               C132 379 136 422 130 462
-               C126 488 119 503 110 512
-               C101 503 94 488 90 462
-               C84 422 88 379 100 345
-               L100 280
-               C87 271 75 259 67 241
-               C54 212 53 177 60 152
-               C66 130 82 112 100 104
-               L100 84
-               C88 80 78 68 78 52
-               C78 33 92 20 110 20 Z"
+            d="M130 34
+               C154 34 172 52 172 75
+               C172 95 157 111 140 114
+               L140 134
+               C163 141 183 158 193 183
+               C205 214 201 250 184 281
+               C174 299 160 312 144 321
+               L144 399
+               C151 425 154 459 149 494
+               C146 517 139 536 130 548
+               C121 536 114 517 111 494
+               C106 459 109 425 116 399
+               L116 321
+               C100 312 86 299 76 281
+               C59 250 55 214 67 183
+               C77 158 97 141 120 134
+               L120 114
+               C103 111 88 95 88 75
+               C88 52 106 34 130 34 Z"
+            filter="url(#scannerGlow)"
           ></path>
-          <path class="scanner-skeleton" d="M110 84 L110 354"></path>
-          <path class="scanner-skeleton" d="M100 176 Q110 184 120 176"></path>
-          <path class="scanner-skeleton" d="M96 244 Q110 256 124 244"></path>
+
+          <path class="scanner-limb" d="M67 185 C52 227 53 288 79 324"></path>
+          <path class="scanner-limb" d="M193 185 C208 227 207 288 181 324"></path>
+
+          <path class="scanner-skeleton" d="M130 140 L130 402"></path>
+          <path class="scanner-skeleton" d="M93 191 C109 181 151 181 167 191"></path>
+          <path class="scanner-skeleton" d="M95 264 C111 275 149 275 165 264"></path>
+          <path class="scanner-skeleton" d="M116 400 C108 446 108 500 120 538"></path>
+          <path class="scanner-skeleton" d="M144 400 C152 446 152 500 140 538"></path>
 
           <g
             class="active-point"
@@ -63,10 +79,10 @@
             aria-label="Тяжесть и шум в голове"
             data-analytics="Scanner: Point Click - Head"
           >
-            <circle cx="110" cy="52" r="24" class="hit-area"></circle>
-            <circle cx="110" cy="52" r="3.2" class="zone-dot"></circle>
-            <circle cx="110" cy="52" r="11" class="pulse-ring"></circle>
-            <text class="scanner-label" x="142" y="56">Голова</text>
+            <circle cx="130" cy="76" r="26" class="hit-area"></circle>
+            <circle cx="130" cy="76" r="3.4" class="zone-dot"></circle>
+            <circle cx="130" cy="76" r="12" class="pulse-ring"></circle>
+            <text class="scanner-label" x="166" y="80">Голова</text>
           </g>
 
           <g
@@ -77,10 +93,10 @@
             aria-label="Напряжение в шее"
             data-analytics="Scanner: Point Click - Neck"
           >
-            <circle cx="110" cy="101" r="22" class="hit-area"></circle>
-            <circle cx="110" cy="101" r="3.2" class="zone-dot"></circle>
-            <circle cx="110" cy="101" r="10" class="pulse-ring" style="animation-delay: 0.2s"></circle>
-            <text class="scanner-label" x="142" y="105">Шея</text>
+            <circle cx="130" cy="124" r="23" class="hit-area"></circle>
+            <circle cx="130" cy="124" r="3.4" class="zone-dot"></circle>
+            <circle cx="130" cy="124" r="11" class="pulse-ring" style="animation-delay: 0.2s"></circle>
+            <text class="scanner-label" x="166" y="128">Шея</text>
           </g>
 
           <g
@@ -91,12 +107,12 @@
             aria-label="Скованность плечевого пояса"
             data-analytics="Scanner: Point Click - Shoulders"
           >
-            <circle cx="78" cy="144" r="24" class="hit-area"></circle>
-            <circle cx="142" cy="144" r="24" class="hit-area"></circle>
-            <circle cx="78" cy="144" r="3.1" class="zone-dot"></circle>
-            <circle cx="142" cy="144" r="3.1" class="zone-dot"></circle>
-            <circle cx="78" cy="144" r="10" class="pulse-ring" style="animation-delay: 0.35s"></circle>
-            <text class="scanner-label" x="142" y="148">Плечи</text>
+            <circle cx="92" cy="190" r="26" class="hit-area"></circle>
+            <circle cx="168" cy="190" r="26" class="hit-area"></circle>
+            <circle cx="92" cy="190" r="3.2" class="zone-dot"></circle>
+            <circle cx="168" cy="190" r="3.2" class="zone-dot"></circle>
+            <circle cx="130" cy="190" r="13" class="pulse-ring" style="animation-delay: 0.32s"></circle>
+            <text class="scanner-label" x="166" y="194">Плечи</text>
           </g>
 
           <g
@@ -107,10 +123,10 @@
             aria-label="Зажим в спине и пояснице"
             data-analytics="Scanner: Point Click - Back"
           >
-            <circle cx="110" cy="236" r="30" class="hit-area"></circle>
-            <circle cx="110" cy="236" r="3.2" class="zone-dot"></circle>
-            <circle cx="110" cy="236" r="14" class="pulse-ring" style="animation-delay: 0.1s"></circle>
-            <text class="scanner-label" x="142" y="240">Спина</text>
+            <circle cx="130" cy="270" r="35" class="hit-area"></circle>
+            <circle cx="130" cy="270" r="3.5" class="zone-dot"></circle>
+            <circle cx="130" cy="270" r="15" class="pulse-ring" style="animation-delay: 0.1s"></circle>
+            <text class="scanner-label" x="166" y="274">Спина</text>
           </g>
 
           <g
@@ -121,10 +137,10 @@
             aria-label="Тяжесть в ногах"
             data-analytics="Scanner: Point Click - Legs"
           >
-            <circle cx="110" cy="392" r="36" class="hit-area"></circle>
-            <circle cx="110" cy="392" r="3.2" class="zone-dot"></circle>
-            <circle cx="110" cy="392" r="16" class="pulse-ring" style="animation-delay: 0.45s"></circle>
-            <text class="scanner-label" x="142" y="396">Ноги</text>
+            <circle cx="130" cy="420" r="40" class="hit-area"></circle>
+            <circle cx="130" cy="420" r="3.5" class="zone-dot"></circle>
+            <circle cx="130" cy="420" r="17" class="pulse-ring" style="animation-delay: 0.45s"></circle>
+            <text class="scanner-label" x="166" y="424">Ноги</text>
           </g>
         </svg>
 
@@ -170,8 +186,8 @@
           <p class="text-[9px] uppercase tracking-[0.28em] text-gray-500 mb-2">Быстрый выбор</p>
           <h3 class="font-serif text-2xl text-ivory mb-4">Выберите, что беспокоит</h3>
           <p class="text-sm text-gray-400 leading-relaxed mb-5">
-            Можно нажать на точку в силуэте или выбрать вариант ниже. После выбора сразу откроется пояснение и готовый
-            сценарий обращения.
+            Можно нажать на точку в силуэте или выбрать вариант ниже. После выбора сразу откроется пояснение
+            и готовый сценарий обращения.
           </p>
           <div class="flex flex-wrap gap-2.5">
             <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="head">Голова</button>

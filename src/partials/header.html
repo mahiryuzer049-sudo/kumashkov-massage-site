@@ -1,31 +1,62 @@
-﻿<header>
+<header>
   <nav class="fixed top-0 w-full z-40 bg-void/70 backdrop-blur-lg border-b border-white/5 transition-all duration-500" id="navbar" aria-label="Основная навигация">
     <div class="max-w-screen-xl mx-auto px-6 h-24 flex items-center justify-between gap-4">
       <a href="/" class="font-serif text-lg tracking-widest text-ivory hover:text-champagne transition interactive-el" data-analytics="Nav: Logo Click">KUMASHKOV</a>
-      <div class="hidden md:flex gap-14">
-        <a href="#trust" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Format Link">Формат</a>
-        <a href="#services" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Services Link">Техники</a>
-        <a href="#packages" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Packages Link">Пакеты</a>
-        <a href="#results" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Results Link">Результат</a>
-        <a href="#how-to-book" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: HowToBook Link">Запись</a>
-        <a href="#booking" class="text-[10px] font-sans uppercase tracking-fashion text-white/50 hover:text-champagne hover:tracking-[0.3em] transition-all duration-300 interactive-el" data-analytics="Nav: Contact Link">Контакт</a>
+
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#trust" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Format Link">Формат</a>
+        <a href="#services" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Services Link">Услуги</a>
+        <a href="#scanner" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Scanner Link">Сканер</a>
+        <a href="#goal-routes" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Routes Link">Маршруты</a>
+        <a href="#results" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Results Link">Результат</a>
+        <a href="#blog" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Blog Link">Блог</a>
+        <a href="#how-to-book" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: HowToBook Link">Запись</a>
       </div>
+
+      <div class="hidden md:flex lg:hidden items-center gap-6">
+        <a href="#services" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Services Link Tablet">Услуги</a>
+        <a href="#scanner" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Scanner Link Tablet">Сканер</a>
+        <a href="#blog" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Blog Link Tablet">Блог</a>
+        <a href="#booking" class="text-[10px] font-sans uppercase tracking-fashion text-white/55 hover:text-champagne transition-all duration-300 interactive-el" data-analytics="Nav: Contact Link Tablet">Контакт</a>
+      </div>
+
       <button id="mobile-menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center border border-white/10 rounded-lg text-white/70 hover:text-white hover:border-white/30 transition interactive-el" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню" type="button">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
+
       <a href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20добрый%20день.%20Пишу%20с%20сайта,%20есть%20вопрос." class="whatsapp-link hidden sm:inline-flex px-8 py-3 border border-champagne/20 text-[9px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Nav: Ask Question">Задать вопрос</a>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden border-t border-white/5 bg-void/90 backdrop-blur-xl" aria-hidden="true">
-      <div class="max-w-screen-xl mx-auto px-6 py-6 flex flex-col gap-4">
+
+    <div class="hidden lg:block border-t border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6 py-2.5 flex items-center gap-2.5 overflow-x-auto hide-scroll">
+        <span class="text-[9px] uppercase tracking-[0.22em] text-gray-500 whitespace-nowrap">Быстрые страницы</span>
+        <a href="/landing-classic.html" class="nav-chip interactive-el" data-analytics="Nav: Landing Classic">Classic</a>
+        <a href="/landing-relax.html" class="nav-chip interactive-el" data-analytics="Nav: Landing Relax">Relax</a>
+        <a href="/landing-lymph.html" class="nav-chip interactive-el" data-analytics="Nav: Landing Lymph">Lymph</a>
+        <a href="/landing-posture.html" class="nav-chip interactive-el" data-analytics="Nav: Landing Posture">Posture</a>
+        <a href="/privacy.html" class="nav-chip interactive-el" data-analytics="Nav: Privacy Link">Политика</a>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="md:hidden hidden border-t border-white/5 bg-void/95 backdrop-blur-xl" aria-hidden="true">
+      <div class="max-w-screen-xl mx-auto px-6 py-6 flex flex-col gap-3.5">
+        <p class="text-[10px] uppercase tracking-[0.22em] text-gray-500 mb-1">Разделы</p>
         <a href="#trust" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Format Link Mobile">Формат</a>
-        <a href="#services" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Services Link Mobile">Техники</a>
-        <a href="#packages" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Packages Link Mobile">Пакеты</a>
+        <a href="#services" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Services Link Mobile">Услуги</a>
+        <a href="#scanner" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Scanner Link Mobile">Сканер</a>
+        <a href="#goal-routes" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Routes Link Mobile">Маршруты</a>
         <a href="#results" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Results Link Mobile">Результат</a>
+        <a href="#blog" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Blog Link Mobile">Блог</a>
         <a href="#how-to-book" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: HowToBook Link Mobile">Запись</a>
-        <a href="#booking" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Contact Link Mobile">Контакт</a>
-        <a href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20добрый%20день.%20Пишу%20из%20мобильного%20меню." class="whatsapp-link w-full py-3 text-center border border-champagne/20 text-[9px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Nav: Ask Question Mobile">Задать вопрос</a>
+
+        <p class="text-[10px] uppercase tracking-[0.22em] text-gray-500 mt-2 mb-1">Быстрые страницы</p>
+        <a href="/landing-classic.html" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Landing Classic Mobile">Classic</a>
+        <a href="/landing-relax.html" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Landing Relax Mobile">Relax</a>
+        <a href="/landing-lymph.html" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Landing Lymph Mobile">Lymph</a>
+        <a href="/landing-posture.html" class="text-xs uppercase tracking-widest text-white/70 hover:text-champagne transition interactive-el" data-analytics="Nav: Landing Posture Mobile">Posture</a>
+
+        <a href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20добрый%20день.%20Пишу%20из%20мобильного%20меню." class="whatsapp-link w-full py-3 mt-1 text-center border border-champagne/20 text-[9px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Nav: Ask Question Mobile">Задать вопрос</a>
       </div>
     </div>
   </nav>
 </header>
-
