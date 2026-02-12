@@ -8,10 +8,14 @@
   <!-- SEO -->
   <meta name="robots" content="index,follow">
   <title>Павел Кумашков — медицинский массаж на дому в Москве</title>
-  <meta name="description" content="Павел Кумашков — медицинский массаж на дому в Москве. Персональный подход, восстановление после стресса и перегрузок. Запись через чат.">
+  <meta name="description" content="Павел Кумашков — медицинский массаж на дому в Москве. Персональный подход, восстановление после стресса и перегрузок, запись через чат.">
   <meta name="author" content="Павел Кумашков">
   <meta name="format-detection" content="telephone=no">
+  <meta name="geo.region" content="RU-MOW">
+  <meta name="geo.placename" content="Москва">
 
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pavel Kumashkov">
   <meta property="og:title" content="Павел Кумашков — медицинский массаж на дому в Москве">
   <meta property="og:description" content="Персональный массаж на дому: восстановление, снятие напряжения, точная работа с мышцами. Запись через чат.">
   <meta property="og:image" content="https://pavelkumashkov.ru/assets/images/og.jpg">
@@ -32,6 +36,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="dns-prefetch" href="//images.unsplash.com">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -51,23 +58,85 @@
     "jobTitle": "Массажист",
     "telephone": "+7 926 089 9019",
     "url": "https://pavelkumashkov.ru/",
-    "areaServed": "Москва"
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
+    "sameAs": [
+      "https://t.me/Pasho_chekk"
+    ]
   }
   </script>
   <!-- TODO: Yandex Metrika counter (place script here) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
     "name": "Павел Кумашков — медицинский массаж на дому",
+    "image": "https://pavelkumashkov.ru/assets/images/og.jpg",
     "telephone": "+7 926 089 9019",
     "url": "https://pavelkumashkov.ru/",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Москва",
+      "addressCountry": "RU"
+    },
     "areaServed": "Москва",
-    "priceRange": "$$"
+    "serviceArea": {
+      "@type": "Place",
+      "name": "Москва"
+    },
+    "availableLanguage": ["ru"],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+7 926 089 9019",
+        "contactType": "Запись",
+        "areaServed": "RU-MOW",
+        "availableLanguage": "ru"
+      }
+    ],
+    "sameAs": [
+      "https://t.me/Pasho_chekk"
+    ]
   }
   </script>
-  <script type="module" crossorigin src="/assets/main-DD8nOFE1.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CfIfIKtZ.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Боюсь, что будет больно или щекотно. Как это контролируется?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Мы работаем на грани комфортных ощущений. Если больно — давление снижается, если щекотно — подбирается более плотная техника. Весь сеанс — в диалоге."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что брать с собой и как проходит переодевание?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ничего — все необходимое привожу с собой. На время переодевания и укрытия я выхожу, захожу только после вашего сигнала."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Когда лучше перенести сеанс?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "При остром воспалении, температуре, инфекциях, свежих травмах или выраженном недомогании. В сомнительных случаях лучше обсудить состояние заранее."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="module" crossorigin src="/assets/main-DscS7IkD.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DjwA6l66.css">
 </head>
 <body class="has-sticky">
   <a class="skip-link" href="#main">К содержимому</a>
@@ -108,57 +177,64 @@
   <main id="main">
     <!-- HERO -->
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- TODO: заменить на /assets/images/hero.jpg (1920x1080) -->
-        <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=75&w=1920&auto=format&fit=crop" class="w-full h-full object-cover opacity-20 grayscale brightness-50 animate-breathe" alt="Atmosphere" fetchpriority="high" decoding="async"><div class="absolute inset-0 bg-gradient-to-b from-void via-void/50 to-void"></div><div class="absolute inset-0 bg-radial-gradient from-transparent to-void"></div></div>
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
-            <p class="text-champagne text-[10px] md:text-xs font-sans uppercase tracking-[0.5em] mb-6 animate-fade-in opacity-0" style="animation-delay: 0.2s;">Moscow • Private Practice</p>
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-8 animate-fade-in opacity-0" style="animation-delay: 0.25s;">Павел Кумашков. Private Body Architecture. Москва. Эксклюзивное восстановление. Медицинский подход.</p>
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-8 animate-fade-in opacity-0" style="animation-delay: 0.3s;">Закрытый прием. Медицинский базис. Эстетика силы.</p>
-            <h1 class="font-serif text-5xl md:text-8xl leading-tight text-ivory mb-10 animate-fade-in opacity-0 tracking-tight" style="animation-delay: 0.4s;">Медицинский массаж <span class="italic text-champagne font-light">для тех, кто живет на высоких скоростях</span></h1>
-            <p class="font-sans text-base md:text-lg text-gray-400 font-light leading-relaxed max-w-2xl mx-auto mb-12 animate-fade-in opacity-0 tracking-wide" style="animation-delay: 0.7s;">Если спина "горит" от офиса, голова не выключается даже ночью, а тело теряет тонус — мы разберем причину и соберем план восстановления. Без мистики, с медицинским базисом. Работаю на дому.</p>
-            <div class="flex flex-col items-center justify-center gap-4 animate-fade-in opacity-0" style="animation-delay: 1s;">
-                <a href="https://wa.me/79260899019?text=Павел,%20хочу%20записаться%20на%20знакомство." class="whatsapp-link group relative px-14 py-5 bg-champagne text-void font-bold uppercase text-[10px] tracking-fashion border border-champagne/30 overflow-hidden interactive-el btn-vibrate transition-colors duration-500 hover:bg-white hover:text-void ripple-container" data-analytics="Hero: Primary CTA">Записаться на знакомство</a>
-                <a href="https://wa.me/79260899019?text=Павел,%20у%20меня%20деликатный%20вопрос.%20Хочу%20спросить%20анонимно." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-gray-500 hover:text-champagne transition pb-1 interactive-el" data-analytics="Hero: Secondary CTA">Задать анонимный вопрос</a>
-                <span class="text-[10px] text-white/30 font-sans tracking-wide font-light">Ответ — лично, без ботов</span>
-            </div>
-            <noscript>
-                <p class="text-[10px] text-gray-400 mt-4 font-sans">Если кнопка не работает, напишите напрямую в WhatsApp: <a class="underline text-champagne" href="https://wa.me/79260899019">открыть чат</a></p>
-            </noscript>
+      <!-- TODO: заменить на /assets/images/hero.jpg (1920x1080) -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=75&w=1920&auto=format&fit=crop" class="w-full h-full object-cover opacity-20 grayscale brightness-50 animate-breathe" alt="Atmosphere" fetchpriority="high" decoding="async">
+        <div class="absolute inset-0 bg-gradient-to-b from-void via-void/50 to-void"></div>
+        <div class="absolute inset-0 bg-radial-gradient from-transparent to-void"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-16">
+        <p class="text-champagne text-[10px] md:text-xs font-sans uppercase tracking-[0.5em] mb-10 animate-fade-in opacity-0" style="animation-delay: 0.2s;">Москва • На дому • Запись через чат</p>
+        <h1 class="font-serif text-5xl md:text-9xl leading-none text-ivory mb-12 animate-fade-in opacity-0 tracking-tight" style="animation-delay: 0.4s;">
+          <span class="block">Архитектура</span>
+          <span class="block italic text-champagne font-light mt-4">Касаний</span>
+        </h1>
+        <p class="font-sans text-sm md:text-base text-gray-400 font-light leading-relaxed max-w-lg mx-auto mb-16 animate-fade-in opacity-0 tracking-wide" style="animation-delay: 0.7s;">
+          Медицинский массаж на дому в Москве.<br>Средняя длительность сеанса — около 60 минут, формат и техники подбираю под ваш запрос.
+        </p>
+        <div class="flex flex-col items-center justify-center animate-fade-in opacity-0" style="animation-delay: 1s;">
+          <a href="https://wa.me/79260899019?text=Павел,%20хочу%20записаться%20на%20сеанс%20на%20дому.%20Удобное%20время%20—%20%5B%5D.%20Зоны%20—%20%5B%5D.%20Цели%20—%20%5B%5D.%20Предпочтения%20по%20техникам%20—%20%5B%5D." class="whatsapp-link group relative px-14 py-6 bg-transparent border border-champagne/30 overflow-hidden interactive-el btn-vibrate transition-colors duration-500 hover:border-champagne ripple-container" data-analytics="Hero: Contact">
+            <span class="absolute inset-0 w-full h-full bg-champagne transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+            <span class="relative font-sans text-[10px] font-bold uppercase tracking-fashion text-champagne group-hover:text-void transition-colors">Записаться</span>
+          </a>
+          <div class="mt-4 flex flex-col items-center gap-2">
+            <span class="text-[9px] text-white/30 font-sans tracking-wide font-light">Отвечу лично. Уточним время, зоны и цели.</span>
+            <a href="https://t.me/Pasho_chekk" class="text-[9px] font-sans uppercase tracking-widest text-gray-500 hover:text-champagne transition interactive-el" data-analytics="Hero: Telegram Question">Задать вопрос анонимно</a>
+          </div>
         </div>
-        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40 animate-bounce"><span class="text-[8px] uppercase tracking-widest text-champagne">Scroll</span><div class="w-[1px] h-12 bg-champagne"></div></div>
+      </div>
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40 animate-bounce">
+        <span class="text-[8px] uppercase tracking-widest text-champagne">Scroll</span>
+        <div class="w-[1px] h-12 bg-champagne"></div>
+      </div>
     </section>
-    
-    <section id="usp" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <div class="reveal-on-scroll">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="w-12 h-[1px] bg-champagne"></span>
-            <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Архитектура</p>
-          </div>
-          <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-8 leading-tight">Архитектура<br><span class="italic text-gray-500 font-light">касания</span></h2>
-          <p class="text-gray-400 font-light leading-relaxed mb-6">Я предлагаю вам свежий взгляд на восстановление. Сочетаю медицинскую точность и энергию мужской силы.</p>
-          <a href="https://wa.me/79260899019?text=Павел,%20меня%20заинтересовал%20ваш%20подход.%20Хочу%20узнать%20подробнее." class="whatsapp-link inline-flex items-center gap-3 text-[10px] font-sans uppercase tracking-widest text-champagne hover:text-white transition interactive-el" data-analytics="USP: CTA">Связаться <span class="text-white/30">Это ни к чему вас не обязывает</span></a>
+    <!-- USP -->
+    <section id="usp" class="py-32 bg-[#050505] relative border-b border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="text-center mb-16 reveal-on-scroll">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Why Me</p>
+          <h2 class="font-serif text-3xl md:text-5xl text-ivory">Мужской <span class="italic text-gray-500">Подход</span></h2>
         </div>
-        <div class="grid gap-6">
-          <div class="glass-panel p-6 reveal-on-scroll">
-            <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Мужской подход</p>
-            <p class="text-xs text-gray-400 font-light">Мой фокус — сила, четкая техника и уважение к границам.</p>
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500">
+            <i class="fa-solid fa-shield-halved text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i>
+            <h3 class="font-serif text-lg text-ivory mb-3">Безопасность</h3>
+            <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я понимаю, как устроено ваше тело. Каждое мое движение обосновано знанием анатомии, поэтому вы в безопасности.</p>
           </div>
-          <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-            <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Безопасность</p>
-            <p class="text-xs text-gray-400 font-light">Каждое движение обосновано знанием анатомии. Вы в безопасности.</p>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.1s;">
+            <i class="fa-solid fa-yin-yang text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i>
+            <h3 class="font-serif text-lg text-ivory mb-3">Баланс</h3>
+            <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я умею управлять силой. Не будет "слишком больно" или "слишком слабо". Мои руки станут стальными для зажимов и бархатными для расслабления.</p>
           </div>
-          <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.2s;">
-            <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Баланс</p>
-            <p class="text-xs text-gray-400 font-light">Не будет “слишком больно” или “слишком слабо”. Я управляю силой.</p>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.2s;">
+            <i class="fa-solid fa-feather text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i>
+            <h3 class="font-serif text-lg text-ivory mb-3">Чувственность</h3>
+            <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я возвращаю вам радость быть в теле. Массаж для меня — это искусство пробуждения чувствительности, а не просто "ремонт".</p>
           </div>
-          <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.3s;">
-            <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Чувственность</p>
-            <p class="text-xs text-gray-400 font-light">Массаж — это искусство пробуждения чувствительности, а не просто “ремонт”.</p>
-          </div>
-          <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.4s;">
-            <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Принятие</p>
-            <p class="text-xs text-gray-400 font-light">Здесь нет табу. Любой запрос обсуждается конфиденциально.</p>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.3s;">
+            <i class="fa-solid fa-lock-open text-champagne text-2xl mb-6 opacity-80 group-hover:scale-110 transition duration-500"></i>
+            <h3 class="font-serif text-lg text-ivory mb-3">Принятие</h3>
+            <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Здесь нет запретных тем. Я создаю пространство, свободное от табу и оценок. Вы можете озвучить любой запрос — мы обсудим его конфиденциально.</p>
           </div>
         </div>
       </div>
@@ -217,60 +293,73 @@
         </div>
     </section>
     
-    <section id="services" class="py-28 bg-void">
+    <!-- SERVICES -->
+    <section id="services" class="py-32 bg-void relative border-b border-white/5">
       <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Мой арсенал</p>
+        <div class="text-center mb-20 reveal-on-scroll">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Service Menu</p>
+          <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6">Мой <span class="italic text-gray-500">Арсенал</span></h2>
+          <p class="font-sans text-sm text-gray-400 font-light max-w-2xl mx-auto leading-relaxed">Выезд на дом по Москве. Средняя длительность сеанса — около 60 минут (зависит от техник). <br>Каждая техника — это инструмент, который я подбираю под задачи вашего тела сегодня.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-8 leading-tight">Я не продаю время. Я предлагаю решение.</h2>
-            <p class="text-gray-400 font-light leading-relaxed mb-8">Каждая техника — это инструмент, который я подбираю под задачи вашего тела сегодня.</p>
-            <blockquote class="text-gray-500 font-light italic border-l border-white/10 pl-6">«Я редко использую одну технику в чистом виде. Я комбинирую их, создавая персональный коктейль для вашего состояния.»</blockquote>
-            <div class="mt-10">
-              <a href="https://wa.me/79260899019?text=Павел,%20помогите%20подобрать%20технику%20под%20мой%20запрос." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Services: CTA">Подобрать программу</a>
-              <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Далее: Атмосфера</p>
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="font-serif text-xl text-ivory">Классика</h3>
+              <i class="fa-solid fa-hand-holding-heart text-champagne/50 text-xl group-hover:text-champagne transition"></i>
             </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Фундаментальная проработка</p>
+            <p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Восстановление тонуса и снятие общей усталости. Глубокая работа с мышцами для улучшения кровообращения.</p>
+            <div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Свобода движения</span></div>
           </div>
-          <div class="grid gap-6">
-            <div class="glass-panel p-6 reveal-on-scroll">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Классика</p>
-              <p class="text-sm text-gray-300 font-light mb-2">Фундаментальная проработка</p>
-              <p class="text-xs text-gray-500 font-light">Восстановление тонуса и снятие общей усталости. Глубокая работа с мышцами для улучшения кровообращения.</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mt-3">Результат: Свобода движения</p>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.1s;">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="font-serif text-xl text-ivory">Лимфодренаж</h3>
+              <i class="fa-solid fa-water text-champagne/50 text-xl group-hover:text-champagne transition"></i>
             </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Лимфодренаж</p>
-              <p class="text-sm text-gray-300 font-light mb-2">Уменьшение отеков и улучшение гидробаланса</p>
-              <p class="text-xs text-gray-500 font-light">Мягкое, ритмичное выведение лишней жидкости из организма.</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mt-3">Результат: Изящность лодыжек и легкость</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Моделирование силуэта</p>
-              <p class="text-sm text-gray-300 font-light mb-2">Работа с контурами тела</p>
-              <p class="text-xs text-gray-500 font-light">Стимуляция микроциркуляции и безопасная коррекция проблемных зон.</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mt-3">Результат: Подтянутый силуэт</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.15s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Релакс / нейроседация</p>
-              <p class="text-sm text-gray-300 font-light mb-2">Глубокое расслабление нервной системы</p>
-              <p class="text-xs text-gray-500 font-light">Снижение уровня кортизола, стресса и тревоги.</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mt-3">Результат: Тишина в голове</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.2s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Лицо / эстетика</p>
-              <p class="text-sm text-gray-300 font-light mb-2">Снятие маски напряжения</p>
-              <p class="text-xs text-gray-500 font-light">Тонус мышц, лифтинг-эффект и возвращение естественного сияния кожи.</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mt-3">Результат: Свежий взгляд</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.25s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Обертывание / SPA-уход</p>
-              <p class="text-sm text-gray-300 font-light mb-2">Локальное улучшение текстуры кожи</p>
-              <p class="text-xs text-gray-500 font-light">Эффект “сжатия” и мощный детокс для тканей.</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mt-3">Результат: Бархатная кожа</p>
-            </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Detox & Flow</p>
+            <p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Уменьшение отеков и улучшение гидробаланса. Мягкое, ритмичное выведение лишней жидкости из организма.</p>
+            <div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Изящность лодыжек и легкость</span></div>
           </div>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.2s;">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="font-serif text-xl text-ivory">Моделирование</h3>
+              <i class="fa-solid fa-shapes text-champagne/50 text-xl group-hover:text-champagne transition"></i>
+            </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Силуэт</p>
+            <p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Работа с контурами тела и стимуляция микроциркуляции. Безопасная коррекция проблемных зон (антицеллюлитный эффект).</p>
+            <div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Подтянутый силуэт</span></div>
+          </div>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="font-serif text-xl text-ivory">Релакс</h3>
+              <i class="fa-solid fa-moon text-champagne/50 text-xl group-hover:text-champagne transition"></i>
+            </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Нейроседация</p>
+            <p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Глубокое расслабление нервной системы. Снижение уровня кортизола, стресса и тревоги.</p>
+            <div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Тишина в голове</span></div>
+          </div>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.1s;">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="font-serif text-xl text-ivory">Лицо</h3>
+              <i class="fa-regular fa-face-smile text-champagne/50 text-xl group-hover:text-champagne transition"></i>
+            </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Эстетика</p>
+            <p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Снятие маски напряжения. Тонус мышц, лифтинг-эффект и возвращение естественного сияния кожи.</p>
+            <div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Свежий взгляд</span></div>
+          </div>
+          <div class="glass-panel p-8 reveal-on-scroll group hover:bg-white/5 transition duration-500" style="transition-delay: 0.2s;">
+            <div class="flex items-start justify-between mb-4">
+              <h3 class="font-serif text-xl text-ivory">Обертывание</h3>
+              <i class="fa-solid fa-leaf text-champagne/50 text-xl group-hover:text-champagne transition"></i>
+            </div>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">SPA-Уход</p>
+            <p class="font-sans text-xs text-gray-300 font-light leading-relaxed mb-6">Локальное улучшение текстуры кожи. Эффект "сжатия" и мощный детокс для тканей.</p>
+            <div class="border-t border-white/5 pt-4"><span class="text-[10px] text-champagne italic">Результат: Бархатная кожа</span></div>
+          </div>
+        </div>
+        <div class="text-center reveal-on-scroll">
+          <p class="font-serif text-lg text-ivory italic mb-6">"Я редко использую одну технику в чистом виде. <br>Я комбинирую их, создавая персональный коктейль для вашего состояния."</p>
+          <a href="https://wa.me/79260899019?text=Павел,%20помогите%20подобрать%20программу.%20Удобное%20время%20—%20%5B%5D.%20Зоны%20—%20%5B%5D.%20Цели%20—%20%5B%5D." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-gray-500 hover:text-champagne border-b border-transparent hover:border-champagne transition pb-1 interactive-el">Подобрать программу и окна</a>
         </div>
       </div>
     </section>
@@ -285,317 +374,494 @@
         <div class="md:hidden flex justify-center gap-2 mt-4 opacity-20"><div class="w-1.5 h-1.5 rounded-full bg-champagne"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div><div class="w-1.5 h-1.5 rounded-full bg-white"></div></div>
     </section>
     
-    <section id="scanner" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Биометрическая карта</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div class="glass-panel p-8 reveal-on-scroll">
-            <h3 class="text-xl text-ivory font-serif mb-4">Интерактивная диагностика зажимов</h3>
-            <p class="text-gray-400 font-light mb-8">Выберите зону на карте тела для получения подробного анализа психосоматики и рекомендаций.</p>
-            <div class="relative w-full max-w-md mx-auto">
-              <svg viewBox="0 0 260 520" class="w-full h-auto">
-                <path class="body-path" d="M130 20 C120 25 115 40 115 55 C115 70 120 80 130 80 C140 80 145 70 145 55 C145 40 140 25 130 20 Z"></path>
-                <path class="body-path" d="M90 90 C100 60 160 60 170 90 C180 120 175 180 160 220 C150 250 150 300 150 340 C150 380 160 420 170 500"></path>
-                <path class="body-path" d="M170 90 C160 60 100 60 90 90 C80 120 85 180 100 220 C110 250 110 300 110 340 C110 380 100 420 90 500"></path>
-                <g class="active-point" data-point="head" role="button" tabindex="0" aria-label="Шум в голове">
-                  <circle cx="130" cy="55" r="6"></circle>
-                  <circle class="pulse-ring" cx="130" cy="55" r="12"></circle>
-                </g>
-                <g class="active-point" data-point="shoulders" role="button" tabindex="0" aria-label="Груз на плечах">
-                  <circle cx="90" cy="110" r="6"></circle>
-                  <circle class="pulse-ring" cx="90" cy="110" r="12"></circle>
-                </g>
-                <g class="active-point" data-point="chest" role="button" tabindex="0" aria-label="Эмоциональный щит">
-                  <circle cx="130" cy="160" r="6"></circle>
-                  <circle class="pulse-ring" cx="130" cy="160" r="12"></circle>
-                </g>
-                <g class="active-point" data-point="lowerback" role="button" tabindex="0" aria-label="Потеря опоры">
-                  <circle cx="130" cy="260" r="6"></circle>
-                  <circle class="pulse-ring" cx="130" cy="260" r="12"></circle>
-                </g>
-                <g class="active-point" data-point="legs" role="button" tabindex="0" aria-label="Земное притяжение">
-                  <circle cx="130" cy="380" r="6"></circle>
-                  <circle class="pulse-ring" cx="130" cy="380" r="12"></circle>
-                </g>
-              </svg>
+    <!-- SCANNER -->
+    <section id="scanner-section" class="py-32 bg-[#080808] relative">
+      <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-champagne/20 to-transparent"></div>
+      <div class="max-w-md mx-auto px-6 mb-20 text-center reveal-on-scroll">
+        <h2 class="font-serif text-4xl text-ivory mb-4">Послушайте свое тело</h2>
+        <p class="text-[10px] font-sans text-gray-500 uppercase tracking-widest">Интерактивный диалог с ощущениями</p>
+      </div>
+      <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative h-[650px] border border-white/5 bg-[#030303] rounded-sm flex items-center justify-center overflow-hidden reveal-on-scroll group" id="scanner-container">
+          <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+          <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 40px 40px;"></div>
+          <div class="scan-line" id="scan-line"></div>
+          <svg viewBox="0 0 200 450" class="h-[90%] w-auto relative z-10 drop-shadow-2xl">
+            <path class="body-path body-outline" d="M100,20 C115,20 125,35 120,50 C115,65 85,65 80,50 C75,35 85,20 100,20 Z" />
+            <path class="body-path body-outline" d="M120,50 Q150,55 160,60 Q170,100 170,160 Q160,200 130,220" />
+            <path class="body-path body-outline" d="M80,50 Q50,55 40,60 Q30,100 30,160 Q40,200 70,220" />
+            <path class="body-path body-outline" d="M70,220 Q65,300 70,350 Q75,420 90,440" />
+            <path class="body-path body-outline" d="M130,220 Q135,300 130,350 Q125,420 110,440" />
+            <path class="body-path body-outline" d="M100,50 L100,220" stroke-dasharray="2,3" opacity="0.3" />
+            <g class="active-point" data-point="head" role="button" tabindex="0" aria-label="Шум в голове" data-analytics="Scanner: Point Click - Head">
+              <circle cx="100" cy="35" r="25" class="hit-area" />
+              <circle cx="100" cy="35" r="3" />
+              <circle cx="100" cy="35" r="8" class="pulse-ring" />
+            </g>
+            <g class="active-point" data-point="neck" role="button" tabindex="0" aria-label="Груз на плечах" data-analytics="Scanner: Point Click - Neck">
+              <circle cx="100" cy="60" r="25" class="hit-area" />
+              <circle cx="100" cy="60" r="3" />
+              <circle cx="100" cy="60" r="12" class="pulse-ring" style="animation-delay: 0.5s" />
+            </g>
+            <g class="active-point" data-point="shoulders" role="button" tabindex="0" aria-label="Эмоциональный щит" data-analytics="Scanner: Point Click - Shoulders">
+              <circle cx="100" cy="70" r="40" class="hit-area" />
+              <circle cx="60" cy="70" r="3" />
+              <circle cx="140" cy="70" r="3" />
+              <circle cx="60" cy="70" r="10" class="pulse-ring" style="animation-delay: 1s" />
+            </g>
+            <g class="active-point" data-point="back" role="button" tabindex="0" aria-label="Потеря опоры" data-analytics="Scanner: Point Click - Back">
+              <circle cx="100" cy="190" r="30" class="hit-area" />
+              <circle cx="100" cy="190" r="3" />
+              <circle cx="100" cy="190" r="15" class="pulse-ring" style="animation-delay: 0.2s" />
+            </g>
+            <g class="active-point" data-point="legs" role="button" tabindex="0" aria-label="Земное притяжение" data-analytics="Scanner: Point Click - Legs">
+              <circle cx="100" cy="350" r="50" class="hit-area" />
+              <circle cx="80" cy="350" r="3" />
+              <circle cx="120" cy="350" r="3" />
+              <circle cx="80" cy="350" r="12" class="pulse-ring" style="animation-delay: 0.7s" />
+            </g>
+          </svg>
+          <div id="zone-popup" class="absolute bottom-6 left-6 right-6 glass-panel p-8 translate-y-[120%] transition-transform duration-500 ease-out z-30 backdrop-blur-xl border border-champagne/10">
+            <div class="flex flex-col mb-4">
+              <h3 id="zone-title" class="font-serif text-2xl text-champagne mb-1">...</h3>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-staff-snake text-[8px] text-gray-500"></i>
+                <span id="zone-med" class="text-[9px] font-sans text-gray-500 uppercase tracking-widest border-b border-gray-700 pb-0.5">...</span>
+              </div>
             </div>
+            <p id="zone-desc" class="text-sm text-gray-300 font-sans font-light leading-relaxed mb-8 h-16 overflow-hidden typing-cursor">...</p>
+            <button id="zone-cta" class="w-full py-4 bg-white/5 border border-champagne/30 hover:bg-champagne hover:text-void transition-colors duration-300 text-[10px] uppercase tracking-[0.2em] interactive-el btn-vibrate ripple-container" data-analytics="Scanner: CTA Click">Мне это знакомо</button>
+            <span class="text-[8px] text-gray-600 mt-3 block text-center font-mono tracking-widest">100% КОНФИДЕНЦИАЛЬНО</span>
+            <button id="zone-close" class="absolute top-4 right-4 text-white/30 hover:text-white w-6 h-6 flex items-center justify-center interactive-el" type="button">×</button>
           </div>
-          <div class="glass-panel p-8 reveal-on-scroll" aria-live="polite">
-            <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Ожидание сигнала</p>
-            <h3 class="text-2xl text-ivory font-serif mb-4" id="scanner-title">Выберите зону</h3>
-            <p class="text-gray-400 font-light leading-relaxed mb-6" id="scanner-description">Нажмите на точку на карте тела, чтобы получить анализ и рекомендацию.</p>
-            <a id="scanner-cta" href="https://wa.me/79260899019?text=Здравствуйте,%20хочу%20записаться." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Scanner: CTA">Подтвердить симптом</a>
-          </div>
+        </div>
+        <div class="glass-panel p-8 reveal-on-scroll">
+          <p class="text-[9px] uppercase tracking-widest text-gray-600 mb-2">Ожидание сигнала</p>
+          <h3 class="text-2xl text-ivory font-serif mb-4">Выберите зону</h3>
+          <p class="text-gray-400 font-light leading-relaxed mb-6">Нажмите на точку на карте тела, чтобы получить анализ и рекомендацию.</p>
+          <a href="https://wa.me/79260899019?text=Здравствуйте,%20хочу%20записаться." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Scanner: CTA">Подтвердить симптом</a>
         </div>
       </div>
     </section>
-    <section id="ritual" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Сценарий знакомства</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Как проходит наша первая встреча</h2>
-            <p class="text-gray-400 font-light mb-8">Кодекс этики. Я понимаю ваши опасения. Моя работа строится на железной дисциплине боевых искусств и медицинской этике.</p>
-            <ul class="text-gray-400 text-sm space-y-3">
-              <li>Никаких двусмысленностей</li>
-              <li>Строгое соблюдение границ</li>
-              <li>Полная конфиденциальность</li>
-            </ul>
-          </div>
-          <div class="grid gap-6">
-            <div class="glass-panel p-6 reveal-on-scroll">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Подготовка</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Снять тревогу</p>
-              <p class="text-xs text-gray-400 font-light">Вход в состояние. Вы приходите, и город остается за дверью. Я даю вам время спокойно переодеться и выдохнуть.</p>
+    <!-- RITUAL -->
+    <section id="ritual" class="py-40 bg-void relative">
+      <div class="max-w-3xl mx-auto px-6">
+        <h2 class="text-center font-serif text-4xl text-ivory mb-6 reveal-on-scroll">Сценарий Знакомства</h2>
+        <p class="text-center text-[10px] font-sans text-gray-500 uppercase tracking-widest mb-16 reveal-on-scroll">Как проходит наша первая встреча</p>
+        <div class="max-w-xl mx-auto mb-20 reveal-on-scroll">
+          <div class="relative p-8 border border-champagne/20 bg-white/5 backdrop-blur-sm rounded-xl flex flex-col md:flex-row gap-8 items-center md:items-start">
+            <div class="shrink-0 relative">
+              <div class="w-16 h-16 rounded-full border border-champagne/30 flex items-center justify-center bg-[#0a0a0a]"><i class="fa-solid fa-shield-heart text-champagne text-2xl"></i></div>
+              <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-green-900/80 rounded-full flex items-center justify-center border border-green-500/30"><i class="fa-solid fa-check text-[10px] text-green-400"></i></div>
             </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Диалог</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Найти причину</p>
-              <p class="text-xs text-gray-400 font-light">Мы говорим. Не формальный опрос, а живой диалог. Важно понять не только где болит, но и как вы живете.</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Терапия</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Глубокая проработка</p>
-              <p class="text-xs text-gray-400 font-light">Магия касания. Я комбинирую техники, слышу отклик мышц и меняю давление.</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.15s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Финал</p>
-              <p class="text-[10px] text-champagne uppercase tracking-widest mb-2">Цель: Закрепить результат</p>
-              <p class="text-xs text-gray-400 font-light">Возвращение. Рекомендации, как сохранить легкость на 2–3 дня. Вы уходите с новым ощущением своего тела.</p>
-            </div>
-          </div>
-        </div>
-        <div class="mt-10">
-          <p class="text-gray-400 font-light mb-4">Остались вопросы по процессу?</p>
-          <a href="https://wa.me/79260899019?text=Павел,%20хочу%20уточнить%20детали%20проведения%20сеанса." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Ritual: CTA">Спросить лично в чате</a>
-          <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Далее: Гарантии безопасности</p>
-        </div>
-      </div>
-    </section>
-    <section id="safety" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Безопасность и этика</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Я знаю, что визит к новому мастеру — это стресс.</h2>
-            <p class="text-gray-400 font-light mb-8">Поэтому каждый шаг регламентирован для вашего спокойствия.</p>
-            <div class="glass-panel p-6">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Практика визита</p>
-              <ul class="text-gray-400 text-sm space-y-3">
-                <li><strong class="text-gray-300 font-medium">Что брать с собой?</strong> Ничего. Одноразовое белье, тапочки, халат, полотенца, средства для снятия макияжа — всё готово.</li>
-                <li><strong class="text-gray-300 font-medium">Приватность переодевания</strong> Я всегда выхожу из кабинета, пока вы переодеваетесь и ложитесь.</li>
-                <li><strong class="text-gray-300 font-medium">Правило “драпировки”</strong> Открыта только зона, с которой работаю. Остальное всегда под тканью.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="grid gap-6">
-            <div class="glass-panel p-6 reveal-on-scroll">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Важные вопросы</p>
-              <p class="text-xs text-gray-400 font-light"><strong class="text-gray-300 font-medium">“Я стесняюсь (тела / мужчины)”</strong> В кабинете гендер исчезает. Есть только специалист и анатомия.</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-              <p class="text-xs text-gray-400 font-light"><strong class="text-gray-300 font-medium">“Боюсь, что будет больно или щекотно”</strong> Мы работаем на грани “приятной боли”. Если больно — снижаю давление.</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-              <p class="text-xs text-gray-400 font-light"><strong class="text-gray-300 font-medium">“Личные границы и правила”</strong> Границы — это гибкая материя, которую мы устанавливаем вместе перед началом.</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.15s;">
-              <p class="text-xs text-gray-400 font-light">В конечном счете, всё зависит только от ваших желаний.</p>
-            </div>
-            <div class="mt-4">
-              <p class="text-gray-400 font-light mb-3">Всё еще тревожно? Это нормально.</p>
-              <a href="https://wa.me/79260899019?text=Павел,%20у%20меня%20есть%20деликатный%20вопрос%20по%20поводу%20сеанса." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Safety: CTA">Задать личный вопрос в чате</a>
-              <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Далее: Результат</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="results" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Результат</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Хронология результата</h2>
-            <p class="text-gray-400 font-light mb-8">Эффект от сеанса — это не только момент “сейчас”. Это процесс, который разворачивается во времени.</p>
-            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20обсудить%20долгосрочный%20результат%20и%20курс." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Results: CTA">Обсудить стратегию курса →</a>
-            <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Далее: Кейс</p>
-          </div>
-          <div class="grid gap-6">
-            <div class="glass-panel p-6 reveal-on-scroll">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Сразу после</p>
-              <ul class="text-xs text-gray-400 font-light space-y-2">
-                <li>Глубокое мышечное расслабление (“эффект желе”).</li>
-                <li>Снятие болевого синдрома в острой фазе.</li>
-                <li>Замедление мыслей, состояние тишины.</li>
-              </ul>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">24 — 72 часа</p>
-              <ul class="text-xs text-gray-400 font-light space-y-2">
-                <li>Лимфодренажный эффект: уходят видимые отеки.</li>
-                <li>Глубокий, восстанавливающий сон.</li>
-                <li>Повышение эластичности движений (легче держать осанку).</li>
-              </ul>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-              <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Курс (5–10)</p>
-              <ul class="text-xs text-gray-400 font-light space-y-2">
-                <li>Структурное изменение осанки (тело “запоминает” правильное положение).</li>
-                <li>Стабильный эмоциональный фон.</li>
-                <li>Эстетика: подтянутый силуэт и качество кожи.</li>
+            <div class="text-center md:text-left">
+              <h3 class="font-serif text-xl text-ivory mb-3">Кодекс Этики</h3>
+              <p class="font-sans text-sm text-gray-300 font-light leading-relaxed mb-4">Я понимаю ваши опасения. Моя работа строится на железной дисциплине боевых искусств и медицинской этике.</p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-3 justify-center md:justify-start"><span class="w-1 h-1 rounded-full bg-champagne"></span><span class="text-[11px] text-gray-400 uppercase tracking-wider">Никаких двусмысленностей</span></li>
+                <li class="flex items-center gap-3 justify-center md:justify-start"><span class="w-1 h-1 rounded-full bg-champagne"></span><span class="text-[11px] text-gray-400 uppercase tracking-wider">Строгое соблюдение границ</span></li>
+                <li class="flex items-center gap-3 justify-center md:justify-start"><span class="w-1 h-1 rounded-full bg-champagne"></span><span class="text-[11px] text-gray-400 uppercase tracking-wider">Полная конфиденциальность</span></li>
               </ul>
             </div>
           </div>
         </div>
+        <div class="flex flex-wrap justify-center gap-4 md:gap-16 mb-20 border-b border-white/5 pb-6 reveal-on-scroll">
+          <button id="step-btn-1" class="step-btn active text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 1" data-step="1">Подготовка</button>
+          <button id="step-btn-2" class="step-btn text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 2" data-step="2">Диалог</button>
+          <button id="step-btn-3" class="step-btn text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 3" data-step="3">Терапия</button>
+          <button id="step-btn-4" class="step-btn text-lg md:text-xl font-serif text-gray-500 hover:text-champagne transition interactive-el ripple-container" data-analytics="Ritual: Step 4" data-step="4">Финал</button>
+        </div>
+        <div class="relative min-h-[350px] md:min-h-[300px] text-center reveal-on-scroll">
+          <div id="ritual-step-1" class="transition-all duration-700 absolute inset-0 opacity-100 transform translate-y-0">
+            <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Снять тревогу</p>
+            <h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Вход в состояние</h3>
+            <p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Вы приходите, и город остается за дверью. Я даю вам время спокойно переодеться и выдохнуть. Здесь никто не торопит. Это момент, чтобы переключиться с режима "надо" на режим "чувствую".</p>
+          </div>
+          <div id="ritual-step-2" class="transition-all duration-700 absolute inset-0 opacity-0 transform translate-y-4 pointer-events-none">
+            <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Найти причину</p>
+            <h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Настройка</h3>
+            <p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Мы говорим. Не формальный опрос, а живой диалог. Мне важно понять не только где болит, но и как вы живете. Офис, спорт, стресс — мы собираем картину, чтобы работать с причиной, а не следствием.</p>
+          </div>
+          <div id="ritual-step-3" class="transition-all duration-700 absolute inset-0 opacity-0 transform translate-y-4 pointer-events-none">
+            <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Глубокая проработка</p>
+            <h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Магия касания</h3>
+            <p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Вы ложитесь, и контроль переходит ко мне. Я комбинирую техники под ваш запрос. Слышу отклик мышц и меняю давление. Это танец анатомии и интуиции, где каждое движение имеет смысл.</p>
+          </div>
+          <div id="ritual-step-4" class="transition-all duration-700 absolute inset-0 opacity-0 transform translate-y-4 pointer-events-none">
+            <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-8">Цель: Закрепить результат</p>
+            <h3 class="font-serif text-2xl md:text-3xl text-ivory mb-6">Возвращение</h3>
+            <p class="font-sans text-lg text-gray-400 font-light leading-relaxed max-w-xl mx-auto">Сеанс завершается плавно. Я даю рекомендации, как сохранить эту легкость на 2-3 дня. Вы уходите не просто "размятой", а с новым ощущением своего тела и пониманием, как с ним дружить.</p>
+          </div>
+        </div>
+        <div class="mt-16 w-full h-[1px] bg-white/5 relative overflow-hidden">
+          <div id="ritual-progress" class="absolute left-0 top-0 h-full bg-champagne transition-all duration-700 w-1/4"></div>
+        </div>
+        <div class="mt-12 text-center reveal-on-scroll">
+          <p class="text-xs text-gray-500 font-light mb-4">Остались вопросы по процессу?</p>
+          <a href="https://wa.me/79260899019?text=Павел,%20хочу%20уточнить%20детали%20проведения%20сеанса." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-champagne border-b border-champagne/30 hover:border-champagne transition pb-1 interactive-el">Спросить лично в чате</a>
+        </div>
       </div>
     </section>
-    <section id="suitability" class="py-28 bg-void">
+    <!-- SAFETY -->
+    <section id="safety" class="py-32 bg-[#050505] border-b border-white/5 relative">
       <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Честный разговор</p>
+        <div class="text-center mb-16 reveal-on-scroll">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Safety Protocol</p>
+          <h2 class="font-serif text-3xl md:text-4xl text-ivory mb-4">Безопасность и Этика</h2>
+          <p class="text-xs text-gray-500 font-light tracking-wide max-w-lg mx-auto">Я знаю, что визит к новому мастеру (особенно мужчине) — это стресс. <br>Поэтому каждый шаг регламентирован для вашего спокойствия.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Мой подход не подойдет вам, если:</h2>
-            <ul class="text-gray-400 font-light space-y-3 mb-8">
-              <li>Вы ждете исцеления хронической проблемы за 1 час. (Качественная работа требует времени).</li>
-              <li>У вас острая фаза воспаления или температура. (Пожалуйста, позаботьтесь о себе дома).</li>
-            </ul>
-            <p class="text-gray-400 font-light">Во всем остальном — я открыт к диалогу. Любые форматы обсуждаемы.</p>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="space-y-4 reveal-on-scroll">
+            <h3 class="font-serif text-xl text-ivory mb-6 pl-2 border-l-2 border-champagne">Важные вопросы</h3>
+            <div class="group">
+              <details class="glass-panel rounded-lg overflow-hidden transition-all duration-300 open:bg-white/5" data-analytics="Safety: Toggle - Shyness">
+                <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-ivory hover:text-champagne transition">
+                  <span class="text-sm font-sans font-light tracking-wide">"Я стесняюсь (тела / мужчины)"</span>
+                  <i class="fa-solid fa-plus text-xs text-white/30 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="px-5 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">В кабинете гендер исчезает. Есть только специалист и анатомия. Я смотрю на ваше тело как врач: вижу зажимы, асимметрию и тонус, а не "недостатки". Стеснение уходит через 5 минут работы.</div>
+              </details>
+            </div>
+            <div class="group">
+              <details class="glass-panel rounded-lg overflow-hidden transition-all duration-300 open:bg-white/5" data-analytics="Safety: Toggle - Pain">
+                <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-ivory hover:text-champagne transition">
+                  <span class="text-sm font-sans font-light tracking-wide">"Боюсь, что будет больно или щекотно"</span>
+                  <i class="fa-solid fa-plus text-xs text-white/30 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="px-5 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">Мы работаем на грани "приятной боли" (good pain). Если больно — я снижаю давление. Если щекотно — меняю технику на более плотную. Мы в постоянном диалоге.</div>
+              </details>
+            </div>
+            <div class="group">
+              <details class="glass-panel rounded-lg overflow-hidden transition-all duration-300 open:bg-white/5" data-analytics="Safety: Toggle - Boundaries">
+                <summary class="flex justify-between items-center p-5 cursor-pointer list-none text-ivory hover:text-champagne transition">
+                  <span class="text-sm font-sans font-light tracking-wide">"Личные границы и правила"</span>
+                  <i class="fa-solid fa-plus text-xs text-white/30 group-open:rotate-45 transition-transform duration-300"></i>
+                </summary>
+                <div class="px-5 pb-5 text-xs text-gray-400 font-light leading-relaxed border-t border-white/5 pt-3">Границы — это гибкая материя, которую мы устанавливаем вместе перед началом. В этом пространстве возможно всё, что комфортно нам обоим. Я умею хранить тайны и слышать то, что не сказано вслух. <br><span class="text-champagne/80">В конечном счете, всё зависит только от ваших желаний.</span></div>
+              </details>
+            </div>
           </div>
-          <div class="glass-panel p-6 reveal-on-scroll">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Кейс</p>
-            <h3 class="text-xl text-ivory font-serif mb-4">Анна, 29 лет</h3>
-            <p class="text-sm text-gray-400 font-light mb-4"><strong class="text-gray-300 font-medium">Запрос:</strong> “Постоянная тревога, плохой сон, отеки на ногах от сидячей работы.”</p>
-            <p class="text-sm text-gray-400 font-light mb-4"><strong class="text-gray-300 font-medium">Решение:</strong> Курс из 5 сеансов (Микс: Релакс + Лимфодренаж).</p>
-            <p class="text-sm text-gray-400 font-light"><strong class="text-gray-300 font-medium">Результат:</strong> Сон восстановился на 2-й сеанс. Ушла “вода” (-1.5 см в щиколотках). Вернулась концентрация.</p>
-            <div class="mt-6">
-              <a href="https://wa.me/79260899019?text=Павел,%20хочу%20обсудить%20мой%20случай%20и%20ожидаемый%20результат." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Suitability: CTA">Обсудить мой случай</a>
+          <div class="space-y-6 reveal-on-scroll" style="transition-delay: 0.2s;">
+            <h3 class="font-serif text-xl text-ivory mb-6 pl-2 border-l-2 border-champagne">Практика визита</h3>
+            <div class="flex gap-5 items-start">
+              <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-champagne"><i class="fa-solid fa-bag-shopping"></i></div>
+              <div>
+                <h4 class="font-serif text-base text-ivory mb-2">Что брать с собой?</h4>
+                <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Ничего. Только себя. Одноразовое белье, тапочки, халат, полотенца, средства для снятия макияжа — всё уже готово для вас.</p>
+              </div>
+            </div>
+            <div class="flex gap-5 items-start">
+              <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-champagne"><i class="fa-solid fa-user-shield"></i></div>
+              <div>
+                <h4 class="font-serif text-base text-ivory mb-2">Приватность переодевания</h4>
+                <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Я всегда выхожу из кабинета, пока вы переодеваетесь и ложитесь. Вы накрываетесь простыней. Я захожу только после вашего сигнала "Готово".</p>
+              </div>
+            </div>
+            <div class="flex gap-5 items-start">
+              <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 text-champagne"><i class="fa-solid fa-layer-group"></i></div>
+              <div>
+                <h4 class="font-serif text-base text-ivory mb-2">Правило "Драпировки"</h4>
+                <p class="font-sans text-xs text-gray-400 font-light leading-relaxed">Вы никогда не лежите полностью обнаженной. Я открываю только ту часть тела (спина, нога, рука), с которой работаю в данный момент. Остальное всегда в тепле под тканью.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 text-center reveal-on-scroll">
+          <p class="text-xs text-gray-500 font-light mb-4">Всё еще тревожно? Это нормально.</p>
+          <a href="https://wa.me/79260899019?text=Павел,%20у%20меня%20есть%20деликатный%20вопрос%20по%20поводу%20сеанса." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-champagne border-b border-champagne/30 hover:border-champagne transition pb-1 interactive-el" data-analytics="Safety: Ask Personal Question">Задать личный вопрос в чате</a>
+        </div>
+      </div>
+    </section>
+    <!-- RESULTS -->
+    <section id="results" class="py-32 bg-[#050505] relative border-b border-white/5 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#080808] to-transparent pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-20 reveal-on-scroll">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Timeline</p>
+          <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6">Хронология <span class="italic text-gray-500">Результата</span></h2>
+          <p class="font-sans text-sm text-gray-400 font-light tracking-wide max-w-lg mx-auto">Эффект от сеанса — это не только момент "сейчас". <br>Это процесс, который разворачивается во времени.</p>
+        </div>
+        <div class="relative space-y-12 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-champagne/20 before:to-transparent">
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal-on-scroll">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-champagne/30 bg-[#0a0a0a] shadow-[0_0_15px_rgba(227,200,173,0.1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"><span class="w-2 h-2 bg-champagne rounded-full"></span></div>
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 glass-panel rounded-xl border border-white/5 hover:border-champagne/20 transition duration-500">
+              <div class="flex justify-between items-start mb-2"><h3 class="font-serif text-lg text-ivory">Сразу после</h3><span class="text-[9px] font-mono text-champagne">T + 00:00</span></div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Глубокое мышечное расслабление ("эффект желе").</p></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Снятие болевого синдрома в острой фазе.</p></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Замедление мыслей, состояние тишины.</p></li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal-on-scroll" style="transition-delay: 0.1s;">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-champagne/30 bg-[#0a0a0a] shadow-[0_0_15px_rgba(227,200,173,0.1)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"><span class="text-[9px] font-serif text-gray-500">2d</span></div>
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 glass-panel rounded-xl border border-white/5 hover:border-champagne/20 transition duration-500">
+              <div class="flex justify-between items-start mb-2"><h3 class="font-serif text-lg text-ivory">24 — 72 часа</h3><span class="text-[9px] font-mono text-gray-500">T + 48:00</span></div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Лимфодренажный эффект: уходят видимые отеки.</p></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Глубокий, восстанавливающий сон.</p></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne/50 text-[10px] mt-1"></i><p class="text-xs text-gray-400 font-light">Повышение эластичности движений (легче держать осанку).</p></li>
+              </ul>
+            </div>
+          </div>
+          <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group reveal-on-scroll" style="transition-delay: 0.2s;">
+            <div class="flex items-center justify-center w-10 h-10 rounded-full border border-champagne bg-champagne/10 shadow-[0_0_20px_rgba(227,200,173,0.2)] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"><i class="fa-solid fa-infinity text-champagne text-xs"></i></div>
+            <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 glass-panel rounded-xl border border-champagne/20 bg-white/5 hover:border-champagne/40 transition duration-500">
+              <div class="flex justify-between items-start mb-2"><h3 class="font-serif text-lg text-ivory">Курс (5-10)</h3><span class="text-[9px] font-mono text-champagne">LONG TERM</span></div>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne text-[10px] mt-1"></i><p class="text-xs text-gray-300 font-light">Структурное изменение осанки (тело "запоминает" правильное положение).</p></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne text-[10px] mt-1"></i><p class="text-xs text-gray-300 font-light">Стабильный эмоциональный фон.</p></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-champagne text-[10px] mt-1"></i><p class="text-xs text-gray-300 font-light">Эстетика: подтянутый силуэт и качество кожи.</p></li>
+              </ul>
+              <div class="mt-4 pt-4 border-t border-white/10"><a href="https://wa.me/79260899019?text=Павел,%20хочу%20обсудить%20долгосрочный%20результат%20и%20курс." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-champagne hover:text-white transition interactive-el">Обсудить стратегию курса →</a></div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="py-20 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="glass-panel p-8 reveal-on-scroll flex items-center justify-between flex-wrap gap-4">
-          <p class="text-gray-400 font-light">Далее: Отзывы</p>
-          <a href="#voices" class="text-[10px] uppercase tracking-widest text-champagne hover:text-white transition interactive-el">Перейти к историям</a>
-        </div>
-      </div>
-    </section>
-    <section id="voices" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Шепот</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Истории, рассказанные телом</h2>
-            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20узнать,%20как%20проходит%20прием%20(правила%20и%20формат)." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Voices: CTA">Написать лично</a>
-            <p class="text-[10px] text-gray-500 mt-3 uppercase tracking-widest">Отвечу лично я, без ботов</p>
-          </div>
-          <div class="grid gap-6">
-            <div class="glass-panel p-6 reveal-on-scroll">
-              <p class="text-xs text-gray-400 font-light">“Павел, честно скажу — шла и боялась. Все-таки мужчина, первый раз... 🙈 Но через 10 минут вообще забыла, кто есть кто. Просто космос. Спасибо за тактичность, это было супер важно!”</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-              <p class="text-xs text-gray-400 font-light">“Руки просто 🔥. Я как будто заново родилась. Спина наконец-то дышит. Запиши меня на следующую неделю, плз!”</p>
-            </div>
-            <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-              <p class="text-xs text-gray-400 font-light">“Такое чувство, что вытащили из меня батарейку и вставили новую. Я в желе 😂 Голова пустая, тело легкое. Это не массаж, это какой-то ментальный детокс.”</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="philosophy" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="glass-panel p-10 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Мой личный гедонизм</p>
-          <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">«…это ваша полная перезагрузка.»</h2>
-          <p class="text-gray-400 font-light leading-relaxed">Для меня массаж — это не работа, а форма медитации. Видеть, как с вашего лица сходит маска напряжения, а плечи опускаются — это мой главный источник энергии. Я не устаю отдавать, потому что получаю взамен ваше доверие и расслабление.</p>
-        </div>
-      </div>
-    </section>
-    <section id="pricing" class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Знакомство</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Новогодняя привилегия</h2>
-            <p class="text-gray-400 font-light mb-6">Я приглашаю вас на знакомство. Это возможность понять, подходим ли мы друг другу и составить план восстановления.</p>
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-8">Без предоплаты и скрытых условий</p>
-            <a href="https://wa.me/79260899019?text=Павел,%20интересует%20стоимость%20визита%20и%20свободные%20окна%20для%20знакомства." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Pricing: CTA">Обсудить визит</a>
-          </div>
-          <div class="glass-panel p-8 reveal-on-scroll">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Оплата только после сеанса</p>
-            <ul class="text-sm text-gray-400 font-light space-y-3">
-              <li>Формат: на дому</li>
-              <li>Длительность: в среднем час (зависит от техники)</li>
-              <li>Запись: напрямую в чате, обсуждаем детали</li>
-              <li>Мини-опрос: время, зоны, техники, цели</li>
+    <!-- PROOF & FILTER -->
+    <section id="proof-filter" class="py-32 bg-void relative">
+      <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <div class="reveal-on-scroll order-2 md:order-1">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Honesty Protocol</p>
+          <h2 class="font-serif text-3xl text-ivory mb-6">Честный разговор</h2>
+          <div class="prose prose-invert prose-p:font-sans prose-p:font-light prose-p:text-gray-400 prose-p:leading-relaxed mb-8">
+            <p>Я ценю свое время и ваше доверие. Чтобы мы сработались, важно понимать специфику моего метода.</p>
+            <p class="text-white/60">Мой подход <span class="text-red-400/80">не подойдет</span> вам, если:</p>
+            <ul class="space-y-3 mt-4">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-900 mt-1 text-xs"></i><span class="text-xs">Вы ждете исцеления хронической проблемы за 1 час. (Качественная работа требует времени).</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-xmark text-red-900 mt-1 text-xs"></i><span class="text-xs">У вас острая фаза воспаления или температура. (Пожалуйста, позаботьтесь о себе дома).</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-check text-champagne mt-1 text-xs"></i><span class="text-xs text-champagne">Во всем остальном — я открыт к диалогу. Любые форматы обсуждаемы.</span></li>
             </ul>
           </div>
         </div>
+        <div class="reveal-on-scroll order-1 md:order-2 relative">
+          <div class="absolute inset-0 bg-champagne/5 blur-[80px] rounded-full pointer-events-none"></div>
+          <div class="glass-panel p-8 rounded-xl border border-white/10 relative">
+            <div class="absolute -top-3 -right-3 bg-champagne text-void text-[9px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm">Real Case</div>
+            <div class="flex items-center gap-4 mb-6 border-b border-white/5 pb-4">
+              <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-400"><i class="fa-regular fa-user"></i></div>
+              <div><p class="text-sm text-ivory font-serif">Анна, 29 лет</p><p class="text-[10px] text-gray-500 uppercase tracking-wide">IT-предприниматель</p></div>
+            </div>
+            <div class="space-y-4 mb-6">
+              <div><p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Запрос</p><p class="text-xs text-gray-300 font-light italic">"Постоянная тревога, плохой сон, отеки на ногах от сидячей работы."</p></div>
+              <div><p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Решение</p><p class="text-xs text-champagne font-light">Курс из 5 сеансов (Микс: Релакс + Лимфодренаж)</p></div>
+              <div>
+                <p class="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Результат</p>
+                <ul class="space-y-1">
+                  <li class="text-xs text-gray-300 font-light flex gap-2"><i class="fa-solid fa-check text-green-500/50 text-[10px] mt-0.5"></i> Сон восстановился на 2-й сеанс.</li>
+                  <li class="text-xs text-gray-300 font-light flex gap-2"><i class="fa-solid fa-check text-green-500/50 text-[10px] mt-0.5"></i> Ушла "вода" (-1.5 см в щиколотках).</li>
+                  <li class="text-xs text-gray-300 font-light flex gap-2"><i class="fa-solid fa-check text-green-500/50 text-[10px] mt-0.5"></i> Вернулась концентрация.</li>
+                </ul>
+              </div>
+            </div>
+            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20обсудить%20мой%20случай%20и%20ожидаемый%20результат." class="whatsapp-link w-full py-3 bg-white/5 border border-champagne/20 hover:bg-champagne hover:text-void transition-colors duration-300 text-[9px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 interactive-el btn-vibrate ripple-container"><span>Обсудить мой случай</span><i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>
+        </div>
       </div>
     </section>
-    <section id="life" class="py-28 bg-void">
+    
+    <!-- SUITABILITY -->
+    <section id="suitability" class="py-32 bg-[#050505] border-b border-white/5 relative">
       <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
-          <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Архитектура жизни</p>
+        <div class="text-center mb-16 reveal-on-scroll">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-4">Suitability</p>
+          <h2 class="font-serif text-3xl md:text-4xl text-ivory mb-4">Кому подходит</h2>
+          <p class="text-xs text-gray-500 font-light tracking-wide max-w-2xl mx-auto">Если вы живете в Москве и нужен массаж на дому — подберу формат под ваш запрос и состояние.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
           <div class="glass-panel p-6 reveal-on-scroll">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Гидробаланс</p>
-            <p class="text-xs text-gray-400 font-light">Я запустил мощные процессы очищения. Теперь токсинам нужен выход. Пейте теплую воду — это лучшее, что вы можете сделать для себя сегодня.</p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Сидячая работа</p>
+            <p class="text-xs text-gray-400 font-light">Зажимы шеи и плеч, тяжесть в спине, усталость от статичной позы.</p>
           </div>
           <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Невесомость</p>
-            <p class="text-xs text-gray-400 font-light">Я часто рекомендую плавание. Вода снимает остаточную нагрузку гравитации. Это идеальный способ закрепить работу с осанкой.</p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Стресс и перегрузки</p>
+            <p class="text-xs text-gray-400 font-light">Нужен перезапуск нервной системы и ощущение тишины в голове.</p>
           </div>
           <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Цифровая тишина</p>
-            <p class="text-xs text-gray-400 font-light">Пожалуйста, не берите телефон сразу. Дайте нервной системе “дожить” состояние покоя. Мир подождет еще час.</p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Отеки</p>
+            <p class="text-xs text-gray-400 font-light">Тяжесть в ногах, ощущение «воды», хочется легкости.</p>
+          </div>
+          <div class="glass-panel p-6 reveal-on-scroll">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Восстановление</p>
+            <p class="text-xs text-gray-400 font-light">Нужно снять общий тонус и вернуть телу подвижность.</p>
+          </div>
+          <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Осанка</p>
+            <p class="text-xs text-gray-400 font-light">Хочется структурной работы с мышечным балансом.</p>
+          </div>
+          <div class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Курс</p>
+            <p class="text-xs text-gray-400 font-light">Если нужен план: 3–6 сеансов для устойчивого результата.</p>
           </div>
         </div>
       </div>
     </section>
-    <section id="trust" class="py-28 bg-void">
+    
+    <!-- CONTRAINDICATIONS -->
+    <section id="contraindications" class="py-28 bg-void border-b border-white/5">
       <div class="max-w-screen-xl mx-auto px-6">
-        <div class="flex items-center gap-4 mb-8">
+        <div class="flex items-center gap-4 mb-8 reveal-on-scroll">
           <span class="w-12 h-[1px] bg-champagne"></span>
-          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Карта доверия</p>
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em]">Contraindications</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-          <div class="reveal-on-scroll">
-            <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Доступ к регулярной работе открывается после первого знакомства</h2>
-            <p class="text-gray-400 font-light mb-6">Я не продаю “абонементы” всем подряд. Первый визит — это наша “проба пера”. Если мы совпадаем в понимании комфорта и границ, вы получаете карту.</p>
-            <p class="text-gray-400 font-light">Это знак того, что мы теперь в одной команде.</p>
-          </div>
+        <div class="grid md:grid-cols-2 gap-8">
           <div class="glass-panel p-8 reveal-on-scroll">
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Специальные условия для знакомства</p>
-            <p class="text-xs text-gray-400 font-light mb-6">Оплата только после сеанса. Никаких скрытых условий.</p>
-            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20записаться%20на%20первый%20сеанс-знакомство." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Trust: CTA">Записаться на знакомство</a>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Когда лучше перенести</h3>
+            <ul class="space-y-3 text-xs text-gray-400 font-light">
+              <li class="flex gap-2"><i class="fa-solid fa-minus text-gray-600 mt-0.5 text-[10px]"></i>Температура, острые воспалительные процессы, инфекционные состояния.</li>
+              <li class="flex gap-2"><i class="fa-solid fa-minus text-gray-600 mt-0.5 text-[10px]"></i>Свежие травмы, выраженная боль неясного происхождения.</li>
+              <li class="flex gap-2"><i class="fa-solid fa-minus text-gray-600 mt-0.5 text-[10px]"></i>Кожные заболевания в зоне воздействия.</li>
+              <li class="flex gap-2"><i class="fa-solid fa-minus text-gray-600 mt-0.5 text-[10px]"></i>Острое недомогание или сильная слабость.</li>
+            </ul>
+          </div>
+          <div class="glass-panel p-8 reveal-on-scroll" style="transition-delay: 0.1s;">
+            <h3 class="font-serif text-2xl text-ivory mb-4">Если есть сомнения</h3>
+            <p class="text-xs text-gray-400 font-light leading-relaxed mb-6">Напишите заранее — разберем ситуацию и решим, когда формат будет безопасным и комфортным.</p>
+            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20уточнить%20по%20противопоказаниям.%20У%20меня%20есть%20состояние:%20%5B%5D." class="whatsapp-link inline-flex px-8 py-3 border border-champagne/30 text-[9px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Contraindications: Ask">Уточнить в чате</a>
+            <p class="text-[9px] text-gray-600 mt-4 font-sans tracking-wide">Приоритет — безопасность и ваше самочувствие.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- VOICES -->
+    <section id="voices" class="py-32 bg-[#050505] relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-void via-[#0a0a0a] to-void"></div>
+      <div class="max-w-md mx-auto px-6 relative z-10">
+        <div class="text-center mb-16 reveal-on-scroll">
+          <i class="fa-regular fa-comment-dots text-champagne/30 text-3xl mb-6"></i>
+          <h2 class="font-serif text-3xl md:text-4xl text-ivory mb-2">Шепот</h2>
+          <p class="text-[10px] text-gray-500 uppercase tracking-widest">Истории, рассказанные телом</p>
+        </div>
+        <div class="space-y-6 font-sans">
+          <div class="reveal-on-scroll flex flex-col items-start group">
+            <div class="bg-[#151515] p-5 rounded-2xl rounded-tl-sm shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/5 relative max-w-[95%] hover:border-champagne/20 transition-colors duration-300">
+              <p class="text-xs text-gray-300 font-light leading-relaxed">Павел, честно скажу — шла и боялась. Все-таки мужчина, первый раз... 🙈 Но через 10 минут вообще забыла, кто есть кто. Просто космос. Спасибо за тактичность, это было супер важно!</p>
+              <span class="text-[9px] text-gray-600 mt-2 block text-right font-mono">14:02</span>
+            </div>
+          </div>
+          <div class="reveal-on-scroll flex flex-col items-start" style="transition-delay: 0.1s;">
+            <div class="bg-[#151515] p-5 rounded-2xl rounded-tl-sm shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/5 relative max-w-[85%] hover:border-champagne/20 transition-colors duration-300">
+              <p class="text-xs text-gray-300 font-light leading-relaxed">Руки просто 🔥. Я как будто заново родилась. Спина наконец-то дышит. Запиши меня на следующую неделю, плз!</p>
+              <span class="text-[9px] text-gray-600 mt-2 block text-right font-mono">Вчера</span>
+            </div>
+          </div>
+          <div class="reveal-on-scroll flex flex-col items-start" style="transition-delay: 0.2s;">
+            <div class="bg-[#151515] p-5 rounded-2xl rounded-tl-sm shadow-[0_4px_20px_rgba(0,0,0,0.5)] border border-white/5 relative max-w-[90%] hover:border-champagne/20 transition-colors duration-300">
+              <p class="text-xs text-gray-300 font-light leading-relaxed">Такое чувство, что вытащили из меня батарейку и вставили новую. Я в желе 😂 Голова пустая, тело легкое. Это не массаж, это какой-то ментальный детокс.</p>
+              <span class="text-[9px] text-gray-600 mt-2 block text-right font-mono">09:15</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-16 text-center reveal-on-scroll border-t border-white/5 pt-8">
+          <div class="inline-flex flex-col items-center">
+            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20узнать,%20как%20проходит%20прием%20(правила%20и%20формат)." class="whatsapp-link text-[10px] font-sans uppercase tracking-widest text-gray-500 hover:text-champagne transition pb-1 interactive-el" data-analytics="Voices: CTA Click"><i class="fa-brands fa-whatsapp mr-2"></i> Написать лично</a>
+            <span class="text-[8px] text-white/20 mt-2 font-sans tracking-wider">Отвечу лично я, без ботов</span>
+            <a href="https://t.me/Pasho_chekk" class="text-[9px] font-sans uppercase tracking-widest text-gray-600 hover:text-champagne transition mt-2 interactive-el" data-analytics="Voices: Telegram Question">Задать вопрос анонимно</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- PHILOSOPHY -->
+    <section class="py-40 bg-[#050505] relative overflow-hidden flex items-center justify-center">
+      <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-champagne/3 rounded-full blur-[150px] animate-pulse-slow"></div>
+      <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal-on-scroll">
+        <i class="fa-solid fa-quote-left text-champagne/20 text-5xl mb-12 block mx-auto"></i>
+        <h2 class="font-serif text-3xl md:text-6xl text-ivory leading-snug mb-12">"Мой личный <span class="text-champagne italic">гедонизм</span> — это ваша полная перезагрузка."</h2>
+        <div class="prose prose-invert prose-xl mx-auto">
+          <p class="font-sans text-gray-400 font-light leading-relaxed">Для меня массаж — это не работа, а форма медитации. Видеть, как с вашего лица сходит маска напряжения, а плечи опускаются — это мой главный источник энергии. <br><br><span class="text-white/80">Я не устаю отдавать, потому что получаю взамен ваше доверие и расслабление.</span></p>
+        </div>
+        <div class="mt-16"><p class="text-[9px] font-sans text-gray-600 uppercase tracking-[0.4em]">Manifesto of Touch</p></div>
+      </div>
+    </section>
+    <section class="py-20 bg-[#080808] border-y border-white/5">
+      <div class="max-w-2xl mx-auto px-6 text-center reveal-on-scroll">
+        <div class="glass-panel p-10 md:p-14 relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-champagne to-transparent opacity-50"></div>
+          <p class="font-serif text-2xl md:text-3xl text-ivory mb-4">Special Invitation</p>
+          <p class="font-sans text-xs text-champagne uppercase tracking-[0.2em] mb-8">Первый визит</p>
+          <div class="flex items-center justify-center gap-6 mb-8">
+            <span class="text-gray-600 line-through font-serif text-xl">15.000₽</span>
+            <i class="fa-solid fa-arrow-right text-white/20 text-xs"></i>
+            <span class="text-champagne font-serif text-4xl md:text-5xl">7.000₽</span>
+          </div>
+          <p class="font-sans text-sm text-gray-400 font-light leading-relaxed mb-10 max-w-sm mx-auto">Я приглашаю вас на знакомство. Это возможность понять, подходим ли мы друг другу и составить план восстановления без лишних обязательств.</p>
+          <div class="flex flex-col items-center">
+            <a href="https://wa.me/79260899019?text=Павел,%20интересует%20стоимость%20визита%20и%20свободные%20окна%20для%20знакомства." class="whatsapp-link inline-block px-10 py-4 bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion hover:bg-white transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Pricing: CTA Click">Обсудить визит</a>
+            <span class="text-[9px] text-gray-600 mt-4 font-sans tracking-wide">Без предоплаты и скрытых условий</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="life" class="py-32 bg-void relative border-b border-white/5">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal-on-scroll">
+          <div>
+            <h2 class="font-serif text-4xl text-ivory mb-3">Архитектура Жизни</h2>
+            <p class="text-[10px] text-gray-500 uppercase tracking-widest">Протокол продления эффекта</p>
+          </div>
+          <div class="hidden md:block w-1/3 h-[1px] bg-gradient-to-r from-champagne/30 to-transparent"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="glass-panel p-10 group hover:border-champagne/30 transition duration-500 reveal-on-scroll">
+            <div class="text-champagne text-3xl mb-8 opacity-80"><i class="fa-solid fa-glass-water"></i></div>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Гидробаланс</h3>
+            <p class="font-sans text-sm text-gray-400 font-light leading-relaxed">Я запустил мощные процессы очищения. Теперь токсинам нужен выход. Я прошу вас пить теплую воду — это лучшее, что вы можете сделать для себя сегодня.</p>
+          </div>
+          <div class="glass-panel p-10 group hover:border-champagne/30 transition duration-500 reveal-on-scroll" style="transition-delay: 0.1s;">
+            <div class="text-champagne text-3xl mb-8 opacity-80"><i class="fa-solid fa-person-swimming"></i></div>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Невесомость</h3>
+            <p class="font-sans text-sm text-gray-400 font-light leading-relaxed">Я часто рекомендую плавание. Вода снимает остаточную нагрузку гравитации. Это идеальный способ закрепить нашу работу с осанкой.</p>
+          </div>
+          <div class="glass-panel p-10 group hover:border-champagne/30 transition duration-500 reveal-on-scroll" style="transition-delay: 0.2s;">
+            <div class="text-champagne text-3xl mb-8 opacity-80"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Цифровая Тишина</h3>
+            <p class="font-sans text-sm text-gray-400 font-light leading-relaxed">Пожалуйста, не берите телефон сразу. Дайте нервной системе "дожить" это состояние покоя. Мир подождет еще час.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- TRUST -->
+    <section class="py-40 bg-[#020202] relative overflow-hidden flex flex-col items-center justify-center border-b border-white/5">
+      <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+      <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center relative z-10">
+        <div class="reveal-on-scroll order-2 md:order-1 text-center md:text-left">
+          <p class="text-champagne text-[10px] font-sans uppercase tracking-[0.4em] mb-6">Trust Protocol</p>
+          <h2 class="font-serif text-4xl md:text-6xl text-ivory mb-8 leading-tight">Карта <br><span class="italic text-gray-600 font-light">Доверия</span></h2>
+          <div class="prose prose-invert prose-base font-light text-gray-400 leading-relaxed mb-12 mx-auto md:mx-0">
+            <p>Я не продаю "абонементы" всем подряд. Доступ к регулярной работе и моему личному расписанию открывается только после первого знакомства.</p>
+            <p>Первый визит — это наша "проба пера". Если мы совпадаем в понимании комфорта и границ, вы получаете карту <strong>Private Access</strong>. Это знак того, что мы теперь в одной команде.</p>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-5 justify-center md:justify-start">
+              <span class="text-champagne font-serif text-3xl">7.000₽</span>
+              <span class="text-gray-600 text-xs uppercase tracking-widest line-through decoration-1">15.000₽</span>
+              <span class="px-3 py-1 bg-champagne/5 border border-champagne/10 text-[9px] uppercase text-champagne tracking-widest rounded-sm">Welcome Visit</span>
+            </div>
+            <p class="text-[9px] text-gray-600 uppercase tracking-widest">Специальные условия для знакомства</p>
+            <p class="text-[9px] text-gray-600 uppercase tracking-widest">Формат: на дому, около 60 минут</p>
+          </div>
+          <div class="mt-8 flex flex-col items-center md:items-start">
+            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20записаться%20на%20первый%20сеанс%20на%20дому.%20Удобное%20время%20—%20%5B%5D.%20Зоны%20—%20%5B%5D.%20Цели%20—%20%5B%5D." class="whatsapp-link inline-block px-10 py-4 bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion hover:bg-white transition duration-500 interactive-el btn-vibrate ripple-container rounded-sm" data-analytics="Trust: CTA Click">Записаться на знакомство</a>
+            <span class="text-[9px] text-gray-600 mt-3 font-sans tracking-wide pl-1">Оплата только после сеанса</span>
+          </div>
+        </div>
+        <div class="member-card-wrapper reveal-on-scroll order-1 md:order-2 flex justify-center">
+          <div class="member-card relative w-[360px] h-[230px] rounded-2xl p-8 flex flex-col justify-between overflow-hidden">
+            <div class="card-glare"></div>
+            <div class="flex justify-between items-start relative z-10"><span class="font-serif text-2xl text-champagne tracking-widest gold-text-shadow">PK</span><i class="fa-solid fa-infinity text-white/10 text-2xl"></i></div>
+            <div class="relative z-10">
+              <p class="font-mono text-white/30 text-sm tracking-[0.25em] mb-6">MEMBER SINCE 2024</p>
+              <div class="flex justify-between items-end">
+                <div>
+                  <p class="text-[8px] uppercase text-gray-600 tracking-widest mb-1">Status</p>
+                  <p class="text-[12px] uppercase text-ivory tracking-widest font-bold">Trusted Guest</p>
+                </div>
+                <div class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center"><div class="w-6 h-6 border border-white/20 rounded-full"></div></div>
+              </div>
+            </div>
+            <div class="absolute inset-0 border border-white/5 rounded-2xl m-1.5 pointer-events-none"></div>
           </div>
         </div>
       </div>
@@ -610,7 +876,7 @@
           <article class="glass-panel p-6 reveal-on-scroll">
             <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Мини-совет</p>
             <h3 class="text-lg text-ivory font-serif mb-2">Как понять, что телу нужен отдых</h3>
-            <p class="text-xs text-gray-400 font-light">Если сон поверхностный, спина “горит”, а мысли не останавливаются — это сигнал. Дайте телу паузу.</p>
+            <p class="text-xs text-gray-400 font-light">Если сон поверхностный, спина "горит", а мысли не останавливаются — это сигнал. Дайте телу паузу.</p>
           </article>
           <article class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
             <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Мини-совет</p>
@@ -622,6 +888,21 @@
             <h3 class="text-lg text-ivory font-serif mb-2">Перерыв от гаджетов</h3>
             <p class="text-xs text-gray-400 font-light">30–60 минут без экрана после сеанса помогают нервной системе закрепить результат.</p>
           </article>
+          <article class="glass-panel p-6 reveal-on-scroll">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Мини-совет</p>
+            <h3 class="text-lg text-ivory font-serif mb-2">Когда нужен лимфодренаж</h3>
+            <p class="text-xs text-gray-400 font-light">Тяжесть в ногах, «водянистость», отеки к вечеру — повод обсудить мягкий лимфодренаж.</p>
+          </article>
+          <article class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.05s;">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Мини-совет</p>
+            <h3 class="text-lg text-ivory font-serif mb-2">Лучшее время для сеанса</h3>
+            <p class="text-xs text-gray-400 font-light">Вечер подходит для глубокого расслабления, день — для тонуса и восстановления.</p>
+          </article>
+          <article class="glass-panel p-6 reveal-on-scroll" style="transition-delay: 0.1s;">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-2">Мини-совет</p>
+            <h3 class="text-lg text-ivory font-serif mb-2">Подготовка к визиту на дому</h3>
+            <p class="text-xs text-gray-400 font-light">Достаточно свободного пространства и тишины. Все остальное я привожу с собой.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -630,8 +911,8 @@
         <div class="glass-panel p-10 reveal-on-scroll grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 class="font-serif text-3xl md:text-5xl text-ivory mb-6 leading-tight">Павел Кумашков</h2>
-            <p class="text-gray-400 font-light mb-6">Павел, здравствуйте. Хочу начать диалог.</p>
-            <a href="https://wa.me/79260899019?text=Павел,%20здравствуйте.%20Хочу%20начать%20диалог." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Booking: CTA">Начать диалог</a>
+            <p class="text-gray-400 font-light mb-6">Массаж на дому в Москве. Средняя длительность сеанса — около 60 минут, точный формат зависит от техник и целей.</p>
+            <a href="https://wa.me/79260899019?text=Павел,%20хочу%20записаться%20на%20сеанс%20на%20дому.%20Удобное%20время%20—%20%5B%5D.%20Зоны%20—%20%5B%5D.%20Цели%20—%20%5B%5D.%20Предпочтения%20по%20техникам%20—%20%5B%5D." class="whatsapp-link inline-flex px-10 py-4 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Booking: CTA">Начать диалог</a>
           </div>
           <div class="text-gray-400 font-light text-sm">
             <div class="flex items-center gap-3 mb-4">
@@ -644,39 +925,53 @@
             </div>
             <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Соединение...</p>
             <p>Отвечу лично, без ботов. Обсудим время, зоны и формат.</p>
-            <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-4">Здравствуйте, хочу записаться.</p>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-4">Мини-опрос (2 минуты):</p>
+            <ul class="mt-3 space-y-2 text-xs text-gray-400 font-light">
+              <li>Когда удобно и где на дому.</li>
+              <li>Какие зоны беспокоят.</li>
+              <li>Какие цели: расслабление, восстановление, тонус.</li>
+              <li>Предпочтения по техникам и ощущениям.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="py-16 bg-void border-t border-white/5">
-    <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-3 gap-10">
-      <div>
-        <h3 class="font-serif text-xl text-ivory mb-3">Павел Кумашков</h3>
-        <p class="text-xs text-gray-400 font-light">Private Body Architecture. Москва. Медицинский подход.</p>
+  <!-- FOOTER -->
+  <footer class="bg-black pt-24 pb-40">
+    <div class="max-w-screen-xl mx-auto px-6 text-center">
+      <p class="font-serif text-5xl text-white/5 mb-10 tracking-widest">KUMASHKOV</p>
+      <div class="flex justify-center gap-10 mb-16">
+        <a href="https://wa.me/79260899019" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" data-analytics="Footer: WhatsApp"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
+        <a href="https://t.me/Pasho_chekk" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" data-analytics="Footer: Telegram"><i class="fa-brands fa-telegram text-3xl"></i></a>
       </div>
-      <div>
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Контакты</p>
-        <div class="text-xs text-gray-400 font-light space-y-2">
-          <p>WhatsApp / Моб: +7 926 089 9019</p>
-          <p>Telegram: @Pasho_chekk</p>
-          <p>На дому, Москва</p>
-        </div>
-      </div>
-      <div>
-        <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Документы</p>
-        <div class="text-xs text-gray-400 font-light space-y-2">
-          <a href="/privacy.html" class="hover:text-champagne transition">Политика конфиденциальности</a>
-        </div>
-      </div>
+      <p class="text-[9px] font-sans text-gray-600 uppercase tracking-[0.3em] mb-6">Москва • На дому • +7 926 089 9019</p>
+      <p class="text-[9px] font-sans text-gray-800 uppercase tracking-[0.4em]">Private Body Architecture © 2024.<br>Members Only.</p>
     </div>
   </footer>
-  <div class="fixed bottom-0 left-0 right-0 z-50 border-t border-white/5 bg-void/90 backdrop-blur-xl">
-    <div class="max-w-screen-xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-      <div class="text-xs text-gray-400 font-light">Павел Кумашков — медицинский массаж на дому в Москве</div>
-      <a href="https://wa.me/79260899019?text=Здравствуйте,%20хочу%20записаться." class="whatsapp-link inline-flex px-8 py-3 border border-champagne/30 text-[10px] font-sans uppercase tracking-widest text-champagne hover:bg-champagne hover:text-void transition duration-500 interactive-el btn-vibrate ripple-container" data-analytics="Sticky: CTA">Записаться</a>
+  <!-- STICKY BAR -->
+  <div class="fixed bottom-0 left-0 w-full z-50 p-6 pb-[env(safe-area-inset-bottom)] pointer-events-none">
+    <div class="max-w-lg mx-auto glass-panel bg-[#050505]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-2.5 flex justify-between items-center shadow-2xl pointer-events-auto transform translate-y-0 transition-transform duration-500">
+      <div class="flex items-center gap-3 pl-3">
+        <div class="relative">
+          <div class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center"><span class="font-serif text-[10px] text-white/40 tracking-widest">PK</span></div>
+          <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-[#050505] flex items-center justify-center">
+            <div class="w-2 h-2 rounded-full bg-green-500 relative"><div class="absolute inset-0 w-full h-full rounded-full bg-green-500 animate-ping opacity-75"></div></div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center">
+          <span class="text-[8px] font-sans uppercase tracking-widest text-gray-500 mb-0.5">Pavel Kumashkov</span>
+          <div class="h-4 flex items-center overflow-hidden relative">
+            <div id="status-container" class="flex items-center gap-2 transition-transform duration-500"><span class="text-[10px] font-serif text-champagne">Online</span></div>
+            <div id="typing-container" class="absolute left-0 top-1/2 -translate-y-1/2 flex items-center gap-2 transition-all duration-500 opacity-0 translate-y-4"><span class="text-[10px] font-serif text-champagne/80 italic">печатает</span><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <a href="https://t.me/Pasho_chekk" class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 text-gray-400 hover:text-white hover:border-white/30 transition interactive-el ripple-container bg-white/5" data-analytics="Sticky: Telegram"><i class="fa-brands fa-telegram text-lg"></i></a>
+        <a href="https://wa.me/79260899019?text=Павел,%20здравствуйте.%20Хочу%20начать%20диалог." class="whatsapp-link px-8 h-12 flex items-center bg-champagne text-void text-[10px] font-bold uppercase tracking-fashion rounded-xl hover:bg-white transition duration-500 interactive-el btn-vibrate shadow-[0_0_25px_rgba(227,200,173,0.15)] ripple-container" data-analytics="Sticky: Start Dialogue">Начать диалог</a>
+      </div>
     </div>
   </div>
 
