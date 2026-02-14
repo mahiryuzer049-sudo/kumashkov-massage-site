@@ -386,7 +386,7 @@ const setActiveZoneState = (zone) => {
   });
 };
 
-const showZoneInfo = (zone, triggerElement) => {
+const showZoneInfo = (zone, triggerElement, shouldFocus = false) => {
   if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return;
   const openedZone = zonePopup.dataset.active || "";
   if (zonePopup.classList.contains("open") && openedZone === zone) {
@@ -413,22 +413,17 @@ const showZoneInfo = (zone, triggerElement) => {
   zonePopup.classList.add("open");
   zonePopup.setAttribute("aria-hidden", "false");
   if (scannerContainer) scannerContainer.dataset.activeZone = zone;
-  if (zonePopup && typeof zonePopup.getBoundingClientRect === "function") {
-    const rect = zonePopup.getBoundingClientRect();
-    const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
-    if (!inView && typeof zonePopup.scrollIntoView === "function") {
-      zonePopup.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }
-  requestAnimationFrame(() => {
-    if (zoneClose && typeof zoneClose.focus === "function") {
-      try {
-        zoneClose.focus({ preventScroll: true });
-      } catch {
-        zoneClose.focus();
+  if (shouldFocus) {
+    requestAnimationFrame(() => {
+      if (zoneClose && typeof zoneClose.focus === "function") {
+        try {
+          zoneClose.focus({ preventScroll: true });
+        } catch {
+          zoneClose.focus();
+        }
       }
-    }
-  });
+    });
+  }
 
   const protocolValue = protocolZoneMap[zone];
   if (protocolValue) {
@@ -478,8 +473,18 @@ activePoints.forEach((point) => {
     suppressZoneClick = true;
     event.preventDefault();
     event.stopPropagation();
-    showZoneInfo(zone, point);
+    showZoneInfo(zone, point, false);
   });
+  point.addEventListener(
+    "touchstart",
+    (event) => {
+      suppressZoneClick = true;
+      event.preventDefault();
+      event.stopPropagation();
+      showZoneInfo(zone, point, false);
+    },
+    { passive: false }
+  );
   point.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -487,13 +492,13 @@ activePoints.forEach((point) => {
       suppressZoneClick = false;
       return;
     }
-    showZoneInfo(zone, point);
+    showZoneInfo(zone, point, false);
   });
   point.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       event.stopPropagation();
-      showZoneInfo(zone, point);
+      showZoneInfo(zone, point, true);
     }
   });
 });
@@ -506,8 +511,18 @@ zoneShortcuts.forEach((button) => {
     suppressZoneClick = true;
     event.preventDefault();
     event.stopPropagation();
-    showZoneInfo(zone, button);
+    showZoneInfo(zone, button, false);
   });
+  button.addEventListener(
+    "touchstart",
+    (event) => {
+      suppressZoneClick = true;
+      event.preventDefault();
+      event.stopPropagation();
+      showZoneInfo(zone, button, false);
+    },
+    { passive: false }
+  );
   button.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -515,7 +530,7 @@ zoneShortcuts.forEach((button) => {
       suppressZoneClick = false;
       return;
     }
-    showZoneInfo(zone, button);
+    showZoneInfo(zone, button, false);
   });
 });
 
