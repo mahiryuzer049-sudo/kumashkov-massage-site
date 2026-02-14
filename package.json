@@ -11,9 +11,13 @@
     "lint:css": "stylelint \"src/styles/**/*.css\"",
     "lint:html": "html-validate \"dist/**/*.html\"",
     "perf:budget": "node scripts/perf-budget.mjs",
+    "qa:anchors": "node scripts/qa-anchors.mjs",
+    "qa:assets": "node scripts/qa-assets.mjs",
+    "qa:scanner": "node scripts/qa-scanner.mjs",
+    "qa:nav": "node scripts/qa-nav.mjs",
     "format": "prettier --write \"src/**/*.{html,js,css}\"",
     "lint": "npm run lint:js && npm run lint:css",
-    "check": "npm run lint && npm run build && npm run lint:html && npm run perf:budget"
+    "check": "npm run lint && npm run build && npm run lint:html && npm run qa:anchors && npm run qa:assets && npm run qa:scanner && npm run qa:nav && npm run perf:budget"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

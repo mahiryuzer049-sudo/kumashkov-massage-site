@@ -24,10 +24,6 @@
 
 <link rel="canonical" href="{{seo.canonical}}">
 
-{{#if seo.includeYandexWebmasterPlaceholder}}
-<!-- TODO: Yandex Webmaster verification meta here -->
-{{/if}}
-
 {{#if seo.preloadImage}}
 <link rel="preload" as="image" href="{{seo.preloadImage}}">
 {{/if}}
@@ -35,10 +31,6 @@
 {{#if seo.preconnectUnsplash}}
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="dns-prefetch" href="//images.unsplash.com">
-{{/if}}
-
-{{#if seo.includeYandexMetrikaPlaceholder}}
-<!-- TODO: Yandex Metrika counter (place script here) -->
 {{/if}}
 
 {{#each seo.structuredDataScripts}}

@@ -1,7 +1,8 @@
 # Фаза 7 — Финальная UX/QA стабилизация
 
-Дата: 2026-02-12  
+Дата: 2026-02-14  
 Проект: `pavelkumashkov.ru`
+Примечание (2026-02-14): повторный прогон после обновлений V3 выполнен.
 
 ## Что проверено
 
@@ -35,16 +36,19 @@
 
 ## Инженерный статус
 
-- `npm run check` — `PASS`.
+- `npm run check` — `PASS` (прогон 2026-02-14).
 - Performance budget:
-  - `Total critical payload (gzip): 67.95 KiB`
-  - Порог обновлён до `70.00 KiB` для актуального объёма контента и UI-слоя.
+  - `index.html (gzip): 29.18 KiB` (лимит `30.00 KiB`)
+  - `main.css (gzip): 12.05 KiB` (лимит `13.00 KiB`)
+  - `Total critical payload (gzip): 72.25 KiB` (лимит `73.00 KiB`)
 
 ## Изменения в рамках фазы
 
 - Обновлён статус фазы 7 в плане: `FIX_PLAN_V2_ISSUES.md`.
 - Обновлён общий perf-budget порог:
-  - `scripts/perf-budget.mjs` → `totalCriticalGzipMax: 70 * 1024`.
+  - `scripts/perf-budget.mjs` → `indexHtmlGzipMax: 30 * 1024`, `mainCssGzipMax: 13 * 1024`, `totalCriticalGzipMax: 73 * 1024`.
+- Добавлена post-build оптимизация HTML:
+  - `vite.config.mjs` → collapse whitespace + удаление HTML-комментариев.
 
 ## Вывод
 

@@ -1,5 +1,5 @@
-<!-- RESULTS -->
-<section id="results" class="section-shell bg-[#050505] overflow-hidden border-y border-white/5">
+﻿<!-- RESULTS -->
+<section id="results" class="section-shell bg-[#050505] overflow-hidden">
   <div class="max-w-6xl mx-auto px-6 relative z-10">
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Outcome Ladder</p>
@@ -10,14 +10,62 @@
       </p>
     </div>
 
+    <div class="compare-slider card-luxe p-5 reveal-on-scroll" data-compare style="--compare: 52%;">
+      <div class="compare-labels">
+        <span>До</span>
+        <span>После</span>
+      </div>
+      <div class="compare-images">
+        <img src="/assets/images/results/results-detail-01.jpg" srcset="/assets/images/results/results-detail-01.jpg?width=640 640w, /assets/images/results/results-detail-01.jpg?width=960 960w, /assets/images/results/results-detail-01.jpg?width=1280 1280w, /assets/images/results/results-detail-01.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 600px" alt="Состояние до" loading="lazy" decoding="async">
+        <img src="/assets/images/results/results-detail-02.jpg" srcset="/assets/images/results/results-detail-02.jpg?width=640 640w, /assets/images/results/results-detail-02.jpg?width=960 960w, /assets/images/results/results-detail-02.jpg?width=1280 1280w, /assets/images/results/results-detail-02.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 70vw, 600px" alt="Состояние после" loading="lazy" decoding="async" class="compare-after">
+      </div>
+      <input
+        class="compare-range"
+        type="range"
+        min="0"
+        max="100"
+        value="52"
+        aria-label="Сравнить до и после"
+      >
+    </div>
+
     <figure class="media-frame aspect-[16/7] mb-8 reveal-on-scroll" data-reveal-delay="0.03s">
-      <img src="/assets/images/results/results-main.jpg" alt="Визуал динамики результата" loading="lazy" decoding="async">
+      <img src="/assets/images/results/results-main.jpg" srcset="/assets/images/results/results-main.jpg?width=640 640w, /assets/images/results/results-main.jpg?width=960 960w, /assets/images/results/results-main.jpg?width=1280 1280w, /assets/images/results/results-main.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Визуал динамики результата" loading="lazy" decoding="async">
       <span class="media-badge">Progress</span>
     </figure>
 
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <article class="card-luxe p-5 reveal-on-scroll" data-reveal-delay="0.02s">
+        <div class="media-frame aspect-[4/3] mb-4">
+          <img src="/assets/images/results/results-detail-01.jpg" srcset="/assets/images/results/results-detail-01.jpg?width=480 480w, /assets/images/results/results-detail-01.jpg?width=720 720w, /assets/images/results/results-detail-01.jpg?width=960 960w, /assets/images/results/results-detail-01.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Результат: снятие напряжения" loading="lazy" decoding="async">
+          <span class="media-badge">Detail 01</span>
+        </div>
+        <p class="text-sm text-ivory mb-1">Снятие напряжения</p>
+        <p class="text-xs text-gray-400">Первые изменения в ключевых зонах уже после 1 визита.</p>
+      </article>
+
+      <article class="card-luxe p-5 reveal-on-scroll" data-reveal-delay="0.08s">
+        <div class="media-frame aspect-[4/3] mb-4">
+          <img src="/assets/images/results/results-detail-02.jpg" srcset="/assets/images/results/results-detail-02.jpg?width=480 480w, /assets/images/results/results-detail-02.jpg?width=720 720w, /assets/images/results/results-detail-02.jpg?width=960 960w, /assets/images/results/results-detail-02.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Результат: ровный тонус" loading="lazy" decoding="async">
+          <span class="media-badge">Detail 02</span>
+        </div>
+        <p class="text-sm text-ivory mb-1">Ровный тонус</p>
+        <p class="text-xs text-gray-400">Тело держит ось и нагрузку без частых откатов.</p>
+      </article>
+
+      <article class="card-luxe p-5 reveal-on-scroll" data-reveal-delay="0.14s">
+        <div class="media-frame aspect-[4/3] mb-4">
+          <img src="/assets/images/results/results-detail-03.jpg" srcset="/assets/images/results/results-detail-03.jpg?width=480 480w, /assets/images/results/results-detail-03.jpg?width=720 720w, /assets/images/results/results-detail-03.jpg?width=960 960w, /assets/images/results/results-detail-03.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Результат: устойчивый режим" loading="lazy" decoding="async">
+          <span class="media-badge">Detail 03</span>
+        </div>
+        <p class="text-sm text-ivory mb-1">Устойчивый режим</p>
+        <p class="text-xs text-gray-400">Появляется понятный ритм поддержки без перегруза.</p>
+      </article>
+    </div>
+
     <div class="grid md:grid-cols-3 gap-5">
       <article class="card-luxe p-6 reveal-on-scroll" data-hover-lift data-reveal-delay="0.02s">
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-3">1 визит</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">1 визит</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Быстрый эффект</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Снимается острая скованность в ключевых зонах.</span></li>
@@ -27,7 +75,7 @@
       </article>
 
       <article class="card-luxe p-6 reveal-on-scroll border border-champagne/30" data-hover-lift data-reveal-delay="0.08s">
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-3">4 визита</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">4 визита</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Курсовый эффект</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Стабилизируется тонус, снижается «фоновая» усталость.</span></li>
@@ -37,7 +85,7 @@
       </article>
 
       <article class="card-luxe p-6 reveal-on-scroll" data-hover-lift data-reveal-delay="0.14s">
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-3">8 визитов</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">8 визитов</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Долгий результат</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Устойчивое ощущение легкости и собранности в теле.</span></li>
@@ -49,15 +97,15 @@
 
     <div class="mt-8 grid md:grid-cols-3 gap-4 reveal-on-scroll" data-reveal-delay="0.18s">
       <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Start</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Start</p>
         <p class="text-sm text-gray-300">Проверяем реакцию тела и фиксируем персональный вектор работы.</p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Core</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Core</p>
         <p class="text-sm text-gray-300">Закрепляем эффект ритмом и корректируем техники по динамике.</p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Signature</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Signature</p>
         <p class="text-sm text-gray-300">Формируем поддерживающий режим без отката к исходному состоянию.</p>
       </div>
     </div>
@@ -65,7 +113,7 @@
     <div class="mt-8 card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.2s">
       <div class="flex flex-wrap items-center justify-between gap-3.5">
         <div>
-          <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-1">Следующий шаг</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-1">Следующий шаг</p>
           <p class="text-sm text-gray-300">
             Если хотите стабильный эффект, после первого визита соберем подходящий пакет и частоту под ваш график.
           </p>
@@ -81,3 +129,4 @@
     </div>
   </div>
 </section>
+

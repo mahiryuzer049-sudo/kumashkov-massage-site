@@ -1,5 +1,5 @@
-<!-- SERVICES -->
-<section id="services" class="section-shell bg-void border-y border-white/5">
+﻿<!-- SERVICES -->
+<section id="services" class="section-shell bg-void">
   <div class="max-w-screen-xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Service Matrix</p>
@@ -13,10 +13,10 @@
     <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
       <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.02s">
         <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/classic.jpg" alt="Service preview: classic" loading="lazy" decoding="async">
+          <img src="/assets/images/services/classic.jpg" srcset="/assets/images/services/classic.jpg?width=480 480w, /assets/images/services/classic.jpg?width=720 720w, /assets/images/services/classic.jpg?width=960 960w, /assets/images/services/classic.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: classic" loading="lazy" decoding="async">
           <span class="media-badge">Classic</span>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Recovery Base</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Recovery Base</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Восстановление</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
           Снятие мышечной перегрузки после работы и стресса. Фокус на спину, плечевой пояс и общее ощущение опоры.
@@ -25,10 +25,10 @@
 
       <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
         <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/relax.jpg" alt="Service preview: relax" loading="lazy" decoding="async">
+          <img src="/assets/images/services/relax.jpg" srcset="/assets/images/services/relax.jpg?width=480 480w, /assets/images/services/relax.jpg?width=720 720w, /assets/images/services/relax.jpg?width=960 960w, /assets/images/services/relax.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: relax" loading="lazy" decoding="async">
           <span class="media-badge">Relax</span>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Calm Reset</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Calm Reset</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Антистресс</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
           Мягкий темп и ритм для разгрузки нервной системы, снижения внутреннего шума и более глубокого отдыха.
@@ -37,10 +37,10 @@
 
       <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.14s">
         <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/lymph.jpg" alt="Service preview: lymph" loading="lazy" decoding="async">
+          <img src="/assets/images/services/lymph.jpg" srcset="/assets/images/services/lymph.jpg?width=480 480w, /assets/images/services/lymph.jpg?width=720 720w, /assets/images/services/lymph.jpg?width=960 960w, /assets/images/services/lymph.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: lymph" loading="lazy" decoding="async">
           <span class="media-badge">Lymph</span>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Drain & Tone</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Drain & Tone</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Легкость и тонус</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
           Формат для уменьшения тяжести в ногах, ощущения «отечности» и повышения общей легкости движений.
@@ -49,10 +49,10 @@
 
       <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.2s">
         <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/posture.jpg" alt="Service preview: posture" loading="lazy" decoding="async">
+          <img src="/assets/images/services/posture.jpg" srcset="/assets/images/services/posture.jpg?width=480 480w, /assets/images/services/posture.jpg?width=720 720w, /assets/images/services/posture.jpg?width=960 960w, /assets/images/services/posture.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: posture" loading="lazy" decoding="async">
           <span class="media-badge">Focus</span>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Zone Focus</p>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Zone Focus</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Прицельные зоны</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
           Акцентная работа по запросу: шея, плечи, поясница, ноги, ягодичная зона — в согласованном и комфортном
@@ -61,10 +61,166 @@
       </article>
     </div>
 
+    <div class="service-spotlight card-luxe p-6 md:p-7 reveal-on-scroll" data-service-tabs data-reveal-delay="0.2s">
+      <div class="service-tabs" role="tablist" aria-label="Форматы и эффекты">
+        <button
+          id="service-tab-classic"
+          class="service-tab is-active interactive-el"
+          type="button"
+          role="tab"
+          aria-controls="service-panel-classic"
+          aria-selected="true"
+          data-service-tab="classic"
+        >
+          Classic
+        </button>
+        <button
+          id="service-tab-relax"
+          class="service-tab interactive-el"
+          type="button"
+          role="tab"
+          aria-controls="service-panel-relax"
+          aria-selected="false"
+          data-service-tab="relax"
+        >
+          Relax
+        </button>
+        <button
+          id="service-tab-lymph"
+          class="service-tab interactive-el"
+          type="button"
+          role="tab"
+          aria-controls="service-panel-lymph"
+          aria-selected="false"
+          data-service-tab="lymph"
+        >
+          Lymph
+        </button>
+        <button
+          id="service-tab-posture"
+          class="service-tab interactive-el"
+          type="button"
+          role="tab"
+          aria-controls="service-panel-posture"
+          aria-selected="false"
+          data-service-tab="posture"
+        >
+          Posture
+        </button>
+      </div>
+
+      <div class="service-panels">
+        <div
+          id="service-panel-classic"
+          class="service-panel is-active"
+          role="tabpanel"
+          aria-labelledby="service-tab-classic"
+          data-service-panel="classic"
+        >
+          <div class="media-frame service-spotlight-media mb-4">
+            <img src="/assets/images/services/classic.jpg" srcset="/assets/images/services/classic.jpg?width=640 640w, /assets/images/services/classic.jpg?width=960 960w, /assets/images/services/classic.jpg?width=1200 1200w, /assets/images/services/classic.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Classic формат" loading="lazy" decoding="async">
+            <span class="media-badge">Classic</span>
+          </div>
+          <h3 class="font-serif text-2xl text-ivory mb-3">Восстановление и опора</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Когда нужно вернуть телу тонус и снять фоновую перегрузку. Базовый формат, который помогает стабилизировать
+            ощущение опоры и энергии.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-400 mb-5">
+            <li>• Фокус: спина, плечевой пояс, общее восстановление.</li>
+            <li>• Эффект: ровнее самочувствие и меньше усталости.</li>
+            <li>• Переход: 1 визит -> Core курс по динамике.</li>
+          </ul>
+          <a href="/landing-classic.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Classic">
+            Смотреть Classic
+          </a>
+        </div>
+
+        <div
+          id="service-panel-relax"
+          class="service-panel"
+          role="tabpanel"
+          aria-labelledby="service-tab-relax"
+          data-service-panel="relax"
+          aria-hidden="true"
+        >
+          <div class="media-frame service-spotlight-media mb-4">
+            <img src="/assets/images/services/relax.jpg" srcset="/assets/images/services/relax.jpg?width=640 640w, /assets/images/services/relax.jpg?width=960 960w, /assets/images/services/relax.jpg?width=1200 1200w, /assets/images/services/relax.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Relax формат" loading="lazy" decoding="async">
+            <span class="media-badge">Relax</span>
+          </div>
+          <h3 class="font-serif text-2xl text-ivory mb-3">Глубокая разгрузка</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Мягкий темп и спокойный ритм для снятия внутреннего шума. Формат, когда важно «выдохнуть» и перезапустить
+            нервную систему.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-400 mb-5">
+            <li>• Фокус: расслабление, сон, снятие эмоционального напряжения.</li>
+            <li>• Эффект: легкость, спокойствие, более ровный ритм.</li>
+            <li>• Переход: 1-2 визита -> поддерживающий режим.</li>
+          </ul>
+          <a href="/landing-relax.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Relax">
+            Смотреть Relax
+          </a>
+        </div>
+
+        <div
+          id="service-panel-lymph"
+          class="service-panel"
+          role="tabpanel"
+          aria-labelledby="service-tab-lymph"
+          data-service-panel="lymph"
+          aria-hidden="true"
+        >
+          <div class="media-frame service-spotlight-media mb-4">
+            <img src="/assets/images/services/lymph.jpg" srcset="/assets/images/services/lymph.jpg?width=640 640w, /assets/images/services/lymph.jpg?width=960 960w, /assets/images/services/lymph.jpg?width=1200 1200w, /assets/images/services/lymph.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Lymph формат" loading="lazy" decoding="async">
+            <span class="media-badge">Lymph</span>
+          </div>
+          <h3 class="font-serif text-2xl text-ivory mb-3">Легкость и дренаж</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Деликатная работа с отечностью и ощущением тяжести в ногах. Подходит как отдельный курс или как поддержка.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-400 mb-5">
+            <li>• Фокус: ноги, лимфодренаж, ощущение легкости.</li>
+            <li>• Эффект: меньше тяжести и отечности.</li>
+            <li>• Переход: 2-4 визита -> закрепление.</li>
+          </ul>
+          <a href="/landing-lymph.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Lymph">
+            Смотреть Lymph
+          </a>
+        </div>
+
+        <div
+          id="service-panel-posture"
+          class="service-panel"
+          role="tabpanel"
+          aria-labelledby="service-tab-posture"
+          data-service-panel="posture"
+          aria-hidden="true"
+        >
+          <div class="media-frame service-spotlight-media mb-4">
+            <img src="/assets/images/services/posture.jpg" srcset="/assets/images/services/posture.jpg?width=640 640w, /assets/images/services/posture.jpg?width=960 960w, /assets/images/services/posture.jpg?width=1200 1200w, /assets/images/services/posture.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Posture формат" loading="lazy" decoding="async">
+            <span class="media-badge">Posture</span>
+          </div>
+          <h3 class="font-serif text-2xl text-ivory mb-3">Осанка и баланс</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Формат для тех, кто много сидит, чувствует зажимы в плечах и пояснице и хочет устойчивого результата.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-400 mb-5">
+            <li>• Фокус: ось тела, плечи, поясница.</li>
+            <li>• Эффект: более ровная осанка и свобода движения.</li>
+            <li>• Переход: курс 4 визита -> поддержка.</li>
+          </ul>
+          <a href="/landing-posture.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Posture">
+            Смотреть Posture
+          </a>
+        </div>
+      </div>
+    </div>
+
     <div class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.24s">
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-2">Как это монетизируется честно</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-2">Как это монетизируется честно</p>
           <p class="text-sm text-gray-300 leading-relaxed">
             Сначала выбираем лучший формат для первого визита, затем при желании переводим в курс или поддерживающий
             режим без навязанных обязательств.
@@ -81,3 +237,4 @@
     </div>
   </div>
 </section>
+

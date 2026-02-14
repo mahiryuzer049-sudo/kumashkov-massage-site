@@ -16,6 +16,14 @@ if (lowPowerEffects) body.classList.add("low-power-effects");
 
 const menuToggle = document.getElementById("mobile-menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
+let lastMenuTrigger = null;
+
+const getMenuFocusable = () => {
+  if (!mobileMenu) return [];
+  return Array.from(
+    mobileMenu.querySelectorAll('a,button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
+  ).filter((node) => !node.hasAttribute("disabled"));
+};
 
 const closeMobileMenu = () => {
   if (!menuToggle || !mobileMenu) return;
@@ -23,14 +31,33 @@ const closeMobileMenu = () => {
   mobileMenu.classList.add("hidden");
   mobileMenu.setAttribute("aria-hidden", "true");
   body.classList.remove("menu-open");
+  if (lastMenuTrigger && typeof lastMenuTrigger.focus === "function") {
+    try {
+      lastMenuTrigger.focus({ preventScroll: true });
+    } catch {
+      lastMenuTrigger.focus();
+    }
+  }
+  lastMenuTrigger = null;
 };
 
 const openMobileMenu = () => {
   if (!menuToggle || !mobileMenu) return;
+  lastMenuTrigger = document.activeElement;
   menuToggle.setAttribute("aria-expanded", "true");
   mobileMenu.classList.remove("hidden");
   mobileMenu.setAttribute("aria-hidden", "false");
   body.classList.add("menu-open");
+  const focusable = getMenuFocusable();
+  if (focusable.length) {
+    requestAnimationFrame(() => {
+      try {
+        focusable[0].focus({ preventScroll: true });
+      } catch {
+        focusable[0].focus();
+      }
+    });
+  }
 };
 
 if (menuToggle && mobileMenu) {
@@ -57,6 +84,20 @@ if (menuToggle && mobileMenu) {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMobileMenu();
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    if (!isOpen || event.key !== "Tab") return;
+    const focusable = getMenuFocusable();
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const current = document.activeElement;
+    if (event.shiftKey && current === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && current === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 }
 
@@ -99,7 +140,7 @@ const animateCursor = () => {
   requestAnimationFrame(animateCursor);
 };
 
-if (!reducedEffects && hasFinePointer && cursorDot && cursorCircle && spotlight) {
+if (!reducedEffects && !lowPowerEffects && hasFinePointer && cursorDot && cursorCircle && spotlight) {
   spotlight.style.setProperty("--x", `${mouseX}px`);
   spotlight.style.setProperty("--y", `${mouseY}px`);
   document.addEventListener("mousemove", (event) => {
@@ -145,13 +186,53 @@ if ("IntersectionObserver" in window) {
   revealElements.forEach((el) => el.classList.add("visible"));
 }
 
+const navSectionLinks = Array.from(document.querySelectorAll("[data-nav-section]"));
+if (navSectionLinks.length && "IntersectionObserver" in window) {
+  const sectionMap = new Map();
+  navSectionLinks.forEach((link) => {
+    const sectionId = link.dataset.navSection || "";
+    if (!sectionId) return;
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+    if (!sectionMap.has(sectionId)) sectionMap.set(sectionId, []);
+    sectionMap.get(sectionId).push(link);
+  });
+
+  const trackedSections = Array.from(sectionMap.keys())
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  const setActiveSection = (id) => {
+    navSectionLinks.forEach((link) => {
+      const isActive = link.dataset.navSection === id;
+      link.classList.toggle("is-active", isActive);
+      link.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+  };
+
+  if (trackedSections.length) {
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const activeId = entry.target.id;
+          setActiveSection(activeId);
+        });
+      },
+      { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 }
+    );
+
+    trackedSections.forEach((section) => navObserver.observe(section));
+  }
+}
+
 const scanLine = document.getElementById("scan-line");
 const scannerSection = document.getElementById("scanner") || document.getElementById("scanner-section");
 if (scanLine && scannerSection && "IntersectionObserver" in window) {
   const scanObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting && !reducedEffects) {
+        if (entry.isIntersecting && !reducedEffects && !lowPowerEffects) {
           scanLine.classList.add("animate-scan");
         } else {
           scanLine.classList.remove("animate-scan");
@@ -161,7 +242,7 @@ if (scanLine && scannerSection && "IntersectionObserver" in window) {
     { threshold: 0.22 }
   );
   scanObserver.observe(scannerSection);
-} else if (scanLine && !reducedEffects) {
+} else if (scanLine && !reducedEffects && !lowPowerEffects) {
   scanLine.classList.add("animate-scan");
 }
 
@@ -172,7 +253,7 @@ document.querySelectorAll(".btn-vibrate").forEach((btn) => {
 });
 
 document.addEventListener("click", (event) => {
-  if (reducedEffects) return;
+  if (reducedEffects || lowPowerEffects) return;
   const target = event.target.closest(".ripple-container");
   if (!target) return;
   const circle = document.createElement("span");
@@ -215,30 +296,35 @@ const zoneData = {
   head: {
     title: "Перегрузка головы",
     med: "Ментальное напряжение",
+    image: "/assets/images/scanner/zone-head.jpg",
     desc: "Если мысли не отпускают даже в тишине, телу нужен мягкий сброс нагрузки. Начнем с расслабления шейно-воротниковой зоны и мягкой стабилизации дыхания.",
     msg: "Здравствуйте! Беспокоит ментальная перегрузка и тяжесть в голове. Хочу подобрать сеанс."
   },
   neck: {
     title: "Напряжение шеи",
     med: "Мышечный зажим",
+    image: "/assets/images/scanner/zone-neck.jpg",
     desc: "Скованность в шее часто накапливается из-за статической нагрузки и стресса. Поможет аккуратная проработка шеи и плечевого пояса с комфортным давлением.",
     msg: "Здравствуйте! Беспокоит шея и верх спины. Хочу записаться на сеанс."
   },
   shoulders: {
     title: "Плечевой щит",
     med: "Переутомление плечевого пояса",
+    image: "/assets/images/scanner/zone-shoulders.jpg",
     desc: "Когда плечи постоянно «вверх», уходит свобода дыхания и появляется фоновая усталость. Сеанс вернет подвижность и снизит общую напряженность.",
     msg: "Здравствуйте! Чувствую сильный зажим в плечах. Хочу обсудить формат сеанса."
   },
   back: {
     title: "Спина просит разгрузку",
     med: "Переутомление спины/поясницы",
+    image: "/assets/images/scanner/zone-back.jpg",
     desc: "Зажим в спине и пояснице влияет на осанку, сон и энергию. В протокол включим мягкую глубинную проработку с акцентом на комфорт и восстановление.",
     msg: "Здравствуйте! Беспокоит спина и поясница, хочу подобрать индивидуальный сеанс."
   },
   legs: {
     title: "Тяжесть в ногах",
     med: "Усталость и застой",
+    image: "/assets/images/scanner/zone-legs.jpg",
     desc: "Если к вечеру появляется ощущение тяжести, хорошо работает дренажный и восстанавливающий формат. Помогу вернуть легкость движению.",
     msg: "Здравствуйте! Есть тяжесть в ногах, хочу записаться на восстанавливающий сеанс."
   }
@@ -316,13 +402,24 @@ const showZoneInfo = (zone, triggerElement) => {
   zoneTitle.innerText = data.title;
   zoneMed.innerText = data.med;
   typeText(zoneDesc, data.desc);
+  if (data.image) {
+    zonePopup.style.setProperty("--zone-image", `url("${data.image}")`);
+  } else {
+    zonePopup.style.removeProperty("--zone-image");
+  }
 
   zonePopup.dataset.active = zone;
   zonePopup.classList.add("open");
   zonePopup.setAttribute("aria-hidden", "false");
   if (scannerContainer) scannerContainer.dataset.activeZone = zone;
   requestAnimationFrame(() => {
-    if (zoneClose) zoneClose.focus();
+    if (zoneClose && typeof zoneClose.focus === "function") {
+      try {
+        zoneClose.focus({ preventScroll: true });
+      } catch {
+        zoneClose.focus();
+      }
+    }
   });
 
   const protocolValue = protocolZoneMap[zone];
@@ -338,10 +435,15 @@ const hideZoneInfo = () => {
   zonePopup.classList.remove("open");
   zonePopup.dataset.active = "";
   zonePopup.setAttribute("aria-hidden", "true");
+  zonePopup.style.removeProperty("--zone-image");
   if (scannerContainer) scannerContainer.dataset.activeZone = "";
   setActiveZoneState("");
   if (lastZoneTrigger && typeof lastZoneTrigger.focus === "function") {
-    lastZoneTrigger.focus();
+    try {
+      lastZoneTrigger.focus({ preventScroll: true });
+    } catch {
+      lastZoneTrigger.focus();
+    }
   }
   lastZoneTrigger = null;
 };
@@ -364,10 +466,15 @@ activePoints.forEach((point) => {
   const zone = point.getAttribute("data-point");
   point.setAttribute("aria-pressed", "false");
   point.setAttribute("aria-controls", "zone-popup");
-  point.addEventListener("click", () => showZoneInfo(zone, point));
+  point.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    showZoneInfo(zone, point);
+  });
   point.addEventListener("keydown", (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
+      event.stopPropagation();
       showZoneInfo(zone, point);
     }
   });
@@ -377,7 +484,9 @@ zoneShortcuts.forEach((button) => {
   const zone = button.getAttribute("data-zone-shortcut");
   button.setAttribute("aria-pressed", "false");
   button.setAttribute("aria-controls", "zone-popup");
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     showZoneInfo(zone, button);
   });
 });
@@ -415,6 +524,152 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
     first.focus();
   }
+});
+
+const compareSliders = Array.from(document.querySelectorAll("[data-compare]"));
+compareSliders.forEach((slider) => {
+  const range = slider.querySelector(".compare-range");
+  if (!range) return;
+  const updateCompare = () => {
+    slider.style.setProperty("--compare", `${range.value}%`);
+  };
+  range.addEventListener("input", updateCompare);
+  range.addEventListener("change", updateCompare);
+  updateCompare();
+});
+
+const serviceSpotlights = Array.from(document.querySelectorAll("[data-service-tabs]"));
+serviceSpotlights.forEach((spotlight) => {
+  const tabs = Array.from(spotlight.querySelectorAll("[data-service-tab]"));
+  const panels = Array.from(spotlight.querySelectorAll("[data-service-panel]"));
+  if (!tabs.length || !panels.length) return;
+
+  const activateTab = (value, focusTab = false) => {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.serviceTab === value;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+      if (isActive && focusTab) tab.focus();
+    });
+
+    panels.forEach((panel) => {
+      const isActive = panel.dataset.servicePanel === value;
+      panel.classList.toggle("is-active", isActive);
+      panel.setAttribute("aria-hidden", String(!isActive));
+    });
+  };
+
+  const initialTab = tabs.find((tab) => tab.classList.contains("is-active")) || tabs[0];
+  if (initialTab) activateTab(initialTab.dataset.serviceTab);
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateTab(tab.dataset.serviceTab));
+    tab.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        event.preventDefault();
+        const next = tabs[index + 1] || tabs[0];
+        activateTab(next.dataset.serviceTab, true);
+      }
+      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        event.preventDefault();
+        const prev = tabs[index - 1] || tabs[tabs.length - 1];
+        activateTab(prev.dataset.serviceTab, true);
+      }
+    });
+  });
+});
+
+const accordions = Array.from(document.querySelectorAll("[data-accordion]"));
+accordions.forEach((accordion) => {
+  const items = Array.from(accordion.querySelectorAll(".trust-accordion-item"));
+  if (!items.length) return;
+
+  const setPanelHeight = (panel, open) => {
+    if (!panel) return;
+    if (open) {
+      panel.style.height = `${panel.scrollHeight}px`;
+      setTimeout(() => {
+        panel.style.height = "auto";
+      }, 260);
+    } else {
+      if (panel.style.height === "auto") {
+        panel.style.height = `${panel.scrollHeight}px`;
+      }
+      requestAnimationFrame(() => {
+        panel.style.height = "0px";
+      });
+    }
+  };
+
+  items.forEach((item) => {
+    const trigger = item.querySelector(".trust-accordion-trigger");
+    const panel = item.querySelector(".trust-accordion-panel");
+    if (!trigger || !panel) return;
+    const isOpen = item.classList.contains("is-open");
+    trigger.setAttribute("aria-expanded", String(isOpen));
+    panel.setAttribute("aria-hidden", String(!isOpen));
+    setPanelHeight(panel, isOpen);
+
+    trigger.addEventListener("click", () => {
+      const openNow = !item.classList.contains("is-open");
+      items.forEach((other) => {
+        const otherTrigger = other.querySelector(".trust-accordion-trigger");
+        const otherPanel = other.querySelector(".trust-accordion-panel");
+        const shouldOpen = other === item ? openNow : false;
+        other.classList.toggle("is-open", shouldOpen);
+        if (otherTrigger) otherTrigger.setAttribute("aria-expanded", String(shouldOpen));
+        if (otherPanel) {
+          otherPanel.setAttribute("aria-hidden", String(!shouldOpen));
+          setPanelHeight(otherPanel, shouldOpen);
+        }
+      });
+    });
+  });
+});
+
+const scenarioCarousels = Array.from(document.querySelectorAll("[data-scenario-carousel]"));
+scenarioCarousels.forEach((carousel) => {
+  const track = carousel.querySelector(".scenario-track");
+  const prev = carousel.querySelector(".scenario-prev");
+  const next = carousel.querySelector(".scenario-next");
+  if (!track) return;
+
+  const scrollByCard = (direction) => {
+    const card = track.querySelector(".scenario-card");
+    const cardWidth = card ? card.getBoundingClientRect().width : 260;
+    track.scrollBy({ left: direction * (cardWidth + 20), behavior: "smooth" });
+  };
+
+  if (prev) prev.addEventListener("click", () => scrollByCard(-1));
+  if (next) next.addEventListener("click", () => scrollByCard(1));
+});
+
+const expectationSwitches = Array.from(document.querySelectorAll("[data-expectation-switch]"));
+expectationSwitches.forEach((switcher) => {
+  const tabs = Array.from(switcher.querySelectorAll("[data-expectation-tab]"));
+  const container = switcher.closest("section") || document;
+  const panels = Array.from(container.querySelectorAll("[data-expectation-panel]"));
+  if (!tabs.length || !panels.length) return;
+
+  const activate = (value) => {
+    tabs.forEach((tab) => {
+      const isActive = tab.dataset.expectationTab === value;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+    });
+    panels.forEach((panel) => {
+      const isActive = panel.dataset.expectationPanel === value;
+      panel.classList.toggle("is-active", isActive);
+      panel.setAttribute("aria-hidden", String(!isActive));
+    });
+  };
+
+  const initial = tabs.find((tab) => tab.classList.contains("is-active")) || tabs[0];
+  if (initial) activate(initial.dataset.expectationTab);
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => activate(tab.dataset.expectationTab));
+  });
 });
 
 const ritualButtons = Array.from(document.querySelectorAll(".step-btn[data-step]"));
@@ -606,3 +861,26 @@ document.querySelectorAll("[data-analytics]").forEach((el) => {
     // Intentionally silent by default.
   });
 });
+
+const tiltCards = Array.from(document.querySelectorAll("[data-tilt-card]"));
+if (tiltCards.length && !reducedEffects && hasFinePointer) {
+  const maxRotate = 8;
+  const maxTranslate = 12;
+
+  tiltCards.forEach((card) => {
+    card.addEventListener("mousemove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      const rotateY = x * maxRotate;
+      const rotateX = -y * maxRotate;
+      const translateX = x * maxTranslate;
+      const translateY = y * maxTranslate;
+      card.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+}

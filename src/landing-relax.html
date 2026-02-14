@@ -10,7 +10,7 @@
   {{> header}}
 
   <main id="main" class="pt-28">
-    <section class="section-shell bg-void border-y border-white/5">
+    <section class="section-shell bg-void">
       <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
         <div class="reveal-on-scroll">
           <p class="section-kicker text-left">Relax Format</p>
@@ -34,7 +34,11 @@
         </div>
 
         <article class="card-luxe p-7 reveal-on-scroll" data-reveal-delay="0.08s">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Когда выбирать</p>
+          <div class="media-frame landing-hero-media mb-5">
+            <img src="/assets/images/landing/relax-hero.jpg" srcset="/assets/images/landing/relax-hero.jpg?width=640 640w, /assets/images/landing/relax-hero.jpg?width=960 960w, /assets/images/landing/relax-hero.jpg?width=1200 1200w, /assets/images/landing/relax-hero.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Relax формат" loading="lazy" decoding="async">
+            <span class="media-badge">Relax</span>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Когда выбирать</p>
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• После эмоционально тяжелой недели и переутомления.</li>
             <li>• Если сложно «отпустить» тело перед сном.</li>
@@ -44,10 +48,10 @@
       </div>
     </section>
 
-    <section class="section-shell bg-[#060606] border-y border-white/5">
+    <section class="section-shell bg-[#060606]">
       <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5">
         <article class="card-luxe p-6 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• Больше спокойствия в теле и мыслях.</li>
             <li>• Более глубокое расслабление после сеанса.</li>
@@ -56,7 +60,7 @@
         </article>
 
         <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Комбинация</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Комбинация</p>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Релакс можно комбинировать с базовым восстановлением или курсом по осанке, если есть смешанный запрос.
           </p>
@@ -80,17 +84,17 @@
 
         <div class="grid md:grid-cols-3 gap-5">
           <a href="/landing-classic.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-analytics="LandingRelax: Related Classic">
-            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Восстановление</h3>
             <p class="text-sm text-gray-300">Если к антистрессу нужно добавить более плотную мышечную работу.</p>
           </a>
           <a href="/landing-lymph.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.08s" data-analytics="LandingRelax: Related Lymph">
-            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Lymph</p>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Lymph</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Легкость</h3>
             <p class="text-sm text-gray-300">Подходит, если вместе со стрессом есть тяжесть и отечность.</p>
           </a>
           <a href="/#technique-guide" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.14s" data-analytics="LandingRelax: Related Guide">
-            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Guide</p>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Guide</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Все форматы</h3>
             <p class="text-sm text-gray-300">Открыть гид и выбрать формат под цель без лишних шагов.</p>
           </a>
@@ -104,3 +108,4 @@
   <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>
+

@@ -1,5 +1,5 @@
 <!-- TRUST -->
-<section id="trust" class="section-shell bg-[#040404] border-y border-white/5">
+<section id="trust" class="section-shell bg-[#040404]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Trust Protocol</p>
@@ -13,10 +13,10 @@
     <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-7 items-start">
       <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
         <div class="media-frame aspect-[16/10] mb-6">
-          <img src="/assets/images/trust/process-01.jpg" alt="Процесс первого визита" loading="lazy" decoding="async">
+          <img src="/assets/images/trust/process-01.jpg" srcset="/assets/images/trust/process-01.jpg?width=480 480w, /assets/images/trust/process-01.jpg?width=720 720w, /assets/images/trust/process-01.jpg?width=960 960w, /assets/images/trust/process-01.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 360px" alt="Процесс первого визита" loading="lazy" decoding="async">
           <span class="media-badge">Process</span>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-3">Что входит в первый визит</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Что входит в первый визит</p>
         <ul class="space-y-3.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5">
             <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
@@ -48,22 +48,55 @@
 
       <article class="card-luxe p-7 md:p-8 reveal-on-scroll" data-reveal-delay="0.08s">
         <div class="media-frame aspect-[16/10] mb-6">
-          <img src="/assets/images/trust/process-02.jpg" alt="Подготовка зоны и материалов" loading="lazy" decoding="async">
+          <img src="/assets/images/trust/process-02.jpg" srcset="/assets/images/trust/process-02.jpg?width=480 480w, /assets/images/trust/process-02.jpg?width=720 720w, /assets/images/trust/process-02.jpg?width=960 960w, /assets/images/trust/process-02.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 360px" alt="Подготовка зоны и материалов" loading="lazy" decoding="async">
           <span class="media-badge">Setup</span>
         </div>
-        <p class="text-[10px] uppercase tracking-[0.24em] text-gray-500 mb-3">Почему это снижает тревогу</p>
-        <div class="grid grid-cols-1 gap-3.5">
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <p class="text-sm text-ivory mb-1">Без неопределенности</p>
-            <p class="text-xs text-gray-400">До старта понимаете, как пройдет визит и какие правила действуют.</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Почему это снижает тревогу</p>
+        <div class="trust-accordion" data-accordion>
+          <div class="trust-accordion-item is-open">
+            <button
+              id="trust-trigger-1"
+              class="trust-accordion-trigger interactive-el"
+              type="button"
+              aria-expanded="true"
+              aria-controls="trust-panel-1"
+            >
+              <span class="trust-accordion-title">Без неопределенности</span>
+              <span class="trust-accordion-icon">+</span>
+            </button>
+            <section id="trust-panel-1" class="trust-accordion-panel" aria-labelledby="trust-trigger-1">
+              <p>До старта понимаете, как пройдет визит и какие правила действуют.</p>
+            </section>
           </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <p class="text-sm text-ivory mb-1">Без давления</p>
-            <p class="text-xs text-gray-400">Вы в любой момент можете скорректировать интенсивность и ритм.</p>
+          <div class="trust-accordion-item">
+            <button
+              id="trust-trigger-2"
+              class="trust-accordion-trigger interactive-el"
+              type="button"
+              aria-expanded="false"
+              aria-controls="trust-panel-2"
+            >
+              <span class="trust-accordion-title">Без давления</span>
+              <span class="trust-accordion-icon">+</span>
+            </button>
+            <section id="trust-panel-2" class="trust-accordion-panel" aria-labelledby="trust-trigger-2">
+              <p>Вы в любой момент можете скорректировать интенсивность и ритм.</p>
+            </section>
           </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <p class="text-sm text-ivory mb-1">Без навязчивых решений</p>
-            <p class="text-xs text-gray-400">После первого визита спокойно решаете, нужен ли курс и в каком формате.</p>
+          <div class="trust-accordion-item">
+            <button
+              id="trust-trigger-3"
+              class="trust-accordion-trigger interactive-el"
+              type="button"
+              aria-expanded="false"
+              aria-controls="trust-panel-3"
+            >
+              <span class="trust-accordion-title">Без навязчивых решений</span>
+              <span class="trust-accordion-icon">+</span>
+            </button>
+            <section id="trust-panel-3" class="trust-accordion-panel" aria-labelledby="trust-trigger-3">
+              <p>После первого визита спокойно решаете, нужен ли курс и в каком формате.</p>
+            </section>
           </div>
         </div>
         <a
@@ -77,3 +110,4 @@
     </div>
   </div>
 </section>
+

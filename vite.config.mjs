@@ -6,6 +6,34 @@ import { getTemplateContext } from "./site.config.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+function collapseWhitespaceHtml() {
+  return {
+    name: "collapse-whitespace-html",
+    enforce: "post",
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        const jsonLdMinified = html.replace(
+          /<script([^>]*?)type=(['"])application\/ld\+json\2([^>]*)>([\s\S]*?)<\/script>/gi,
+          (fullMatch, beforeType, quote, afterType, jsonText) => {
+            try {
+              const compactJson = JSON.stringify(JSON.parse(jsonText));
+              return `<script${beforeType}type=${quote}application/ld+json${quote}${afterType}>${compactJson}</script>`;
+            } catch {
+              return fullMatch;
+            }
+          }
+        );
+
+        return jsonLdMinified
+          .replace(/<!--[\s\S]*?-->/g, "")
+          .replace(/>\s+</g, "><")
+          .trim();
+      },
+    },
+  };
+}
+
 export default defineConfig({
   root: "src",
   publicDir: "../public",
@@ -14,6 +42,7 @@ export default defineConfig({
       partialDirectory: "./src/partials",
       context: (pagePath) => getTemplateContext(pagePath),
     }),
+    collapseWhitespaceHtml(),
   ],
   build: {
     outDir: "../dist",

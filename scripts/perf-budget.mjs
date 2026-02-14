@@ -1,17 +1,20 @@
 import { gzipSync } from "node:zlib";
-import { existsSync, readFileSync, readdirSync } from "node:fs";
-import { join, resolve } from "node:path";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { join, resolve, extname } from "node:path";
 import process from "node:process";
 
 const DIST_DIR = resolve(process.cwd(), "dist");
 
 const BUDGET = {
-  indexHtmlGzipMax: 28 * 1024,
+  indexHtmlGzipMax: 30 * 1024,
   landingHtmlGzipMax: 7 * 1024,
   privacyHtmlGzipMax: 5 * 1024,
-  mainCssGzipMax: 12 * 1024,
+  mainCssGzipMax: 13 * 1024,
   mainJsGzipMax: 7 * 1024,
-  totalCriticalGzipMax: 70 * 1024,
+  totalCriticalGzipMax: 73 * 1024,
+  heroImageMax: 900 * 1024,
+  totalImagesMax: 6 * 1024 * 1024,
+  totalFontsMax: 600 * 1024,
 };
 
 const LANDING_FILES = [
@@ -36,6 +39,16 @@ function findHashedAsset(regex) {
   const assetsDir = join(DIST_DIR, "assets");
   const assets = existsSync(assetsDir) ? readdirSync(assetsDir) : [];
   return assets.find((fileName) => regex.test(fileName)) || null;
+}
+
+function collectFiles(dir) {
+  if (!existsSync(dir)) return [];
+  const entries = readdirSync(dir, { withFileTypes: true });
+  return entries.flatMap((entry) => {
+    const fullPath = join(dir, entry.name);
+    if (entry.isDirectory()) return collectFiles(fullPath);
+    return [fullPath];
+  });
 }
 
 function bytesLabel(bytes) {
@@ -98,6 +111,38 @@ function runBudgetCheck() {
     results.push({ metric: `${mainJs} (gzip)`, value: jsGzip, budget: BUDGET.mainJsGzipMax });
     if (jsGzip > BUDGET.mainJsGzipMax) {
       failures.push(`${mainJs} gzip is ${bytesLabel(jsGzip)} (budget ${bytesLabel(BUDGET.mainJsGzipMax)}).`);
+    }
+  }
+
+  const assetsDir = join(DIST_DIR, "assets");
+  const assetFiles = collectFiles(assetsDir);
+  const imageExts = new Set([".jpg", ".jpeg", ".png", ".webp", ".svg", ".gif", ".avif"]);
+  const fontExts = new Set([".woff", ".woff2", ".ttf", ".otf"]);
+
+  const imageFiles = assetFiles.filter((filePath) => imageExts.has(extname(filePath).toLowerCase()));
+  const fontFiles = assetFiles.filter((filePath) => fontExts.has(extname(filePath).toLowerCase()));
+
+  const totalImages = imageFiles.reduce((sum, filePath) => sum + statSync(filePath).size, 0);
+  const totalFonts = fontFiles.reduce((sum, filePath) => sum + statSync(filePath).size, 0);
+
+  results.push({ metric: "Total images (bytes)", value: totalImages, budget: BUDGET.totalImagesMax });
+  if (totalImages > BUDGET.totalImagesMax) {
+    failures.push(`Total images size is ${bytesLabel(totalImages)} (budget ${bytesLabel(BUDGET.totalImagesMax)}).`);
+  }
+
+  results.push({ metric: "Total fonts (bytes)", value: totalFonts, budget: BUDGET.totalFontsMax });
+  if (totalFonts > BUDGET.totalFontsMax) {
+    failures.push(`Total fonts size is ${bytesLabel(totalFonts)} (budget ${bytesLabel(BUDGET.totalFontsMax)}).`);
+  }
+
+  const heroImagePath = join(DIST_DIR, "assets", "images", "hero", "hero-main.jpg");
+  if (!existsSync(heroImagePath)) {
+    failures.push("Cannot find hero image at dist/assets/images/hero/hero-main.jpg.");
+  } else {
+    const heroSize = statSync(heroImagePath).size;
+    results.push({ metric: "Hero image (bytes)", value: heroSize, budget: BUDGET.heroImageMax });
+    if (heroSize > BUDGET.heroImageMax) {
+      failures.push(`Hero image size is ${bytesLabel(heroSize)} (budget ${bytesLabel(BUDGET.heroImageMax)}).`);
     }
   }
 

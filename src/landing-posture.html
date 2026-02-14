@@ -10,7 +10,7 @@
   {{> header}}
 
   <main id="main" class="pt-28">
-    <section class="section-shell bg-void border-y border-white/5">
+    <section class="section-shell bg-void">
       <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
         <div class="reveal-on-scroll">
           <p class="section-kicker text-left">Posture Balance</p>
@@ -34,7 +34,11 @@
         </div>
 
         <article class="card-luxe p-7 reveal-on-scroll" data-reveal-delay="0.08s">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Когда выбирать</p>
+          <div class="media-frame landing-hero-media mb-5">
+            <img src="/assets/images/landing/posture-hero.jpg" srcset="/assets/images/landing/posture-hero.jpg?width=640 640w, /assets/images/landing/posture-hero.jpg?width=960 960w, /assets/images/landing/posture-hero.jpg?width=1200 1200w, /assets/images/landing/posture-hero.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Posture формат" loading="lazy" decoding="async">
+            <span class="media-badge">Posture</span>
+          </div>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Когда выбирать</p>
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• Шея и плечи быстро устают от сидячей работы.</li>
             <li>• Сложно держать ровную спину в течение дня.</li>
@@ -44,10 +48,10 @@
       </div>
     </section>
 
-    <section class="section-shell bg-[#060606] border-y border-white/5">
+    <section class="section-shell bg-[#060606]">
       <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5">
         <article class="card-luxe p-6 reveal-on-scroll">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• Меньше зажимов в плечевом поясе и пояснице.</li>
             <li>• Более ровное ощущение осанки и свободы движения.</li>
@@ -56,7 +60,7 @@
         </article>
 
         <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
-          <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Рекомендованный путь</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Рекомендованный путь</p>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
             Чаще всего оптимален короткий курс 4 визита: это помогает не только снять симптомы, но и закрепить
             результат.
@@ -81,17 +85,17 @@
 
         <div class="grid md:grid-cols-3 gap-5">
           <a href="/landing-classic.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-analytics="LandingPosture: Related Classic">
-            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Восстановление</h3>
             <p class="text-sm text-gray-300">Базовый формат, если нужна общая разгрузка всего тела.</p>
           </a>
           <a href="/landing-relax.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.08s" data-analytics="LandingPosture: Related Relax">
-            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Relax</p>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Relax</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Антистресс</h3>
             <p class="text-sm text-gray-300">Хорошо дополняет курс, если есть высокий уровень стресса.</p>
           </a>
           <a href="/#goal-routes" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.14s" data-analytics="LandingPosture: Related Routes">
-            <p class="text-[10px] uppercase tracking-[0.24em] text-champagne mb-2">Routes</p>
+            <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Routes</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Маршруты</h3>
             <p class="text-sm text-gray-300">Подбор формата и частоты под вашу задачу и расписание.</p>
           </a>
@@ -105,3 +109,4 @@
   <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>
+

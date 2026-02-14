@@ -110,12 +110,11 @@ const PAGES = {
     description:
       "Персональный массаж на дому в Москве: восстановление, антистресс, лимфодренаж и работа с осанкой. Запись через WhatsApp и Telegram.",
     canonicalPath: "/",
+    pageType: "home",
     robots: "index,follow",
     geo: true,
     preloadImage: "/assets/images/og.jpg",
     preconnectUnsplash: false,
-    includeYandexWebmasterPlaceholder: true,
-    includeYandexMetrikaPlaceholder: true,
     structuredData: (site) => [PERSON_SCHEMA(site), BUSINESS_SCHEMA(site), HOME_FAQ],
   },
   "/privacy.html": {
@@ -123,13 +122,15 @@ const PAGES = {
     description:
       "Политика конфиденциальности и обработки персональных данных сайта pavelkumashkov.ru.",
     canonicalPath: "/privacy.html",
-    robots: "index,follow",
+    pageType: "legal",
+    robots: "noindex,follow",
   },
   "/landing-classic.html": {
     title: "Классический массаж на дому в Москве | Павел Кумашков",
     description:
       "Классический массаж на дому в Москве: снятие мышечной усталости, восстановление тонуса и легкость в теле.",
     canonicalPath: "/landing-classic.html",
+    pageType: "landing",
     robots: "index,follow",
     structuredData: (site) => [
       SERVICE_SCHEMA(site, {
@@ -144,6 +145,7 @@ const PAGES = {
     description:
       "Лимфодренажный массаж на дому в Москве: легкость в ногах, деликатная работа с отечностью и гидробалансом.",
     canonicalPath: "/landing-lymph.html",
+    pageType: "landing",
     robots: "index,follow",
     structuredData: (site) => [
       SERVICE_SCHEMA(site, {
@@ -158,6 +160,7 @@ const PAGES = {
     description:
       "Релакс-массаж на дому в Москве: мягкое антистресс-воздействие, расслабление нервной системы и спокойный ритм.",
     canonicalPath: "/landing-relax.html",
+    pageType: "landing",
     robots: "index,follow",
     structuredData: (site) => [
       SERVICE_SCHEMA(site, {
@@ -172,6 +175,7 @@ const PAGES = {
     description:
       "Формат для осанки и мышечного баланса на дому в Москве: снижение зажимов, выравнивание нагрузки, стабильный тонус.",
     canonicalPath: "/landing-posture.html",
+    pageType: "landing",
     robots: "index,follow",
     structuredData: (site) => [
       SERVICE_SCHEMA(site, {
@@ -195,12 +199,21 @@ export const getTemplateContext = (pagePath) => {
   const pageConfig = PAGES[normalizedPath] || PAGES["/index.html"];
   const canonicalPath = pageConfig.canonicalPath || normalizedPath;
   const canonical = toAbsoluteUrl(SITE.baseUrl, canonicalPath);
+  const pageType = pageConfig.pageType || (normalizedPath === "/index.html" ? "home" : "landing");
+  const anchorPrefix = pageType === "home" ? "#" : "/#";
   const structuredData =
     typeof pageConfig.structuredData === "function"
       ? pageConfig.structuredData(SITE)
       : pageConfig.structuredData || [];
 
   return {
+    page: {
+      type: pageType,
+      isHome: pageType === "home",
+      isLanding: pageType === "landing",
+      isLegal: pageType === "legal",
+      anchorPrefix,
+    },
     site: SITE,
     seo: {
       title: pageConfig.title,
@@ -221,8 +234,6 @@ export const getTemplateContext = (pagePath) => {
       twitterImage: toAbsoluteUrl(SITE.baseUrl, pageConfig.twitterImagePath || SITE.ogImagePath),
       preloadImage: pageConfig.preloadImage || "",
       preconnectUnsplash: Boolean(pageConfig.preconnectUnsplash),
-      includeYandexWebmasterPlaceholder: Boolean(pageConfig.includeYandexWebmasterPlaceholder),
-      includeYandexMetrikaPlaceholder: Boolean(pageConfig.includeYandexMetrikaPlaceholder),
       structuredDataScripts: structuredData.map((item) => JSON.stringify(item)),
     },
   };

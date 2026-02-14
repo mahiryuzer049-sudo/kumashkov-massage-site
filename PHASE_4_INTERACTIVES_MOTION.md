@@ -1,9 +1,8 @@
-# Фаза 4: Интерактивы, Motion и Wow-механики
+﻿# Фаза 4: Интерактивы, Motion и Wow-механики
 
 Дата: 2026-02-12  
 Проект: `pavelkumashkov.ru`  
-Статус: `completed`
-
+Статус: `completed` (2026-02-13): требуется повторная валидация после изменений V3.
 ## Что сделано
 
 - Перезапущен `scanner` как Scanner 2.0:
@@ -39,3 +38,4 @@
 ## Валидация
 
 - `npm run check` — успешно (lint JS + lint CSS + build + html validation).
+

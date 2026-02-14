@@ -1,8 +1,15 @@
 <!-- HERO -->
 <section class="section-shell relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- TODO: заменить на /assets/images/hero/hero-main.jpg (2560x1440 рекомендуемо) -->
   <div class="absolute inset-0 z-0">
-    <img src="/assets/images/hero/hero-main.jpg" class="w-full h-full object-cover opacity-35 grayscale brightness-50 animate-breathe" alt="Атмосфера пространства" fetchpriority="high" decoding="async">
+    <img
+      src="/assets/images/hero/hero-main.jpg"
+      srcset="/assets/images/hero/hero-main.jpg?width=960 960w, /assets/images/hero/hero-main.jpg?width=1280 1280w, /assets/images/hero/hero-main.jpg?width=1600 1600w, /assets/images/hero/hero-main.jpg?width=2000 2000w"
+      sizes="100vw"
+      class="w-full h-full object-cover opacity-35 grayscale brightness-50 animate-breathe"
+      alt="Атмосфера пространства"
+      fetchpriority="high"
+      decoding="async"
+    >
     <div class="absolute inset-0 bg-gradient-to-b from-[#030303] via-[#050505]/70 to-[#050505]"></div>
     <div class="absolute inset-0 bg-radial-gradient from-transparent to-void"></div>
   </div>
@@ -36,13 +43,13 @@
       </a>
     </div>
 
-    <p class="text-[10px] text-white/35 font-sans tracking-wide mt-5 animate-fade-in opacity-0" style="animation-delay: 0.88s;">
+    <p class="text-[11px] text-white/35 font-sans tracking-wide mt-5 animate-fade-in opacity-0" style="animation-delay: 0.88s;">
       Отвечаю лично. Уточним время, зоны и ожидаемый результат.
     </p>
   </div>
 
   <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50 animate-bounce">
-    <span class="text-[8px] uppercase tracking-widest text-champagne">Scroll</span>
+    <span class="text-[11px] uppercase tracking-widest text-champagne">Scroll</span>
     <div class="w-[1px] h-10 bg-champagne"></div>
   </div>
 </section>
