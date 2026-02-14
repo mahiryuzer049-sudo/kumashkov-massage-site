@@ -113,7 +113,6 @@ const PAGES = {
     pageType: "home",
     robots: "index,follow",
     geo: true,
-    preloadImage: "/assets/images/og.jpg",
     preconnectUnsplash: false,
     structuredData: (site) => [PERSON_SCHEMA(site), BUSINESS_SCHEMA(site), HOME_FAQ],
   },

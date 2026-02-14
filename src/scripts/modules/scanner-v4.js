@@ -216,21 +216,25 @@ export const initScannerV4 = (options = {}) => {
     return openZone(zoneId, { trigger, focus: focusClose });
   };
 
-  const onRootClick = (event) => {
-    const trigger = event.target.closest(".active-point,[data-zone-shortcut]");
-    if (!trigger || !root.contains(trigger)) return;
+  const onTriggerClick = (event) => {
     event.preventDefault();
+    event.stopPropagation();
+    const trigger = event.currentTarget;
+    if (!(trigger instanceof Element)) return;
     const zoneId = trigger.dataset.point || trigger.dataset.zoneShortcut;
+    if (!zoneId) return;
     toggleZone(zoneId, trigger, false);
   };
 
-  const onRootKeydown = (event) => {
+  const onTriggerKeydown = (event) => {
     const isActivator = event.key === "Enter" || event.key === " ";
     if (!isActivator) return;
-    const trigger = event.target.closest(".active-point,[data-zone-shortcut]");
-    if (!trigger || !root.contains(trigger)) return;
     event.preventDefault();
+    event.stopPropagation();
+    const trigger = event.currentTarget;
+    if (!(trigger instanceof Element)) return;
     const zoneId = trigger.dataset.point || trigger.dataset.zoneShortcut;
+    if (!zoneId) return;
     toggleZone(zoneId, trigger, true);
   };
 
@@ -298,24 +302,32 @@ export const initScannerV4 = (options = {}) => {
   elements.points.forEach((point) => {
     point.setAttribute("aria-pressed", "false");
     point.setAttribute("aria-controls", "zone-popup");
+    point.addEventListener("click", onTriggerClick);
+    point.addEventListener("keydown", onTriggerKeydown);
   });
   elements.shortcuts.forEach((button) => {
     button.setAttribute("aria-pressed", "false");
     button.setAttribute("aria-controls", "zone-popup");
+    button.addEventListener("click", onTriggerClick);
+    button.addEventListener("keydown", onTriggerKeydown);
   });
 
   elements.popup.dataset.active = "";
   syncPopupState(false);
 
-  root.addEventListener("click", onRootClick);
-  root.addEventListener("keydown", onRootKeydown);
   if (elements.close) elements.close.addEventListener("click", closeZone);
   if (elements.cta) elements.cta.addEventListener("click", onCtaClick);
 
   const destroy = () => {
     disableDocumentHandlers();
-    root.removeEventListener("click", onRootClick);
-    root.removeEventListener("keydown", onRootKeydown);
+    elements.points.forEach((point) => {
+      point.removeEventListener("click", onTriggerClick);
+      point.removeEventListener("keydown", onTriggerKeydown);
+    });
+    elements.shortcuts.forEach((button) => {
+      button.removeEventListener("click", onTriggerClick);
+      button.removeEventListener("keydown", onTriggerKeydown);
+    });
     if (elements.close) elements.close.removeEventListener("click", closeZone);
     if (elements.cta) elements.cta.removeEventListener("click", onCtaClick);
   };

@@ -69,6 +69,7 @@ main > section {
 }
 main > section:first-of-type { content-visibility: visible; }
 section[id] { scroll-margin-top: calc(var(--anchor-offset) + 8px); scroll-margin-bottom: 120px; }
+.anchor-target { scroll-margin-top: var(--anchor-offset); height: 0; }
 #navbar > div:first-child { min-height: 6rem; height: auto; padding-top: 0.75rem; padding-bottom: 0.75rem; }
 main :where(p, li) { line-height: var(--reading-line-height); }
 main :where(p) { max-width: var(--reading-width); }
