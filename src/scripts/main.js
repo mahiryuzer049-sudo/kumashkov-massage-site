@@ -373,6 +373,12 @@ const typeText = (target, text) => {
 };
 
 const setActiveZoneState = (zone) => {
+  if (!activePoints.length) {
+    activePoints = Array.from(document.querySelectorAll(".active-point"));
+  }
+  if (!zoneShortcuts.length) {
+    zoneShortcuts = Array.from(document.querySelectorAll("[data-zone-shortcut]"));
+  }
   activePoints.forEach((point) => {
     const isActive = point.dataset.point === zone;
     point.classList.toggle("selected", isActive);
@@ -387,12 +393,29 @@ const setActiveZoneState = (zone) => {
 };
 
 const showZoneInfo = (zone, triggerElement, shouldFocus = false) => {
-  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc) return;
-  const openedZone = zonePopup.dataset.active || "";
-  if (zonePopup.classList.contains("open") && openedZone === zone) {
+  const popup = document.getElementById("zone-popup");
+  const title = document.getElementById("zone-title");
+  const med = document.getElementById("zone-med");
+  const desc = document.getElementById("zone-desc");
+  const cta = document.getElementById("zone-cta");
+  const close = document.getElementById("zone-close");
+  const container = document.getElementById("scanner-container");
+
+  if (!popup || !title || !med || !desc) return;
+  zonePopup = popup;
+  zoneTitle = title;
+  zoneMed = med;
+  zoneDesc = desc;
+  zoneCta = cta;
+  zoneClose = close;
+  scannerContainer = container;
+
+  const openedZone = popup.dataset.active || "";
+  if (popup.classList.contains("open") && openedZone === zone) {
     hideZoneInfo();
     return;
   }
+
   const data = zoneData[zone];
   if (!data) return;
   if (navigator.vibrate) navigator.vibrate(10);
@@ -400,26 +423,26 @@ const showZoneInfo = (zone, triggerElement, shouldFocus = false) => {
   lastZoneTrigger = triggerElement || document.activeElement;
 
   currentZoneMsg = data.msg;
-  zoneTitle.innerText = data.title;
-  zoneMed.innerText = data.med;
-  typeText(zoneDesc, data.desc);
+  title.innerText = data.title;
+  med.innerText = data.med;
+  typeText(desc, data.desc);
   if (data.image) {
-    zonePopup.style.setProperty("--zone-image", `url("${data.image}")`);
+    popup.style.setProperty("--zone-image", `url("${data.image}")`);
   } else {
-    zonePopup.style.removeProperty("--zone-image");
+    popup.style.removeProperty("--zone-image");
   }
 
-  zonePopup.dataset.active = zone;
-  zonePopup.classList.add("open");
-  zonePopup.setAttribute("aria-hidden", "false");
-  if (scannerContainer) scannerContainer.dataset.activeZone = zone;
+  popup.dataset.active = zone;
+  popup.classList.add("open");
+  popup.setAttribute("aria-hidden", "false");
+  if (container) container.dataset.activeZone = zone;
   if (shouldFocus) {
     requestAnimationFrame(() => {
-      if (zoneClose && typeof zoneClose.focus === "function") {
+      if (close && typeof close.focus === "function") {
         try {
-          zoneClose.focus({ preventScroll: true });
+          close.focus({ preventScroll: true });
         } catch {
-          zoneClose.focus();
+          close.focus();
         }
       }
     });
@@ -603,9 +626,10 @@ document.addEventListener(
 );
 
 window.__openZone = (zone) => {
-  if (!ensureScannerElements()) return false;
+  ensureScannerElements();
   showZoneInfo(zone, null, false);
-  return Boolean(zonePopup && zonePopup.classList.contains("open"));
+  const popup = document.getElementById("zone-popup");
+  return Boolean(popup && popup.classList.contains("open"));
 };
 
 window.__scannerDebug = () => ({
@@ -616,7 +640,8 @@ window.__scannerDebug = () => ({
   cta: Boolean(document.getElementById("zone-cta")),
   points: document.querySelectorAll(".active-point").length,
   shortcuts: document.querySelectorAll("[data-zone-shortcut]").length,
-  popupOpen: Boolean(document.getElementById("zone-popup")?.classList.contains("open"))
+  popupOpen: Boolean(document.getElementById("zone-popup")?.classList.contains("open")),
+  active: document.getElementById("zone-popup")?.dataset?.active || ""
 });
 
 if (document.readyState === "loading") {
