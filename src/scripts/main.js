@@ -340,6 +340,7 @@ const protocolZoneMap = {
 
 let currentZoneMsg = "";
 let typeTimer;
+let suppressZoneClick = false;
 
 const zonePopup = document.getElementById("zone-popup");
 const scannerContainer = document.getElementById("scanner-container");
@@ -412,6 +413,13 @@ const showZoneInfo = (zone, triggerElement) => {
   zonePopup.classList.add("open");
   zonePopup.setAttribute("aria-hidden", "false");
   if (scannerContainer) scannerContainer.dataset.activeZone = zone;
+  if (zonePopup && typeof zonePopup.getBoundingClientRect === "function") {
+    const rect = zonePopup.getBoundingClientRect();
+    const inView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    if (!inView && typeof zonePopup.scrollIntoView === "function") {
+      zonePopup.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
   requestAnimationFrame(() => {
     if (zoneClose && typeof zoneClose.focus === "function") {
       try {
@@ -466,9 +474,19 @@ activePoints.forEach((point) => {
   const zone = point.getAttribute("data-point");
   point.setAttribute("aria-pressed", "false");
   point.setAttribute("aria-controls", "zone-popup");
+  point.addEventListener("pointerdown", (event) => {
+    suppressZoneClick = true;
+    event.preventDefault();
+    event.stopPropagation();
+    showZoneInfo(zone, point);
+  });
   point.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
+    if (suppressZoneClick) {
+      suppressZoneClick = false;
+      return;
+    }
     showZoneInfo(zone, point);
   });
   point.addEventListener("keydown", (event) => {
@@ -484,9 +502,19 @@ zoneShortcuts.forEach((button) => {
   const zone = button.getAttribute("data-zone-shortcut");
   button.setAttribute("aria-pressed", "false");
   button.setAttribute("aria-controls", "zone-popup");
+  button.addEventListener("pointerdown", (event) => {
+    suppressZoneClick = true;
+    event.preventDefault();
+    event.stopPropagation();
+    showZoneInfo(zone, button);
+  });
   button.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
+    if (suppressZoneClick) {
+      suppressZoneClick = false;
+      return;
+    }
     showZoneInfo(zone, button);
   });
 });
