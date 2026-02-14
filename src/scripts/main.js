@@ -387,7 +387,7 @@ const setActiveZoneState = (zone) => {
 };
 
 const showZoneInfo = (zone, triggerElement, shouldFocus = false) => {
-  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return;
+  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc) return;
   const openedZone = zonePopup.dataset.active || "";
   if (zonePopup.classList.contains("open") && openedZone === zone) {
     hideZoneInfo();
@@ -477,7 +477,7 @@ const ensureScannerElements = () => {
   activePoints = Array.from(document.querySelectorAll(".active-point"));
   zoneShortcuts = Array.from(document.querySelectorAll("[data-zone-shortcut]"));
 
-  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return false;
+  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc) return false;
   if (!activePoints.length && !zoneShortcuts.length) return false;
 
   activePoints.forEach((point) => {
@@ -497,94 +497,117 @@ const ensureScannerElements = () => {
   return true;
 };
 
-const getZoneTrigger = (target) => {
-  if (!(target instanceof Element)) return null;
-  const point = target.closest(".active-point");
-  if (point) {
-    return { zone: point.getAttribute("data-point"), trigger: point };
-  }
-  const shortcut = target.closest("[data-zone-shortcut]");
-  if (shortcut) {
-    return { zone: shortcut.getAttribute("data-zone-shortcut"), trigger: shortcut };
-  }
+const getZoneTriggerFromNode = (node) => {
+  if (!(node instanceof Element)) return null;
+  const point = node.closest(".active-point");
+  if (point) return { zone: point.getAttribute("data-point"), trigger: point };
+  const shortcut = node.closest("[data-zone-shortcut]");
+  if (shortcut) return { zone: shortcut.getAttribute("data-zone-shortcut"), trigger: shortcut };
   return null;
 };
 
-document.addEventListener("pointerdown", (event) => {
-  const info = getZoneTrigger(event.target);
-  if (!info) return;
-  if (!ensureScannerElements()) return;
-  suppressZoneClick = true;
-  event.preventDefault();
-  showZoneInfo(info.zone, info.trigger, false);
-});
+const getZoneTrigger = (event) => {
+  const path = typeof event.composedPath === "function" ? event.composedPath() : [];
+  for (const node of path) {
+    const info = getZoneTriggerFromNode(node);
+    if (info) return info;
+  }
+  return getZoneTriggerFromNode(event.target);
+};
 
 document.addEventListener(
-  "touchstart",
+  "pointerdown",
   (event) => {
-    const info = getZoneTrigger(event.target);
+    const info = getZoneTrigger(event);
     if (!info) return;
     if (!ensureScannerElements()) return;
     suppressZoneClick = true;
     event.preventDefault();
     showZoneInfo(info.zone, info.trigger, false);
   },
-  { passive: false }
+  true
 );
 
-document.addEventListener("click", (event) => {
-  const info = getZoneTrigger(event.target);
-  if (info) {
-    if (!ensureScannerElements()) return;
-    event.preventDefault();
-    if (suppressZoneClick) {
-      suppressZoneClick = false;
-      return;
-    }
-    showZoneInfo(info.zone, info.trigger, false);
-    return;
-  }
-
-  if (!zonePopup || !zonePopup.classList.contains("open")) return;
-  const isPopup = event.target.closest("#zone-popup");
-  const isPoint = event.target.closest(".active-point");
-  const isShortcut = event.target.closest("[data-zone-shortcut]");
-  if (!isPopup && !isPoint && !isShortcut) hideZoneInfo();
-});
-
-document.addEventListener("keydown", (event) => {
-  const isActivator = event.key === "Enter" || event.key === " ";
-  if (isActivator) {
-    const info = getZoneTrigger(event.target);
+document.addEventListener(
+  "touchstart",
+  (event) => {
+    const info = getZoneTrigger(event);
     if (!info) return;
     if (!ensureScannerElements()) return;
+    suppressZoneClick = true;
     event.preventDefault();
-    showZoneInfo(info.zone, info.trigger, true);
-    return;
-  }
+    showZoneInfo(info.zone, info.trigger, false);
+  },
+  { passive: false, capture: true }
+);
 
-  if (!zonePopup || !zonePopup.classList.contains("open")) return;
-  if (event.key === "Escape") {
-    event.preventDefault();
-    hideZoneInfo();
-    return;
-  }
-  if (event.key !== "Tab") return;
-  const focusable = Array.from(
-    zonePopup.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
-  ).filter((node) => !node.hasAttribute("disabled"));
-  if (!focusable.length) return;
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
-  const current = document.activeElement;
-  if (event.shiftKey && current === first) {
-    event.preventDefault();
-    last.focus();
-  } else if (!event.shiftKey && current === last) {
-    event.preventDefault();
-    first.focus();
-  }
-});
+document.addEventListener(
+  "click",
+  (event) => {
+    const info = getZoneTrigger(event);
+    if (info) {
+      if (!ensureScannerElements()) return;
+      event.preventDefault();
+      if (suppressZoneClick) {
+        suppressZoneClick = false;
+        return;
+      }
+      showZoneInfo(info.zone, info.trigger, false);
+      return;
+    }
+
+    if (!zonePopup || !zonePopup.classList.contains("open")) return;
+    const isPopup = event.target.closest("#zone-popup");
+    const isPoint = event.target.closest(".active-point");
+    const isShortcut = event.target.closest("[data-zone-shortcut]");
+    if (!isPopup && !isPoint && !isShortcut) hideZoneInfo();
+  },
+  true
+);
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+    const isActivator = event.key === "Enter" || event.key === " ";
+    if (isActivator) {
+      const info = getZoneTrigger(event);
+      if (!info) return;
+      if (!ensureScannerElements()) return;
+      event.preventDefault();
+      showZoneInfo(info.zone, info.trigger, true);
+      return;
+    }
+
+    if (!zonePopup || !zonePopup.classList.contains("open")) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      hideZoneInfo();
+      return;
+    }
+    if (event.key !== "Tab") return;
+    const focusable = Array.from(
+      zonePopup.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
+    ).filter((node) => !node.hasAttribute("disabled"));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const current = document.activeElement;
+    if (event.shiftKey && current === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && current === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  },
+  true
+);
+
+window.__openZone = (zone) => {
+  if (!ensureScannerElements()) return false;
+  showZoneInfo(zone, null, false);
+  return Boolean(zonePopup && zonePopup.classList.contains("open"));
+};
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", ensureScannerElements, { once: true });
