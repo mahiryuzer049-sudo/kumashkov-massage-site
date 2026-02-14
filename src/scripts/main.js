@@ -342,13 +342,17 @@ let currentZoneMsg = "";
 let typeTimer;
 let suppressZoneClick = false;
 
-const zonePopup = document.getElementById("zone-popup");
-const scannerContainer = document.getElementById("scanner-container");
-const zoneTitle = document.getElementById("zone-title");
-const zoneMed = document.getElementById("zone-med");
-const zoneDesc = document.getElementById("zone-desc");
-const zoneCta = document.getElementById("zone-cta");
-const zoneClose = document.getElementById("zone-close");
+let zonePopup = null;
+let scannerContainer = null;
+let zoneTitle = null;
+let zoneMed = null;
+let zoneDesc = null;
+let zoneCta = null;
+let zoneClose = null;
+let activePoints = [];
+let zoneShortcuts = [];
+let lastZoneTrigger = null;
+let scannerInitialized = false;
 
 const typeText = (target, text) => {
   clearTimeout(typeTimer);
@@ -367,10 +371,6 @@ const typeText = (target, text) => {
   };
   step();
 };
-
-const activePoints = Array.from(document.querySelectorAll(".active-point"));
-const zoneShortcuts = Array.from(document.querySelectorAll("[data-zone-shortcut]"));
-let lastZoneTrigger = null;
 
 const setActiveZoneState = (zone) => {
   activePoints.forEach((point) => {
@@ -465,109 +465,133 @@ const bookZone = () => {
   }, 550);
 };
 
-activePoints.forEach((point) => {
-  const zone = point.getAttribute("data-point");
-  point.setAttribute("aria-pressed", "false");
-  point.setAttribute("aria-controls", "zone-popup");
-  point.addEventListener("pointerdown", (event) => {
-    suppressZoneClick = true;
-    event.preventDefault();
-    event.stopPropagation();
-    showZoneInfo(zone, point, false);
-  });
-  point.addEventListener(
-    "touchstart",
-    (event) => {
+const initScanner = () => {
+  if (scannerInitialized) return;
+  zonePopup = document.getElementById("zone-popup");
+  scannerContainer = document.getElementById("scanner-container");
+  zoneTitle = document.getElementById("zone-title");
+  zoneMed = document.getElementById("zone-med");
+  zoneDesc = document.getElementById("zone-desc");
+  zoneCta = document.getElementById("zone-cta");
+  zoneClose = document.getElementById("zone-close");
+  activePoints = Array.from(document.querySelectorAll(".active-point"));
+  zoneShortcuts = Array.from(document.querySelectorAll("[data-zone-shortcut]"));
+
+  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return;
+  if (!activePoints.length && !zoneShortcuts.length) return;
+
+  scannerInitialized = true;
+
+  activePoints.forEach((point) => {
+    const zone = point.getAttribute("data-point");
+    point.setAttribute("aria-pressed", "false");
+    point.setAttribute("aria-controls", "zone-popup");
+    point.addEventListener("pointerdown", (event) => {
       suppressZoneClick = true;
       event.preventDefault();
       event.stopPropagation();
       showZoneInfo(zone, point, false);
-    },
-    { passive: false }
-  );
-  point.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (suppressZoneClick) {
-      suppressZoneClick = false;
-      return;
-    }
-    showZoneInfo(zone, point, false);
-  });
-  point.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
+    });
+    point.addEventListener(
+      "touchstart",
+      (event) => {
+        suppressZoneClick = true;
+        event.preventDefault();
+        event.stopPropagation();
+        showZoneInfo(zone, point, false);
+      },
+      { passive: false }
+    );
+    point.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
-      showZoneInfo(zone, point, true);
-    }
+      if (suppressZoneClick) {
+        suppressZoneClick = false;
+        return;
+      }
+      showZoneInfo(zone, point, false);
+    });
+    point.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        event.stopPropagation();
+        showZoneInfo(zone, point, true);
+      }
+    });
   });
-});
 
-zoneShortcuts.forEach((button) => {
-  const zone = button.getAttribute("data-zone-shortcut");
-  button.setAttribute("aria-pressed", "false");
-  button.setAttribute("aria-controls", "zone-popup");
-  button.addEventListener("pointerdown", (event) => {
-    suppressZoneClick = true;
-    event.preventDefault();
-    event.stopPropagation();
-    showZoneInfo(zone, button, false);
-  });
-  button.addEventListener(
-    "touchstart",
-    (event) => {
+  zoneShortcuts.forEach((button) => {
+    const zone = button.getAttribute("data-zone-shortcut");
+    button.setAttribute("aria-pressed", "false");
+    button.setAttribute("aria-controls", "zone-popup");
+    button.addEventListener("pointerdown", (event) => {
       suppressZoneClick = true;
       event.preventDefault();
       event.stopPropagation();
       showZoneInfo(zone, button, false);
-    },
-    { passive: false }
-  );
-  button.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    if (suppressZoneClick) {
-      suppressZoneClick = false;
+    });
+    button.addEventListener(
+      "touchstart",
+      (event) => {
+        suppressZoneClick = true;
+        event.preventDefault();
+        event.stopPropagation();
+        showZoneInfo(zone, button, false);
+      },
+      { passive: false }
+    );
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (suppressZoneClick) {
+        suppressZoneClick = false;
+        return;
+      }
+      showZoneInfo(zone, button, false);
+    });
+  });
+
+  if (zoneCta) zoneCta.addEventListener("click", bookZone);
+  if (zoneClose) zoneClose.addEventListener("click", hideZoneInfo);
+
+  document.addEventListener("click", (event) => {
+    if (!zonePopup || !zonePopup.classList.contains("open")) return;
+    const isPopup = event.target.closest("#zone-popup");
+    const isPoint = event.target.closest(".active-point");
+    const isShortcut = event.target.closest("[data-zone-shortcut]");
+    if (!isPopup && !isPoint && !isShortcut) hideZoneInfo();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!zonePopup || !zonePopup.classList.contains("open")) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      hideZoneInfo();
       return;
     }
-    showZoneInfo(zone, button, false);
+    if (event.key !== "Tab") return;
+    const focusable = Array.from(
+      zonePopup.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
+    ).filter((node) => !node.hasAttribute("disabled"));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const current = document.activeElement;
+    if (event.shiftKey && current === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && current === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
-});
+};
 
-if (zoneCta) zoneCta.addEventListener("click", bookZone);
-if (zoneClose) zoneClose.addEventListener("click", hideZoneInfo);
-
-document.addEventListener("click", (event) => {
-  if (!zonePopup || !zonePopup.classList.contains("open")) return;
-  const isPopup = event.target.closest("#zone-popup");
-  const isPoint = event.target.closest(".active-point");
-  const isShortcut = event.target.closest("[data-zone-shortcut]");
-  if (!isPopup && !isPoint && !isShortcut) hideZoneInfo();
-});
-
-document.addEventListener("keydown", (event) => {
-  if (!zonePopup || !zonePopup.classList.contains("open")) return;
-  if (event.key === "Escape") {
-    event.preventDefault();
-    hideZoneInfo();
-    return;
-  }
-  if (event.key !== "Tab") return;
-  const focusable = Array.from(
-    zonePopup.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
-  ).filter((node) => !node.hasAttribute("disabled"));
-  if (!focusable.length) return;
-  const first = focusable[0];
-  const last = focusable[focusable.length - 1];
-  const current = document.activeElement;
-  if (event.shiftKey && current === first) {
-    event.preventDefault();
-    last.focus();
-  } else if (!event.shiftKey && current === last) {
-    event.preventDefault();
-    first.focus();
-  }
-});
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initScanner, { once: true });
+} else {
+  initScanner();
+}
 
 const compareSliders = Array.from(document.querySelectorAll("[data-compare]"));
 compareSliders.forEach((slider) => {
