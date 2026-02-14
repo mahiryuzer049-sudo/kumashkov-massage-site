@@ -465,8 +465,8 @@ const bookZone = () => {
   }, 550);
 };
 
-const initScanner = () => {
-  if (scannerInitialized) return;
+const ensureScannerElements = () => {
+  if (scannerInitialized) return true;
   zonePopup = document.getElementById("zone-popup");
   scannerContainer = document.getElementById("scanner-container");
   zoneTitle = document.getElementById("zone-title");
@@ -477,120 +477,119 @@ const initScanner = () => {
   activePoints = Array.from(document.querySelectorAll(".active-point"));
   zoneShortcuts = Array.from(document.querySelectorAll("[data-zone-shortcut]"));
 
-  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return;
-  if (!activePoints.length && !zoneShortcuts.length) return;
-
-  scannerInitialized = true;
+  if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc || !zoneCta) return false;
+  if (!activePoints.length && !zoneShortcuts.length) return false;
 
   activePoints.forEach((point) => {
-    const zone = point.getAttribute("data-point");
     point.setAttribute("aria-pressed", "false");
     point.setAttribute("aria-controls", "zone-popup");
-    point.addEventListener("pointerdown", (event) => {
-      suppressZoneClick = true;
-      event.preventDefault();
-      event.stopPropagation();
-      showZoneInfo(zone, point, false);
-    });
-    point.addEventListener(
-      "touchstart",
-      (event) => {
-        suppressZoneClick = true;
-        event.preventDefault();
-        event.stopPropagation();
-        showZoneInfo(zone, point, false);
-      },
-      { passive: false }
-    );
-    point.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      if (suppressZoneClick) {
-        suppressZoneClick = false;
-        return;
-      }
-      showZoneInfo(zone, point, false);
-    });
-    point.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        event.stopPropagation();
-        showZoneInfo(zone, point, true);
-      }
-    });
   });
 
   zoneShortcuts.forEach((button) => {
-    const zone = button.getAttribute("data-zone-shortcut");
     button.setAttribute("aria-pressed", "false");
     button.setAttribute("aria-controls", "zone-popup");
-    button.addEventListener("pointerdown", (event) => {
-      suppressZoneClick = true;
-      event.preventDefault();
-      event.stopPropagation();
-      showZoneInfo(zone, button, false);
-    });
-    button.addEventListener(
-      "touchstart",
-      (event) => {
-        suppressZoneClick = true;
-        event.preventDefault();
-        event.stopPropagation();
-        showZoneInfo(zone, button, false);
-      },
-      { passive: false }
-    );
-    button.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      if (suppressZoneClick) {
-        suppressZoneClick = false;
-        return;
-      }
-      showZoneInfo(zone, button, false);
-    });
   });
 
   if (zoneCta) zoneCta.addEventListener("click", bookZone);
   if (zoneClose) zoneClose.addEventListener("click", hideZoneInfo);
 
-  document.addEventListener("click", (event) => {
-    if (!zonePopup || !zonePopup.classList.contains("open")) return;
-    const isPopup = event.target.closest("#zone-popup");
-    const isPoint = event.target.closest(".active-point");
-    const isShortcut = event.target.closest("[data-zone-shortcut]");
-    if (!isPopup && !isPoint && !isShortcut) hideZoneInfo();
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (!zonePopup || !zonePopup.classList.contains("open")) return;
-    if (event.key === "Escape") {
-      event.preventDefault();
-      hideZoneInfo();
-      return;
-    }
-    if (event.key !== "Tab") return;
-    const focusable = Array.from(
-      zonePopup.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
-    ).filter((node) => !node.hasAttribute("disabled"));
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    const current = document.activeElement;
-    if (event.shiftKey && current === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && current === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
+  scannerInitialized = true;
+  return true;
 };
 
+const getZoneTrigger = (target) => {
+  if (!(target instanceof Element)) return null;
+  const point = target.closest(".active-point");
+  if (point) {
+    return { zone: point.getAttribute("data-point"), trigger: point };
+  }
+  const shortcut = target.closest("[data-zone-shortcut]");
+  if (shortcut) {
+    return { zone: shortcut.getAttribute("data-zone-shortcut"), trigger: shortcut };
+  }
+  return null;
+};
+
+document.addEventListener("pointerdown", (event) => {
+  const info = getZoneTrigger(event.target);
+  if (!info) return;
+  if (!ensureScannerElements()) return;
+  suppressZoneClick = true;
+  event.preventDefault();
+  showZoneInfo(info.zone, info.trigger, false);
+});
+
+document.addEventListener(
+  "touchstart",
+  (event) => {
+    const info = getZoneTrigger(event.target);
+    if (!info) return;
+    if (!ensureScannerElements()) return;
+    suppressZoneClick = true;
+    event.preventDefault();
+    showZoneInfo(info.zone, info.trigger, false);
+  },
+  { passive: false }
+);
+
+document.addEventListener("click", (event) => {
+  const info = getZoneTrigger(event.target);
+  if (info) {
+    if (!ensureScannerElements()) return;
+    event.preventDefault();
+    if (suppressZoneClick) {
+      suppressZoneClick = false;
+      return;
+    }
+    showZoneInfo(info.zone, info.trigger, false);
+    return;
+  }
+
+  if (!zonePopup || !zonePopup.classList.contains("open")) return;
+  const isPopup = event.target.closest("#zone-popup");
+  const isPoint = event.target.closest(".active-point");
+  const isShortcut = event.target.closest("[data-zone-shortcut]");
+  if (!isPopup && !isPoint && !isShortcut) hideZoneInfo();
+});
+
+document.addEventListener("keydown", (event) => {
+  const isActivator = event.key === "Enter" || event.key === " ";
+  if (isActivator) {
+    const info = getZoneTrigger(event.target);
+    if (!info) return;
+    if (!ensureScannerElements()) return;
+    event.preventDefault();
+    showZoneInfo(info.zone, info.trigger, true);
+    return;
+  }
+
+  if (!zonePopup || !zonePopup.classList.contains("open")) return;
+  if (event.key === "Escape") {
+    event.preventDefault();
+    hideZoneInfo();
+    return;
+  }
+  if (event.key !== "Tab") return;
+  const focusable = Array.from(
+    zonePopup.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])')
+  ).filter((node) => !node.hasAttribute("disabled"));
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  const current = document.activeElement;
+  if (event.shiftKey && current === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && current === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
+
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initScanner, { once: true });
+  document.addEventListener("DOMContentLoaded", ensureScannerElements, { once: true });
 } else {
-  initScanner();
+  ensureScannerElements();
 }
 
 const compareSliders = Array.from(document.querySelectorAll("[data-compare]"));
