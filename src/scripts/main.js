@@ -478,7 +478,6 @@ const ensureScannerElements = () => {
   zoneShortcuts = Array.from(document.querySelectorAll("[data-zone-shortcut]"));
 
   if (!zonePopup || !zoneTitle || !zoneMed || !zoneDesc) return false;
-  if (!activePoints.length && !zoneShortcuts.length) return false;
 
   activePoints.forEach((point) => {
     point.setAttribute("aria-pressed", "false");
@@ -608,6 +607,17 @@ window.__openZone = (zone) => {
   showZoneInfo(zone, null, false);
   return Boolean(zonePopup && zonePopup.classList.contains("open"));
 };
+
+window.__scannerDebug = () => ({
+  popup: Boolean(document.getElementById("zone-popup")),
+  title: Boolean(document.getElementById("zone-title")),
+  med: Boolean(document.getElementById("zone-med")),
+  desc: Boolean(document.getElementById("zone-desc")),
+  cta: Boolean(document.getElementById("zone-cta")),
+  points: document.querySelectorAll(".active-point").length,
+  shortcuts: document.querySelectorAll("[data-zone-shortcut]").length,
+  popupOpen: Boolean(document.getElementById("zone-popup")?.classList.contains("open"))
+});
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", ensureScannerElements, { once: true });
