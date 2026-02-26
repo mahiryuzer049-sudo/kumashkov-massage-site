@@ -1,0 +1,1 @@
+const n=()=>{Array.from(document.querySelectorAll(".media-frame")).forEach(r=>{const e=r.querySelector("img");if(!e||e.complete&&e.naturalWidth>0)return;r.classList.add("is-loading");const t=()=>{r.classList.remove("is-loading")};e.addEventListener("load",t,{once:!0}),e.addEventListener("error",t,{once:!0})})};export{n as initMediaSkeletons};

@@ -1,0 +1,1 @@
+const r=()=>{Array.from(document.querySelectorAll('a.whatsapp-link, a[href*="wa.me/"], a[href*="t.me/"]')).forEach(e=>{e instanceof HTMLAnchorElement&&(e.setAttribute("target","_blank"),e.setAttribute("rel","noopener noreferrer"))})};export{r as initExternalCtas};

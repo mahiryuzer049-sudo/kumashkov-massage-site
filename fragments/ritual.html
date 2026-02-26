@@ -1,0 +1,142 @@
+<!-- RITUAL -->
+<section id="ritual" class="section-shell bg-[#050505]">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="section-head reveal-on-scroll">
+      <p class="section-kicker">Session Flow</p>
+      <h2 class="section-title">Сценарий первой встречи</h2>
+      <p class="section-subtitle">
+        Четкая структура помогает снять тревогу и мягко провести вас от запроса к результату. Без резких переходов и
+        без перегруза.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
+        <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-3">Кодекс процесса</p>
+        <h3 class="font-serif text-2xl text-ivory mb-4">Спокойно, понятно, бережно</h3>
+        <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>Перед стартом обсуждаем цель, зоны и комфортный ритм.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>В процессе можно скорректировать давление и темп в любой момент.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
+            <span>После сеанса получаете короткие рекомендации по закреплению эффекта.</span>
+          </li>
+        </ul>
+      </article>
+
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
+        <div class="ritual-controls mb-7" role="tablist" aria-label="Этапы сессии">
+          <button
+            id="step-btn-1"
+            class="ritual-step-btn step-btn active interactive-el ripple-container"
+            data-step="1"
+           
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-1"
+            aria-selected="true"
+          >
+            Подготовка
+          </button>
+          <button
+            id="step-btn-2"
+            class="ritual-step-btn step-btn interactive-el ripple-container"
+            data-step="2"
+           
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-2"
+            aria-selected="false"
+          >
+            Диалог
+          </button>
+          <button
+            id="step-btn-3"
+            class="ritual-step-btn step-btn interactive-el ripple-container"
+            data-step="3"
+           
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-3"
+            aria-selected="false"
+          >
+            Сессия
+          </button>
+          <button
+            id="step-btn-4"
+            class="ritual-step-btn step-btn interactive-el ripple-container"
+            data-step="4"
+           
+            type="button"
+            role="tab"
+            aria-controls="ritual-step-4"
+            aria-selected="false"
+          >
+            Фиксация
+          </button>
+        </div>
+
+        <div class="ritual-stage relative min-h-[260px] md:min-h-[240px]">
+          <div id="ritual-step-1" class="ritual-step is-active" role="tabpanel" aria-labelledby="step-btn-1">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 1</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Вход в спокойный режим</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Пара минут на переключение: выдыхаете, устраиваетесь, обозначаете состояние на сейчас. Наша цель на этом
+              этапе — снять суету и начать работу в комфортном темпе.
+            </p>
+          </div>
+          <div id="ritual-step-2" class="ritual-step" role="tabpanel" aria-labelledby="step-btn-2">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 2</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Короткая настройка</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Обсуждаем, что именно хочется получить от сеанса: расслабление, восстановление, тонус или работу с
+              конкретной зоной. По итогам фиксируем персональный протокол.
+            </p>
+          </div>
+          <div id="ritual-step-3" class="ritual-step" role="tabpanel" aria-labelledby="step-btn-3">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 3</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Основная проработка</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Техники комбинируются по отклику тела, а не по шаблону. Если нужно, ритм и давление корректируются сразу
+              в процессе, чтобы сохранить точность и комфорт.
+            </p>
+          </div>
+          <div id="ritual-step-4" class="ritual-step" role="tabpanel" aria-labelledby="step-btn-4">
+            <p class="text-[11px] uppercase tracking-[0.28em] text-champagne mb-3">Шаг 4</p>
+            <h3 class="font-serif text-2xl text-ivory mb-4">Закрепление результата</h3>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Финально подводим итог: что изменилось в ощущениях и как сохранить эффект в ближайшие дни. Вы уходите с
+              ясным пониманием следующего шага.
+            </p>
+          </div>
+        </div>
+
+        <div class="ritual-progress-track mt-7">
+          <div id="ritual-progress" class="ritual-progress-bar" style="width: 25%"></div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap items-center gap-2.5">
+          <button id="ritual-prev" type="button" class="btn-secondary interactive-el">
+            Предыдущий шаг
+          </button>
+          <button id="ritual-next" type="button" class="btn-secondary interactive-el">
+            Следующий шаг
+          </button>
+          <a
+            href="https://wa.me/79260899019?text=%D0%9F%D0%B0%D0%B2%D0%B5%D0%BB%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%83%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D1%82%D1%8C%20%D0%BA%D0%B0%D0%BA%20%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D0%B8%D1%82%20%D0%BF%D0%B5%D1%80%D0%B2%D0%B0%D1%8F%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0.%0A%0A%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%3A%20Site%3A%20WhatsApp%0Autm_source%3Dsite%26utm_medium%3Dwhatsapp%26utm_campaign%3Dsite-general"
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+           
+          >
+            Уточнить детали в чате
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
