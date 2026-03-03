@@ -1,86 +1,107 @@
 <!-- RESULTS -->
-<section id="results" class="section-shell bg-[#050505] overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6 relative z-10">
-    <div class="section-head reveal-on-scroll">
+<section data-fragment="results" id="results" class="section-shell bg-[#050505] overflow-hidden" data-motion-profile="editorial" data-choreo-section data-choreo-stack>
+  <div class="filmic-overlay" data-exp-media="filmic" style="--filmic-intensity: 0.55;"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10 editorial-grid editorial-grid--c">
+    <div class="section-head reveal-on-scroll" data-depth="0">
       <p class="section-kicker">Outcome Ladder</p>
-      <h2 class="section-title">Результат по шагам</h2>
+      <h2 class="section-title" data-kinetic>Результат по шагам</h2>
       <p class="section-subtitle">
         Здесь видно, как один визит переходит в устойчивый эффект. Это помогает выбрать формат осознанно: разовая
         сессия, короткий курс или поддержка.
       </p>
     </div>
 
-    <div class="compare-slider card-luxe p-5 reveal-on-scroll" data-compare style="--compare: 52%;">
-      <div class="compare-labels">
-        <span>До</span>
-        <span>После</span>
+    <div
+      class="media-stripe media-stripe--horizontal media-stripe--animate grid-breakout mb-8 reveal-on-scroll"
+      style="--stripe-image: url('/assets/images/results/results-main.jpg');"
+      aria-hidden="true"
+      data-depth="2"
+      data-exp-media="stripes"
+      data-choreo-mask
+      data-choreo-parallax
+      data-choreo-depth="0.24"
+    ></div>
+
+    <div class="results-compare reveal-on-scroll" data-depth="1">
+      <div class="results-compare__sticky" data-choreo-sticky>
+        <div class="compare-slider card-luxe p-5" data-compare data-compare-scroll style="--compare: 52%;">
+          <div class="compare-labels">
+            <span>До</span>
+            <span>После</span>
+          </div>
+          <div class="compare-images shape-clip shape-reveal shape-clip-tilt mask-media mask-soft" data-exp-media="shapes" data-exp-media-secondary="masks">
+            <picture>
+              <source type="image/avif" srcset="/assets/images/results/results-detail-01.avif">
+              <source type="image/webp" srcset="/assets/images/results/results-detail-01.webp">
+              <img src="/assets/images/results/results-detail-01.jpg" alt="Состояние до" loading="lazy" decoding="async">
+            </picture>
+            <picture>
+              <source type="image/avif" srcset="/assets/images/results/results-detail-02.avif">
+              <source type="image/webp" srcset="/assets/images/results/results-detail-02.webp">
+              <img src="/assets/images/results/results-detail-02.jpg" alt="Состояние после" loading="lazy" decoding="async" class="compare-after">
+            </picture>
+          </div>
+          <input
+            class="compare-range"
+            type="range"
+            min="0"
+            max="100"
+            value="52"
+            aria-label="Сравнить до и после"
+          >
+        </div>
+        <div class="compare-captions" aria-hidden="true">
+          <span class="compare-caption compare-caption--left">Визит 1</span>
+          <span class="compare-caption compare-caption--right">Визит 4</span>
+          <span class="compare-caption compare-caption--note">Динамика</span>
+        </div>
       </div>
-      <div class="compare-images">
-                <picture>
-          <source type="image/avif" srcset="/assets/images/results/results-detail-01.avif">
-          <source type="image/webp" srcset="/assets/images/results/results-detail-01.webp">
-          <img src="/assets/images/results/results-detail-01.jpg" alt="Состояние до" loading="lazy" decoding="async">
-        </picture>
-                <picture>
-          <source type="image/avif" srcset="/assets/images/results/results-detail-02.avif">
-          <source type="image/webp" srcset="/assets/images/results/results-detail-02.webp">
-          <img src="/assets/images/results/results-detail-02.jpg" alt="Состояние после" loading="lazy" decoding="async" class="compare-after">
-        </picture>
-      </div>
-      <input
-        class="compare-range"
-        type="range"
-        min="0"
-        max="100"
-        value="52"
-        aria-label="Сравнить до и после"
-      >
     </div>
 
-    <figure class="media-frame aspect-[16/7] mb-8 reveal-on-scroll">
-            <picture>
+    <figure class="media-frame aspect-[16/7] mb-8 reveal-on-scroll grid-breakout shape-clip shape-reveal shape-clip-lean mask-media mask-dissolve" data-depth="2" data-exp-media="shapes" data-exp-media-secondary="masks">
+      <picture>
         <source type="image/avif" srcset="/assets/images/results/results-main.avif">
         <source type="image/webp" srcset="/assets/images/results/results-main.webp">
         <img src="/assets/images/results/results-main.jpg" alt="Визуал динамики результата" loading="lazy" decoding="async">
       </picture>
-      <span class="media-badge">Progress</span>
+      <span class="media-badge blend-text" data-blend>Progress</span>
     </figure>
 
     <div class="grid md:grid-cols-3 gap-4 mb-8">
       <article class="card-luxe p-5 reveal-on-scroll">
-        <div class="media-frame aspect-[4/3] mb-4">
-                    <picture>
+        <div class="media-frame aspect-[4/3] mb-4 shape-clip shape-reveal shape-clip-arch mask-media mask-paper" data-exp-media="shapes" data-exp-media-secondary="masks">
+          <picture>
             <source type="image/avif" srcset="/assets/images/results/results-detail-01.avif">
             <source type="image/webp" srcset="/assets/images/results/results-detail-01.webp">
             <img src="/assets/images/results/results-detail-01.jpg" alt="Результат: снятие напряжения" loading="lazy" decoding="async">
           </picture>
-          <span class="media-badge">Detail 01</span>
+          <span class="media-badge blend-text" data-blend>Detail 01</span>
         </div>
         <p class="text-sm text-ivory mb-1">Снятие напряжения</p>
         <p class="text-xs text-gray-400">Первые изменения в ключевых зонах уже после 1 визита.</p>
       </article>
 
       <article class="card-luxe p-5 reveal-on-scroll">
-        <div class="media-frame aspect-[4/3] mb-4">
-                    <picture>
+        <div class="media-frame aspect-[4/3] mb-4 shape-clip shape-reveal shape-clip-hex mask-media mask-ink" data-exp-media="shapes" data-exp-media-secondary="masks">
+          <picture>
             <source type="image/avif" srcset="/assets/images/results/results-detail-02.avif">
             <source type="image/webp" srcset="/assets/images/results/results-detail-02.webp">
             <img src="/assets/images/results/results-detail-02.jpg" alt="Результат: ровный тонус" loading="lazy" decoding="async">
           </picture>
-          <span class="media-badge">Detail 02</span>
+          <span class="media-badge blend-text" data-blend>Detail 02</span>
         </div>
         <p class="text-sm text-ivory mb-1">Ровный тонус</p>
         <p class="text-xs text-gray-400">Тело держит ось и нагрузку без частых откатов.</p>
       </article>
 
       <article class="card-luxe p-5 reveal-on-scroll">
-        <div class="media-frame aspect-[4/3] mb-4">
-                    <picture>
+        <div class="media-frame aspect-[4/3] mb-4 shape-clip shape-reveal shape-clip-corner mask-media mask-brush" data-exp-media="shapes" data-exp-media-secondary="masks">
+          <picture>
             <source type="image/avif" srcset="/assets/images/results/results-detail-03.avif">
             <source type="image/webp" srcset="/assets/images/results/results-detail-03.webp">
             <img src="/assets/images/results/results-detail-03.jpg" alt="Результат: устойчивый режим" loading="lazy" decoding="async">
           </picture>
-          <span class="media-badge">Detail 03</span>
+          <span class="media-badge blend-text" data-blend>Detail 03</span>
         </div>
         <p class="text-sm text-ivory mb-1">Устойчивый режим</p>
         <p class="text-xs text-gray-400">Появляется понятный ритм поддержки без перегруза.</p>
@@ -90,7 +111,7 @@
     <div class="grid md:grid-cols-3 gap-5">
       <article class="card-luxe p-6 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">1 визит</p>
-        <h3 class="font-serif text-2xl text-ivory mb-3">Быстрый эффект</h3>
+        <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Быстрый эффект</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Снимается острая скованность в ключевых зонах.</span></li>
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Тело «выдыхает», голова становится спокойнее.</span></li>
@@ -100,7 +121,7 @@
 
       <article class="card-luxe p-6 reveal-on-scroll border border-champagne/30">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">4 визита</p>
-        <h3 class="font-serif text-2xl text-ivory mb-3">Курсовый эффект</h3>
+        <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Курсовый эффект</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Стабилизируется тонус, снижается «фоновая» усталость.</span></li>
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Тело легче держит осанку и рабочую нагрузку.</span></li>
@@ -110,7 +131,7 @@
 
       <article class="card-luxe p-6 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">8 визитов</p>
-        <h3 class="font-serif text-2xl text-ivory mb-3">Долгий результат</h3>
+        <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Долгий результат</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Устойчивое ощущение легкости и собранности в теле.</span></li>
           <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>Меньше откатов после стрессовых и рабочих недель.</span></li>
@@ -143,11 +164,10 @@
           </p>
         </div>
         <a
-          href="https://wa.me/79260899019?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20%D0%B8%20%D0%BE%D0%B6%D0%B8%D0%B4%D0%B0%D0%B5%D0%BC%D1%8B%D0%B9%20%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82.%0A%0A%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%3A%20Site%3A%20WhatsApp%0Autm_source%3Dsite%26utm_medium%3Dwhatsapp%26utm_campaign%3Dsite-general"
+          href="https://wa.me/79260899019?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%BA%D1%83%D1%80%D1%81%20%D0%B8%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82.%0A%0A%D0%98%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%3A%20Site%3A%20WhatsApp%0Autm_source%3Dsite%26utm_medium%3Dwhatsapp%26utm_campaign%3Dsite-general"
           class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-         
         >
-          Обсудить пакет
+          Записаться
         </a>
       </div>
     </div>

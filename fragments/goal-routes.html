@@ -1,5 +1,5 @@
-<section id="goal-routes" class="section-shell bg-[#050505]">
-  <div class="max-w-screen-xl mx-auto px-6">
+<section data-fragment="goal-routes" id="goal-routes" class="section-shell bg-[#050505]" data-choreo-section>
+  <div class="max-w-screen-xl mx-auto px-6 editorial-grid editorial-grid--b">
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Routes by Goals</p>
       <h2 class="section-title">Маршруты по задачам</h2>
@@ -8,9 +8,13 @@
       </p>
     </div>
 
-    <div class="route-grid mb-8">
-      <article class="card-luxe route-card p-6 reveal-on-scroll" data-route-step="01">
-        <div class="media-frame route-media mb-4">
+    <div class="goal-timeline mb-8" data-goal-timeline>
+      <div class="goal-timeline__line" aria-hidden="true" data-choreo-timeline>
+        <span class="goal-timeline__progress"></span>
+      </div>
+      <div class="goal-timeline__track">
+      <article class="card-luxe route-card p-6 reveal-on-scroll goal-checkpoint goal-checkpoint--1" data-route-step="01" data-goal-reveal>
+        <div class="media-frame route-media goal-chip mb-4 shape-clip shape-reveal shape-clip-arch">
                     <picture>
             <source type="image/avif" srcset="/assets/images/routes/route-01.avif">
             <source type="image/webp" srcset="/assets/images/routes/route-01.webp">
@@ -30,8 +34,8 @@
         <p class="text-xs text-gray-500">Старт: 1 визит -> при необходимости переход в Core.</p>
       </article>
 
-      <article class="card-luxe route-card p-6 reveal-on-scroll" data-route-step="02">
-        <div class="media-frame route-media mb-4">
+      <article class="card-luxe route-card p-6 reveal-on-scroll goal-checkpoint goal-checkpoint--2" data-route-step="02" data-goal-reveal>
+        <div class="media-frame route-media goal-chip mb-4 shape-clip shape-reveal shape-clip-lean">
                     <picture>
             <source type="image/avif" srcset="/assets/images/routes/route-02.avif">
             <source type="image/webp" srcset="/assets/images/routes/route-02.webp">
@@ -51,8 +55,8 @@
         <p class="text-xs text-gray-500">Обычно 2-4 визита дают наиболее заметную динамику.</p>
       </article>
 
-      <article class="card-luxe route-card p-6 reveal-on-scroll" data-route-step="03">
-        <div class="media-frame route-media mb-4">
+      <article class="card-luxe route-card p-6 reveal-on-scroll goal-checkpoint goal-checkpoint--3" data-route-step="03" data-goal-reveal>
+        <div class="media-frame route-media goal-chip mb-4 shape-clip shape-reveal shape-clip-hex">
                     <picture>
             <source type="image/avif" srcset="/assets/images/routes/route-03.avif">
             <source type="image/webp" srcset="/assets/images/routes/route-03.webp">
@@ -72,8 +76,8 @@
         <p class="text-xs text-gray-500">Оптимально: курс 4 визита с коррекцией по динамике.</p>
       </article>
 
-      <article class="card-luxe route-card p-6 reveal-on-scroll" data-route-step="04">
-        <div class="media-frame route-media mb-4">
+      <article class="card-luxe route-card p-6 reveal-on-scroll goal-checkpoint goal-checkpoint--4" data-route-step="04" data-goal-reveal>
+        <div class="media-frame route-media goal-chip mb-4 shape-clip shape-reveal shape-clip-corner">
                     <picture>
             <source type="image/avif" srcset="/assets/images/routes/route-04.avif">
             <source type="image/webp" srcset="/assets/images/routes/route-04.webp">
@@ -92,6 +96,7 @@
         </div>
         <p class="text-xs text-gray-500">Формат и интенсивность определяются после первого диалога.</p>
       </article>
+      </div>
     </div>
 
     <div class="card-luxe p-6 md:p-7 reveal-on-scroll">
