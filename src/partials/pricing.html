@@ -1,89 +1,86 @@
-﻿<!-- PRICING -->
-<section id="pricing" class="section-shell bg-[#080808]">
+<!-- PRICING -->
+<section id="pricing" class="section-shell bg-[#080808] pricing-editorial">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
-      <p class="section-kicker">Pricing Ladder</p>
-      <h2 class="section-title">Стоимость без скрытых условий</h2>
+      <p class="section-kicker">{{pricing.kicker}}</p>
+      <h2
+        class="section-title"
+        data-exp="pricing-title"
+        data-exp-text-a="{{pricing.title}}"
+        data-exp-text-b="Стоимость: без сюрпризов"
+      >
+        {{pricing.title}}
+      </h2>
       <p class="section-subtitle">
-        Прозрачная ценовая лестница: первый визит, короткий курс и расширенный курс. Вы заранее понимаете, за что
-        платите и какой формат получаете.
+        {{pricing.subtitle}}
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-5">
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.02s">
-        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Start</p>
-        <h3 class="font-serif text-3xl text-ivory mb-2">1 визит</h3>
-        <p class="text-sm text-gray-400 mb-4">Диагностика запроса, сессия и персональные рекомендации.</p>
-        <div class="flex items-end justify-between gap-2">
-          <span class="font-serif text-5xl text-champagne">7 000 ₽</span>
-          <span class="text-sm text-gray-600 line-through">15 000 ₽</span>
+    <div class="pricing-plane">
+      <div class="pricing-plane-accent" aria-hidden="true"></div>
+      <div class="grid lg:grid-cols-3 gap-5 pricing-grid">
+      {{#each pricing.cards}}
+      <article class="card-luxe p-6 reveal-on-scroll pricing-card{{#if featured}} is-featured border border-champagne/30{{/if}}" data-pricing-tier="{{id}}" data-pricing-card data-analytics="Pricing: Card {{id}}">
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">{{label}}</p>
+        {{#if tags.length}}
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          {{#each tags}}
+          <span class="tag-pill">{{this}}</span>
+          {{/each}}
         </div>
-      </article>
-
-      <article class="card-luxe p-6 border border-champagne/30 reveal-on-scroll" data-reveal-delay="0.1s">
-        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Core</p>
-        <h3 class="font-serif text-3xl text-ivory mb-2">Курс 4</h3>
-        <p class="text-sm text-gray-400 mb-4">Оптимальный баланс цены и устойчивости эффекта.</p>
-        <div class="flex items-end justify-between gap-2 mb-3">
-          <span class="font-serif text-5xl text-champagne">26 000 ₽</span>
+        {{/if}}
+        <h3 class="font-serif text-3xl text-ivory mb-2 pricing-title">{{title}}</h3>
+        <p class="text-sm text-gray-400 mb-4 pricing-desc">{{description}}</p>
+        <div class="flex items-end justify-between gap-2 mb-2 pricing-price-row">
+          <span class="font-serif text-5xl text-champagne pricing-price">{{price}}</span>
         </div>
-        <p class="text-[11px] text-gray-500">Экономия 2 000 ₽ относительно разовых визитов.</p>
+        <p class="text-[11px] text-gray-500">{{priceNote}}</p>
+        <div class="pricing-media-slot shape-clip shape-clip-arch mask-media mask-soft" aria-hidden="true" style="--media-image: url('/assets/images/space/space-02.jpg');"></div>
       </article>
-
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.18s">
-        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Signature</p>
-        <h3 class="font-serif text-3xl text-ivory mb-2">Курс 8</h3>
-        <p class="text-sm text-gray-400 mb-4">Глубокая последовательная работа и долгосрочная поддержка.</p>
-        <div class="flex items-end justify-between gap-2 mb-3">
-          <span class="font-serif text-5xl text-champagne">48 000 ₽</span>
-        </div>
-        <p class="text-[11px] text-gray-500">Экономия 8 000 ₽ относительно разовых визитов.</p>
-      </article>
+      {{/each}}
+      </div>
     </div>
 
-    <div class="mt-8 card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.24s">
+    <div class="mt-8 card-luxe p-6 md:p-7 reveal-on-scroll">
       <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10">
         <div>
-          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-2">Как выбрать</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-2">{{pricing.advisory.kicker}}</p>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Не уверены, какой пакет ваш? Начните со Start и после первого визита перейдем в Core или Signature, если
-            это действительно нужно вашему запросу.
+            {{pricing.advisory.body}}
+          </p>
+          <p class="text-[11px] text-gray-500 mt-3">
+            {{pricing.advisory.note}}
           </p>
         </div>
         <div class="flex flex-wrap gap-2.5">
+          {{#each pricing.ctas}}
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20забронировать%20первый%20визит%20(пакет%20Start)."
-            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-            data-analytics="Pricing: Start CTA"
+            href="{{waLink ../site.phoneDigits message}}"
+            class="{{className}} pricing-cta"
           >
-            Забронировать Start
+            {{label}}
           </a>
-          <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20подобрать%20между%20пакетами%20Core%20и%20Signature."
-            class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
-            data-analytics="Pricing: Compare CTA"
-          >
-            Сравнить пакеты
-          </a>
+          {{/each}}
         </div>
       </div>
+      <p class="text-[11px] text-gray-500 mt-3">
+        {{pricing.responseNote}}
+      </p>
 
       <div class="grid md:grid-cols-3 gap-4 pt-6">
+        {{#each pricing.extras}}
         <div class="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
-          <p class="text-[11px] uppercase tracking-[0.22em] text-champagne mb-1.5">Доп. время</p>
-          <p class="text-sm text-gray-300">+30 минут по согласованию к любому формату.</p>
+          <p class="text-[11px] uppercase tracking-[0.22em] text-champagne mb-1.5">{{title}}</p>
+          <p class="text-sm text-gray-300">{{text}}</p>
         </div>
-        <div class="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
-          <p class="text-[11px] uppercase tracking-[0.22em] text-champagne mb-1.5">Зональный фокус</p>
-          <p class="text-sm text-gray-300">Усиленная проработка одной зоны, включая ягодичную область.</p>
-        </div>
-        <div class="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
-          <p class="text-[11px] uppercase tracking-[0.22em] text-champagne mb-1.5">Поддержка</p>
-          <p class="text-sm text-gray-300">После курса: режим 1-2 визита в месяц для удержания эффекта.</p>
-        </div>
+        {{/each}}
+      </div>
+
+      <div class="mt-5 flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.22em] text-gray-500 pricing-trust">
+        <span>Без предоплаты</span>
+        <span>Перенос возможен</span>
+        <span>Ответ до 10 минут</span>
       </div>
     </div>
   </div>
 </section>
-

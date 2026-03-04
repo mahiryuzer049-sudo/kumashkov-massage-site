@@ -1,4 +1,13 @@
-﻿const SITE = {
+import { PRICING_SECTION, PACKAGES_SECTION } from "./src/features/pricing/model/packages.config.js";
+import {
+  BUSINESS_SCHEMA,
+  FAQ_SCHEMA,
+  PERSON_SCHEMA,
+  REVIEW_SCHEMA,
+  SERVICE_SCHEMA,
+} from "./src/shared/seo/schema-registry.js";
+
+const SITE = {
   baseUrl: "https://pavelkumashkov.ru",
   brandRu: "Павел Кумашков",
   brandEn: "Pavel Kumashkov",
@@ -7,102 +16,67 @@
   phoneDigits: "79260899019",
   phoneDisplay: "+7 926 089 9019",
   telegram: "https://t.me/Pasho_chekk",
+  metrikaId: "",
   ogImagePath: "/assets/images/og.jpg",
 };
 
-const HOME_FAQ = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Сколько длится сеанс и где проходит?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Сеанс обычно длится около 60 минут и проходит в формате выезда на дом по Москве.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Как записаться?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Лучше всего написать в WhatsApp или Telegram: укажите цель, зоны запроса и удобное время.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Как понять, какой формат мне подходит?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Начинаем с первого визита, после которого фиксируем отклик тела и при необходимости собираем курс или поддерживающий ритм.",
-      },
-    },
-  ],
-};
+const HOME_FAQ_ITEMS = [
+  {
+    question: "Сколько длится сеанс и где проходит?",
+    answer: "Сеанс обычно длится около 60 минут и проходит в формате выезда на дом по Москве.",
+  },
+  {
+    question: "Как записаться?",
+    answer: "Лучше всего написать в WhatsApp или Telegram: укажите цель, зоны запроса и удобное время.",
+  },
+  {
+    question: "Как понять, какой формат мне подходит?",
+    answer:
+      "Начинаем с первого визита, после которого фиксируем отклик тела и при необходимости собираем курс или поддерживающий ритм.",
+  },
+];
+const HOME_FAQ = FAQ_SCHEMA(HOME_FAQ_ITEMS);
 
-const PERSON_SCHEMA = (site) => ({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.brandRu,
-  jobTitle: "Массажист",
-  telephone: site.phoneDisplay,
-  url: `${site.baseUrl}/`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: site.city,
-    addressCountry: "RU",
+const HOME_SERVICES = [
+  {
+    name: "Классический массаж на дому",
+    description: "Восстановительный формат для спины, плеч и общего тонуса.",
+    canonicalPath: "/landing-classic.html",
   },
-  sameAs: [site.telegram],
-});
+  {
+    name: "Релакс-массаж на дому",
+    description: "Антистресс-формат для глубокой разгрузки и восстановления спокойствия.",
+    canonicalPath: "/landing-relax.html",
+  },
+  {
+    name: "Лимфодренажный массаж на дому",
+    description: "Мягкий дренажный формат для легкости и уменьшения отечности.",
+    canonicalPath: "/landing-lymph.html",
+  },
+  {
+    name: "Массаж для осанки на дому",
+    description: "Работа с мышечным балансом, шеей, плечами и поясницей.",
+    canonicalPath: "/landing-posture.html",
+  },
+];
 
-const BUSINESS_SCHEMA = (site) => ({
-  "@context": "https://schema.org",
-  "@type": ["HealthAndBeautyBusiness", "LocalBusiness"],
-  name: `${site.brandRu} - массаж на дому в Москве`,
-  image: `${site.baseUrl}${site.ogImagePath}`,
-  telephone: site.phoneDisplay,
-  url: `${site.baseUrl}/`,
-  priceRange: "$$",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: site.city,
-    addressCountry: "RU",
+const HOME_REVIEWS = [
+  {
+    author: "Клиентка, 27",
+    reviewBody:
+      "Перед первым визитом переживала, но уже в начале стало спокойно. Очень аккуратная коммуникация и понятный темп. После сеанса — легкая спина и больше энергии.",
   },
-  areaServed: site.city,
-  serviceArea: {
-    "@type": "Place",
-    name: site.city,
+  {
+    author: "Клиентка, 31",
+    reviewBody:
+      "Понравилось, что все согласовали заранее: зоны, интенсивность, длительность. Без давления и без неловкости. Формат комфортный, хочу продолжить регулярные встречи.",
   },
-  availableLanguage: ["ru"],
-  contactPoint: [
-    {
-      "@type": "ContactPoint",
-      telephone: site.phoneDisplay,
-      contactType: "Запись",
-      areaServed: site.regionCode,
-      availableLanguage: "ru",
-    },
-  ],
-  sameAs: [site.telegram],
-});
-
-const SERVICE_SCHEMA = (site, { name, description, canonicalPath }) => ({
-  "@context": "https://schema.org",
-  "@type": "Service",
-  serviceType: name,
-  name,
-  description,
-  provider: {
-    "@type": "Person",
-    name: site.brandRu,
+  {
+    author: "Клиентка, 24",
+    reviewBody:
+      "Для меня важно было чувство приватности и четкие границы. Здесь это соблюдается спокойно и профессионально. После встречи ощущение, что тело «дышит» свободнее.",
   },
-  areaServed: {
-    "@type": "City",
-    name: site.city,
-  },
-  url: new URL(canonicalPath, `${site.baseUrl}/`).toString(),
-});
+];
 
 const PAGES = {
   "/index.html": {
@@ -113,8 +87,12 @@ const PAGES = {
     pageType: "home",
     robots: "index,follow",
     geo: true,
+    preloadImage: "/assets/images/hero/hero-mobile.avif",
+    preloadImageType: "image/avif",
+    preloadImageSrcset: "",
+    preloadImageSizes: "",
     preconnectUnsplash: false,
-    structuredData: (site) => [PERSON_SCHEMA(site), BUSINESS_SCHEMA(site), HOME_FAQ],
+    structuredData: (site) => [PERSON_SCHEMA(site), BUSINESS_SCHEMA(site), HOME_FAQ, ...HOME_SERVICES.map((service) => SERVICE_SCHEMA(site, service)), ...HOME_REVIEWS.map((review) => REVIEW_SCHEMA(site, review))],
   },
   "/privacy.html": {
     title: "Политика конфиденциальности | Павел Кумашков",
@@ -184,8 +162,22 @@ const PAGES = {
       }),
     ],
   },
+  "/landing-recovery.html": {
+    title: "Recovery Massage at Home | Pavel Kumashkov",
+    description:
+      "Recovery massage at home in Moscow with calm rhythm, gentle release, and focused support.",
+    canonicalPath: "/landing-recovery.html",
+    pageType: "landing",
+    robots: "index,follow",
+    structuredData: (site) => [
+      SERVICE_SCHEMA(site, {
+        name: "Recovery massage at home",
+        description: "Calm recovery massage format with gentle release and support.",
+        canonicalPath: "/landing-recovery.html",
+      }),
+    ],
+  },
 };
-
 const toAbsoluteUrl = (baseUrl, path) => new URL(path, `${baseUrl}/`).toString();
 
 const normalizePagePath = (pagePath) => {
@@ -232,10 +224,17 @@ export const getTemplateContext = (pagePath) => {
       twitterDescription: pageConfig.twitterDescription || pageConfig.description,
       twitterImage: toAbsoluteUrl(SITE.baseUrl, pageConfig.twitterImagePath || SITE.ogImagePath),
       preloadImage: pageConfig.preloadImage || "",
+      preloadImageType: pageConfig.preloadImageType || "",
+      preloadImageSrcset: pageConfig.preloadImageSrcset || "",
+      preloadImageSizes: pageConfig.preloadImageSizes || "",
       preconnectUnsplash: Boolean(pageConfig.preconnectUnsplash),
       structuredDataScripts: structuredData.map((item) => JSON.stringify(item)),
     },
+    pricing: PRICING_SECTION,
+    packages: PACKAGES_SECTION,
   };
 };
 
 export { SITE };
+
+

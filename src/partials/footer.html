@@ -1,45 +1,72 @@
 <!-- FOOTER -->
-<footer class="bg-black pt-24 pb-40 border-t border-white/5">
+<footer class="bg-black pt-24 pb-40 border-t border-white/5 footer-editorial">
   <div class="max-w-screen-xl mx-auto px-6">
+    <div class="footer-cta-panel">
+      <div class="footer-cta-copy">
+        <p class="footer-cta-kicker">Private Session</p>
+        <h2 class="footer-cta-title">Готовы записаться на персональный сеанс?</h2>
+        <p class="footer-cta-subtitle">Расскажите запрос, подберем формат и согласуем время под ваш график.</p>
+      </div>
+      <div class="footer-cta-actions">
+        <a href="{{waLink site.phoneDigits 'Здравствуйте! Хочу записаться на сеанс.'}}" class="btn-primary interactive-el btn-vibrate ripple-container">Написать</a>
+        <a href="{{page.anchorPrefix}}packages" class="btn-secondary interactive-el">Смотреть пакеты</a>
+      </div>
+    </div>
     <div class="grid md:grid-cols-[1.2fr_0.9fr_0.9fr] gap-10 mb-14">
       <div>
-        <p class="font-serif text-4xl text-white/10 tracking-widest mb-5">KUMASHKOV</p>
+        <p class="font-serif text-4xl text-white/10 tracking-widest mb-5 footer-blend-copy">KUMASHKOV</p>
         <p class="text-sm text-gray-400 leading-relaxed max-w-md">
           Персональные сеансы на дому в Москве. Комфортный маршрут от первого контакта до записи и регулярного формата.
         </p>
         <div class="flex gap-4 mt-6">
-          <a href="https://wa.me/{{site.phoneDigits}}" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" data-analytics="Footer: WhatsApp"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-          <a href="{{site.telegram}}" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" data-analytics="Footer: Telegram"><i class="fa-brands fa-telegram text-2xl"></i></a>
+          <a href="{{waLink site.phoneDigits 'Здравствуйте!
+
+Источник: Footer: WhatsApp
+utm_source=site&utm_medium=whatsapp&utm_campaign=footer-whatsapp'}}" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" aria-label="Написать в WhatsApp"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+          <a href="{{site.telegram}}" class="text-gray-600 hover:text-champagne transition transform hover:scale-110 interactive-el ripple-container" aria-label="Написать в Telegram"><i class="fa-brands fa-telegram text-2xl"></i></a>
         </div>
       </div>
 
       <div>
         <p class="text-[11px] uppercase tracking-[0.22em] text-gray-500 mb-4">Разделы</p>
         <div class="flex flex-col gap-2.5">
-          <a href="{{page.anchorPrefix}}trust" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Trust Anchor">Формат</a>
-          <a href="{{page.anchorPrefix}}services" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Services Anchor">Услуги</a>
-          <a href="{{page.anchorPrefix}}scanner" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Scanner Anchor">Сканер</a>
-          <a href="{{page.anchorPrefix}}results" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Results Anchor">Результат</a>
-          <a href="{{page.anchorPrefix}}blog" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Blog Anchor">Блог</a>
-          <a href="{{page.anchorPrefix}}booking" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Booking Anchor">Запись</a>
+          <a href="{{page.anchorPrefix}}home" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Главная</a>
+          <a href="{{page.anchorPrefix}}trust" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Формат</a>
+          <a href="{{page.anchorPrefix}}services" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Услуги</a>
+          <a href="{{page.anchorPrefix}}goal-routes" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Маршруты</a>
+          <a href="{{page.anchorPrefix}}packages" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Пакеты</a>
+          <a href="{{page.anchorPrefix}}scanner-anchor" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Сканер</a>
+          <a href="{{page.anchorPrefix}}results" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Результат</a>
+          <a href="{{page.anchorPrefix}}how-to-book" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Запись</a>
+          <a href="{{page.anchorPrefix}}blog" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Блог</a>
         </div>
       </div>
 
       <div>
         <p class="text-[11px] uppercase tracking-[0.22em] text-gray-500 mb-4">Страницы</p>
         <div class="flex flex-col gap-2.5">
-          <a href="/landing-classic.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Landing Classic">Classic</a>
-          <a href="/landing-relax.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Landing Relax">Relax</a>
-          <a href="/landing-lymph.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Landing Lymph">Lymph</a>
-          <a href="/landing-posture.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Landing Posture">Posture</a>
-          <a href="/privacy.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el" data-analytics="Footer: Privacy Link">Политика</a>
+          <a href="/landing-classic.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Classic</a>
+          <a href="/landing-relax.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Relax</a>
+          <a href="/landing-lymph.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Lymph</a>
+          <a href="/landing-posture.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Posture</a>
+          <a href="/privacy.html" class="text-sm text-gray-300 hover:text-champagne transition interactive-el">Политика</a>
         </div>
       </div>
     </div>
 
+    <div class="footer-media-tail" aria-hidden="true">
+      <span class="footer-tail-panel"></span>
+      <span class="footer-tail-chip"></span>
+    </div>
     <div class="pt-6 border-t border-white/5 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
       <p class="text-[11px] font-sans text-gray-600 uppercase tracking-[0.3em]">Москва • На дому • +7 926 089 9019</p>
       <p class="text-[11px] font-sans text-gray-700 uppercase tracking-[0.3em]">Private Body Architecture © 2026</p>
     </div>
   </div>
 </footer>
+
+{{#each seo.structuredDataScripts}}
+<script type="application/ld+json">
+{{{this}}}
+</script>
+{{/each}}

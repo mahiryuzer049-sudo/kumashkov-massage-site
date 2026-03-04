@@ -1,4 +1,4 @@
-﻿<!-- SUITABILITY -->
+<!-- SUITABILITY -->
 <section id="suitability" class="section-shell bg-[#060606]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
@@ -11,19 +11,19 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-5 mb-7">
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.02s">
+      <article class="card-luxe p-6 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Сидячая работа</p>
         <p class="text-sm text-gray-300 leading-relaxed">
           Скованность шеи и плеч, усталость поясницы, ощущение «тяжелой» спины к вечеру.
         </p>
       </article>
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+      <article class="card-luxe p-6 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Перегрузки и стресс</p>
         <p class="text-sm text-gray-300 leading-relaxed">
           Нужен мягкий сброс напряжения и восстановление ресурса без поездок и лишней суеты.
         </p>
       </article>
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.14s">
+      <article class="card-luxe p-6 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Визуальный тонус</p>
         <p class="text-sm text-gray-300 leading-relaxed">
           Цель — ощущение подтянутого тела, легкости в движении и аккуратный восстановительный эффект.
@@ -31,7 +31,7 @@
       </article>
     </div>
 
-    <div class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.2s">
+    <div class="card-luxe p-6 md:p-7 reveal-on-scroll">
       <div class="grid md:grid-cols-[1fr_1fr] gap-6">
         <div>
           <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Когда лучше перенести</p>
@@ -57,9 +57,9 @@
             комфорт.
           </p>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте,%20хочу%20уточнить,%20подходит%20ли%20мне%20формат%20сейчас."
+            href="{{waLink site.phoneDigits 'Здравствуйте, хочу уточнить, подходит ли мне формат сейчас.'}}"
             class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
-            data-analytics="Suitability: Ask"
+           
           >
             Уточнить по состоянию
           </a>
@@ -68,4 +68,6 @@
     </div>
   </div>
 </section>
+
+
 

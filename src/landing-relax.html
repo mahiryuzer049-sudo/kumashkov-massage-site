@@ -1,40 +1,45 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth bg-[#050505]">
 <head>
   {{> head-core}}
   {{> head-seo}}
 </head>
-<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
+<body class="has-sticky landing-shell landing-relax" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
   <a class="skip-link" href="#main">К содержимому</a>
   {{> chrome}}
   {{> header}}
 
-  <main id="main" class="pt-28">
-    <section class="section-shell bg-void">
-      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+  <main id="main" class="pt-28 landing-main">
+    <section class="section-shell bg-void landing-hero">
+      <div class="landing-relax-ambient" aria-hidden="true">
+        <span class="landing-relax-blob landing-relax-blob--one"></span>
+        <span class="landing-relax-blob landing-relax-blob--two"></span>
+        <span class="landing-relax-blob landing-relax-blob--three"></span>
+      </div>
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center landing-hero-grid">
         <div class="reveal-on-scroll">
           <p class="section-kicker text-left">Relax Format</p>
           <h1 class="section-title text-left">Релакс-массаж на дому в Москве</h1>
           <p class="section-subtitle text-left m-0">
-            Мягкий темп для глубокой разгрузки нервной системы. Формат, когда хочется «выдохнуть», снизить внутренний
-            шум и вернуть телу спокойный ритм.
+            Мягкий темп для глубокой разгрузки нервной системы — когда нужно выдохнуть, снять напряжение и вернуть
+            телу спокойный ритм.
           </p>
           <div class="flex flex-wrap gap-3 mt-8">
             <a
-              href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20записаться%20на%20релакс-массаж%20на%20дому."
+              href="{{waLink site.phoneDigits 'Здравствуйте! Хочу записаться на релакс-массаж на дому.'}}"
               class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-              data-analytics="LandingRelax: Book"
+              data-analytics="LandingRelax: Book" data-cta-flow="landing_hero" data-cta-step="open_chat"
             >
-              Записаться
+              Записаться на сеанс
             </a>
-            <a href="/#packages" class="btn-secondary interactive-el" data-analytics="LandingRelax: Packages">
-              Пакеты и курс
+            <a href="/#packages" class="btn-secondary interactive-el" data-analytics="LandingRelax: Packages" data-cta-flow="landing_hero" data-cta-step="view_packages">
+              Подобрать курс
             </a>
           </div>
         </div>
 
-        <article class="card-luxe p-7 reveal-on-scroll" data-reveal-delay="0.08s">
-          <div class="media-frame landing-hero-media mb-5">
+        <article class="card-luxe p-7 reveal-on-scroll landing-hero-card" data-reveal-delay="0.08s">
+          <div class="media-frame landing-hero-media mb-5 shape-clip shape-clip-wave mask-media mask-dissolve">
             <img src="/assets/images/landing/relax-hero.jpg" srcset="/assets/images/landing/relax-hero.jpg?width=640 640w, /assets/images/landing/relax-hero.jpg?width=960 960w, /assets/images/landing/relax-hero.jpg?width=1200 1200w, /assets/images/landing/relax-hero.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Relax формат" loading="lazy" decoding="async">
             <span class="media-badge">Relax</span>
           </div>
@@ -42,19 +47,20 @@
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• После эмоционально тяжелой недели и переутомления.</li>
             <li>• Если сложно «отпустить» тело перед сном.</li>
-            <li>• Когда нужен деликатный формат без жесткой проработки.</li>
+            <li>• Когда нужен деликатный формат без жесткой проработки и боли.</li>
           </ul>
         </article>
       </div>
     </section>
 
-    <section class="section-shell bg-[#060606]">
+    <div class="landing-wave-divider" aria-hidden="true"></div>
+    <section class="section-shell bg-[#060606] landing-duo landing-relax-flow">
       <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5">
         <article class="card-luxe p-6 reveal-on-scroll">
           <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• Больше спокойствия в теле и мыслях.</li>
-            <li>• Более глубокое расслабление после сеанса.</li>
+            <li>• Глубокое расслабление и ровное дыхание после сеанса.</li>
             <li>• Понятный план поддерживающего режима.</li>
           </ul>
         </article>
@@ -62,27 +68,28 @@
         <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
           <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Комбинация</p>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
-            Релакс можно комбинировать с базовым восстановлением или курсом по осанке, если есть смешанный запрос.
+            Если запрос смешанный, соберем комбинацию: релакс + восстановление или осанка.
           </p>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20собрать%20мягкий%20антистресс%20формат%20и%20частоту%20визитов."
+            href="{{waLink site.phoneDigits 'Здравствуйте! Хочу собрать мягкий антистресс формат и частоту визитов.'}}"
             class="whatsapp-link btn-secondary interactive-el"
             data-analytics="LandingRelax: Combo"
           >
-            Собрать комбинацию
+            Подобрать комбинацию
           </a>
         </article>
       </div>
     </section>
 
-    <section class="section-shell bg-[#050505]">
+    <div class="landing-wave-divider landing-wave-divider--soft" aria-hidden="true"></div>
+    <section class="section-shell bg-[#050505] landing-related landing-relax-flow">
       <div class="max-w-screen-xl mx-auto px-6">
         <div class="section-head reveal-on-scroll mb-10">
           <p class="section-kicker">Related Formats</p>
           <h2 class="section-title">Смотреть также</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-5">
+        <div class="grid md:grid-cols-3 gap-5 landing-related-grid">
           <a href="/landing-classic.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-analytics="LandingRelax: Related Classic">
             <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Восстановление</h3>
@@ -96,7 +103,7 @@
           <a href="/#technique-guide" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.14s" data-analytics="LandingRelax: Related Guide">
             <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Guide</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Все форматы</h3>
-            <p class="text-sm text-gray-300">Открыть гид и выбрать формат под цель без лишних шагов.</p>
+            <p class="text-sm text-gray-300">Открыть гид форматов и выбрать следующий шаг.</p>
           </a>
         </div>
       </div>

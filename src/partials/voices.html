@@ -1,4 +1,4 @@
-﻿<!-- VOICES -->
+<!-- VOICES -->
 <section id="voices" class="section-shell bg-[#050505]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
@@ -10,7 +10,7 @@
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
-      <article class="voice-bubble p-6 reveal-on-scroll" data-reveal-delay="0.02s">
+      <article class="voice-bubble p-6 reveal-on-scroll">
         <p class="text-xs text-gray-300 leading-relaxed font-light mb-5">
           «Перед первым визитом переживала, но уже в начале стало спокойно. Очень аккуратная коммуникация и понятный
           темп. После сеанса — легкая спина и больше энергии».
@@ -21,7 +21,7 @@
         </div>
       </article>
 
-      <article class="voice-bubble p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+      <article class="voice-bubble p-6 reveal-on-scroll">
         <p class="text-xs text-gray-300 leading-relaxed font-light mb-5">
           «Понравилось, что все согласовали заранее: зоны, интенсивность, длительность. Без давления и без неловкости.
           Формат комфортный, хочу продолжить регулярные встречи».
@@ -32,7 +32,7 @@
         </div>
       </article>
 
-      <article class="voice-bubble p-6 reveal-on-scroll" data-reveal-delay="0.14s">
+      <article class="voice-bubble p-6 reveal-on-scroll">
         <p class="text-xs text-gray-300 leading-relaxed font-light mb-5">
           «Для меня важно было чувство приватности и четкие границы. Здесь это соблюдается спокойно и профессионально.
           После встречи ощущение, что тело «дышит» свободнее».
@@ -44,15 +44,15 @@
       </article>
     </div>
 
-    <div class="mt-8 card-luxe p-5 md:p-6 reveal-on-scroll" data-reveal-delay="0.2s">
+    <div class="mt-8 card-luxe p-5 md:p-6 reveal-on-scroll">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <p class="text-sm text-gray-300 leading-relaxed">
           Хотите так же спокойно пройти первый визит? Напишите, какой результат для вас в приоритете сейчас.
         </p>
         <a
-          href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20обсудить%20мой%20запрос%20и%20формат%20первого%20визита."
+          href="{{waLink site.phoneDigits 'Здравствуйте! Хочу обсудить мой запрос и формат первого визита.'}}"
           class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
-          data-analytics="Voices: Primary CTA"
+         
         >
           Написать лично
         </a>
@@ -60,4 +60,6 @@
     </div>
   </div>
 </section>
+
+
 

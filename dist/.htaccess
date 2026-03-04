@@ -1,0 +1,11 @@
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .htm .css .js .json .txt .xml .svg
+
+<IfModule mod_mime.c>
+  AddType image/avif .avif
+  AddType image/webp .webp
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>

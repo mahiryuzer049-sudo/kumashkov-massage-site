@@ -1,13 +1,48 @@
-<div class="cursor-dot"></div><div class="cursor-circle"></div><div class="noise-overlay"></div><div class="spotlight-overlay" id="spotlight"></div>
-<div id="preloader"><div class="flex flex-col items-center"><span class="font-serif text-champagne tracking-widest text-xl mb-4">PRIVATE ACCESS</span><div class="w-48 h-[1px] bg-white/10 relative"><div class="loader-line absolute left-0 top-0 h-full" id="loader-progress"></div></div></div></div>
+<div class="cursor-dot"></div>
+<div class="cursor-circle"></div>
+<div class="noise-overlay"></div>
+<div class="spotlight-overlay" id="spotlight"></div>
+<div id="preloader">
+  <div class="flex flex-col items-center">
+    <span class="font-serif text-champagne tracking-widest text-xl mb-4">PRIVATE ACCESS</span>
+    <div class="w-48 h-[1px] bg-white/10 relative">
+      <div class="loader-line absolute left-0 top-0 h-full" id="loader-progress"></div>
+    </div>
+  </div>
+</div>
+{{#if site.metrikaId}}
+<noscript><div><img src="https://mc.yandex.ru/watch/{{site.metrikaId}}" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+{{/if}}
 {{#if page.isHome}}
-<nav class="section-rail" aria-label="Быстрая навигация">
-  <a href="{{page.anchorPrefix}}trust" data-nav-section="trust" data-label="Формат"></a>
-  <a href="{{page.anchorPrefix}}services" data-nav-section="services" data-label="Услуги"></a>
-  <a href="{{page.anchorPrefix}}scanner-anchor" data-nav-section="scanner" data-label="Сканер"></a>
-  <a href="{{page.anchorPrefix}}packages" data-nav-section="packages" data-label="Пакеты"></a>
-  <a href="{{page.anchorPrefix}}results" data-nav-section="results" data-label="Результат"></a>
-  <a href="{{page.anchorPrefix}}blog" data-nav-section="blog" data-label="Блог"></a>
-  <a href="{{page.anchorPrefix}}how-to-book" data-nav-section="how-to-book" data-label="Запись"></a>
+<nav class="section-rail section-rail--blend" aria-label="Быстрая навигация">
+  <div class="section-rail-progress" aria-hidden="true"><span></span></div>
+  <div class="section-rail-status" aria-hidden="true">
+    <span class="section-rail-kicker">Сейчас</span>
+    <span id="rail-current" class="section-rail-current">Главная</span>
+    <span class="section-rail-kicker">Далее</span>
+    <span id="rail-next" class="section-rail-next">Формат</span>
+  </div>
+  <button type="button" class="section-rail-command" data-command-trigger aria-label="Открыть навигацию" aria-controls="nav-command" aria-expanded="false">K</button>
+  <a href="{{page.anchorPrefix}}home" data-nav-section="home" data-label="Главная" aria-label="Главная"><span class="sr-only">Главная</span></a>
+  <a href="{{page.anchorPrefix}}trust" data-nav-section="trust" data-label="Формат" aria-label="Формат"><span class="sr-only">Формат</span></a>
+  <a href="{{page.anchorPrefix}}services" data-nav-section="services" data-label="Услуги" aria-label="Услуги"><span class="sr-only">Услуги</span></a>
+  <a href="{{page.anchorPrefix}}goal-routes" data-nav-section="goal-routes" data-label="Маршруты" aria-label="Маршруты"><span class="sr-only">Маршруты</span></a>
+  <a href="{{page.anchorPrefix}}packages" data-nav-section="packages" data-label="Пакеты" aria-label="Пакеты"><span class="sr-only">Пакеты</span></a>
+  <a href="{{page.anchorPrefix}}scanner-anchor" data-nav-section="scanner" data-label="Сканер" aria-label="Сканер"><span class="sr-only">Сканер</span></a>
+  <a href="{{page.anchorPrefix}}results" data-nav-section="results" data-label="Результаты" aria-label="Результаты"><span class="sr-only">Результаты</span></a>
+  <a href="{{page.anchorPrefix}}how-to-book" data-nav-section="how-to-book" data-label="Запись" aria-label="Запись"><span class="sr-only">Запись</span></a>
+  <a href="{{page.anchorPrefix}}blog" data-nav-section="blog" data-label="Блог" aria-label="Блог"><span class="sr-only">Блог</span></a>
 </nav>
 {{/if}}
+<div id="nav-command" class="nav-command hidden" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="nav-command-title">
+  <div class="nav-command-panel" role="document">
+    <div class="nav-command-header">
+      <p id="nav-command-title" class="nav-command-title">Навигация</p>
+      <button id="nav-command-close" type="button" class="nav-command-close" aria-label="Закрыть">&times;</button>
+    </div>
+    <label class="nav-command-label" for="nav-command-input">Быстрый переход</label>
+    <input id="nav-command-input" class="nav-command-input" type="search" placeholder="Найти раздел" autocomplete="off">
+    <ul id="nav-command-list" class="nav-command-list"></ul>
+    <div class="nav-command-hint">Enter — перейти, Esc — закрыть</div>
+  </div>
+</div>

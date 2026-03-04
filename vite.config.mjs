@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
 import handlebars from "vite-plugin-handlebars";
+import Handlebars from "handlebars";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 import { getTemplateContext } from "./site.config.mjs";
+import { buildWhatsAppLink } from "./src/features/messenger/lib/wa-link-builder.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -37,10 +39,22 @@ function collapseWhitespaceHtml() {
 export default defineConfig({
   root: "src",
   publicDir: "../public",
+  resolve: {
+    alias: {
+      "@app": resolve(__dirname, "src/app"),
+      "@features": resolve(__dirname, "src/features"),
+      "@shared": resolve(__dirname, "src/shared"),
+      "@entities": resolve(__dirname, "src/entities"),
+      "@scripts": resolve(__dirname, "src/scripts"),
+    },
+  },
   plugins: [
     handlebars({
       partialDirectory: "./src/partials",
       context: (pagePath) => getTemplateContext(pagePath),
+      helpers: {
+        waLink: (phoneDigits, text) => new Handlebars.SafeString(buildWhatsAppLink(phoneDigits, text)),
+      },
     }),
     collapseWhitespaceHtml(),
   ],

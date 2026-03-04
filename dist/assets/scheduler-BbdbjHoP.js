@@ -1,0 +1,1 @@
+const d=(e,n=1200)=>{if(typeof e=="function"){if("requestIdleCallback"in window){window.requestIdleCallback(()=>e(),{timeout:n});return}window.setTimeout(e,n)}},o=(e,n=1200)=>{if(document.readyState==="complete"){d(e,n);return}window.addEventListener("load",()=>{d(e,n)},{once:!0})};export{o as a,d as s};

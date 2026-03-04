@@ -1,15 +1,34 @@
-﻿<!-- BOOKING -->
-<section id="booking" class="section-shell bg-[#050505]">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid lg:grid-cols-[1.02fr_0.98fr] gap-7 items-start">
+<!-- BOOKING -->
+<section id="booking" class="section-shell bg-[#050505] booking-editorial">
+  <div class="booking-media-layer" aria-hidden="true">
+    <div class="booking-media-pane media-frame shape-clip shape-clip-arch mask-media mask-soft">
+      <picture>
+        <source type="image/avif" srcset="/assets/images/space/space-03.avif">
+        <source type="image/webp" srcset="/assets/images/space/space-03.webp">
+        <img src="/assets/images/space/space-03.jpg" alt="" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <div class="booking-media-chip shape-clip shape-clip-ellipse mask-media mask-dissolve" style="--media-image: url('/assets/images/space/space-06.jpg');"></div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 booking-shell">
+    <div class="grid lg:grid-cols-[1.02fr_0.98fr] gap-7 items-start booking-grid">
+      <aside class="card-luxe p-6 booking-rail" aria-label="Booking context">
+        <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-3">Маршрут</p>
+        <div class="space-y-3 text-sm text-gray-300">
+          <p>Окно подтверждения — до 10 минут.</p>
+          <p>Время, район, запрос — в одном сообщении.</p>
+          <p>Формат и интенсивность согласуем в диалоге.</p>
+        </div>
+      </aside>
       <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
         <p class="section-kicker !text-left mb-3">Direct Booking</p>
         <h2 class="font-serif text-4xl md:text-5xl text-ivory leading-[0.96] mb-5">
           Запись напрямую
         </h2>
         <p class="text-sm text-gray-300 leading-relaxed mb-6">
-          Вы общаетесь лично со мной, без менеджеров и долгих анкет. Средняя длительность сеанса — около 60 минут,
-          точный формат согласуем под ваш запрос и комфорт.
+          Вы общаетесь лично со мной, без менеджеров и анкет. Достаточно 2–3 пунктов в одном сообщении —
+          можно текстом или голосом. Средняя длительность сеанса — около 60 минут,
+          формат согласуем под ваш запрос и комфорт.
         </p>
 
         <div class="flex flex-wrap gap-2.5 mb-6">
@@ -19,53 +38,68 @@
           <span class="tag-pill">Конфиденциально</span>
         </div>
 
-        <div class="flex flex-wrap gap-2.5">
+        <div class="flex flex-wrap gap-2.5 booking-cta-group">
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20записаться%20на%20массаж.%20Удобное%20время:%20[ ].%20Район:%20[ ].%20Запрос:%20[ ]."
-            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-            data-analytics="Booking: Primary CTA"
+            href="{{waLink site.phoneDigits 'Здравствуйте! Хочу записаться на массаж. Удобное время: [ ]. Район: [ ]. Запрос: [ ].'}}"
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container booking-cta booking-cta-primary"
+           
           >
-            Начать диалог в WhatsApp
+            Написать в WhatsApp
           </a>
           <a
             href="{{site.telegram}}"
-            class="btn-secondary interactive-el"
-            data-analytics="Booking: Secondary CTA"
+            class="btn-secondary interactive-el booking-cta booking-cta-secondary"
+           
           >
             Написать в Telegram
           </a>
         </div>
+        <div class="booking-micro-media" aria-hidden="true">
+          <span class="booking-micro-dot" style="--media-image: url('/assets/images/space/space-01.jpg');"></span>
+          <span class="booking-micro-dot" style="--media-image: url('/assets/images/space/space-02.jpg');"></span>
+        </div>
+        <p class="text-[11px] text-gray-500 mt-3">
+          Можно одним сообщением: время, район, запрос. Ответ обычно до 10 минут.
+        </p>
+        <p class="text-[11px] text-gray-500 mt-2">
+          Быстрый формат: «Сегодня/завтра, [район], [запрос]».
+        </p>
+        <div class="mt-4 flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.22em] text-gray-500 booking-trust">
+          <span>Лично со мной</span>
+          <span>Без предоплаты</span>
+          <span>Конфиденциально</span>
+        </div>
       </article>
 
-      <article class="card-luxe p-7 md:p-8 reveal-on-scroll" data-reveal-delay="0.08s">
-        <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Мини-опрос перед подтверждением</p>
+      <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
+        <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Мини-опрос перед записью</p>
         <ol class="space-y-3.5 booking-checklist">
           <li>
             <span class="booking-check-num">1</span>
             <div>
-              <p class="booking-check-title">Когда удобно и в каком районе Москвы</p>
-              <p class="booking-check-text">Подбираем ближайшее подходящее окно без лишней переписки.</p>
+              <p class="booking-check-title">Удобное время и район</p>
+              <p class="booking-check-text">Подбираем ближайшее окно без лишней переписки.</p>
             </div>
           </li>
           <li>
             <span class="booking-check-num">2</span>
             <div>
-              <p class="booking-check-title">Какие зоны беспокоят сейчас</p>
-              <p class="booking-check-text">Сразу определяем приоритет и стартовую тактику работы.</p>
+              <p class="booking-check-title">Что беспокоит сейчас</p>
+              <p class="booking-check-text">Сразу определяем приоритет и стартовую тактику.</p>
             </div>
           </li>
           <li>
             <span class="booking-check-num">3</span>
             <div>
-              <p class="booking-check-title">Какая цель на первый визит</p>
-              <p class="booking-check-text">Расслабление, восстановление, тонус или комплексный формат.</p>
+              <p class="booking-check-title">Цель первого визита</p>
+              <p class="booking-check-text">Расслабление, восстановление, тонус или комплекс.</p>
             </div>
           </li>
           <li>
             <span class="booking-check-num">4</span>
             <div>
-              <p class="booking-check-title">Пожелания по интенсивности</p>
-              <p class="booking-check-text">Согласуем комфортный ритм до начала сессии.</p>
+              <p class="booking-check-title">Интенсивность и комфорт</p>
+              <p class="booking-check-text">Достаточно «мягко/плотно» — остальное уточним.</p>
             </div>
           </li>
         </ol>
@@ -73,4 +107,7 @@
     </div>
   </div>
 </section>
+
+
+
 

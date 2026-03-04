@@ -1,97 +1,105 @@
-﻿<!-- PACKAGES -->
-<section id="packages" class="section-shell bg-[#070707]">
-  <div class="max-w-6xl mx-auto px-6">
+<!-- PACKAGES -->
+<section id="packages" class="section-shell bg-[#070707] relative" data-choreo-section>
+  <div class="floating-media-field" data-floating-media="packages" aria-hidden="true">
+    <span
+      class="floating-media floating-media--tall mask-media mask-ink"
+      data-floating-item
+      data-depth="0.3"
+      style="--x: 10%; --y: 22%; --size: clamp(40px, 6vw, 82px); --media-image: url('/assets/images/results/results-main.jpg'); --float-rotate: -8deg;"
+    ></span>
+    <span
+      class="floating-media floating-media--ring mask-media mask-soft"
+      data-floating-item
+      data-depth="0.2"
+      data-floating-dense="true"
+      style="--x: 18%; --y: 78%; --size: clamp(32px, 5vw, 64px); --media-image: url('/assets/images/services/relax.jpg'); --float-rotate: 6deg;"
+    ></span>
+    <span
+      class="floating-media mask-media mask-paper"
+      data-floating-item
+      data-depth="0.26"
+      style="--x: 86%; --y: 26%; --size: clamp(42px, 7vw, 90px); --media-image: url('/assets/images/services/classic.jpg'); --float-rotate: 10deg;"
+    ></span>
+    <span
+      class="floating-media floating-media--ring mask-media mask-soft"
+      data-floating-item
+      data-depth="0.18"
+      data-floating-dense="true"
+      style="--x: 90%; --y: 74%; --size: clamp(30px, 4vw, 60px); --media-image: url('/assets/images/space/space-06.jpg'); --float-rotate: -6deg;"
+    ></span>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
     <div class="section-head reveal-on-scroll">
-      <p class="section-kicker">Packages & Formats</p>
-      <h2 class="section-title">Пакеты под вашу задачу</h2>
+      <p class="section-kicker">{{packages.kicker}}</p>
+      <h2
+        class="section-title"
+        data-exp="packages-title"
+        data-exp-text-a="{{packages.title}}"
+        data-exp-text-b="Выберите формат под задачу"
+      >
+        {{packages.title}}
+        <span class="inline-media inline-media--micro mask-media mask-ink" style="--inline-media-image: url('/assets/images/services/posture.jpg'); --inline-tilt: -8deg;" aria-hidden="true"></span>
+        <span class="inline-media inline-media--micro mask-media mask-paper" style="--inline-media-image: url('/assets/images/space/space-05.jpg'); --inline-tilt: 6deg;" aria-hidden="true"></span>
+        <span class="inline-media inline-media--micro mask-media mask-soft" style="--inline-media-image: url('/assets/images/space/space-04.jpg'); --inline-tilt: -4deg;" aria-hidden="true"></span>
+      </h2>
       <p class="section-subtitle">
-        Три уровня формата: старт, курс и поддержка. Можно начать с одного визита и спокойно выбрать следующий шаг по
-        ощущениям.
+        {{packages.subtitle}}
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-5">
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.02s">
-        <div class="media-frame package-media-frame mb-4">
-          <img src="/assets/images/packages/start.jpg" srcset="/assets/images/packages/start.jpg?width=480 480w, /assets/images/packages/start.jpg?width=720 720w, /assets/images/packages/start.jpg?width=960 960w, /assets/images/packages/start.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Пакет Start" loading="lazy" decoding="async">
-          <span class="media-badge">Start</span>
+    <div class="packages-spread">
+      <div class="packages-proof-float media-frame shape-clip shape-clip-arch mask-media mask-soft" data-choreo-parallax data-choreo-depth="0.18" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="/assets/images/space/space-04.avif">
+          <source type="image/webp" srcset="/assets/images/space/space-04.webp">
+          <img src="/assets/images/space/space-04.jpg" alt="" loading="lazy" decoding="async">
+        </picture>
+        <span class="packages-proof-tag">Client Proof</span>
+      </div>
+      {{#each packages.cards}}
+      <article class="card-luxe p-6 reveal-on-scroll package-card{{#if featured}} package-card--hero border border-champagne/30{{/if}}">
+        <div class="media-frame package-media-frame mb-4 shape-clip shape-clip-arch mask-media mask-soft">
+          <picture>
+            <source type="image/avif" srcset="{{media.avif}}">
+            <source type="image/webp" srcset="{{media.webp}}">
+            <img src="{{media.jpg}}" alt="{{media.alt}}" loading="lazy" decoding="async">
+          </picture>
+          <span class="media-badge">{{badge}}</span>
         </div>
-        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Start</p>
-        <h3 class="font-serif text-3xl text-ivory mb-3">Знакомство</h3>
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">{{label}}</p>
+        {{#if tags.length}}
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          {{#each tags}}
+          <span class="tag-pill">{{this}}</span>
+          {{/each}}
+        </div>
+        {{/if}}
+        <h3 class="font-serif text-3xl text-ivory mb-3">{{title}}</h3>
         <p class="text-sm text-gray-300 leading-relaxed mb-4">
-          Первый визит для диагностики запроса, подбора техники и проверки отклика тела.
+          {{description}}
         </p>
         <ul class="space-y-2 text-sm text-gray-400 mb-5">
-          <li>• 1 сеанс, около 60 минут</li>
-          <li>• Персональный протокол</li>
-          <li>• Рекомендации после встречи</li>
+          {{#each features}}
+          <li>• {{this}}</li>
+          {{/each}}
         </ul>
         <div class="flex items-end justify-between gap-3">
-          <span class="font-serif text-4xl text-champagne">7 000 ₽</span>
+          <div>
+            <span class="font-serif text-4xl text-champagne price-kinetic">{{price}}</span>
+            <p class="text-[11px] uppercase tracking-[0.18em] text-gray-500 mt-1">{{priceNote}}</p>
+          </div>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20пакет%20Start%20(первый%20визит)."
-            class="whatsapp-link btn-secondary interactive-el"
-            data-analytics="Packages: Start"
+            href="{{waLink ../site.phoneDigits cta.message}}"
+            class="{{cta.className}}"
           >
-            Выбрать
+            {{cta.label}}
           </a>
         </div>
-      </article>
-
-      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/30" data-reveal-delay="0.1s">
-        <div class="media-frame package-media-frame mb-4">
-          <img src="/assets/images/packages/core.jpg" srcset="/assets/images/packages/core.jpg?width=480 480w, /assets/images/packages/core.jpg?width=720 720w, /assets/images/packages/core.jpg?width=960 960w, /assets/images/packages/core.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Пакет Core" loading="lazy" decoding="async">
-          <span class="media-badge">Core</span>
-        </div>
-        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Core</p>
-        <h3 class="font-serif text-3xl text-ivory mb-3">Курс 4</h3>
-        <p class="text-sm text-gray-300 leading-relaxed mb-4">
-          Для закрепления эффекта: стабильный тонус, более ровное самочувствие и понятный ритм восстановления.
+        <p class="text-[11px] text-gray-500 mt-3">
+          {{note}}
         </p>
-        <ul class="space-y-2 text-sm text-gray-400 mb-5">
-          <li>• 4 сеанса по согласованной частоте</li>
-          <li>• Корректировка протокола по динамике</li>
-          <li>• Приоритет по расписанию</li>
-        </ul>
-        <div class="flex items-end justify-between gap-3">
-          <span class="font-serif text-4xl text-champagne">26 000 ₽</span>
-          <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20обсудить%20пакет%20Core%20(курс%204%20сеанса)."
-            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-            data-analytics="Packages: Core"
-          >
-            Выбрать
-          </a>
-        </div>
       </article>
-
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.18s">
-        <div class="media-frame package-media-frame mb-4">
-          <img src="/assets/images/packages/signature.jpg" srcset="/assets/images/packages/signature.jpg?width=480 480w, /assets/images/packages/signature.jpg?width=720 720w, /assets/images/packages/signature.jpg?width=960 960w, /assets/images/packages/signature.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Пакет Signature" loading="lazy" decoding="async">
-          <span class="media-badge">Signature</span>
-        </div>
-        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Signature</p>
-        <h3 class="font-serif text-3xl text-ivory mb-3">Курс 8</h3>
-        <p class="text-sm text-gray-300 leading-relaxed mb-4">
-          Формат для глубокой и последовательной работы: устойчивый результат и долгосрочная стратегия поддержки.
-        </p>
-        <ul class="space-y-2 text-sm text-gray-400 mb-5">
-          <li>• 8 сеансов с персональным ритмом</li>
-          <li>• Гибкая настройка по зонам и задачам</li>
-          <li>• Поддержка в чате между визитами</li>
-        </ul>
-        <div class="flex items-end justify-between gap-3">
-          <span class="font-serif text-4xl text-champagne">48 000 ₽</span>
-          <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20обсудить%20пакет%20Signature%20(курс%208%20сеансов)."
-            class="whatsapp-link btn-secondary interactive-el"
-            data-analytics="Packages: Signature"
-          >
-            Выбрать
-          </a>
-        </div>
-      </article>
+      {{/each}}
     </div>
   </div>
 </section>
-

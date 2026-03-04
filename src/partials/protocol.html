@@ -1,4 +1,4 @@
-﻿<!-- PROTOCOL -->
+<!-- PROTOCOL -->
 <section id="protocol" class="section-shell bg-[#070707]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
@@ -83,7 +83,7 @@
         </div>
       </article>
 
-      <article class="protocol-card card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.08s">
+      <article class="protocol-card card-luxe p-6 md:p-7 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-2">Предварительный результат</p>
         <h3 class="font-serif text-2xl text-ivory mb-4">Ваш стартовый протокол</h3>
         <p id="protocol-output" class="protocol-output">
@@ -96,9 +96,12 @@
         <div class="mt-6 flex flex-wrap gap-2.5">
           <a
             id="protocol-cta"
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте,%20хочу%20записаться."
+            href="{{waLink site.phoneDigits 'Здравствуйте, хочу записаться.'}}"
             class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
             data-analytics="Protocol: CTA"
+            data-cta-flow="protocol"
+            data-cta-step="open_chat"
+           
           >
             Отправить этот запрос
           </a>
@@ -106,6 +109,9 @@
             href="{{site.telegram}}"
             class="btn-secondary interactive-el"
             data-analytics="Protocol: Telegram"
+            data-cta-flow="protocol"
+            data-cta-step="open_telegram"
+           
           >
             Написать в Telegram
           </a>
@@ -114,4 +120,6 @@
     </div>
   </div>
 </section>
+
+
 

@@ -1,12 +1,24 @@
-<!-- PRIVATE ACCESS CARD -->
-<section id="private-access" class="section-shell bg-[#050505]">
-  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center">
+?<!-- PRIVATE ACCESS CARD -->
+<section id="private-access" class="section-shell bg-[#050505] private-access-editorial">
+  <div class="private-media-layer" aria-hidden="true">
+    <span class="private-media-orbit"></span>
+    <span class="private-media-spot"></span>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 items-center private-grid">
+    <aside class="card-luxe p-6 private-rail" aria-label="Private access rail">
+      <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-3">Private Rail</p>
+      <div class="space-y-3 text-sm text-gray-300">
+        <p>Приватный протокол фиксируем в диалоге.</p>
+        <p>Минимум данных, максимум комфорта.</p>
+        <p>Без публичных анкет и посредников.</p>
+      </div>
+    </aside>
     <div class="member-card-wrapper">
       <div class="member-card private-card" data-tilt-card>
         <div class="card-glare"></div>
         <div class="private-card-body">
           <p class="text-[11px] uppercase tracking-[0.35em] text-champagne/80 mb-3">Private Access</p>
-          <h3 class="font-serif text-3xl md:text-4xl text-ivory mb-4">Карта приватного доступа</h3>
+          <h2 class="font-serif text-3xl md:text-4xl text-ivory mb-4">Карта приватного доступа</h2>
           <p class="text-sm text-gray-300 leading-relaxed mb-6">
             Формат без публичности и без лишних посредников. Все обсуждаем лично, в комфортном ритме
             и с уважением к вашим границам.
@@ -22,29 +34,36 @@
 
     <div class="card-luxe p-7 md:p-8 reveal-on-scroll">
       <p class="section-kicker !text-left mb-3">Private Protocol</p>
-      <h2 class="font-serif text-4xl md:text-5xl text-ivory leading-[0.96] mb-5">
+      <h3 class="font-serif text-4xl md:text-5xl text-ivory leading-[0.96] mb-5">
         Доступ только через личный диалог
-      </h2>
+      </h3>
       <p class="text-sm text-gray-300 leading-relaxed mb-6">
         Это не публичная витрина услуг, а персональный маршрут. Мы обсудим запрос, зоны и комфортный темп,
         после чего фиксируем финальный протокол.
       </p>
       <div class="flex flex-wrap gap-3">
         <a
-          href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20хочу%20получить%20приватный%20доступ%20и%20обсудить%20формат."
+          href="{{waLink site.phoneDigits 'Павел, хочу получить приватный доступ и обсудить формат.'}}"
           class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-          data-analytics="PrivateAccess: Primary CTA"
+         
         >
           Запросить доступ
         </a>
         <a
           href="{{page.anchorPrefix}}booking"
           class="btn-secondary interactive-el"
-          data-analytics="PrivateAccess: Secondary CTA"
+         
         >
           Смотреть формат визита
         </a>
       </div>
+      <div class="private-micro-media" aria-hidden="true">
+        <span class="private-micro-dot" style="--media-image: url('/assets/images/space/space-03.jpg');"></span>
+        <span class="private-micro-dot" style="--media-image: url('/assets/images/space/space-04.jpg');"></span>
+      </div>
+
     </div>
   </div>
 </section>
+
+

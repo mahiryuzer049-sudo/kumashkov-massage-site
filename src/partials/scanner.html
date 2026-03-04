@@ -1,16 +1,70 @@
-﻿<!-- SCANNER -->
-<section id="scanner" class="section-shell bg-[#070707]">
+<!-- SCANNER -->
+<section id="scanner" class="section-shell bg-[#070707] relative" data-choreo-section>
+  <div class="floating-media-field" data-floating-media="scanner" aria-hidden="true">
+    <span
+      class="floating-media floating-media--ring mask-media mask-soft"
+      data-floating-item
+      data-depth="0.34"
+      style="--x: 6%; --y: 28%; --size: clamp(38px, 6vw, 78px); --media-image: url('/assets/images/services/lymph.jpg'); --float-rotate: -12deg;"
+    ></span>
+    <span
+      class="floating-media mask-media mask-paper"
+      data-floating-item
+      data-depth="0.2"
+      data-floating-dense="true"
+      style="--x: 16%; --y: 78%; --size: clamp(34px, 5vw, 68px); --media-image: url('/assets/images/space/space-02.jpg'); --float-rotate: 8deg;"
+    ></span>
+    <span
+      class="floating-media floating-media--tall mask-media mask-ink"
+      data-floating-item
+      data-depth="0.28"
+      style="--x: 88%; --y: 24%; --size: clamp(42px, 7vw, 88px); --media-image: url('/assets/images/services/relax.jpg'); --float-rotate: 6deg;"
+    ></span>
+    <span
+      class="floating-media floating-media--ring mask-media mask-soft"
+      data-floating-item
+      data-depth="0.18"
+      data-floating-dense="true"
+      style="--x: 92%; --y: 74%; --size: clamp(30px, 4vw, 62px); --media-image: url('/assets/images/space/space-04.jpg'); --float-rotate: -6deg;"
+    ></span>
+  </div>
   <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div id="scanner-anchor" class="anchor-target"></div>
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Body Scanner 2.0</p>
-      <h2 class="section-title">Послушайте сигналы тела</h2>
+      <h2 class="section-title">
+        Послушайте сигналы тела
+        <span class="inline-media inline-media--micro mask-media mask-soft" style="--inline-media-image: url('/assets/images/services/classic.jpg'); --inline-tilt: -4deg;" aria-hidden="true"></span>
+        <span class="inline-media inline-media--micro mask-media mask-ink" style="--inline-media-image: url('/assets/images/space/space-01.jpg'); --inline-tilt: 7deg;" aria-hidden="true"></span>
+        <span class="inline-media inline-media--micro mask-media mask-paper" style="--inline-media-image: url('/assets/images/space/space-03.jpg'); --inline-tilt: -6deg;" aria-hidden="true"></span>
+      </h2>
       <p class="section-subtitle">
         Нажмите на зону, которая беспокоит прямо сейчас. Сканер покажет короткую интерпретацию
         и предложит стартовый формат сессии.
       </p>
     </div>
-
-    <div id="scanner-anchor" class="anchor-target"></div>
+    <div class="scanner-narrative reveal-on-scroll" data-scanner-narrative>
+      <div
+        class="scanner-narrative__media shape-clip shape-reveal shape-clip-swoop mask-media mask-dissolve"
+        data-scanner-parallax
+        data-choreo-parallax
+        data-choreo-depth="0.26"
+        style="--scanner-media-image: url('/assets/images/space/space-04.jpg');"
+        aria-hidden="true"
+      ></div>
+      <div class="scanner-narrative__steps">
+        <article class="scanner-step scanner-step--first">
+          <span class="scanner-step__tag">Step 01</span>
+          <h3 class="scanner-step__title">Считывание</h3>
+          <p class="scanner-step__text">Карта зоны и сигнала, чтобы не гадать, а действовать точно.</p>
+        </article>
+        <article class="scanner-step scanner-step--second">
+          <span class="scanner-step__tag">Step 02</span>
+          <h3 class="scanner-step__title">Маршрут сеанса</h3>
+          <p class="scanner-step__text">Набор техник и темп под ваш ритм, без перегруза и резких переходов.</p>
+        </article>
+      </div>
+    </div>
     <div class="grid xl:grid-cols-[1.15fr_0.85fr] gap-8 items-start">
       <div id="scanner-container" class="scanner-stage card-luxe reveal-on-scroll group relative p-4 md:p-6" data-active-zone="">
         <div class="scanner-grid" aria-hidden="true"></div>
@@ -37,6 +91,7 @@
           <circle class="scanner-zone-halo scanner-zone-halo-neck" cx="130" cy="124" r="28"></circle>
           <ellipse class="scanner-zone-halo scanner-zone-halo-shoulders" cx="130" cy="192" rx="58" ry="28"></ellipse>
           <ellipse class="scanner-zone-halo scanner-zone-halo-back" cx="130" cy="270" rx="56" ry="62"></ellipse>
+          <ellipse class="scanner-zone-halo scanner-zone-halo-lumbar" cx="130" cy="320" rx="50" ry="34"></ellipse>
           <ellipse class="scanner-zone-halo scanner-zone-halo-legs" cx="130" cy="420" rx="48" ry="78"></ellipse>
 
           <path
@@ -78,7 +133,7 @@
             role="button"
             tabindex="0"
             aria-label="Тяжесть и шум в голове"
-            data-analytics="Scanner: Point Click - Head"
+           
           >
             <circle cx="130" cy="76" r="26" class="hit-area"></circle>
             <circle cx="130" cy="76" r="3.4" class="zone-dot"></circle>
@@ -92,7 +147,7 @@
             role="button"
             tabindex="0"
             aria-label="Напряжение в шее"
-            data-analytics="Scanner: Point Click - Neck"
+           
           >
             <circle cx="130" cy="124" r="23" class="hit-area"></circle>
             <circle cx="130" cy="124" r="3.4" class="zone-dot"></circle>
@@ -106,7 +161,7 @@
             role="button"
             tabindex="0"
             aria-label="Скованность плечевого пояса"
-            data-analytics="Scanner: Point Click - Shoulders"
+           
           >
             <circle cx="92" cy="190" r="26" class="hit-area"></circle>
             <circle cx="168" cy="190" r="26" class="hit-area"></circle>
@@ -122,7 +177,7 @@
             role="button"
             tabindex="0"
             aria-label="Зажим в спине и пояснице"
-            data-analytics="Scanner: Point Click - Back"
+           
           >
             <circle cx="130" cy="270" r="35" class="hit-area"></circle>
             <circle cx="130" cy="270" r="3.5" class="zone-dot"></circle>
@@ -132,11 +187,25 @@
 
           <g
             class="active-point"
+            data-point="lumbar"
+            role="button"
+            tabindex="0"
+            aria-label="Напряжение в пояснице"
+           
+          >
+            <circle cx="130" cy="320" r="28" class="hit-area"></circle>
+            <circle cx="130" cy="320" r="3.4" class="zone-dot"></circle>
+            <circle cx="130" cy="320" r="13" class="pulse-ring" style="animation-delay: 0.2s"></circle>
+            <text class="scanner-label" x="166" y="324">Поясница</text>
+          </g>
+
+          <g
+            class="active-point"
             data-point="legs"
             role="button"
             tabindex="0"
             aria-label="Тяжесть в ногах"
-            data-analytics="Scanner: Point Click - Legs"
+           
           >
             <circle cx="130" cy="420" r="40" class="hit-area"></circle>
             <circle cx="130" cy="420" r="3.5" class="zone-dot"></circle>
@@ -177,15 +246,19 @@
           <button
             id="zone-cta"
             type="button"
+            data-base-label="Открыть чат"
+            data-analytics="Scanner: CTA"
+            data-cta-flow="scanner"
+            data-cta-step="open_chat"
             class="mt-5 w-full btn-secondary interactive-el btn-vibrate ripple-container"
-            data-analytics="Scanner: CTA Click"
+           
           >
-            Сформировать запрос по этой зоне
+            Открыть чат
           </button>
         </div>
       </div>
 
-      <aside class="space-y-5">
+      <aside class="space-y-5" aria-label="Scanner guidance">
         <div class="card-luxe p-6 reveal-on-scroll">
           <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-2">Быстрый выбор</p>
           <h3 class="font-serif text-2xl text-ivory mb-4">Выберите, что беспокоит</h3>
@@ -198,17 +271,18 @@
             <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="neck">Шея</button>
             <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="shoulders">Плечи</button>
             <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="back">Спина</button>
+            <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="lumbar">Поясница</button>
             <button class="zone-shortcut interactive-el" type="button" data-zone-shortcut="legs">Ноги</button>
           </div>
         </div>
 
-        <div class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+        <div class="card-luxe p-6 reveal-on-scroll">
           <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-2">Конфиденциально</p>
           <h3 class="font-serif text-2xl text-ivory mb-4">Никакой публичности</h3>
           <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
-              <span>Запрос обсуждается только в личном чате.</span>
+              <span>Без звонков — уточняем запрос и время в личном чате.</span>
             </li>
             <li class="flex items-start gap-2.5">
               <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
@@ -216,15 +290,93 @@
             </li>
           </ul>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте,%20хочу%20обсудить%20запрос%20по%20массажу."
+            href="{{waLink site.phoneDigits 'Здравствуйте, хочу обсудить запрос по массажу.'}}"
             class="mt-5 inline-flex btn-primary whatsapp-link interactive-el btn-vibrate ripple-container"
-            data-analytics="Scanner: Main Aside CTA"
+           
           >
             Обсудить мой запрос
           </a>
         </div>
       </aside>
     </div>
+
+    <div class="mt-10 card-luxe p-6 md:p-7">
+      <p class="text-[11px] uppercase tracking-[0.28em] text-gray-500 mb-2">Сканер без JS</p>
+      <h3 class="font-serif text-2xl text-ivory mb-3">Зоны, сигналы и стартовые методики</h3>
+      <p class="text-sm text-gray-400 leading-relaxed mb-5">
+        Если интерактивная версия временно недоступна, используйте список ниже. Каждая зона содержит сигнал,
+        фокус протокола и рекомендуемый стартовый формат.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <details class="faq-panel">
+          <summary class="faq-summary">
+            <span>Голова — перегрузка, шум, тяжесть</span>
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p class="faq-body">
+            Сигнал: ментальная перегрузка и «тяжелая» голова. Фокус протокола: шейно-воротниковая зона и мягкая
+            стабилизация дыхания. Рекомендуемый старт: Start (1 визит), затем Core для закрепления.
+          </p>
+        </details>
+
+        <details class="faq-panel">
+          <summary class="faq-summary">
+            <span>Шея — зажим, скованность, ограничение движений</span>
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p class="faq-body">
+            Сигнал: напряжение в шее и верхней части спины. Фокус протокола: шея + плечевой пояс с комфортным
+            давлением. Рекомендуемый старт: Start или Core при регулярной статической нагрузке.
+          </p>
+        </details>
+
+        <details class="faq-panel">
+          <summary class="faq-summary">
+            <span>Плечи — «поднятые» плечи и усталость</span>
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p class="faq-body">
+            Сигнал: хроническое напряжение плечевого пояса. Фокус протокола: плечи и верх спины с восстановлением
+            подвижности. Рекомендуемый старт: Core для устойчивого эффекта.
+          </p>
+        </details>
+
+        <details class="faq-panel">
+          <summary class="faq-summary">
+            <span>Спина — зажим, усталость, влияние на осанку</span>
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p class="faq-body">
+            Сигнал: напряжение в спине и ощущение «перегруженности». Фокус протокола: мягкая глубокая проработка
+            спины с акцентом на восстановление. Рекомендуемый старт: Core, при длительном запросе — Signature.
+          </p>
+        </details>
+
+        <details class="faq-panel">
+          <summary class="faq-summary">
+            <span>Поясница — нагрузка, сидячий режим, спазм</span>
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p class="faq-body">
+            Сигнал: напряжение поясничной зоны и потеря устойчивости. Фокус протокола: поясница и баланс таза,
+            снятие спазма и возвращение опоры. Рекомендуемый старт: Core.
+          </p>
+        </details>
+
+        <details class="faq-panel">
+          <summary class="faq-summary">
+            <span>Ноги — тяжесть, застой, усталость</span>
+            <i class="fa-solid fa-plus"></i>
+          </summary>
+          <p class="faq-body">
+            Сигнал: тяжесть к вечеру и ощущение «тяжелых ног». Фокус протокола: дренаж + восстановление ног.
+            Рекомендуемый старт: Start, затем Core при повторяемости симптомов.
+          </p>
+        </details>
+      </div>
+    </div>
   </div>
 </section>
+
+
 

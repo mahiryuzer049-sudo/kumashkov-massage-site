@@ -5,7 +5,7 @@
 
   {{> head-seo}}
 </head>
-<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
+<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}" data-metrika="{{site.metrikaId}}">
   <a class="skip-link" href="#main">К содержимому</a>
 
   {{> chrome}}
@@ -22,27 +22,27 @@
     {{> transparent-rules}}
     {{> services}}
     {{> technique-guide}}
-    {{> goal-routes}}
+    <section id="goal-routes" class="section-shell bg-[#050505]" data-ds="/fragments/goal-routes.html"></section>
     {{> packages}}
     {{> frequency}}
     {{> scanner}}
     {{> protocol}}
-    {{> results}}
+    <section id="results" class="section-shell bg-void" data-ds="/fragments/results.html"></section>
     {{> voices}}
-    {{> safety}}
+    <section id="safety" class="section-shell bg-[#050505]" data-ds="/fragments/safety.html"></section>
     {{> suitability}}
-    {{> request-scenarios}}
+    <section id="request-scenarios" class="section-shell bg-[#050505]" data-ds="/fragments/request-scenarios.html"></section>
     {{> expectations}}
     {{> pricing}}
     {{> how-to-book}}
-    {{> after-request}}
+    <section id="after-request" class="section-shell bg-[#050505]" data-ds="/fragments/after-request.html"></section>
     {{> booking}}
-    {{> ritual}}
+    <section id="ritual" class="section-shell bg-[#050505]" data-ds="/fragments/ritual.html"></section>
     {{> atmosphere}}
     {{> signature-style}}
     {{> philosophy}}
     {{> life}}
-    {{> blog}}
+    <section id="blog" class="section-shell bg-void" data-ds="/fragments/blog.html"></section>
   </main>
 
   {{> footer}}
@@ -51,3 +51,4 @@
   <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>
+

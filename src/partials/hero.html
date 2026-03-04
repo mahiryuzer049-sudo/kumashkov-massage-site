@@ -1,51 +1,115 @@
 <!-- HERO -->
-<section class="section-shell relative min-h-screen flex items-center justify-center overflow-hidden">
-  <div class="absolute inset-0 z-0">
-    <img
-      src="/assets/images/hero/hero-main.jpg"
-      srcset="/assets/images/hero/hero-main.jpg?width=960 960w, /assets/images/hero/hero-main.jpg?width=1280 1280w, /assets/images/hero/hero-main.jpg?width=1600 1600w, /assets/images/hero/hero-main.jpg?width=2000 2000w"
-      sizes="100vw"
-      class="w-full h-full object-cover opacity-35 grayscale brightness-50 animate-breathe"
-      alt="Атмосфера пространства"
-      fetchpriority="high"
-      decoding="async"
-    >
-    <div class="absolute inset-0 bg-gradient-to-b from-[#030303] via-[#050505]/70 to-[#050505]"></div>
-    <div class="absolute inset-0 bg-radial-gradient from-transparent to-void"></div>
+<section id="home" class="section-shell hero-stage relative overflow-hidden" data-motion-profile="cinematic" data-hero-stage data-choreo-section data-choreo-stack>
+  <div class="filmic-overlay" data-exp-media="filmic" style="--filmic-intensity: 0.7;"></div>
+  <div class="hero-media-layer shape-clip shape-clip-arch shape-reveal" data-depth="3" data-exp-media="shapes" data-shader-scene="hero" data-shader-intensity="0.62">
+    <picture>
+      <source media="(max-width: 768px)" type="image/avif" srcset="/assets/images/hero/hero-mobile.avif">
+      <source media="(max-width: 768px)" type="image/webp" srcset="/assets/images/hero/hero-mobile-lcp.webp">
+      <source type="image/avif" srcset="/assets/images/hero/hero-main.avif">
+      <source type="image/webp" srcset="/assets/images/hero/hero-main.webp">
+      <img
+        src="/assets/images/hero/hero-main.jpg"
+        class="hero-media-img mask-media mask-dissolve" data-exp-media="masks"
+        alt="Атмосфера пространства"
+        fetchpriority="high"
+        decoding="async"
+      >
+    </picture>
+    <div class="hero-media-glow" aria-hidden="true"></div>
+    <div class="hero-media-overlay" aria-hidden="true"></div>
+  </div>
+  <div class="hero-reveal" aria-hidden="true" data-depth="2"></div>
+  <div class="floating-media-field" data-floating-media="hero" aria-hidden="true">
+    <span
+      class="floating-media floating-media--ring mask-media mask-soft"
+      data-floating-item
+      data-depth="0.32"
+      style="--x: 18%; --y: 22%; --size: clamp(42px, 7vw, 88px); --media-image: url('/assets/images/space/space-01.jpg'); --float-rotate: -8deg;"
+    ></span>
+    <span
+      class="floating-media mask-media mask-paper"
+      data-floating-item
+      data-depth="0.22"
+      data-floating-dense="true"
+      style="--x: 12%; --y: 70%; --size: clamp(36px, 6vw, 72px); --media-image: url('/assets/images/space/space-05.jpg'); --float-rotate: 6deg;"
+    ></span>
+    <span
+      class="floating-media floating-media--tall mask-media mask-ink"
+      data-floating-item
+      data-depth="0.28"
+      style="--x: 82%; --y: 30%; --size: clamp(44px, 7vw, 94px); --media-image: url('/assets/images/hero/hero-main.jpg'); --float-rotate: -4deg;"
+    ></span>
+    <span
+      class="floating-media floating-media--ring mask-media mask-soft"
+      data-floating-item
+      data-depth="0.18"
+      data-floating-dense="true"
+      style="--x: 86%; --y: 72%; --size: clamp(32px, 5vw, 66px); --media-image: url('/assets/images/space/space-03.jpg'); --float-rotate: 10deg;"
+    ></span>
   </div>
 
-  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto mt-16">
-    <p class="section-kicker animate-fade-in opacity-0" style="animation-delay: 0.1s;">Москва • Private Wellness • Выезд на дому</p>
+  <div class="hero-stage__sticky" data-choreo-sticky>
+    <div class="hero-stage__grid editorial-grid editorial-grid--b" data-depth="0">
+      <div class="hero-core">
+        <p class="section-kicker">Москва • Private Wellness • Выезд на дому</p>
 
-    <h1 class="section-title text-5xl md:text-8xl animate-fade-in opacity-0" style="animation-delay: 0.28s;">
-      <span class="block">Архитектура</span>
-      <span class="block italic text-champagne font-light mt-3">Касаний</span>
-    </h1>
+        <h1 class="section-title text-5xl md:text-8xl" data-kinetic>
+          <span class="block">
+            Архитектура
+            <span class="inline-media inline-media--micro mask-media mask-ink" style="--inline-media-image: url('/assets/images/space/space-03.jpg'); --inline-tilt: -6deg;" aria-hidden="true"></span>
+            <span class="inline-media inline-media--micro mask-media mask-paper" style="--inline-media-image: url('/assets/images/space/space-02.jpg'); --inline-tilt: 4deg;" aria-hidden="true"></span>
+          </span>
+          <span class="block italic text-champagne font-light mt-3">
+            Касаний
+            <span class="inline-media inline-media--portrait mask-media mask-soft" style="--inline-media-image: url('/assets/images/space/space-06.jpg'); --inline-tilt: 6deg;" aria-hidden="true"></span>
+            <span class="inline-media inline-media--micro mask-media mask-ink" style="--inline-media-image: url('/assets/images/space/space-05.jpg'); --inline-tilt: -8deg;" aria-hidden="true"></span>
+          </span>
+        </h1>
 
-    <p class="section-subtitle animate-fade-in opacity-0 mb-10" style="animation-delay: 0.48s;">
-      Персональные сеансы 18+ в Москве: глубокое расслабление, эстетика прикосновений и ощущение
-      собранного, живого тела. Формат под ваш запрос, темп и личные границы.
-    </p>
+        <p class="section-subtitle mb-10">
+          Персональные сеансы 18+ в Москве: глубокое расслабление, эстетика прикосновений и ощущение
+          собранного, живого тела. Формат под ваш запрос, темп и личные границы.
+        </p>
 
-    <div class="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-12 animate-fade-in opacity-0" style="animation-delay: 0.58s;">
-      <span class="tag-pill"><i class="fa-regular fa-clock text-champagne/80"></i> 60+ минут</span>
-      <span class="tag-pill"><i class="fa-solid fa-house text-champagne/80"></i> На дому</span>
-      <span class="tag-pill"><i class="fa-solid fa-user-check text-champagne/80"></i> Лично от Павла</span>
-      <span class="tag-pill"><i class="fa-solid fa-lock text-champagne/80"></i> Конфиденциально</span>
+        <div class="hero-meta flex flex-wrap justify-center gap-2.5 md:gap-3 mb-12 animate-fade-in opacity-0" style="animation-delay: 0.58s;">
+          <span class="tag-pill"><i class="fa-regular fa-clock text-champagne/80"></i> 60+ минут</span>
+          <span class="tag-pill"><i class="fa-solid fa-house text-champagne/80"></i> На дому</span>
+          <span class="tag-pill"><i class="fa-solid fa-user-check text-champagne/80"></i> Лично от Павла</span>
+          <span class="tag-pill"><i class="fa-solid fa-lock text-champagne/80"></i> Конфиденциально</span>
+        </div>
+
+        <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in opacity-0" style="animation-delay: 0.75s;">
+          <a
+            href="{{waLink site.phoneDigits 'Павел, хочу записаться на сеанс на дому. Удобное время — []. Зоны — []. Цели — []. Предпочтения по техникам — [].'}}"
+            class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+            data-exp="hero-cta"
+            data-cta-flow="home_hero"
+            data-cta-step="open_chat"
+            data-exp-text-a="Записаться на сеанс"
+            data-exp-text-b="Записаться сегодня"
+          >
+            Записаться на сеанс
+          </a>
+          <a href="{{site.telegram}}" class="btn-secondary interactive-el" data-cta-flow="home_hero" data-cta-step="open_telegram">
+            Вопрос В Telegram
+          </a>
+        </div>
+
+        <p class="text-[11px] text-white/35 font-sans tracking-wide mt-5 animate-fade-in opacity-0" style="animation-delay: 0.88s;">
+          Отвечаю лично. Уточним время, зоны и ожидаемый результат.
+        </p>
+      </div>
+
+      <aside class="hero-caption" aria-label="Hero highlights">
+        <span class="hero-caption__label">Private Wellness</span>
+        <span class="hero-caption__line">Ritual 18+</span>
+        <div class="hero-caption__meta">
+          <span>Формат: выезд или studio</span>
+          <span>Глубина: soft → deep</span>
+          <span>Ритм: 1–2 раза в неделю</span>
+        </div>
+      </aside>
     </div>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in opacity-0" style="animation-delay: 0.75s;">
-      <a href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20хочу%20записаться%20на%20сеанс%20на%20дому.%20Удобное%20время%20—%20%5B%5D.%20Зоны%20—%20%5B%5D.%20Цели%20—%20%5B%5D.%20Предпочтения%20по%20техникам%20—%20%5B%5D." class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container" data-analytics="Hero: Primary CTA">
-        Записаться на сеанс
-      </a>
-      <a href="{{site.telegram}}" class="btn-secondary interactive-el" data-analytics="Hero: Secondary CTA">
-        Вопрос В Telegram
-      </a>
-    </div>
-
-    <p class="text-[11px] text-white/35 font-sans tracking-wide mt-5 animate-fade-in opacity-0" style="animation-delay: 0.88s;">
-      Отвечаю лично. Уточним время, зоны и ожидаемый результат.
-    </p>
   </div>
 
   <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-50 animate-bounce">
@@ -53,3 +117,6 @@
     <div class="w-[1px] h-10 bg-champagne"></div>
   </div>
 </section>
+
+
+

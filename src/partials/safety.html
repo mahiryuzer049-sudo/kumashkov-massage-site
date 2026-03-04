@@ -1,4 +1,4 @@
-﻿<!-- SAFETY -->
+<!-- SAFETY -->
 <section id="safety" class="section-shell bg-[#050505]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
@@ -14,7 +14,7 @@
       <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
         <h3 class="font-serif text-2xl text-ivory mb-5">Частые вопросы</h3>
         <div class="space-y-3">
-          <details class="faq-panel" data-analytics="Safety: FAQ - Comfort">
+          <details class="faq-panel">
             <summary class="faq-summary">
               <span>Что если я стесняюсь или переживаю перед первым визитом?</span>
               <i class="fa-solid fa-plus"></i>
@@ -25,7 +25,7 @@
             </p>
           </details>
 
-          <details class="faq-panel" data-analytics="Safety: FAQ - Pain">
+          <details class="faq-panel">
             <summary class="faq-summary">
               <span>А если давление окажется слишком сильным?</span>
               <i class="fa-solid fa-plus"></i>
@@ -36,7 +36,7 @@
             </p>
           </details>
 
-          <details class="faq-panel" data-analytics="Safety: FAQ - Boundaries">
+          <details class="faq-panel">
             <summary class="faq-summary">
               <span>Как соблюдаются личные границы?</span>
               <i class="fa-solid fa-plus"></i>
@@ -49,7 +49,7 @@
         </div>
       </article>
 
-      <article class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.08s">
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
         <h3 class="font-serif text-2xl text-ivory mb-5">Практика визита</h3>
         <ul class="space-y-4">
           <li class="safety-item">
@@ -84,9 +84,9 @@
             Если остался деликатный вопрос, его лучше обсудить заранее в чате — это снимает лишнюю тревогу до встречи.
           </p>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте,%20у%20меня%20есть%20вопрос%20по%20формату%20и%20границам%20сеанса."
+            href="{{waLink site.phoneDigits 'Здравствуйте, у меня есть вопрос по формату и границам сеанса.'}}"
             class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
-            data-analytics="Safety: Ask in Chat"
+           
           >
             Задать вопрос заранее
           </a>
@@ -95,4 +95,6 @@
     </div>
   </div>
 </section>
+
+
 

@@ -1,4 +1,4 @@
-﻿<!-- RITUAL -->
+<!-- RITUAL -->
 <section id="ritual" class="section-shell bg-[#050505]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
@@ -30,13 +30,13 @@
         </ul>
       </article>
 
-      <article class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.06s">
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
         <div class="ritual-controls mb-7" role="tablist" aria-label="Этапы сессии">
           <button
             id="step-btn-1"
             class="ritual-step-btn step-btn active interactive-el ripple-container"
             data-step="1"
-            data-analytics="Ritual: Step 1"
+           
             type="button"
             role="tab"
             aria-controls="ritual-step-1"
@@ -48,7 +48,7 @@
             id="step-btn-2"
             class="ritual-step-btn step-btn interactive-el ripple-container"
             data-step="2"
-            data-analytics="Ritual: Step 2"
+           
             type="button"
             role="tab"
             aria-controls="ritual-step-2"
@@ -60,7 +60,7 @@
             id="step-btn-3"
             class="ritual-step-btn step-btn interactive-el ripple-container"
             data-step="3"
-            data-analytics="Ritual: Step 3"
+           
             type="button"
             role="tab"
             aria-controls="ritual-step-3"
@@ -72,7 +72,7 @@
             id="step-btn-4"
             class="ritual-step-btn step-btn interactive-el ripple-container"
             data-step="4"
-            data-analytics="Ritual: Step 4"
+           
             type="button"
             role="tab"
             aria-controls="ritual-step-4"
@@ -129,9 +129,9 @@
             Следующий шаг
           </button>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Павел,%20хочу%20уточнить%20как%20проходит%20первая%20встреча."
+            href="{{waLink site.phoneDigits 'Павел, хочу уточнить как проходит первая встреча.'}}"
             class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-            data-analytics="Ritual: Ask in Chat"
+           
           >
             Уточнить детали в чате
           </a>
@@ -140,4 +140,6 @@
     </div>
   </div>
 </section>
+
+
 

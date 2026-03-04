@@ -1,20 +1,33 @@
 <!-- TRUST -->
-<section id="trust" class="section-shell bg-[#040404]">
-  <div class="max-w-6xl mx-auto px-6">
+<section id="trust" class="section-shell bg-[#040404]" data-choreo-section>
+  <div class="filmic-overlay" data-exp-media="filmic" style="--filmic-intensity: 0.45;"></div>
+  <div class="max-w-6xl mx-auto px-6 editorial-grid editorial-grid--a">
     <div class="section-head reveal-on-scroll">
       <p class="section-kicker">Trust Protocol</p>
-      <h2 class="section-title">Понятный формат первого визита</h2>
+      <h2 class="section-title blend-text" data-blend>Понятный формат первого визита</h2>
       <p class="section-subtitle">
         Первая встреча нужна не «на удачу», а для точной настройки: запрос, зоны, комфортная интенсивность и
         прозрачный сценарий следующих шагов.
       </p>
     </div>
 
+    <div class="trust-orbit reveal-on-scroll" aria-hidden="true">
+      <span class="trust-orbit__dot trust-orbit__dot--a"></span>
+      <span class="trust-orbit__dot trust-orbit__dot--b"></span>
+      <span class="trust-orbit__dot trust-orbit__dot--c"></span>
+      <span class="trust-orbit__dot trust-orbit__dot--d"></span>
+      <span class="trust-orbit__label">Protocol</span>
+    </div>
+
     <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-7 items-start">
       <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
-        <div class="media-frame aspect-[16/10] mb-6">
-          <img src="/assets/images/trust/process-01.jpg" srcset="/assets/images/trust/process-01.jpg?width=480 480w, /assets/images/trust/process-01.jpg?width=720 720w, /assets/images/trust/process-01.jpg?width=960 960w, /assets/images/trust/process-01.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 360px" alt="Процесс первого визита" loading="lazy" decoding="async">
-          <span class="media-badge">Process</span>
+        <div class="media-frame aspect-[16/10] mb-6 shape-clip shape-reveal shape-clip-arch mask-media mask-paper trust-media" data-exp-media="shapes" data-exp-media-secondary="masks" data-trust-depth="0.24">
+                    <picture>
+            <source type="image/avif" srcset="/assets/images/trust/process-01.avif">
+            <source type="image/webp" srcset="/assets/images/trust/process-01.webp">
+            <img src="/assets/images/trust/process-01.jpg" alt="Процесс первого визита" loading="lazy" decoding="async">
+          </picture>
+          <span class="media-badge blend-text" data-blend>Process</span>
         </div>
           <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Что входит в первый визит</p>
         <ul class="space-y-3.5 text-sm text-gray-300 leading-relaxed">
@@ -46,12 +59,16 @@
         </p>
       </article>
 
-      <article class="card-luxe p-7 md:p-8 reveal-on-scroll" data-reveal-delay="0.08s">
-        <div class="media-frame aspect-[16/10] mb-6">
-          <img src="/assets/images/trust/process-02.jpg" srcset="/assets/images/trust/process-02.jpg?width=480 480w, /assets/images/trust/process-02.jpg?width=720 720w, /assets/images/trust/process-02.jpg?width=960 960w, /assets/images/trust/process-02.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 360px" alt="Подготовка зоны и материалов" loading="lazy" decoding="async">
-          <span class="media-badge">Setup</span>
+      <article class="card-luxe p-7 md:p-8 reveal-on-scroll">
+        <div class="media-frame aspect-[16/10] mb-6 shape-clip shape-reveal shape-clip-tilt mask-media mask-brush trust-media" data-exp-media="shapes" data-exp-media-secondary="masks" data-trust-depth="0.34">
+                    <picture>
+            <source type="image/avif" srcset="/assets/images/trust/process-02.avif">
+            <source type="image/webp" srcset="/assets/images/trust/process-02.webp">
+            <img src="/assets/images/trust/process-02.jpg" alt="Подготовка зоны и материалов" loading="lazy" decoding="async">
+          </picture>
+          <span class="media-badge blend-text" data-blend>Setup</span>
         </div>
-          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Почему это снижает тревогу</p>
+          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Почему это спокойно</p>
         <div class="trust-accordion" data-accordion>
           <div class="trust-accordion-item is-open">
             <button
@@ -61,11 +78,11 @@
               aria-expanded="true"
               aria-controls="trust-panel-1"
             >
-              <span class="trust-accordion-title">Без неопределенности</span>
+              <span class="trust-accordion-title">Без сюрпризов</span>
               <span class="trust-accordion-icon">+</span>
             </button>
             <section id="trust-panel-1" class="trust-accordion-panel" aria-labelledby="trust-trigger-1">
-              <p>До старта понимаете, как пройдет визит и какие правила действуют.</p>
+              <p>До старта понятно, как пройдет визит и какие правила действуют.</p>
             </section>
           </div>
           <div class="trust-accordion-item">
@@ -80,7 +97,7 @@
               <span class="trust-accordion-icon">+</span>
             </button>
             <section id="trust-panel-2" class="trust-accordion-panel" aria-labelledby="trust-trigger-2">
-              <p>Вы в любой момент можете скорректировать интенсивность и ритм.</p>
+              <p>Интенсивность и ритм можно корректировать в любой момент.</p>
             </section>
           </div>
           <div class="trust-accordion-item">
@@ -95,19 +112,24 @@
               <span class="trust-accordion-icon">+</span>
             </button>
             <section id="trust-panel-3" class="trust-accordion-panel" aria-labelledby="trust-trigger-3">
-              <p>После первого визита спокойно решаете, нужен ли курс и в каком формате.</p>
+              <p>После первого визита вы сами решаете, нужен ли курс и в каком формате.</p>
             </section>
           </div>
         </div>
         <a
-          href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20уточнить%20формат%20первого%20визита%20и%20свободные%20окна."
+          href="{{waLink site.phoneDigits 'Здравствуйте! Хочу уточнить формат первого визита и свободные окна.'}}"
           class="whatsapp-link mt-6 inline-flex btn-primary interactive-el btn-vibrate ripple-container"
-          data-analytics="Trust: Clarify First Visit"
+         
         >
-          Уточнить формат первого визита
+          Уточнить формат и окна
         </a>
       </article>
     </div>
   </div>
 </section>
+
+
+
+
+
 

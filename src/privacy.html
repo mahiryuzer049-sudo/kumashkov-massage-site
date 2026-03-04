@@ -4,18 +4,77 @@
   {{> head-core}}
   {{> head-seo}}
 </head>
-<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
+<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}" data-metrika="{{site.metrikaId}}">
   <a class="skip-link" href="#main">К содержимому</a>
   {{> chrome}}
   {{> header}}
   <main id="main" class="pt-28">
-    <section class="py-28 bg-void">
-      <div class="max-w-screen-xl mx-auto px-6">
-        <h1 class="font-serif text-3xl md:text-5xl text-ivory mb-6">Политика конфиденциальности</h1>
-        <div class="prose prose-invert max-w-none text-gray-400 font-light">
-          <p>Этот сайт не собирает персональные данные автоматически. Связь осуществляется напрямую через WhatsApp или Telegram по инициативе пользователя.</p>
-          <p>Переписка конфиденциальна и не передается третьим лицам. Данные используются только для записи и согласования деталей сеанса.</p>
-          <p>Если у вас есть вопросы по обработке данных, напишите напрямую по контактам на сайте.</p>
+    <section class="py-28 bg-void privacy-editorial">
+      <div class="max-w-screen-xl mx-auto px-6 privacy-grid">
+        <aside class="privacy-toc" aria-label="Содержание">
+          <div class="privacy-toc-inner">
+            <p class="privacy-toc-kicker">Навигация</p>
+            <a href="#privacy-collect">Сбор данных</a>
+            <a href="#privacy-use">Использование</a>
+            <a href="#privacy-confidential">Конфиденциальность</a>
+            <a href="#privacy-questions">Вопросы</a>
+          </div>
+        </aside>
+
+        <div class="privacy-content">
+          <header class="privacy-header">
+            <p class="privacy-kicker">Документ</p>
+            <h1 class="font-serif text-3xl md:text-5xl text-ivory mb-3">Политика конфиденциальности</h1>
+            <p class="privacy-lead">Коротко и понятно: какие данные мы собираем и как используем.</p>
+          </header>
+
+          <div class="privacy-stripe" aria-hidden="true"></div>
+
+          <section id="privacy-collect" class="privacy-block">
+            <div class="privacy-block-header">
+              <span class="privacy-icon" aria-hidden="true"></span>
+              <h2 class="privacy-block-title">Сбор данных</h2>
+            </div>
+            <div class="privacy-panel mask-media mask-soft">
+              <p>Сайт не собирает персональные данные автоматически. Связь возможна только через WhatsApp или Telegram по вашей инициативе.</p>
+            </div>
+          </section>
+
+          <div class="privacy-stripe" aria-hidden="true"></div>
+
+          <section id="privacy-use" class="privacy-block">
+            <div class="privacy-block-header">
+              <span class="privacy-icon privacy-icon--dot" aria-hidden="true"></span>
+              <h2 class="privacy-block-title">Использование данных</h2>
+            </div>
+            <div class="privacy-panel mask-media mask-soft">
+              <p>Данные используются только для записи и согласования деталей сеанса.</p>
+            </div>
+          </section>
+
+          <div class="privacy-stripe" aria-hidden="true"></div>
+
+          <section id="privacy-confidential" class="privacy-block">
+            <div class="privacy-block-header">
+              <span class="privacy-icon privacy-icon--shield" aria-hidden="true"></span>
+              <h2 class="privacy-block-title">Конфиденциальность</h2>
+            </div>
+            <div class="privacy-panel mask-media mask-soft">
+              <p>Переписка конфиденциальна и не передается третьим лицам. Мы не создаем публичные анкеты и не передаем данные партнерам.</p>
+            </div>
+          </section>
+
+          <div class="privacy-stripe" aria-hidden="true"></div>
+
+          <section id="privacy-questions" class="privacy-block">
+            <div class="privacy-block-header">
+              <span class="privacy-icon privacy-icon--signal" aria-hidden="true"></span>
+              <h2 class="privacy-block-title">Вопросы</h2>
+            </div>
+            <div class="privacy-panel mask-media mask-soft">
+              <p>Если у вас есть вопросы по обработке данных, напишите напрямую по контактам на сайте.</p>
+            </div>
+          </section>
         </div>
       </div>
     </section>

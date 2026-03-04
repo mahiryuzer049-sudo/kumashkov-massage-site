@@ -1,17 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru" class="scroll-smooth bg-[#050505]">
 <head>
   {{> head-core}}
   {{> head-seo}}
 </head>
-<body class="has-sticky" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
+<body class="has-sticky landing-shell landing-lymph" data-phone="{{site.phoneDigits}}" data-telegram="{{site.telegram}}">
   <a class="skip-link" href="#main">К содержимому</a>
   {{> chrome}}
   {{> header}}
 
-  <main id="main" class="pt-28">
-    <section class="section-shell bg-void">
-      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+  <main id="main" class="pt-28 landing-main">
+    <section class="section-shell bg-void landing-hero landing-lymph-hero">
+      <div class="landing-lymph-grid" aria-hidden="true"></div>
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center landing-hero-grid">
         <div class="reveal-on-scroll">
           <p class="section-kicker text-left">Lymph Drain</p>
           <h1 class="section-title text-left">Лимфодренажный массаж на дому в Москве</h1>
@@ -19,22 +20,27 @@
             Формат для ощущения легкости: мягкая работа с отечностью, тяжестью в ногах и общим гидробалансом.
             Подходит как отдельный курс и как дополнение к базовому восстановлению.
           </p>
+          <div class="landing-lymph-pills" aria-hidden="true">
+            <span class="landing-lymph-pill">Drain Protocol</span>
+            <span class="landing-lymph-pill">Lightness Map</span>
+            <span class="landing-lymph-pill">Soft Reset</span>
+          </div>
           <div class="flex flex-wrap gap-3 mt-8">
             <a
-              href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20записаться%20на%20лимфодренажный%20массаж%20на%20дому."
+              href="{{waLink site.phoneDigits 'Здравствуйте! Хочу записаться на лимфодренажный массаж на дому.'}}"
               class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
-              data-analytics="LandingLymph: Book"
+              data-analytics="LandingLymph: Book" data-cta-flow="landing_hero" data-cta-step="open_chat"
             >
-              Записаться
+              Записаться на сеанс
             </a>
-            <a href="/#packages" class="btn-secondary interactive-el" data-analytics="LandingLymph: Packages">
-              Пакеты и курс
+            <a href="/#packages" class="btn-secondary interactive-el" data-analytics="LandingLymph: Packages" data-cta-flow="landing_hero" data-cta-step="view_packages">
+              Подобрать курс
             </a>
           </div>
         </div>
 
-        <article class="card-luxe p-7 reveal-on-scroll" data-reveal-delay="0.08s">
-          <div class="media-frame landing-hero-media mb-5">
+        <article class="card-luxe p-7 reveal-on-scroll landing-hero-card" data-reveal-delay="0.08s">
+          <div class="media-frame landing-hero-media mb-5 shape-clip mask-media">
             <img src="/assets/images/landing/lymph-hero.jpg" srcset="/assets/images/landing/lymph-hero.jpg?width=640 640w, /assets/images/landing/lymph-hero.jpg?width=960 960w, /assets/images/landing/lymph-hero.jpg?width=1200 1200w, /assets/images/landing/lymph-hero.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Lymph формат" loading="lazy" decoding="async">
             <span class="media-badge">Lymph</span>
           </div>
@@ -48,25 +54,25 @@
       </div>
     </section>
 
-    <section class="section-shell bg-[#060606]">
-      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5">
+    <section class="section-shell bg-[#060606] landing-duo landing-lymph-duo">
+      <div class="max-w-screen-xl mx-auto px-6 grid md:grid-cols-2 gap-5 landing-lymph-duo-grid">
         <article class="card-luxe p-6 reveal-on-scroll">
           <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Что получаете</p>
           <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
             <li>• Больше легкости в ногах и теле.</li>
             <li>• Меньше ощущения вечерней усталости.</li>
-            <li>• Понятный протокол под ваш график и ритм жизни.</li>
+            <li>• Понятный протокол и ритм под ваш график.</li>
           </ul>
         </article>
 
-        <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
+        <article class="card-luxe p-6 reveal-on-scroll landing-lymph-sticky" data-reveal-delay="0.08s">
           <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Ритм курса</p>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
-            Обычно заметная динамика появляется в формате 2-4 визитов. Частоту подбираем индивидуально после первого
+            Обычно заметная динамика появляется в формате 2–4 визитов. Частоту подбираем индивидуально после первого
             сеанса.
           </p>
           <a
-            href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20подобрать%20ритм%20лимфодренажного%20курса."
+            href="{{waLink site.phoneDigits 'Здравствуйте! Хочу подобрать ритм лимфодренажного курса.'}}"
             class="whatsapp-link btn-secondary interactive-el"
             data-analytics="LandingLymph: PickFrequency"
           >
@@ -76,14 +82,14 @@
       </div>
     </section>
 
-    <section class="section-shell bg-[#050505]">
+    <section class="section-shell bg-[#050505] landing-related">
       <div class="max-w-screen-xl mx-auto px-6">
         <div class="section-head reveal-on-scroll mb-10">
           <p class="section-kicker">Related Formats</p>
           <h2 class="section-title">Смотреть также</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-5">
+        <div class="grid md:grid-cols-3 gap-5 landing-related-grid">
           <a href="/landing-classic.html" class="card-luxe p-6 reveal-on-scroll interactive-el" data-analytics="LandingLymph: Related Classic">
             <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Classic</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Восстановление</h3>
@@ -97,7 +103,7 @@
           <a href="/#goal-routes" class="card-luxe p-6 reveal-on-scroll interactive-el" data-reveal-delay="0.14s" data-analytics="LandingLymph: Related Routes">
             <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Routes</p>
             <h3 class="font-serif text-2xl text-ivory mb-2">Маршруты</h3>
-            <p class="text-sm text-gray-300">Открыть подбор формата по задаче и выбрать следующий шаг.</p>
+            <p class="text-sm text-gray-300">Открыть подбор формата и выбрать следующий шаг.</p>
           </a>
         </div>
       </div>
@@ -109,4 +115,5 @@
   <script type="module" src="/scripts/main.js"></script>
 </body>
 </html>
+
 

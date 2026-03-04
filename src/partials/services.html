@@ -1,67 +1,112 @@
-﻿<!-- SERVICES -->
-<section id="services" class="section-shell bg-void">
-  <div class="max-w-screen-xl mx-auto px-6">
-    <div class="section-head reveal-on-scroll">
+<!-- SERVICES -->
+<section id="services" class="section-shell bg-void" data-choreo-section>
+  <div class="max-w-screen-xl mx-auto px-6 editorial-grid editorial-grid--a">
+    <div class="grid-overlap grid-overlap--soft">
+      <div class="section-head reveal-on-scroll overlap-layer-1">
       <p class="section-kicker">Service Matrix</p>
       <h2 class="section-title">Линейка форматов под разные цели</h2>
       <p class="section-subtitle">
-        Вместо «одного универсального массажа» — понятная матрица форматов: восстановление, антистресс, тонус и
-        работа с конкретными зонами.
+        Вместо «универсального» — матрица форматов под задачу: восстановление, антистресс, тонус и фокус по зонам.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.02s">
-        <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/classic.jpg" srcset="/assets/images/services/classic.jpg?width=480 480w, /assets/images/services/classic.jpg?width=720 720w, /assets/images/services/classic.jpg?width=960 960w, /assets/images/services/classic.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: classic" loading="lazy" decoding="async">
+    <div class="services-collage grid-breakout-right overlap-layer-2">
+      <div
+        class="services-collage__stripe media-stripe media-stripe--vertical media-stripe--animate shape-clip shape-clip-slice"
+        style="--stripe-image: url('/assets/images/services/relax.jpg');"
+        data-exp-media="stripes"
+        data-choreo-parallax
+        data-choreo-depth="0.22"
+        aria-hidden="true"
+      ></div>
+      <article class="card-luxe p-6 reveal-on-scroll service-card service-card--primary">
+        <div class="media-frame service-media-frame mb-4 shape-clip shape-reveal shape-clip-arch">
+                    <picture>
+            <source type="image/avif" srcset="/assets/images/services/classic.avif">
+            <source type="image/webp" srcset="/assets/images/services/classic.webp">
+            <img src="/assets/images/services/classic.jpg" alt="Классический массаж — восстановление и тонус" loading="lazy" decoding="async">
+          </picture>
           <span class="media-badge">Classic</span>
         </div>
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Recovery Base</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Восстановление</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
-          Снятие мышечной перегрузки после работы и стресса. Фокус на спину, плечевой пояс и общее ощущение опоры.
+          Снятие перегрузки после работы и стресса. Фокус на спину, плечи и общий тонус.
         </p>
       </article>
 
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.08s">
-        <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/relax.jpg" srcset="/assets/images/services/relax.jpg?width=480 480w, /assets/images/services/relax.jpg?width=720 720w, /assets/images/services/relax.jpg?width=960 960w, /assets/images/services/relax.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: relax" loading="lazy" decoding="async">
+      <article class="card-luxe p-6 reveal-on-scroll service-card service-card--secondary">
+        <div class="media-frame service-media-frame mb-4 shape-clip shape-reveal shape-clip-lean">
+                    <picture>
+            <source type="image/avif" srcset="/assets/images/services/relax.avif">
+            <source type="image/webp" srcset="/assets/images/services/relax.webp">
+            <img src="/assets/images/services/relax.jpg" alt="Релакс-массаж — антистресс формат" loading="lazy" decoding="async">
+          </picture>
           <span class="media-badge">Relax</span>
         </div>
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Calm Reset</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Антистресс</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
-          Мягкий темп и ритм для разгрузки нервной системы, снижения внутреннего шума и более глубокого отдыха.
+          Мягкий темп для разгрузки нервной системы, снижения внутреннего шума и глубокого отдыха.
         </p>
       </article>
 
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.14s">
-        <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/lymph.jpg" srcset="/assets/images/services/lymph.jpg?width=480 480w, /assets/images/services/lymph.jpg?width=720 720w, /assets/images/services/lymph.jpg?width=960 960w, /assets/images/services/lymph.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: lymph" loading="lazy" decoding="async">
+      <article class="card-luxe p-6 reveal-on-scroll service-card service-card--tertiary">
+        <div class="media-frame service-media-frame mb-4 shape-clip shape-reveal shape-clip-hex">
+                    <picture>
+            <source type="image/avif" srcset="/assets/images/services/lymph.avif">
+            <source type="image/webp" srcset="/assets/images/services/lymph.webp">
+            <img src="/assets/images/services/lymph.jpg" alt="Лимфодренажный массаж — легкость в ногах" loading="lazy" decoding="async">
+          </picture>
           <span class="media-badge">Lymph</span>
         </div>
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Drain & Tone</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Легкость и тонус</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
-          Формат для уменьшения тяжести в ногах, ощущения «отечности» и повышения общей легкости движений.
+          Для уменьшения тяжести в ногах, ощущения отечности и возврата легкости движений.
         </p>
       </article>
 
-      <article class="card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.2s">
-        <div class="media-frame service-media-frame mb-4">
-          <img src="/assets/images/services/posture.jpg" srcset="/assets/images/services/posture.jpg?width=480 480w, /assets/images/services/posture.jpg?width=720 720w, /assets/images/services/posture.jpg?width=960 960w, /assets/images/services/posture.jpg?width=1200 1200w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 320px" alt="Service preview: posture" loading="lazy" decoding="async">
+      <article class="card-luxe p-6 reveal-on-scroll service-card service-card--quaternary">
+        <div class="media-frame service-media-frame mb-4 shape-clip shape-reveal shape-clip-corner">
+                    <picture>
+            <source type="image/avif" srcset="/assets/images/services/posture.avif">
+            <source type="image/webp" srcset="/assets/images/services/posture.webp">
+            <img src="/assets/images/services/posture.jpg" alt="Массаж для осанки — зона фокуса" loading="lazy" decoding="async">
+          </picture>
           <span class="media-badge">Focus</span>
         </div>
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-2">Zone Focus</p>
         <h3 class="font-serif text-2xl text-ivory mb-3">Прицельные зоны</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
-          Акцентная работа по запросу: шея, плечи, поясница, ноги, ягодичная зона — в согласованном и комфортном
-          формате.
+          Акцентная работа по запросу: шея, плечи, поясница, ноги. Все в согласованном и комфортном темпе.
         </p>
       </article>
+      <div class="services-collage__micro media-frame shape-clip shape-reveal shape-clip-ellipse" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="/assets/images/space/space-05.avif">
+          <source type="image/webp" srcset="/assets/images/space/space-05.webp">
+          <img src="/assets/images/space/space-05.jpg" alt="" loading="lazy" decoding="async">
+        </picture>
+      </div>
+    </div>
     </div>
 
-    <div class="service-spotlight card-luxe p-6 md:p-7 reveal-on-scroll" data-service-tabs data-reveal-delay="0.2s">
+    <div class="service-spotlight card-luxe p-6 md:p-7 reveal-on-scroll" data-service-tabs>
+      <div
+        class="service-spotlight__float mask-media mask-soft"
+        data-service-float
+        data-depth="0.22"
+        style="--spotlight-base-x: 88%; --spotlight-base-y: 14%; --media-image: url('/assets/images/services/relax.jpg'); --spotlight-rotate: -8deg;"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="service-spotlight__float service-spotlight__float--secondary mask-media mask-ink"
+        data-service-float
+        data-depth="0.16"
+        style="--spotlight-base-x: 14%; --spotlight-base-y: 78%; --media-image: url('/assets/images/services/classic.jpg'); --spotlight-rotate: 6deg;"
+        aria-hidden="true"
+      ></div>
       <div class="service-tabs" role="tablist" aria-label="Форматы и эффекты">
         <button
           id="service-tab-classic"
@@ -117,21 +162,24 @@
           aria-labelledby="service-tab-classic"
           data-service-panel="classic"
         >
-          <div class="media-frame service-spotlight-media mb-4">
-            <img src="/assets/images/services/classic.jpg" srcset="/assets/images/services/classic.jpg?width=640 640w, /assets/images/services/classic.jpg?width=960 960w, /assets/images/services/classic.jpg?width=1200 1200w, /assets/images/services/classic.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Classic формат" loading="lazy" decoding="async">
+          <div class="media-frame service-spotlight-media mb-4 shape-clip shape-reveal shape-clip-wave">
+                        <picture>
+              <source type="image/avif" srcset="/assets/images/services/classic.avif">
+              <source type="image/webp" srcset="/assets/images/services/classic.webp">
+              <img src="/assets/images/services/classic.jpg" alt="Classic: восстановление и опора" loading="lazy" decoding="async">
+            </picture>
             <span class="media-badge">Classic</span>
           </div>
           <h3 class="font-serif text-2xl text-ivory mb-3">Восстановление и опора</h3>
           <p class="text-sm text-gray-300 leading-relaxed mb-4">
-            Когда нужно вернуть телу тонус и снять фоновую перегрузку. Базовый формат, который помогает стабилизировать
-            ощущение опоры и энергии.
+            Когда нужно вернуть телу тонус и снять фоновую перегрузку. Базовый формат для устойчивой опоры и энергии.
           </p>
           <ul class="space-y-2 text-sm text-gray-400 mb-5">
             <li>• Фокус: спина, плечевой пояс, общее восстановление.</li>
             <li>• Эффект: ровнее самочувствие и меньше усталости.</li>
-            <li>• Переход: 1 визит -> Core курс по динамике.</li>
+            <li>• Переход: 1 визит -> Core по динамике.</li>
           </ul>
-          <a href="/landing-classic.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Classic">
+          <a href="/landing-classic.html" class="btn-primary interactive-el btn-vibrate ripple-container">
             Смотреть Classic
           </a>
         </div>
@@ -144,8 +192,12 @@
           data-service-panel="relax"
           aria-hidden="true"
         >
-          <div class="media-frame service-spotlight-media mb-4">
-            <img src="/assets/images/services/relax.jpg" srcset="/assets/images/services/relax.jpg?width=640 640w, /assets/images/services/relax.jpg?width=960 960w, /assets/images/services/relax.jpg?width=1200 1200w, /assets/images/services/relax.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Relax формат" loading="lazy" decoding="async">
+          <div class="media-frame service-spotlight-media mb-4 shape-clip shape-reveal shape-clip-tilt">
+                        <picture>
+              <source type="image/avif" srcset="/assets/images/services/relax.avif">
+              <source type="image/webp" srcset="/assets/images/services/relax.webp">
+              <img src="/assets/images/services/relax.jpg" alt="Relax: глубокая разгрузка" loading="lazy" decoding="async">
+            </picture>
             <span class="media-badge">Relax</span>
           </div>
           <h3 class="font-serif text-2xl text-ivory mb-3">Глубокая разгрузка</h3>
@@ -154,11 +206,11 @@
             нервную систему.
           </p>
           <ul class="space-y-2 text-sm text-gray-400 mb-5">
-            <li>• Фокус: расслабление, сон, снятие эмоционального напряжения.</li>
-            <li>• Эффект: легкость, спокойствие, более ровный ритм.</li>
+            <li>• Фокус: расслабление, сон, снятие напряжения.</li>
+            <li>• Эффект: легкость, спокойствие, ровный ритм.</li>
             <li>• Переход: 1-2 визита -> поддерживающий режим.</li>
           </ul>
-          <a href="/landing-relax.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Relax">
+          <a href="/landing-relax.html" class="btn-primary interactive-el btn-vibrate ripple-container">
             Смотреть Relax
           </a>
         </div>
@@ -171,8 +223,12 @@
           data-service-panel="lymph"
           aria-hidden="true"
         >
-          <div class="media-frame service-spotlight-media mb-4">
-            <img src="/assets/images/services/lymph.jpg" srcset="/assets/images/services/lymph.jpg?width=640 640w, /assets/images/services/lymph.jpg?width=960 960w, /assets/images/services/lymph.jpg?width=1200 1200w, /assets/images/services/lymph.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Lymph формат" loading="lazy" decoding="async">
+          <div class="media-frame service-spotlight-media mb-4 shape-clip shape-reveal shape-clip-notch">
+                        <picture>
+              <source type="image/avif" srcset="/assets/images/services/lymph.avif">
+              <source type="image/webp" srcset="/assets/images/services/lymph.webp">
+              <img src="/assets/images/services/lymph.jpg" alt="Lymph: легкость и дренаж" loading="lazy" decoding="async">
+            </picture>
             <span class="media-badge">Lymph</span>
           </div>
           <h3 class="font-serif text-2xl text-ivory mb-3">Легкость и дренаж</h3>
@@ -184,7 +240,7 @@
             <li>• Эффект: меньше тяжести и отечности.</li>
             <li>• Переход: 2-4 визита -> закрепление.</li>
           </ul>
-          <a href="/landing-lymph.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Lymph">
+          <a href="/landing-lymph.html" class="btn-primary interactive-el btn-vibrate ripple-container">
             Смотреть Lymph
           </a>
         </div>
@@ -197,8 +253,12 @@
           data-service-panel="posture"
           aria-hidden="true"
         >
-          <div class="media-frame service-spotlight-media mb-4">
-            <img src="/assets/images/services/posture.jpg" srcset="/assets/images/services/posture.jpg?width=640 640w, /assets/images/services/posture.jpg?width=960 960w, /assets/images/services/posture.jpg?width=1200 1200w, /assets/images/services/posture.jpg?width=1600 1600w" sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 520px" alt="Posture формат" loading="lazy" decoding="async">
+          <div class="media-frame service-spotlight-media mb-4 shape-clip shape-reveal shape-clip-stretch">
+                        <picture>
+              <source type="image/avif" srcset="/assets/images/services/posture.avif">
+              <source type="image/webp" srcset="/assets/images/services/posture.webp">
+              <img src="/assets/images/services/posture.jpg" alt="Posture: осанка и баланс" loading="lazy" decoding="async">
+            </picture>
             <span class="media-badge">Posture</span>
           </div>
           <h3 class="font-serif text-2xl text-ivory mb-3">Осанка и баланс</h3>
@@ -210,14 +270,14 @@
             <li>• Эффект: более ровная осанка и свобода движения.</li>
             <li>• Переход: курс 4 визита -> поддержка.</li>
           </ul>
-          <a href="/landing-posture.html" class="btn-secondary interactive-el" data-analytics="Services: Spotlight Posture">
+          <a href="/landing-posture.html" class="btn-primary interactive-el btn-vibrate ripple-container">
             Смотреть Posture
           </a>
         </div>
       </div>
     </div>
 
-    <div class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.24s">
+    <div class="card-luxe p-6 md:p-7 reveal-on-scroll">
       <div class="flex flex-wrap items-center justify-between gap-4">
         <div>
           <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-2">Как это монетизируется честно</p>
@@ -227,9 +287,9 @@
           </p>
         </div>
         <a
-          href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Хочу%20подобрать%20подходящий%20формат%20из%20линейки%20услуг."
-          class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
-          data-analytics="Services: Match Product Format"
+          href="{{waLink site.phoneDigits 'Здравствуйте! Хочу подобрать подходящий формат из линейки услуг.'}}"
+          class="whatsapp-link btn-primary interactive-el btn-vibrate ripple-container"
+         
         >
           Подобрать формат
         </a>
@@ -237,4 +297,6 @@
     </div>
   </div>
 </section>
+
+
 

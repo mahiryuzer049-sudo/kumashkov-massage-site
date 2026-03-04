@@ -1,7 +1,8 @@
-﻿<!-- PROFESSIONAL PROFILE -->
-<section id="professional-profile" class="section-shell bg-[#060606]">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="section-head reveal-on-scroll">
+<!-- PROFESSIONAL PROFILE -->
+<section id="professional-profile" class="section-shell bg-[#060606]" data-choreo-section>
+  <div class="max-w-6xl mx-auto px-6 editorial-grid editorial-grid--b">
+    <div class="grid-overlap grid-overlap--hard">
+      <div class="section-head reveal-on-scroll overlap-layer-1">
       <p class="section-kicker">Professional Profile</p>
       <h2 class="section-title">Профессиональный профиль мастера</h2>
       <p class="section-subtitle">
@@ -10,31 +11,52 @@
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-[1fr_1fr] gap-7 items-start">
-      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
-        <div class="media-frame profile-media mb-5">
-          <img src="/assets/images/profile/master-portrait.jpg" srcset="/assets/images/profile/master-portrait.jpg?width=480 480w, /assets/images/profile/master-portrait.jpg?width=720 720w, /assets/images/profile/master-portrait.jpg?width=960 960w, /assets/images/profile/master-portrait.jpg?width=1200 1200w" sizes="(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 360px" alt="Портрет мастера" loading="lazy" decoding="async">
-          <span class="media-badge">Portrait</span>
+    <div class="profile-grid overlap-layer-2">
+      <article class="card-luxe profile-card reveal-on-scroll">
+        <div class="profile-top">
+          <div class="profile-portrait-stack">
+            <div class="media-frame profile-media shape-clip shape-reveal shape-clip-swoop mask-media mask-brush" data-exp-media="shapes" data-exp-media-secondary="masks">
+              <picture>
+                <source type="image/avif" srcset="/assets/images/profile/master-portrait.avif">
+                <source type="image/webp" srcset="/assets/images/profile/master-portrait.webp">
+                <img src="/assets/images/profile/master-portrait.jpg" alt="Портрет мастера" loading="lazy" decoding="async">
+              </picture>
+              <span class="media-badge blend-text" data-blend>Portrait</span>
+            </div>
+            <div class="profile-portrait-overlay profile-portrait-overlay--left blend-text" data-blend>Studio / Home</div>
+            <div class="profile-portrait-overlay profile-portrait-overlay--right blend-text" data-blend>18+ Ritual</div>
+            <div class="profile-portrait-badges" aria-hidden="true">
+              <span class="portrait-badge">12+ лет</span>
+              <span class="portrait-badge">Private</span>
+              <span class="portrait-badge">Manual</span>
+            </div>
+          </div>
+          <div class="profile-identity">
+            <p class="profile-name">Павел Кумашков</p>
+            <p class="profile-role">Мастер выездных сеансов • 18+</p>
+            <div class="profile-badges">
+              <span class="profile-badge">Личный формат</span>
+              <span class="profile-badge">Конфиденциально</span>
+              <span class="profile-badge">Без менеджеров</span>
+            </div>
+          </div>
         </div>
-        <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Подход в работе</p>
-        <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
-          <li class="flex items-start gap-2.5">
-            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
-            <span>Персональная настройка техники и темпа под ваш запрос.</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
-            <span>Приоритет на комфорт, безопасность и корректную коммуникацию.</span>
-          </li>
-          <li class="flex items-start gap-2.5">
-            <i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i>
-            <span>Формат на дому без спешки, с понятным сценарием каждого шага.</span>
-          </li>
-        </ul>
 
-        <div class="mt-6 pt-5 border-t border-white/10">
-          <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-2">Техники в работе</p>
-          <div class="flex flex-wrap gap-2.5">
+        <div class="profile-approach">
+          <p class="profile-label">Подход</p>
+          <p class="profile-text">
+            Спокойная, точная работа по запросу. Сначала уточняем цели и комфорт, затем — понятный сценарий визита.
+          </p>
+          <div class="profile-lines">
+            <div class="profile-line">Персональная настройка техники и темпа.</div>
+            <div class="profile-line">Приоритет безопасности и диалога.</div>
+            <div class="profile-line">Домашний формат без спешки.</div>
+          </div>
+        </div>
+
+        <div class="profile-skills">
+          <p class="profile-label">Техники и акценты</p>
+          <div class="profile-tags">
             <span class="tag-pill">Расслабляющий формат</span>
             <span class="tag-pill">Восстановительный формат</span>
             <span class="tag-pill">Лимфодренажный акцент</span>
@@ -43,39 +65,82 @@
         </div>
       </article>
 
-      <article class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.08s">
-        <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Сертификаты и документы</p>
-        <div class="space-y-3">
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="media-frame certificate-media mb-3">
-              <img src="/assets/images/certs/cert-01.jpg" srcset="/assets/images/certs/cert-01.jpg?width=320 320w, /assets/images/certs/cert-01.jpg?width=480 480w, /assets/images/certs/cert-01.jpg?width=640 640w, /assets/images/certs/cert-01.jpg?width=800 800w" sizes="(max-width: 640px) 70vw, (max-width: 1024px) 240px, 200px" alt="Сертификат 1" loading="lazy" decoding="async">
-              <span class="media-badge">Cert 01</span>
-            </div>
-            <p class="text-sm text-ivory mb-1">Сертификация базовых техник</p>
-            <p class="text-xs text-gray-400">Документы подтверждают профильную подготовку.</p>
+      <article class="card-luxe profile-card profile-card--certs reveal-on-scroll">
+        <div class="profile-cred-header">
+          <p class="profile-label">Проверка и доверие</p>
+          <p class="profile-caption">Коротко, чтобы всё было понятно с первого взгляда.</p>
+        </div>
+
+        <div class="profile-proofs">
+          <div class="profile-proof">
+            <p class="profile-proof-title">Опыт и специализация</p>
+            <p class="profile-proof-text">Фокус — восстановление, мягкая глубина, бережная коммуникация.</p>
           </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="media-frame certificate-media mb-3">
-              <img src="/assets/images/certs/cert-02.jpg" srcset="/assets/images/certs/cert-02.jpg?width=320 320w, /assets/images/certs/cert-02.jpg?width=480 480w, /assets/images/certs/cert-02.jpg?width=640 640w, /assets/images/certs/cert-02.jpg?width=800 800w" sizes="(max-width: 640px) 70vw, (max-width: 1024px) 240px, 200px" alt="Сертификат 2" loading="lazy" decoding="async">
-              <span class="media-badge">Cert 02</span>
-            </div>
-            <p class="text-sm text-ivory mb-1">Специализация по восстановлению</p>
-            <p class="text-xs text-gray-400">Фокус на безопасной и мягкой проработке.</p>
+          <div class="profile-proof">
+            <p class="profile-proof-title">Документы и подтверждения</p>
+            <p class="profile-proof-text">Сертификаты базовых техник и регулярное повышение квалификации.</p>
           </div>
-          <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-            <div class="media-frame certificate-media mb-3">
-              <img src="/assets/images/certs/cert-03.jpg" srcset="/assets/images/certs/cert-03.jpg?width=320 320w, /assets/images/certs/cert-03.jpg?width=480 480w, /assets/images/certs/cert-03.jpg?width=640 640w, /assets/images/certs/cert-03.jpg?width=800 800w" sizes="(max-width: 640px) 70vw, (max-width: 1024px) 240px, 200px" alt="Сертификат 3" loading="lazy" decoding="async">
-              <span class="media-badge">Cert 03</span>
-            </div>
-            <p class="text-sm text-ivory mb-1">Повышение квалификации</p>
-            <p class="text-xs text-gray-400">Актуальные программы и обновление практики.</p>
+          <div class="profile-proof">
+            <p class="profile-proof-title">Как проходит визит</p>
+            <p class="profile-proof-text">Запрос > формат > сеанс. Всё ясно ещё до старта.</p>
           </div>
         </div>
-        <p class="text-[11px] text-gray-500 mt-4">
-          Документы доступны для просмотра при запросе.
-        </p>
+
+        <div class="profile-certs">
+          <div class="profile-certs-header">
+            <p class="profile-label">Сертификаты</p>
+            <div class="profile-certs-controls">
+              <button type="button" class="profile-certs-arrow" data-cert-prev aria-label="Предыдущие сертификаты">&larr;</button>
+              <button type="button" class="profile-certs-arrow" data-cert-next aria-label="Следующие сертификаты">&rarr;</button>
+            </div>
+          </div>
+          <div class="profile-certs-slider hide-scroll" data-cert-slider>
+            <div class="profile-certs-track">
+              <article class="profile-cert">
+                <div class="media-frame certificate-media shape-clip shape-reveal shape-clip-notch mask-media mask-brush" data-exp-media="shapes" data-exp-media-secondary="masks">
+                                    <picture>
+                    <source type="image/avif" srcset="/assets/images/certs/cert-01.avif">
+                    <source type="image/webp" srcset="/assets/images/certs/cert-01.webp">
+                    <img src="/assets/images/certs/cert-01.jpg" alt="Сертификат: базовые техники массажа" loading="lazy" decoding="async">
+                  </picture>
+                  <span class="media-badge blend-text" data-blend>Cert 01</span>
+                </div>
+                <p class="profile-cert-title">Базовые техники</p>
+                <p class="profile-cert-sub">Профильная подготовка</p>
+              </article>
+              <article class="profile-cert">
+                <div class="media-frame certificate-media shape-clip shape-reveal shape-clip-notch mask-media mask-ink" data-exp-media="shapes" data-exp-media-secondary="masks">
+                                    <picture>
+                    <source type="image/avif" srcset="/assets/images/certs/cert-02.avif">
+                    <source type="image/webp" srcset="/assets/images/certs/cert-02.webp">
+                    <img src="/assets/images/certs/cert-02.jpg" alt="Сертификат: восстановительные практики" loading="lazy" decoding="async">
+                  </picture>
+                  <span class="media-badge blend-text" data-blend>Cert 02</span>
+                </div>
+                <p class="profile-cert-title">Восстановление</p>
+                <p class="profile-cert-sub">Мягкая проработка</p>
+              </article>
+              <article class="profile-cert">
+                <div class="media-frame certificate-media shape-clip shape-reveal shape-clip-notch mask-media mask-brush" data-exp-media="shapes" data-exp-media-secondary="masks">
+                                    <picture>
+                    <source type="image/avif" srcset="/assets/images/certs/cert-03.avif">
+                    <source type="image/webp" srcset="/assets/images/certs/cert-03.webp">
+                    <img src="/assets/images/certs/cert-03.jpg" alt="Сертификат: повышение квалификации" loading="lazy" decoding="async">
+                  </picture>
+                  <span class="media-badge">Cert 03</span>
+                </div>
+                <p class="profile-cert-title">Повышение квалификации</p>
+                <p class="profile-cert-sub">Актуальные программы</p>
+              </article>
+            </div>
+          </div>
+        </div>
       </article>
+    </div>
     </div>
   </div>
 </section>
+
+
+
 

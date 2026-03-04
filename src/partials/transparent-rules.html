@@ -1,4 +1,4 @@
-﻿<!-- TRANSPARENT RULES -->
+<!-- TRANSPARENT RULES -->
 <section id="transparent-rules" class="section-shell bg-[#060606]">
   <div class="max-w-6xl mx-auto px-6">
     <div class="section-head reveal-on-scroll">
@@ -28,7 +28,7 @@
         </ul>
       </article>
 
-      <article class="card-luxe p-6 md:p-7 reveal-on-scroll" data-reveal-delay="0.08s">
+      <article class="card-luxe p-6 md:p-7 reveal-on-scroll">
         <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Во время и после</p>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
           <li class="flex items-start gap-2.5">
@@ -47,15 +47,15 @@
       </article>
     </div>
 
-    <div class="mt-7 card-luxe p-6 reveal-on-scroll" data-reveal-delay="0.14s">
+    <div class="mt-7 card-luxe p-6 reveal-on-scroll">
       <div class="flex flex-wrap items-center justify-between gap-3">
         <p class="text-sm text-gray-300 leading-relaxed">
           Если хотите, отправлю короткий чек-лист «как подготовиться к первому визиту» прямо в чат.
         </p>
         <a
-          href="https://wa.me/{{site.phoneDigits}}?text=Здравствуйте!%20Отправьте,%20пожалуйста,%20чек-лист%20подготовки%20к%20первому%20визиту."
+          href="{{waLink site.phoneDigits 'Здравствуйте! Отправьте, пожалуйста, чек-лист подготовки к первому визиту.'}}"
           class="whatsapp-link btn-secondary interactive-el btn-vibrate ripple-container"
-          data-analytics="Rules: Checklist CTA"
+         
         >
           Получить чек-лист
         </a>
@@ -63,4 +63,6 @@
     </div>
   </div>
 </section>
+
+
 

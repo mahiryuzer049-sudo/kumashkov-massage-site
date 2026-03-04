@@ -178,3 +178,13 @@ tmp/
 temp/
 .tmp/
 vite.config.ts.timestamp-*
+
+# Local deploy helper artifacts
+recovery/qa-runs/**/winscp-*.txt
+recovery/qa-runs/**/rclone-*.conf
+recovery/qa-runs/**/ftp-test.txt
+recovery/qa-runs/**/asset-test.txt
+recovery/qa-runs/**/size-*.js
+recovery/qa-runs/**/test-wa.js
+recovery/qa-runs/**/init-copy.js
+recovery/qa-runs/**/init-CcoUZuFM.js
