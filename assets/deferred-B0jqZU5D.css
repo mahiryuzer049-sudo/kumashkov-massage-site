@@ -841,20 +841,22 @@
 
 .results-compare {
   position: relative;
-  min-height: clamp(360px, 120vh, 900px);
-  margin-bottom: clamp(2rem, 6vh, 3.5rem);
+  min-height: auto;
+  margin-bottom: clamp(1.4rem, 4vh, 2.4rem);
 }
 
-.results-compare__sticky {
-  position: sticky;
-  top: clamp(90px, 16vh, 180px);
+.results-compare__frame {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
 }
 
 .compare-captions {
-  position: absolute;
-  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
   pointer-events: none;
-  display: grid;
 }
 
 .compare-caption {
@@ -870,37 +872,24 @@
 }
 
 .compare-caption--left {
-  place-self: start;
-  transform: translate(-8%, -40%);
+  transform: none;
 }
 
 .compare-caption--right {
-  place-self: end;
-  transform: translate(12%, 40%);
+  transform: none;
 }
 
 .compare-caption--note {
-  place-self: center;
-  transform: translateY(-20%);
+  margin-inline: auto;
+  transform: none;
   color: rgba(227, 200, 173, 0.8);
 }
 
 @media (max-width: 768px) {
-  .results-compare {
-    min-height: auto;
-  }
-
-  .results-compare__sticky {
-    position: relative;
-    top: auto;
-  }
-
   .compare-captions {
-    position: static;
     display: flex;
     justify-content: space-between;
     gap: 0.8rem;
-    margin-top: 0.8rem;
   }
 
   .compare-caption {
@@ -916,6 +905,11 @@
   .compare-captions {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .compare-labels {
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
   }
 
   .compare-caption {
