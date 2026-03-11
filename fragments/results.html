@@ -10,8 +10,8 @@
       </p>
     </div>
 
-    <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-5 mb-8">
-      <article class="card-luxe p-6 reveal-on-scroll">
+    <div class="grid md:grid-cols-[1.05fr_0.95fr] gap-5 mb-8">
+      <article class="card-luxe p-6 reveal-on-scroll results-summary-card">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">Что видно сразу</p>
         <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Результат читается по шагам, а не обещаниям</h3>
         <p class="text-sm text-gray-300 leading-relaxed">
@@ -20,59 +20,47 @@
         </p>
       </article>
 
-      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/20">
+      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/20 results-summary-card">
         <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Ориентир</p>
-        <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
-          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>1 визит — снимается фоновая перегрузка и становится понятна реакция тела.</span></li>
-          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>4 визита — появляется более стабильный тонус и меньше откатов.</span></li>
-          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>8 визитов — выстраивается поддерживающий режим без постоянного обнуления.</span></li>
-        </ul>
+        <div class="results-mini-timeline">
+          <div class="results-mini-timeline__item">
+            <span class="results-mini-timeline__step">1</span>
+            <p>Снимается фоновая перегрузка и становится понятна реакция тела.</p>
+          </div>
+          <div class="results-mini-timeline__item">
+            <span class="results-mini-timeline__step">4</span>
+            <p>Появляется более стабильный тонус и меньше откатов.</p>
+          </div>
+          <div class="results-mini-timeline__item">
+            <span class="results-mini-timeline__step">8</span>
+            <p>Выстраивается поддерживающий режим без постоянного обнуления.</p>
+          </div>
+        </div>
       </article>
     </div>
 
     <div class="grid md:grid-cols-3 gap-4 mb-8">
-      <article class="card-luxe p-5 reveal-on-scroll">
-        <div class="media-frame aspect-[4/3] mb-4 shape-clip shape-reveal shape-clip-arch mask-media mask-paper" data-exp-media="shapes" data-exp-media-secondary="masks">
-          <picture>
-            <source type="image/avif" srcset="/assets/images/results/results-detail-01.avif">
-            <source type="image/webp" srcset="/assets/images/results/results-detail-01.webp">
-            <img src="/assets/images/results/results-detail-01.jpg" alt="Результат: снятие напряжения" loading="lazy" decoding="async">
-          </picture>
-          <span class="media-badge blend-text" data-blend>Detail 01</span>
-        </div>
+      <article class="card-luxe p-5 reveal-on-scroll results-signal-card">
+        <p class="results-signal-card__tag">Step 01</p>
         <p class="text-sm text-ivory mb-1">Снятие напряжения</p>
         <p class="text-xs text-gray-400">Первые изменения в ключевых зонах уже после 1 визита.</p>
       </article>
 
-      <article class="card-luxe p-5 reveal-on-scroll">
-        <div class="media-frame aspect-[4/3] mb-4 shape-clip shape-reveal shape-clip-hex mask-media mask-ink" data-exp-media="shapes" data-exp-media-secondary="masks">
-          <picture>
-            <source type="image/avif" srcset="/assets/images/results/results-detail-02.avif">
-            <source type="image/webp" srcset="/assets/images/results/results-detail-02.webp">
-            <img src="/assets/images/results/results-detail-02.jpg" alt="Результат: ровный тонус" loading="lazy" decoding="async">
-          </picture>
-          <span class="media-badge blend-text" data-blend>Detail 02</span>
-        </div>
+      <article class="card-luxe p-5 reveal-on-scroll results-signal-card">
+        <p class="results-signal-card__tag">Step 02</p>
         <p class="text-sm text-ivory mb-1">Ровный тонус</p>
         <p class="text-xs text-gray-400">Тело держит ось и нагрузку без частых откатов.</p>
       </article>
 
-      <article class="card-luxe p-5 reveal-on-scroll">
-        <div class="media-frame aspect-[4/3] mb-4 shape-clip shape-reveal shape-clip-corner mask-media mask-brush" data-exp-media="shapes" data-exp-media-secondary="masks">
-          <picture>
-            <source type="image/avif" srcset="/assets/images/results/results-detail-03.avif">
-            <source type="image/webp" srcset="/assets/images/results/results-detail-03.webp">
-            <img src="/assets/images/results/results-detail-03.jpg" alt="Результат: устойчивый режим" loading="lazy" decoding="async">
-          </picture>
-          <span class="media-badge blend-text" data-blend>Detail 03</span>
-        </div>
+      <article class="card-luxe p-5 reveal-on-scroll results-signal-card">
+        <p class="results-signal-card__tag">Step 03</p>
         <p class="text-sm text-ivory mb-1">Устойчивый режим</p>
         <p class="text-xs text-gray-400">Появляется понятный ритм поддержки без перегруза.</p>
       </article>
     </div>
 
     <div class="grid md:grid-cols-3 gap-5">
-      <article class="card-luxe p-6 reveal-on-scroll">
+      <article class="card-luxe p-6 reveal-on-scroll results-phase-card">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">1 визит</p>
         <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Быстрый эффект</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
@@ -82,7 +70,7 @@
         </ul>
       </article>
 
-      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/30">
+      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/30 results-phase-card results-phase-card--accent">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">4 визита</p>
         <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Курсовый эффект</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
@@ -92,7 +80,7 @@
         </ul>
       </article>
 
-      <article class="card-luxe p-6 reveal-on-scroll">
+      <article class="card-luxe p-6 reveal-on-scroll results-phase-card">
         <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">8 визитов</p>
         <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Долгий результат</h3>
         <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
