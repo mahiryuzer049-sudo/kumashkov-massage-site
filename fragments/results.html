@@ -10,61 +10,25 @@
       </p>
     </div>
 
-    <div
-      class="media-stripe media-stripe--horizontal media-stripe--animate grid-breakout mb-8 reveal-on-scroll"
-      style="--stripe-image: url('/assets/images/results/results-main.jpg');"
-      aria-hidden="true"
-      data-depth="2"
-      data-exp-media="stripes"
-      data-choreo-mask
-      data-choreo-parallax
-      data-choreo-depth="0.24"
-    ></div>
+    <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-5 mb-8">
+      <article class="card-luxe p-6 reveal-on-scroll">
+        <p class="text-[11px] uppercase tracking-[0.24em] text-champagne mb-3">Что видно сразу</p>
+        <h3 class="font-serif text-2xl text-ivory mb-3" data-kinetic>Результат читается по шагам, а не обещаниям</h3>
+        <p class="text-sm text-gray-300 leading-relaxed">
+          Сначала становится легче в перегруженных зонах. Потом тело ровнее держит ось, нагрузку и ритм. Ниже —
+          короткая лестница, чтобы понять, что обычно меняется после 1, 4 и 8 визитов.
+        </p>
+      </article>
 
-    <div class="results-compare reveal-on-scroll" data-depth="1">
-      <div class="results-compare__frame">
-        <div class="compare-slider card-luxe p-5" data-compare data-compare-scroll style="--compare: 52%;">
-          <div class="compare-labels">
-            <span>До</span>
-            <span>После</span>
-          </div>
-          <div class="compare-images shape-clip shape-reveal shape-clip-tilt mask-media mask-soft" data-exp-media="shapes" data-exp-media-secondary="masks">
-            <picture>
-              <source type="image/avif" srcset="/assets/images/results/results-detail-01.avif">
-              <source type="image/webp" srcset="/assets/images/results/results-detail-01.webp">
-              <img src="/assets/images/results/results-detail-01.jpg" alt="Состояние до" loading="lazy" decoding="async">
-            </picture>
-            <picture>
-              <source type="image/avif" srcset="/assets/images/results/results-detail-02.avif">
-              <source type="image/webp" srcset="/assets/images/results/results-detail-02.webp">
-              <img src="/assets/images/results/results-detail-02.jpg" alt="Состояние после" loading="lazy" decoding="async" class="compare-after">
-            </picture>
-          </div>
-          <input
-            class="compare-range"
-            type="range"
-            min="0"
-            max="100"
-            value="52"
-            aria-label="Сравнить до и после"
-          >
-        </div>
-        <div class="compare-captions" aria-hidden="true">
-          <span class="compare-caption compare-caption--left">Визит 1</span>
-          <span class="compare-caption compare-caption--right">Визит 4</span>
-          <span class="compare-caption compare-caption--note">Динамика</span>
-        </div>
-      </div>
+      <article class="card-luxe p-6 reveal-on-scroll border border-champagne/20">
+        <p class="text-[11px] uppercase tracking-[0.24em] text-gray-500 mb-3">Ориентир</p>
+        <ul class="space-y-2.5 text-sm text-gray-300 leading-relaxed">
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>1 визит — снимается фоновая перегрузка и становится понятна реакция тела.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>4 визита — появляется более стабильный тонус и меньше откатов.</span></li>
+          <li class="flex items-start gap-2.5"><i class="fa-solid fa-check text-champagne text-[11px] mt-1"></i><span>8 визитов — выстраивается поддерживающий режим без постоянного обнуления.</span></li>
+        </ul>
+      </article>
     </div>
-
-    <figure class="media-frame aspect-[16/7] mb-8 reveal-on-scroll grid-breakout shape-clip shape-reveal shape-clip-lean mask-media mask-dissolve" data-depth="2" data-exp-media="shapes" data-exp-media-secondary="masks">
-      <picture>
-        <source type="image/avif" srcset="/assets/images/results/results-main.avif">
-        <source type="image/webp" srcset="/assets/images/results/results-main.webp">
-        <img src="/assets/images/results/results-main.jpg" alt="Визуал динамики результата" loading="lazy" decoding="async">
-      </picture>
-      <span class="media-badge blend-text" data-blend>Progress</span>
-    </figure>
 
     <div class="grid md:grid-cols-3 gap-4 mb-8">
       <article class="card-luxe p-5 reveal-on-scroll">
