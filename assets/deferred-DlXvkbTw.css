@@ -114,6 +114,44 @@
     radial-gradient(circle at top right, rgba(227, 200, 173, 0.08), transparent 58%);
 }
 
+.results-section {
+  padding-top: clamp(4.4rem, 6vw, 6.2rem);
+  padding-bottom: clamp(4.8rem, 6.6vw, 6.8rem);
+}
+
+.results-section__head {
+  margin-bottom: 2.8rem;
+}
+
+.results-section__head,
+.results-section__summary,
+.results-section__signals,
+.results-section__footer,
+.results-section .results-phase-card,
+.results-section .results-summary-card,
+.results-section .results-signal-card {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.results-section::before {
+  background:
+    radial-gradient(880px 320px at 14% 16%, rgba(227, 200, 173, 0.09), transparent 70%),
+    radial-gradient(760px 300px at 84% 72%, rgba(227, 200, 173, 0.04), transparent 74%);
+}
+
+@media (max-width: 900px) {
+  .results-section {
+    padding-top: 4rem;
+    padding-bottom: 4.6rem;
+  }
+
+  .results-section__head {
+    margin-bottom: 2.2rem;
+  }
+}
+
 :where(.fa-solid, .fa-regular, .fa-brands)::before {
   display: inline-block;
 }
