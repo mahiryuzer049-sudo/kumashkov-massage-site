@@ -1924,13 +1924,13 @@
 }
 
 .hero-stage--ready .hero-media-layer {
-  opacity: 0;
-  transform: translateY(18px) scale(0.98);
-  transition: opacity 0.8s ease, transform 1.2s cubic-bezier(0.2, 1, 0.3, 1), clip-path 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: clip-path 1.2s cubic-bezier(0.2, 1, 0.3, 1), transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .hero-stage--ready .hero-media-layer.shape-reveal {
-  clip-path: var(--clip-reveal-from);
+  clip-path: var(--clip);
 }
 
 .hero-stage--active .hero-media-layer {
