@@ -1,1 +1,0 @@
-const n=o=>{const{body:e}=o;document.querySelectorAll(".interactive-el").forEach(t=>{t.addEventListener("mouseenter",()=>e.classList.add("hovering")),t.addEventListener("mouseleave",()=>e.classList.remove("hovering"))})};export{n as initHoverState};
