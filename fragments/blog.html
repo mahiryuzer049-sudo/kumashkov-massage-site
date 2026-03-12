@@ -1,4 +1,4 @@
-<section data-fragment="blog" id="blog" class="section-shell bg-void" data-motion-profile="calm" data-choreo-section>
+<section data-fragment="blog" id="blog" class="section-shell blog-section bg-void" data-motion-profile="calm" data-choreo-section>
   <div class="max-w-screen-xl mx-auto px-6">
     <div class="section-head reveal-on-scroll" data-depth="0">
       <p class="section-kicker">Mini Blog</p>
@@ -36,13 +36,20 @@
 
       <div class="blog-rail">
         <div class="blog-rail__head">
-          <div>
+          <div class="blog-rail__intro">
             <p class="blog-rail__kicker">Навигация по материалам</p>
-            <p class="blog-rail__subtitle">Листайте карточки горизонтально. Такой формат масштабируется и на 8, и на 500 материалов.</p>
+            <p class="blog-rail__subtitle">Один заметный материал и компактная лента рядом. Без тяжёлых ползунков и лишнего UI-шума.</p>
+          </div>
+          <div class="blog-rail__meta">
+            <div class="blog-rail__status" aria-live="polite">
+              <span data-blog-rail-current>01</span>
+              <span class="blog-rail__status-divider">/</span>
+              <span data-blog-rail-total>08</span>
+            </div>
           </div>
           <div class="blog-rail__controls">
-            <button type="button" class="blog-rail__button" data-blog-rail-prev aria-label="Прокрутить материалы назад">←</button>
-            <button type="button" class="blog-rail__button" data-blog-rail-next aria-label="Прокрутить материалы вперёд">→</button>
+            <button type="button" class="blog-rail__button" data-blog-rail-prev aria-label="Прокрутить материалы назад">Назад</button>
+            <button type="button" class="blog-rail__button" data-blog-rail-next aria-label="Прокрутить материалы вперёд">Далее</button>
           </div>
         </div>
 
