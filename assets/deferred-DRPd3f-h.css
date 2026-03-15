@@ -6,12 +6,14 @@
 .blog-shell {
   display: grid;
   gap: 1.15rem;
+  min-width: 0;
 }
 
 .blog-featured {
   display: grid;
   gap: 1.25rem;
   align-items: stretch;
+  min-width: 0;
 }
 
 .blog-featured__content {
@@ -43,6 +45,9 @@
 .blog-rail {
   display: grid;
   gap: 1rem;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .blog-rail__head {
@@ -50,6 +55,7 @@
   grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 0.85rem 1rem;
+  min-width: 0;
 }
 
 .blog-rail__intro {
@@ -105,10 +111,14 @@
 .blog-rail__directory {
   display: flex;
   gap: 0.55rem;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   padding-bottom: 0.1rem;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+  min-width: 0;
 }
 
 .blog-rail__directory::-webkit-scrollbar {
@@ -116,11 +126,14 @@
 }
 
 .blog-rail__directory-item {
+  flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  min-width: 0;
   min-height: 38px;
   padding: 0.65rem 0.95rem;
+  max-width: min(18rem, 100%);
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.02);
@@ -151,6 +164,11 @@
 }
 
 .blog-rail__directory-title {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -185,13 +203,19 @@
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(240px, 23.5%);
+  inline-size: 100%;
+  max-width: 100%;
   gap: 0.85rem;
   overflow-x: auto;
+  padding-inline-end: 1rem;
   padding-bottom: 0;
+  scroll-padding-inline: 0 1rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+  min-width: 0;
 }
 
 .blog-rail__track::-webkit-scrollbar {
@@ -220,6 +244,7 @@
 .blog-section {
   padding-top: clamp(4rem, 4.7vw, 5.2rem);
   padding-bottom: clamp(4.2rem, 5vw, 5.6rem);
+  overflow-x: clip;
 }
 
 .results-summary-card,
@@ -313,6 +338,21 @@
 
   .blog-featured {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .blog-rail__directory {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    overflow: visible;
+  }
+
+  .blog-rail__directory-item {
+    width: 100%;
+    max-width: none;
+  }
+
+  .blog-rail__track {
+    grid-auto-columns: minmax(248px, calc((100% - 0.85rem) / 2));
   }
 }
 
