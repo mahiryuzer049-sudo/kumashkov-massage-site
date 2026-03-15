@@ -38,7 +38,7 @@
         <div class="blog-rail__head">
           <div class="blog-rail__intro">
             <p class="blog-rail__kicker">Навигация по материалам</p>
-            <p class="blog-rail__subtitle">Один заметный материал и быстрый индекс ниже. Можно листать rail или сразу прыгать к нужной теме без лишнего UI-шума.</p>
+            <p class="blog-rail__subtitle">Один заметный материал и компактное оглавление. Можно листать rail или сразу открыть список тем без лишнего UI-шума.</p>
           </div>
           <div class="blog-rail__meta">
             <div class="blog-rail__status" aria-live="polite">
@@ -46,6 +46,7 @@
               <span class="blog-rail__status-divider">/</span>
               <span data-blog-rail-total>08</span>
             </div>
+            <p class="blog-rail__active-title" data-blog-rail-active-title>Как снять стресс за вечер</p>
           </div>
           <div class="blog-rail__controls">
             <button type="button" class="blog-rail__button" data-blog-rail-prev aria-label="Прокрутить материалы назад">Назад</button>
@@ -53,7 +54,27 @@
           </div>
         </div>
 
-        <nav class="blog-rail__directory" data-blog-rail-directory aria-label="Быстрый индекс материалов"></nav>
+        <div class="blog-rail__index">
+          <button
+            type="button"
+            class="blog-rail__index-trigger interactive-el"
+            data-blog-rail-index-trigger
+            aria-expanded="false"
+            aria-controls="blog-rail-directory-panel"
+          >
+            <span class="blog-rail__index-kicker">Оглавление</span>
+            <span class="blog-rail__index-current" data-blog-rail-index-current>Как снять стресс за вечер</span>
+            <span class="blog-rail__index-icon" aria-hidden="true">+</span>
+          </button>
+          <div
+            id="blog-rail-directory-panel"
+            class="blog-rail__directory-panel"
+            data-blog-rail-directory-panel
+            hidden
+          >
+            <nav class="blog-rail__directory" data-blog-rail-directory aria-label="Быстрый индекс материалов"></nav>
+          </div>
+        </div>
 
         <div class="blog-rail__track" data-blog-rail-track>
           <article class="card-luxe p-6 reveal-on-scroll blog-rail__card">
