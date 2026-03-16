@@ -458,8 +458,8 @@
   }
 
   .blog-rail__card {
-    flex-basis: calc((100% - 0.85rem) / 2);
-    max-width: calc((100% - 0.85rem) / 2);
+    flex-basis: calc((100% - 1.7rem) / 3);
+    max-width: calc((100% - 1.7rem) / 3);
   }
 }
 
